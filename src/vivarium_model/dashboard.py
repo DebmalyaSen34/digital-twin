@@ -9,11 +9,10 @@ import sys
 import os
 
 # Add src to path for process imports
-# Add src to path for process imports
 project_root = os.path.join(os.path.dirname(__file__), "../..")
 sys.path.insert(0, project_root)
 
-# --- Load extra layouts for Cytoscape ---  
+# --- Load extra layouts for Cytoscape ---
 cyto.load_extra_layouts()
 
 VIVARIUM_AVAILABLE = False
@@ -33,7 +32,7 @@ DRUG_DB = {
     "Control (No Treatment)": {
         "targets": [],
         "desc": "Baseline metabolism.",
-        "mic_uM": 0,           # Minimum inhibitory concentration
+        "mic_uM": 0,
         "typical_dose_uM": 0,
     },
     "Trimethoprim": {
@@ -189,6 +188,9 @@ def run_fba_legacy(drug_name, efficacy):
     }
 
 
+_sim_cache = {}
+
+
 def run_hybrid_cached(drug_name, concentration_uM, sim_time=300.0):
     """Run Vivarium hybrid simulation with caching."""
     key = (drug_name, round(concentration_uM, 2), round(sim_time, 1))
@@ -198,12 +200,11 @@ def run_hybrid_cached(drug_name, concentration_uM, sim_time=300.0):
                 drug_name=drug_name,
                 extracellular_concentration=concentration_uM,
                 total_time=sim_time,
-                emit_step=sim_time / 30,  # ~30 data points
+                emit_step=max(sim_time / 30.0, 1.0),  # ~30 data points
             )
             result["simulation_mode"] = "vivarium_hybrid"
         else:
             # Fallback: convert concentration to an effective "efficacy"
-            # using a simple sigmoid (Hill equation approximation)
             mic = DRUG_DB[drug_name].get("mic_uM", 10.0)
             if mic > 0 and concentration_uM > 0:
                 efficacy = concentration_uM / (mic + concentration_uM)
@@ -218,9 +219,6 @@ def run_hybrid_cached(drug_name, concentration_uM, sim_time=300.0):
             del _sim_cache[oldest]
 
     return _sim_cache[key]
-
-
-_sim_cache = {}
 
 
 def build_cytoscape_elements():
@@ -314,7 +312,7 @@ STYLESHEET = [
         "border-width": 1, "border-color": "#4f46e5", "border-style": "dashed",
         "shape": "round-rectangle", "label": "data(label)",
         "font-size": 14, "color": "#818cf8", "text-valign": "top", "text-halign": "center",
-        "text-margin-y": -10, "text-opacity": 0.8, "padding": 20,
+        "text-margin-y": -10, "text-opacity": 0.8, "padding": 40,
         "compound-sizing-wrt-labels": "include",
     }},
     # === DEFAULT DIMMED ===
@@ -457,7 +455,6 @@ app.layout = html.Div(
                     style={"marginBottom": "16px"},
                 ),
 
-                # --- NEW: Concentration-based dosing (replaces "efficacy") ---
                 html.Label("Extracellular Drug Concentration (µM):", style={"color": "#888", "fontSize": "11px"}),
                 html.Div(style={"display": "flex", "alignItems": "baseline", "gap": "8px"}, children=[
                     html.Div(id="conc-val", style={
@@ -474,7 +471,6 @@ app.layout = html.Div(
                     },
                 ),
 
-                # --- NEW: Simulation time ---
                 html.Label("Simulation Time (seconds):", style={"color": "#888", "fontSize": "11px", "marginTop": "8px"}),
                 dcc.Slider(
                     id="time-slider", min=30, max=600, step=30, value=300,
@@ -493,7 +489,6 @@ app.layout = html.Div(
 
                 html.Hr(style={"borderColor": "#1a1a3e", "margin": "16px 0"}),
 
-                # Drug info card
                 html.Div(id="drug-info", style={
                     "padding": "12px", "backgroundColor": "#111133",
                     "borderRadius": "8px", "border": "1px solid #222255", "fontSize": "12px",
@@ -501,7 +496,6 @@ app.layout = html.Div(
 
                 html.Hr(style={"borderColor": "#1a1a3e", "margin": "16px 0"}),
 
-                # --- NEW: Kinetics time-course panel ---
                 html.Div(id="kinetics-panel", style={
                     "padding": "12px", "backgroundColor": "#111133",
                     "borderRadius": "8px", "border": "1px solid #222255",
@@ -509,12 +503,10 @@ app.layout = html.Div(
 
                 html.Hr(style={"borderColor": "#1a1a3e", "margin": "16px 0"}),
 
-                # Metrics
                 html.Div(id="metrics-panel"),
 
                 html.Hr(style={"borderColor": "#1a1a3e", "margin": "16px 0"}),
 
-                # Legend
                 html.Div(style={"fontSize": "10px", "color": "#555"}, children=[
                     html.Div("LEGEND", style={
                         "color": "#444", "fontWeight": "bold",
@@ -541,20 +533,25 @@ app.layout = html.Div(
                     elements=BASE_ELEMENTS,
                     stylesheet=STYLESHEET,
                     layout={
-                        "name": "cose", "animate": True, "animationDuration": 800,
-                        "quality": "proof", "randomize": True,
-                        "nodeRepulsion": 8000, "idealEdgeLength": 50,
-                        "edgeElasticity": 0.45, "gravity": 0.25, "gravityRange": 3.8,
-                        "nestingFactor": 0.1, "numIter": 5000, "tile": True,
-                        "tilingPaddingVertical": 20, "tilingPaddingHorizontal": 20,
-                        "packComponents": True,
+                        "name": "cola",
+                        "animate": True,
+                        "refresh": 1,
+                        "maxSimulationTime": 4000,
+                        "ungrabifyWhileSimulating": False,
+                        "fit": True,
+                        "padding": 50,
+                        "randomize": True,
+                        "avoidOverlap": True,
+                        "handleDisconnected": True,
+                        "nodeSpacing": 45,
+                        "edgeLength": 220,
+                        "infinite": False,
                     },
                     style={"width": "100%", "height": "100%", "backgroundColor": CLR_BG},
-                    responsive=True, minZoom=0.03, maxZoom=5.0,
+                    responsive=True, minZoom=0.05, maxZoom=4.0,
                     autoRefreshLayout=False, boxSelectionEnabled=False,
                 ),
 
-                # Floating tooltip
                 html.Div(id="node-tooltip", style={
                     "position": "absolute", "bottom": "12px", "left": "12px",
                     "color": "#ddd", "padding": "10px 14px",
@@ -573,7 +570,7 @@ app.layout = html.Div(
 
             # --- RIGHT: Time-course graphs ---
             html.Div(id="timecourse-panel", style={
-                "width": "280px", "flexShrink": 0, "padding": "12px",
+                "width": "300px", "flexShrink": 0, "padding": "12px",
                 "backgroundColor": "#0d0d24", "overflowY": "auto",
                 "borderLeft": "1px solid #1a1a3e",
             }),
@@ -600,7 +597,7 @@ def compute_simulation(drug_name, conc_uM, sim_time):
     """Run hybrid simulation (diffusion → kinetics → FBA)."""
     result = run_hybrid_cached(drug_name, float(conc_uM), float(sim_time))
 
-    # Serialize for dcc.Store — only keep what the UI needs
+    # Serialize for dcc.Store
     drug_data = DRUG_DB[drug_name]
     relevant_rxn_ids = set()
     for tid in drug_data["targets"]:
@@ -611,11 +608,11 @@ def compute_simulation(drug_name, conc_uM, sim_time):
                     relevant_rxn_ids.add(r2)
 
     wt_fluxes = result.get("wt_fluxes", {})
-    drug_fluxes = result.get("fluxes", {})
+    # The hybrid simulation returns "fluxes" (final snapshot), not "drug_fluxes"
+    drug_fluxes = result.get("fluxes", result.get("drug_fluxes", {}))
     wt_subset = {rid: float(wt_fluxes.get(rid, 0)) for rid in relevant_rxn_ids}
     drug_subset = {rid: float(drug_fluxes.get(rid, 0)) for rid in relevant_rxn_ids}
 
-    # Final growth rate
     growth_series = result.get("growth_rate", [0.0])
     final_growth = growth_series[-1] if growth_series else 0.0
 
@@ -761,7 +758,6 @@ def update_graph(drug_name, cascade_depth, sim_data):
                 }) for t in drug_data["targets"]]
             ])
         )
-        # Show MIC
         mic = drug_data.get("mic_uM", 0)
         if mic > 0:
             info_children.append(
@@ -778,7 +774,7 @@ def update_graph(drug_name, cascade_depth, sim_data):
             ])
         )
 
-    # --- Kinetics panel (enzyme activity summary) ---
+    # --- Kinetics panel ---
     enzyme_activities = sim_data.get("enzyme_activities", {})
     kinetics_children = []
     if enzyme_activities:
@@ -850,7 +846,6 @@ def update_graph(drug_name, cascade_depth, sim_data):
             ]),
         ]
 
-    # --- Right panel: Time-course plots ---
     timecourse = _build_timecourse_panel(sim_data, drug_name)
 
     return updated, info_children, metrics, header, kinetics_children, timecourse
@@ -880,6 +875,7 @@ def _build_timecourse_panel(sim_data, drug_name):
     ]
 
     # 1) Drug diffusion plot
+    peak_drug = max(drug_intra) if drug_intra else 0
     children.append(dcc.Graph(
         figure={
             "data": [{
@@ -887,14 +883,16 @@ def _build_timecourse_panel(sim_data, drug_name):
                 "type": "scatter", "mode": "lines",
                 "line": {"color": "#22c55e", "width": 2},
                 "name": "Intracellular [Drug]",
+                "fill": "tozeroy",
+                "fillcolor": "rgba(34, 197, 94, 0.1)",
             }],
             "layout": {
-                "title": {"text": "Drug Diffusion", "font": {"size": 12, "color": "#888"}},
+                "title": {"text": f"Drug Diffusion (peak: {peak_drug:.2f} µM)", "font": {"size": 11, "color": "#888"}},
                 "xaxis": {"title": "Time (s)", "color": "#555", "gridcolor": "#1a1a3e"},
                 "yaxis": {"title": "[Drug] µM", "color": "#555", "gridcolor": "#1a1a3e"},
                 "paper_bgcolor": "rgba(0,0,0,0)",
                 "plot_bgcolor": "rgba(13,13,36,0.8)",
-                "margin": {"l": 45, "r": 10, "t": 30, "b": 35},
+                "margin": {"l": 50, "r": 10, "t": 30, "b": 35},
                 "height": 180,
                 "font": {"color": "#888"},
             },
@@ -908,28 +906,35 @@ def _build_timecourse_panel(sim_data, drug_name):
         traces = []
         colors = ["#d946ef", "#f97316", "#eab308", "#22d3ee", "#a855f7"]
         for i, (gene_id, activities) in enumerate(enzyme_acts.items()):
+            final_a = activities[-1] if activities else 1.0
             traces.append({
                 "x": times[:len(activities)],
                 "y": activities,
                 "type": "scatter", "mode": "lines",
                 "line": {"color": colors[i % len(colors)], "width": 2},
-                "name": gene_id,
+                "name": f"{gene_id} ({final_a:.0%})",
             })
 
         children.append(dcc.Graph(
             figure={
                 "data": traces,
                 "layout": {
-                    "title": {"text": "Enzyme Activity", "font": {"size": 12, "color": "#888"}},
+                    "title": {"text": "Enzyme Activity", "font": {"size": 11, "color": "#888"}},
                     "xaxis": {"title": "Time (s)", "color": "#555", "gridcolor": "#1a1a3e"},
-                    "yaxis": {"title": "Activity", "range": [0, 1.05], "color": "#555", "gridcolor": "#1a1a3e"},
+                    "yaxis": {"title": "Activity", "range": [-0.05, 1.05], "color": "#555", "gridcolor": "#1a1a3e"},
                     "paper_bgcolor": "rgba(0,0,0,0)",
                     "plot_bgcolor": "rgba(13,13,36,0.8)",
-                    "margin": {"l": 45, "r": 10, "t": 30, "b": 35},
+                    "margin": {"l": 50, "r": 10, "t": 30, "b": 35},
                     "height": 180,
                     "font": {"color": "#888"},
                     "showlegend": True,
-                    "legend": {"font": {"size": 9, "color": "#888"}, "x": 0.7, "y": 0.95},
+                    "legend": {"font": {"size": 9, "color": "#888"}, "x": 0.55, "y": 0.95},
+                    # Add 50% threshold line
+                    "shapes": [{
+                        "type": "line", "x0": times[0], "x1": times[-1],
+                        "y0": 0.5, "y1": 0.5,
+                        "line": {"color": "#ef4444", "width": 1, "dash": "dot"},
+                    }],
                 },
             },
             config={"displayModeBar": False},
@@ -937,31 +942,47 @@ def _build_timecourse_panel(sim_data, drug_name):
         ))
 
     # 3) Growth rate plot
+    wt_growth = sim_data.get("wt_growth", 0)
     children.append(dcc.Graph(
         figure={
-            "data": [{
-                "x": times[:len(growth_rates)],
-                "y": growth_rates,
-                "type": "scatter", "mode": "lines",
-                "line": {"color": "#3b82f6", "width": 2},
-                "name": "Growth Rate",
-            }],
+            "data": [
+                {
+                    "x": times[:len(growth_rates)],
+                    "y": growth_rates,
+                    "type": "scatter", "mode": "lines",
+                    "line": {"color": "#3b82f6", "width": 2},
+                    "name": "Growth Rate",
+                    "fill": "tozeroy",
+                    "fillcolor": "rgba(59, 130, 246, 0.1)",
+                },
+                {
+                    "x": [times[0], times[-1]],
+                    "y": [wt_growth, wt_growth],
+                    "type": "scatter", "mode": "lines",
+                    "line": {"color": "#44aaff", "width": 1, "dash": "dash"},
+                    "name": f"WT ({wt_growth:.2f})",
+                },
+            ],
             "layout": {
-                "title": {"text": "Growth Rate (FBA)", "font": {"size": 12, "color": "#888"}},
+                "title": {"text": "Growth Rate (FBA)", "font": {"size": 11, "color": "#888"}},
                 "xaxis": {"title": "Time (s)", "color": "#555", "gridcolor": "#1a1a3e"},
                 "yaxis": {"title": "Growth (1/h)", "color": "#555", "gridcolor": "#1a1a3e"},
                 "paper_bgcolor": "rgba(0,0,0,0)",
                 "plot_bgcolor": "rgba(13,13,36,0.8)",
-                "margin": {"l": 45, "r": 10, "t": 30, "b": 35},
+                "margin": {"l": 50, "r": 10, "t": 30, "b": 35},
                 "height": 180,
                 "font": {"color": "#888"},
+                "showlegend": True,
+                "legend": {"font": {"size": 9, "color": "#888"}, "x": 0.55, "y": 0.95},
             },
         },
         config={"displayModeBar": False},
         style={"marginBottom": "8px"},
     ))
 
-    # 4) Simulation info
+    # 4) Simulation summary
+    final_drug = drug_intra[-1] if drug_intra else 0
+    final_growth = growth_rates[-1] if growth_rates else 0
     children.append(html.Div(style={
         "padding": "8px", "backgroundColor": "#111133",
         "borderRadius": "6px", "border": "1px solid #222255",
@@ -969,8 +990,10 @@ def _build_timecourse_panel(sim_data, drug_name):
     }, children=[
         html.Div("SIMULATION DETAILS", style={"fontWeight": "bold", "letterSpacing": "1px", "marginBottom": "4px"}),
         html.Div(f"⏱ Duration: {times[-1]:.0f}s ({len(times)} steps)"),
-        html.Div(f"📊 Final [Drug]ᵢₙ: {drug_intra[-1]:.2f} µM"),
-        html.Div(f"📉 Final Growth: {growth_rates[-1]:.4f} h⁻¹"),
+        html.Div(f"📊 Peak [Drug]ᵢₙ: {max(drug_intra):.2f} µM"),
+        html.Div(f"📊 Final [Drug]ᵢₙ: {final_drug:.2f} µM"),
+        html.Div(f"📉 Final Growth: {final_growth:.4f} h⁻¹"),
+        html.Div(f"📉 WT Growth: {wt_growth:.4f} h⁻¹"),
         html.Div(f"🔬 Mode: {sim_data.get('simulation_mode', 'unknown')}"),
     ]))
 
@@ -1021,7 +1044,6 @@ def show_node_info(data, sim_data):
         for rid in rxn_ids:
             pathways.add(_rxn_pathway_map.get(rid, "Unknown"))
 
-        # Show enzyme activity if this gene is a target
         enzyme_info = []
         if nid in enzyme_acts:
             acts = enzyme_acts[nid]
@@ -1051,7 +1073,6 @@ def show_node_info(data, sim_data):
         pct = ((flux_drug - flux_wt) / flux_wt * 100) if abs(flux_wt) > 1e-9 else 0
         fc = "#ff4444" if pct < -10 else ("#ffaa00" if pct < -1 else "#44ff44")
 
-        # Check if this reaction is constrained by an inhibited enzyme
         gene_ids = _rxn_gene_map.get(nid, [])
         constraint_info = []
         for gid in gene_ids:
