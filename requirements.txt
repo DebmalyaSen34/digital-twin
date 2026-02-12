@@ -63,7 +63,7 @@ numpy
 optlang
 orjson
 packaging
-pandas
+pandas==2.3.3
 parso
 pexpect
 pillow
@@ -96,12 +96,10 @@ rich
 rpds-py
 ruamel-yaml
 scipy
-seaborn
 setuptools
 six
 smmap
 stack-data
-streamlit
 swiglpk
 sympy
 tenacity
@@ -118,3 +116,4 @@ wcwidth
 werkzeug
 xlrd
 zipp
+gunicorn
