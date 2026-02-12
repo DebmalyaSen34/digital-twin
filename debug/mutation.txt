@@ -1,0 +1,31 @@
+
+============================================================
+   🧬 GENOMIC MUTATION LAB: EVOLUTION SIMULATOR
+============================================================
+[PHASE 1] LOADING HEALTHY GENOME...
+   > Loaded 476 genes.
+   > Target Selected: MG041 (Essential Enzyme)
+
+[PHASE 2] EXPOSING MG041 TO MUTAGENIC RADIATION...
+   ⚠️  MUTATION DETECTED: Position 254: T -> A
+
+[PHASE 3] ANALYZING PROTEIN STRUCTURE...
+   Original Protein: MKKFQAVIKDPVGIHARPAS...
+   Mutated Protein:  MKKFQAVIKDPVGIHARPAS...
+   Mutation Type:    MISSENSE
+
+[PHASE 4] SIMULATING PHYSIOLOGICAL EFFECT...
+   ✅ Healthy Growth Rate: 14.15829
+   > Effect: Enzyme Efficiency Reduced (50%).
+
+============================================================
+   EVOLUTIONARY OUTCOME REPORT
+============================================================
+   Gene:           MG041
+   Mutation:       Position 254: T -> A
+   Classification: MISSENSE
+   Survival:       YES
+   New Growth:     14.15829
+   Status:         SICK (Metabolic function impaired)
+============================================================
+
