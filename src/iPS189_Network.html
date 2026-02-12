@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 750px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG041", "label": "MG041", "shape": "dot", "size": 10, "title": "MG041"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Transport", "label": "Transport", "shape": "dot", "size": 25, "title": "Transport"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG429", "label": "MG429", "shape": "dot", "size": 10, "title": "MG429"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG071", "label": "MG071", "shape": "dot", "size": 10, "title": "MG071"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "s0001", "label": "s0001", "shape": "dot", "size": 10, "title": "s0001"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG179", "label": "MG179", "shape": "dot", "size": 10, "title": "MG179"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG180", "label": "MG180", "shape": "dot", "size": 10, "title": "MG180"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG181", "label": "MG181", "shape": "dot", "size": 10, "title": "MG181"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG077", "label": "MG077", "shape": "dot", "size": 10, "title": "MG077"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG078", "label": "MG078", "shape": "dot", "size": 10, "title": "MG078"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG079", "label": "MG079", "shape": "dot", "size": 10, "title": "MG079"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG080", "label": "MG080", "shape": "dot", "size": 10, "title": "MG080"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG062", "label": "MG062", "shape": "dot", "size": 10, "title": "MG062"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG119", "label": "MG119", "shape": "dot", "size": 10, "title": "MG119"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG069", "label": "MG069", "shape": "dot", "size": 10, "title": "MG069"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG187", "label": "MG187", "shape": "dot", "size": 10, "title": "MG187"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG188", "label": "MG188", "shape": "dot", "size": 10, "title": "MG188"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG189", "label": "MG189", "shape": "dot", "size": 10, "title": "MG189"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG033", "label": "MG033", "shape": "dot", "size": 10, "title": "MG033"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG323", "label": "MG323", "shape": "dot", "size": 10, "title": "MG323"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG410", "label": "MG410", "shape": "dot", "size": 10, "title": "MG410"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG411", "label": "MG411", "shape": "dot", "size": 10, "title": "MG411"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG042", "label": "MG042", "shape": "dot", "size": 10, "title": "MG042"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG043", "label": "MG043", "shape": "dot", "size": 10, "title": "MG043"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG044", "label": "MG044", "shape": "dot", "size": 10, "title": "MG044"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG226", "label": "MG226", "shape": "dot", "size": 10, "title": "MG226"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG225", "label": "MG225", "shape": "dot", "size": 10, "title": "MG225"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG357", "label": "MG357", "shape": "dot", "size": 10, "title": "MG357"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Carbohydrates and related molecules", "label": "Carbohydrates and related molecules", "shape": "dot", "size": 25, "title": "Carbohydrates and related molecules"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG271", "label": "MG271", "shape": "dot", "size": 10, "title": "MG271"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG066", "label": "MG066", "shape": "dot", "size": 10, "title": "MG066"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG063", "label": "MG063", "shape": "dot", "size": 10, "title": "MG063"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG023", "label": "MG023", "shape": "dot", "size": 10, "title": "MG023"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG260", "label": "MG260", "shape": "dot", "size": 10, "title": "MG260"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG111", "label": "MG111", "shape": "dot", "size": 10, "title": "MG111"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG299", "label": "MG299", "shape": "dot", "size": 10, "title": "MG299"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG300", "label": "MG300", "shape": "dot", "size": 10, "title": "MG300"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG430", "label": "MG430", "shape": "dot", "size": 10, "title": "MG430"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG053", "label": "MG053", "shape": "dot", "size": 10, "title": "MG053"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG216", "label": "MG216", "shape": "dot", "size": 10, "title": "MG216"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG396", "label": "MG396", "shape": "dot", "size": 10, "title": "MG396"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG431", "label": "MG431", "shape": "dot", "size": 10, "title": "MG431"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG118", "label": "MG118", "shape": "dot", "size": 10, "title": "MG118"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG171", "label": "MG171", "shape": "dot", "size": 10, "title": "MG171"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Nucleotide Metabolism", "label": "Nucleotide Metabolism", "shape": "dot", "size": 25, "title": "Nucleotide Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG276", "label": "MG276", "shape": "dot", "size": 10, "title": "MG276"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG212", "label": "MG212", "shape": "dot", "size": 10, "title": "MG212"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Lipid \u0026 Cell Membrane Metabolism", "label": "Lipid \u0026 Cell Membrane Metabolism", "shape": "dot", "size": 25, "title": "Lipid \u0026 Cell Membrane Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG114", "label": "MG114", "shape": "dot", "size": 10, "title": "MG114"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG453", "label": "MG453", "shape": "dot", "size": 10, "title": "MG453"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG292", "label": "MG292", "shape": "dot", "size": 10, "title": "MG292"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Alanine Metabolism", "label": "Alanine Metabolism", "shape": "dot", "size": 25, "title": "Alanine Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG378", "label": "MG378", "shape": "dot", "size": 10, "title": "MG378"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Amino acids and related molecules", "label": "Amino acids and related molecules", "shape": "dot", "size": 25, "title": "Amino acids and related molecules"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG365", "label": "MG365", "shape": "dot", "size": 10, "title": "MG365"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG098", "label": "MG098", "shape": "dot", "size": 10, "title": "MG098"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG099", "label": "MG099", "shape": "dot", "size": 10, "title": "MG099"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG100", "label": "MG100", "shape": "dot", "size": 10, "title": "MG100"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG448", "label": "MG448", "shape": "dot", "size": 10, "title": "MG448"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG408", "label": "MG408", "shape": "dot", "size": 10, "title": "MG408"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG113", "label": "MG113", "shape": "dot", "size": 10, "title": "MG113"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "tRNA Charging", "label": "tRNA Charging", "shape": "dot", "size": 25, "title": "tRNA Charging"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG036", "label": "MG036", "shape": "dot", "size": 10, "title": "MG036"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG253", "label": "MG253", "shape": "dot", "size": 10, "title": "MG253"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG035", "label": "MG035", "shape": "dot", "size": 10, "title": "MG035"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG126", "label": "MG126", "shape": "dot", "size": 10, "title": "MG126"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG334", "label": "MG334", "shape": "dot", "size": 10, "title": "MG334"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Nucleotide Salvage Pathway", "label": "Nucleotide Salvage Pathway", "shape": "dot", "size": 25, "title": "Nucleotide Salvage Pathway"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG034", "label": "MG034", "shape": "dot", "size": 10, "title": "MG034"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG399", "label": "MG399", "shape": "dot", "size": 10, "title": "MG399"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Oxidative Phosphorylation", "label": "Oxidative Phosphorylation", "shape": "dot", "size": 25, "title": "Oxidative Phosphorylation"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG400", "label": "MG400", "shape": "dot", "size": 10, "title": "MG400"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG401", "label": "MG401", "shape": "dot", "size": 10, "title": "MG401"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG402", "label": "MG402", "shape": "dot", "size": 10, "title": "MG402"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG403", "label": "MG403", "shape": "dot", "size": 10, "title": "MG403"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG404", "label": "MG404", "shape": "dot", "size": 10, "title": "MG404"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG405", "label": "MG405", "shape": "dot", "size": 10, "title": "MG405"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG356", "label": "MG356", "shape": "dot", "size": 10, "title": "MG356"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Cell Envelope Biosynthesis", "label": "Cell Envelope Biosynthesis", "shape": "dot", "size": 25, "title": "Cell Envelope Biosynthesis"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG025", "label": "MG025", "shape": "dot", "size": 10, "title": "MG025"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG075", "label": "MG075", "shape": "dot", "size": 10, "title": "MG075"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG137", "label": "MG137", "shape": "dot", "size": 10, "title": "MG137"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG052", "label": "MG052", "shape": "dot", "size": 10, "title": "MG052"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Purine and Pyrimidine Biosynthesis", "label": "Purine and Pyrimidine Biosynthesis", "shape": "dot", "size": 25, "title": "Purine and Pyrimidine Biosynthesis"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Nucleotide Salvage Pathways", "label": "Nucleotide Salvage Pathways", "shape": "dot", "size": 25, "title": "Nucleotide Salvage Pathways"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG382", "label": "MG382", "shape": "dot", "size": 10, "title": "MG382"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Nucleotides and nucleic acids", "label": "Nucleotides and nucleic acids", "shape": "dot", "size": 25, "title": "Nucleotides and nucleic acids"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG330", "label": "MG330", "shape": "dot", "size": 10, "title": "MG330"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG107", "label": "MG107", "shape": "dot", "size": 10, "title": "MG107"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG050", "label": "MG050", "shape": "dot", "size": 10, "title": "MG050"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG006", "label": "MG006", "shape": "dot", "size": 10, "title": "MG006"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG051", "label": "MG051", "shape": "dot", "size": 10, "title": "MG051"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG458", "label": "MG458", "shape": "dot", "size": 10, "title": "MG458"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG037", "label": "MG037", "shape": "dot", "size": 10, "title": "MG037"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG058", "label": "MG058", "shape": "dot", "size": 10, "title": "MG058"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG229", "label": "MG229", "shape": "dot", "size": 10, "title": "MG229"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG230", "label": "MG230", "shape": "dot", "size": 10, "title": "MG230"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG231", "label": "MG231", "shape": "dot", "size": 10, "title": "MG231"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG227", "label": "MG227", "shape": "dot", "size": 10, "title": "MG227"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG030", "label": "MG030", "shape": "dot", "size": 10, "title": "MG030"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG434", "label": "MG434", "shape": "dot", "size": 10, "title": "MG434"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG049", "label": "MG049", "shape": "dot", "size": 10, "title": "MG049"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG228", "label": "MG228", "shape": "dot", "size": 10, "title": "MG228"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Vitamins \u0026 Cofactor Biosynthesis", "label": "Vitamins \u0026 Cofactor Biosynthesis", "shape": "dot", "size": 25, "title": "Vitamins \u0026 Cofactor Biosynthesis"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG383", "label": "MG383", "shape": "dot", "size": 10, "title": "MG383"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG407", "label": "MG407", "shape": "dot", "size": 10, "title": "MG407"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Central Metabolism", "label": "Central Metabolism", "shape": "dot", "size": 25, "title": "Central Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG301", "label": "MG301", "shape": "dot", "size": 10, "title": "MG301"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG273", "label": "MG273", "shape": "dot", "size": 10, "title": "MG273"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG274", "label": "MG274", "shape": "dot", "size": 10, "title": "MG274"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG145", "label": "MG145", "shape": "dot", "size": 10, "title": "MG145"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Coenzymes and prosthetic groups", "label": "Coenzymes and prosthetic groups", "shape": "dot", "size": 25, "title": "Coenzymes and prosthetic groups"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG013", "label": "MG013", "shape": "dot", "size": 10, "title": "MG013"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG240", "label": "MG240", "shape": "dot", "size": 10, "title": "MG240"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG394", "label": "MG394", "shape": "dot", "size": 10, "title": "MG394"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Amino Acid Metabolism", "label": "Amino Acid Metabolism", "shape": "dot", "size": 25, "title": "Amino Acid Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG259", "label": "MG259", "shape": "dot", "size": 10, "title": "MG259"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "glutamine-N5 methyltransferase pathway", "label": "glutamine-N5 methyltransferase pathway", "shape": "dot", "size": 25, "title": "glutamine-N5 methyltransferase pathway"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG462", "label": "MG462", "shape": "dot", "size": 10, "title": "MG462"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Other function", "label": "Other function", "shape": "dot", "size": 25, "title": "Other function"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG021", "label": "MG021", "shape": "dot", "size": 10, "title": "MG021"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG038", "label": "MG038", "shape": "dot", "size": 10, "title": "MG038"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Alternate Carbon Metabolism", "label": "Alternate Carbon Metabolism", "shape": "dot", "size": 25, "title": "Alternate Carbon Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG251", "label": "MG251", "shape": "dot", "size": 10, "title": "MG251"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Glycine and Serine Metabolism", "label": "Glycine and Serine Metabolism", "shape": "dot", "size": 25, "title": "Glycine and Serine Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG005", "label": "MG005", "shape": "dot", "size": 10, "title": "MG005"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG345", "label": "MG345", "shape": "dot", "size": 10, "title": "MG345"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Valine, Leucine, and Isoleucine Metabolism", "label": "Valine, Leucine, and Isoleucine Metabolism", "shape": "dot", "size": 25, "title": "Valine, Leucine, and Isoleucine Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG266", "label": "MG266", "shape": "dot", "size": 10, "title": "MG266"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG460", "label": "MG460", "shape": "dot", "size": 10, "title": "MG460"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Membrane bioenergetics", "label": "Membrane bioenergetics", "shape": "dot", "size": 25, "title": "Membrane bioenergetics"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG102", "label": "MG102", "shape": "dot", "size": 10, "title": "MG102"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG136", "label": "MG136", "shape": "dot", "size": 10, "title": "MG136"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Threonine and Lysine Metabolism", "label": "Threonine and Lysine Metabolism", "shape": "dot", "size": 25, "title": "Threonine and Lysine Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG375", "label": "MG375", "shape": "dot", "size": 10, "title": "MG375"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG047", "label": "MG047", "shape": "dot", "size": 10, "title": "MG047"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Methionine Metabolism", "label": "Methionine Metabolism", "shape": "dot", "size": 25, "title": "Methionine Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG275", "label": "MG275", "shape": "dot", "size": 10, "title": "MG275"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Energy Metabolism", "label": "Energy Metabolism", "shape": "dot", "size": 25, "title": "Energy Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG128", "label": "MG128", "shape": "dot", "size": 10, "title": "MG128"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Cofactor and Prosthetic Group Biosynthesis", "label": "Cofactor and Prosthetic Group Biosynthesis", "shape": "dot", "size": 25, "title": "Cofactor and Prosthetic Group Biosynthesis"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG372", "label": "MG372", "shape": "dot", "size": 10, "title": "MG372"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG463", "label": "MG463", "shape": "dot", "size": 10, "title": "MG463"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Quinone Biosynthesis", "label": "Quinone Biosynthesis", "shape": "dot", "size": 25, "title": "Quinone Biosynthesis"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG215", "label": "MG215", "shape": "dot", "size": 10, "title": "MG215"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Glycolysis/Gluconeogenesis", "label": "Glycolysis/Gluconeogenesis", "shape": "dot", "size": 25, "title": "Glycolysis/Gluconeogenesis"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG194", "label": "MG194", "shape": "dot", "size": 10, "title": "MG194"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Tyrosine, Tryptophan, and Phenylalanine Metabolism", "label": "Tyrosine, Tryptophan, and Phenylalanine Metabolism", "shape": "dot", "size": 25, "title": "Tyrosine, Tryptophan, and Phenylalanine Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG195", "label": "MG195", "shape": "dot", "size": 10, "title": "MG195"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG455", "label": "MG455", "shape": "dot", "size": 10, "title": "MG455"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG351", "label": "MG351", "shape": "dot", "size": 10, "title": "MG351"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Anaplerotic Reactions", "label": "Anaplerotic Reactions", "shape": "dot", "size": 25, "title": "Anaplerotic Reactions"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG283", "label": "MG283", "shape": "dot", "size": 10, "title": "MG283"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Arginine and Proline Metabolism", "label": "Arginine and Proline Metabolism", "shape": "dot", "size": 25, "title": "Arginine and Proline Metabolism"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG370", "label": "MG370", "shape": "dot", "size": 10, "title": "MG370"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "pseudouridylate synthase pathway", "label": "pseudouridylate synthase pathway", "shape": "dot", "size": 25, "title": "pseudouridylate synthase pathway"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG209", "label": "MG209", "shape": "dot", "size": 10, "title": "MG209"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG112", "label": "MG112", "shape": "dot", "size": 10, "title": "MG112"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "Pentose Phosphate Pathway", "label": "Pentose Phosphate Pathway", "shape": "dot", "size": 25, "title": "Pentose Phosphate Pathway"}, {"color": "#00ff41", "font": {"color": "white"}, "group": "Gene", "id": "MG124", "label": "MG124", "shape": "dot", "size": 10, "title": "MG124"}, {"color": "#ff0044", "font": {"color": "white"}, "group": "Pathway", "id": "thiol peroxidase pathway", "label": "thiol peroxidase pathway", "shape": "dot", "size": 25, "title": "thiol peroxidase pathway"}]);
+                  edges = new vis.DataSet([{"from": "MG041", "to": "Transport", "width": 1}, {"from": "Transport", "to": "MG429", "width": 1}, {"from": "Transport", "to": "MG071", "width": 1}, {"from": "Transport", "to": "s0001", "width": 1}, {"from": "Transport", "to": "MG179", "width": 1}, {"from": "Transport", "to": "MG180", "width": 1}, {"from": "Transport", "to": "MG181", "width": 1}, {"from": "Transport", "to": "MG077", "width": 1}, {"from": "Transport", "to": "MG078", "width": 1}, {"from": "Transport", "to": "MG079", "width": 1}, {"from": "Transport", "to": "MG080", "width": 1}, {"from": "Transport", "to": "MG062", "width": 1}, {"from": "Transport", "to": "MG119", "width": 1}, {"from": "Transport", "to": "MG069", "width": 1}, {"from": "Transport", "to": "MG187", "width": 1}, {"from": "Transport", "to": "MG188", "width": 1}, {"from": "Transport", "to": "MG189", "width": 1}, {"from": "Transport", "to": "MG033", "width": 1}, {"from": "Transport", "to": "MG323", "width": 1}, {"from": "Transport", "to": "MG410", "width": 1}, {"from": "Transport", "to": "MG411", "width": 1}, {"from": "Transport", "to": "MG042", "width": 1}, {"from": "Transport", "to": "MG043", "width": 1}, {"from": "Transport", "to": "MG044", "width": 1}, {"from": "Transport", "to": "MG226", "width": 1}, {"from": "Transport", "to": "MG225", "width": 1}, {"from": "MG357", "to": "Carbohydrates and related molecules", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG271", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG066", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG063", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG023", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG260", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG111", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG299", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG300", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG430", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG053", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG216", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG396", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG431", "width": 1}, {"from": "Carbohydrates and related molecules", "to": "MG118", "width": 1}, {"from": "MG171", "to": "Nucleotide Metabolism", "width": 1}, {"from": "Nucleotide Metabolism", "to": "MG276", "width": 1}, {"from": "MG212", "to": "Lipid \u0026 Cell Membrane Metabolism", "width": 1}, {"from": "Lipid \u0026 Cell Membrane Metabolism", "to": "MG114", "width": 1}, {"from": "Lipid \u0026 Cell Membrane Metabolism", "to": "MG453", "width": 1}, {"from": "MG292", "to": "Alanine Metabolism", "width": 1}, {"from": "MG378", "to": "Amino acids and related molecules", "width": 1}, {"from": "Amino acids and related molecules", "to": "MG365", "width": 1}, {"from": "Amino acids and related molecules", "to": "MG098", "width": 1}, {"from": "Amino acids and related molecules", "to": "MG099", "width": 1}, {"from": "Amino acids and related molecules", "to": "MG100", "width": 1}, {"from": "Amino acids and related molecules", "to": "MG448", "width": 1}, {"from": "Amino acids and related molecules", "to": "MG408", "width": 1}, {"from": "MG113", "to": "tRNA Charging", "width": 1}, {"from": "tRNA Charging", "to": "MG036", "width": 1}, {"from": "tRNA Charging", "to": "MG253", "width": 1}, {"from": "tRNA Charging", "to": "MG035", "width": 1}, {"from": "tRNA Charging", "to": "MG126", "width": 1}, {"from": "tRNA Charging", "to": "MG334", "width": 1}, {"from": "s0001", "to": "Nucleotide Salvage Pathway", "width": 1}, {"from": "Nucleotide Salvage Pathway", "to": "MG034", "width": 1}, {"from": "MG399", "to": "Oxidative Phosphorylation", "width": 1}, {"from": "Oxidative Phosphorylation", "to": "MG400", "width": 1}, {"from": "Oxidative Phosphorylation", "to": "MG401", "width": 1}, {"from": "Oxidative Phosphorylation", "to": "MG402", "width": 1}, {"from": "Oxidative Phosphorylation", "to": "MG403", "width": 1}, {"from": "Oxidative Phosphorylation", "to": "MG404", "width": 1}, {"from": "Oxidative Phosphorylation", "to": "MG405", "width": 1}, {"from": "MG356", "to": "Cell Envelope Biosynthesis", "width": 1}, {"from": "Cell Envelope Biosynthesis", "to": "MG025", "width": 1}, {"from": "Cell Envelope Biosynthesis", "to": "MG075", "width": 1}, {"from": "Cell Envelope Biosynthesis", "to": "MG137", "width": 1}, {"from": "MG052", "to": "Purine and Pyrimidine Biosynthesis", "width": 1}, {"from": "MG052", "to": "Nucleotide Salvage Pathways", "width": 1}, {"from": "MG382", "to": "Nucleotides and nucleic acids", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG330", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG107", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG050", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG006", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG051", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG458", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG037", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG058", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG229", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG230", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG231", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG227", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG030", "width": 1}, {"from": "Nucleotides and nucleic acids", "to": "MG434", "width": 1}, {"from": "Nucleotide Salvage Pathways", "to": "MG049", "width": 1}, {"from": "Nucleotide Salvage Pathways", "to": "MG229", "width": 1}, {"from": "Nucleotide Salvage Pathways", "to": "MG230", "width": 1}, {"from": "Nucleotide Salvage Pathways", "to": "MG231", "width": 1}, {"from": "MG228", "to": "Vitamins \u0026 Cofactor Biosynthesis", "width": 1}, {"from": "Vitamins \u0026 Cofactor Biosynthesis", "to": "MG383", "width": 1}, {"from": "MG407", "to": "Central Metabolism", "width": 1}, {"from": "Central Metabolism", "to": "MG301", "width": 1}, {"from": "Central Metabolism", "to": "MG273", "width": 1}, {"from": "Central Metabolism", "to": "MG274", "width": 1}, {"from": "MG145", "to": "Coenzymes and prosthetic groups", "width": 1}, {"from": "Coenzymes and prosthetic groups", "to": "MG013", "width": 1}, {"from": "Coenzymes and prosthetic groups", "to": "MG240", "width": 1}, {"from": "MG394", "to": "Amino Acid Metabolism", "width": 1}, {"from": "MG259", "to": "glutamine-N5 methyltransferase pathway", "width": 1}, {"from": "MG462", "to": "Other function", "width": 1}, {"from": "Other function", "to": "MG021", "width": 1}, {"from": "MG038", "to": "Alternate Carbon Metabolism", "width": 1}, {"from": "MG251", "to": "Glycine and Serine Metabolism", "width": 1}, {"from": "Glycine and Serine Metabolism", "to": "MG005", "width": 1}, {"from": "MG345", "to": "Valine, Leucine, and Isoleucine Metabolism", "width": 1}, {"from": "Valine, Leucine, and Isoleucine Metabolism", "to": "MG266", "width": 1}, {"from": "MG460", "to": "Membrane bioenergetics", "width": 1}, {"from": "Membrane bioenergetics", "to": "MG102", "width": 1}, {"from": "MG136", "to": "Threonine and Lysine Metabolism", "width": 1}, {"from": "Threonine and Lysine Metabolism", "to": "MG375", "width": 1}, {"from": "MG047", "to": "Methionine Metabolism", "width": 1}, {"from": "MG275", "to": "Energy Metabolism", "width": 1}, {"from": "MG128", "to": "Cofactor and Prosthetic Group Biosynthesis", "width": 1}, {"from": "Cofactor and Prosthetic Group Biosynthesis", "to": "MG372", "width": 1}, {"from": "MG463", "to": "Quinone Biosynthesis", "width": 1}, {"from": "MG215", "to": "Glycolysis/Gluconeogenesis", "width": 1}, {"from": "MG194", "to": "Tyrosine, Tryptophan, and Phenylalanine Metabolism", "width": 1}, {"from": "Tyrosine, Tryptophan, and Phenylalanine Metabolism", "to": "MG195", "width": 1}, {"from": "Tyrosine, Tryptophan, and Phenylalanine Metabolism", "to": "MG455", "width": 1}, {"from": "MG351", "to": "Anaplerotic Reactions", "width": 1}, {"from": "MG283", "to": "Arginine and Proline Metabolism", "width": 1}, {"from": "MG370", "to": "pseudouridylate synthase pathway", "width": 1}, {"from": "pseudouridylate synthase pathway", "to": "MG209", "width": 1}, {"from": "MG112", "to": "Pentose Phosphate Pathway", "width": 1}, {"from": "MG124", "to": "thiol peroxidase pathway", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

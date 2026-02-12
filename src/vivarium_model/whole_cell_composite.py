@@ -4,187 +4,227 @@ Composes the three processes (diffusion, kinetics, FBA) into a single
 Vivarium simulation that can be stepped forward in time.
 """
 
-from vivarium.core.composer import Composer
-from vivarium.core.engine import Engine
+import numpy as np
+import cobra
 
-from src.vivarium_model.drug_diffusion import DrugDiffusion
+from src.vivarium_model.drug_diffusion import DrugDiffusion, DRUG_PERMEABILITY
 from src.vivarium_model.binding_kinetics import EnzymeKinetics, DRUG_TARGET_PARAMS
 from src.vivarium_model.fba_process import DynamicFBA
 
-class WholeCellComposite(Composer):
-    """
-    Composes:
-      1. DrugDiffusion  — extracellular → cytoplasm drug transport
-      2. EnzymeKinetics — drug-enzyme binding → fractional activity
-      3. DynamicFBA     — enzyme activities → constrained FBA → fluxes + growth
+# Try Vivarium import — fall back to manual stepping if unavailable
+VIVARIUM_ENGINE_AVAILABLE = False
+try:
+    from vivarium.core.composer import Composer
+    from vivarium.core.engine import Engine
+    VIVARIUM_ENGINE_AVAILABLE = True
+except ImportError:
+    pass
 
-    Wiring:
-      DrugDiffusion.cytoplasm.drug_concentration
-        → EnzymeKinetics.cytoplasm.drug_concentration
-      EnzymeKinetics.enzymes.*_activity
-        → DynamicFBA.enzymes.*_activity
+
+def _run_manual_simulation(
+    drug_name: str,
+    extracellular_concentration: float,
+    total_time: float = 300.0,
+    emit_step: float = 10.0,
+) -> dict:
+    """
+    Manual time-stepping simulation that doesn't depend on Vivarium Engine.
+    Steps: diffusion (fast) → kinetics → FBA (slow).
+    This guarantees correct data flow between processes.
     """
 
-    defaults = {
-        "drug_name": "Trimethoprim",
-        "model_path": "src/iPS189.xml",
-        "diffusion_timestep": 0.1,   # seconds (fast process)
-        "kinetics_timestep": 1.0,    # seconds
-        "fba_timestep": 10.0,        # seconds (slow, expensive)
+    target_params = DRUG_TARGET_PARAMS.get(drug_name, {})
+
+    # --- Get drug permeability parameters ---
+    P = DRUG_PERMEABILITY.get(drug_name, 5.0e-6)
+    av_ratio = 2.0e5       # M. genitalium surface-area-to-volume (1/cm)
+    k_deg = 1.0e-4         # intracellular degradation rate (1/s)
+    volume_ratio = 1000.0  # extracellular / intracellular volume
+
+    # --- Load COBRA model once ---
+    model = cobra.io.read_sbml_model("src/iPS189.xml")
+    model.objective = "Biomass"
+
+    # WT solution
+    wt_sol = model.optimize()
+    wt_growth = float(wt_sol.objective_value) if wt_sol.status == "optimal" else 0.0
+    wt_fluxes = {}
+    for rxn in model.reactions:
+        wt_fluxes[rxn.id] = float(wt_sol.fluxes.get(rxn.id, 0.0))
+
+    # Build gene → reaction map
+    gene_rxn_map = {}
+    for gene in model.genes:
+        gene_rxn_map[gene.id] = [rxn.id for rxn in gene.reactions]
+
+    # Store original bounds
+    original_bounds = {}
+    for rxn in model.reactions:
+        original_bounds[rxn.id] = (rxn.lower_bound, rxn.upper_bound)
+
+    # --- State variables ---
+    c_out = float(extracellular_concentration)
+    c_in = 0.0
+
+    enzyme_activity = {}
+    enzyme_active_fraction = {}  # for irreversible inhibitors
+    for gid, params in target_params.items():
+        enzyme_activity[gid] = 1.0
+        if params.get("inhibition_type") == "irreversible":
+            enzyme_active_fraction[gid] = 1.0
+
+    # --- Time stepping ---
+    dt_diffusion = 0.1      # seconds (fast)
+    dt_kinetics = 1.0       # seconds
+    dt_fba = max(emit_step, 10.0)  # seconds (slow)
+
+    times = []
+    drug_intra_series = []
+    enzyme_act_series = {gid: [] for gid in target_params}
+    growth_series = []
+
+    current_growth = wt_growth
+    current_fluxes = dict(wt_fluxes)
+
+    t = 0.0
+    next_emit = 0.0
+    next_kinetics = 0.0
+    next_fba = 0.0
+
+    while t <= total_time + 1e-9:
+        # === EMIT data at regular intervals ===
+        if t >= next_emit - 1e-9:
+            times.append(t)
+            drug_intra_series.append(c_in)
+            for gid in target_params:
+                enzyme_act_series[gid].append(enzyme_activity[gid])
+            growth_series.append(current_growth)
+            next_emit += emit_step
+
+        # === DIFFUSION (every dt_diffusion) ===
+        dc_in = (P * av_ratio * (c_out - c_in) - k_deg * c_in) * dt_diffusion
+        dc_out = -dc_in / volume_ratio
+        c_in = max(0.0, c_in + dc_in)
+        c_out = max(0.0, c_out + dc_out)
+
+        # === KINETICS (every dt_kinetics) ===
+        if t >= next_kinetics - 1e-9:
+            for gid, params in target_params.items():
+                Ki = params["Ki"]
+                n = params.get("hill_coefficient", 1.0)
+                inh_type = params.get("inhibition_type", "competitive")
+
+                if inh_type == "competitive":
+                    if c_in > 0 and Ki > 0:
+                        enzyme_activity[gid] = 1.0 / (1.0 + (c_in / Ki) ** n)
+                    else:
+                        enzyme_activity[gid] = 1.0
+
+                elif inh_type == "irreversible":
+                    k_inact = params.get("inactivation_rate", 0.01)
+                    frac = enzyme_active_fraction.get(gid, 1.0)
+                    if c_in > 0 and Ki > 0:
+                        inactivation = k_inact * c_in / (Ki + c_in) * dt_kinetics
+                        frac = max(0.0, frac - inactivation)
+                    enzyme_active_fraction[gid] = frac
+                    enzyme_activity[gid] = frac
+
+                elif inh_type == "slow_tight":
+                    k_on = params.get("k_on", 1e5)
+                    k_off = params.get("k_off", 1e-2)
+                    curr = enzyme_activity[gid]
+                    # dA/dt = k_off*(1-A) - k_on*[I]*A  (with [I] in M → µM*1e-6)
+                    d_activity = (k_off * (1 - curr) - k_on * c_in * 1e-6 * curr) * dt_kinetics
+                    enzyme_activity[gid] = float(np.clip(curr + d_activity, 0.0, 1.0))
+
+            next_kinetics += dt_kinetics
+
+        # === FBA (every dt_fba) ===
+        if t >= next_fba - 1e-9:
+            # Reset bounds
+            for rxn in model.reactions:
+                orig_lb, orig_ub = original_bounds[rxn.id]
+                rxn.lower_bound = orig_lb
+                rxn.upper_bound = orig_ub
+
+            # Apply enzyme constraints
+            for gid, activity in enzyme_activity.items():
+                if activity < 1.0 - 1e-9:
+                    for rxn_id in gene_rxn_map.get(gid, []):
+                        try:
+                            rxn = model.reactions.get_by_id(rxn_id)
+                            orig_lb, orig_ub = original_bounds[rxn_id]
+                            rxn.lower_bound = orig_lb * activity
+                            rxn.upper_bound = orig_ub * activity
+                        except KeyError:
+                            pass
+
+            sol = model.optimize()
+            if sol.status == "optimal":
+                current_growth = float(sol.objective_value)
+                for rxn in model.reactions:
+                    current_fluxes[rxn.id] = float(sol.fluxes.get(rxn.id, 0.0))
+            else:
+                current_growth = 0.0
+                for rxn in model.reactions:
+                    current_fluxes[rxn.id] = 0.0
+
+            next_fba += dt_fba
+
+        t += dt_diffusion
+
+    return {
+        "time": times,
+        "drug_intracellular": drug_intra_series,
+        "enzyme_activities": enzyme_act_series,
+        "growth_rate": growth_series,
+        "fluxes": current_fluxes,       # final snapshot
+        "wt_growth": wt_growth,
+        "wt_fluxes": wt_fluxes,
     }
-
-    def generate_processes(self, config):
-        return {
-            "diffusion": DrugDiffusion({
-                "drug_name": config["drug_name"],
-                "time_step": config["diffusion_timestep"],
-            }),
-            "kinetics": EnzymeKinetics({
-                "drug_name": config["drug_name"],
-                "time_step": config["kinetics_timestep"],
-            }),
-            "fba": DynamicFBA({
-                "model_path": config["model_path"],
-                "time_step": config["fba_timestep"],
-            }),
-        }
-
-    def generate_topology(self, config):
-        return {
-            "diffusion": {
-                "extracellular": ("extracellular",),
-                "cytoplasm": ("cytoplasm",),
-                "membrane": ("membrane",),
-            },
-            "kinetics": {
-                "cytoplasm": ("cytoplasm",),
-                "enzymes": ("enzymes",),
-            },
-            "fba": {
-                "enzymes": ("enzymes",),
-                "fluxes": ("fluxes",),
-                "global": ("global",),
-            },
-        }
 
 
 def run_hybrid_simulation(
     drug_name: str,
-    extracellular_concentration: float,  # µM
-    total_time: float = 300.0,           # seconds (5 minutes)
-    emit_step: float = 10.0,             # seconds between data points
+    extracellular_concentration: float,
+    total_time: float = 300.0,
+    emit_step: float = 10.0,
 ) -> dict:
     """
     Run the full hybrid simulation and return time-series data.
-
-    Returns:
-        dict with keys:
-          - time: list of time points
-          - drug_intracellular: list of intracellular drug conc at each time
-          - enzyme_activities: {gene_id: [activity at each time]}
-          - growth_rate: list of growth rates at each time
-          - fluxes: {rxn_id: [flux at each time]}  (only for affected reactions)
+    Uses manual stepping for reliability.
     """
-    if drug_name == "Control (No Treatment)":
-        # No drug — just run FBA once
-        import cobra
+    if drug_name == "Control (No Treatment)" or extracellular_concentration <= 0:
         model = cobra.io.read_sbml_model("src/iPS189.xml")
         model.objective = "Biomass"
         sol = model.optimize()
+        gr = float(sol.objective_value) if sol.status == "optimal" else 0.0
         return {
             "time": [0.0],
             "drug_intracellular": [0.0],
             "enzyme_activities": {},
-            "growth_rate": [float(sol.objective_value) if sol.status == "optimal" else 0.0],
-            "fluxes": {rxn.id: [float(sol.fluxes.get(rxn.id, 0))] for rxn in model.reactions},
-            "wt_growth": float(sol.objective_value) if sol.status == "optimal" else 0.0,
+            "growth_rate": [gr],
+            "fluxes": {rxn.id: float(sol.fluxes.get(rxn.id, 0)) for rxn in model.reactions},
+            "wt_growth": gr,
+            "wt_fluxes": {rxn.id: float(sol.fluxes.get(rxn.id, 0)) for rxn in model.reactions},
         }
 
-    # Build composite
-    composite = WholeCellComposite({
-        "drug_name": drug_name,
-    })
-
-    # Initial state
-    initial_state = {
-        "extracellular": {
-            "drug_concentration": extracellular_concentration,
-        },
-        "cytoplasm": {
-            "drug_concentration": 0.0,
-        },
-        "membrane": {
-            "permeability_factor": 1.0,
-        },
-        "enzymes": {},
-        "fluxes": {},
-        "global": {
-            "growth_rate": 0.0,
-        },
-    }
-
-    # Initialize enzyme activities to 1.0
-    target_params = DRUG_TARGET_PARAMS.get(drug_name, {})
-    for gene_id in target_params:
-        initial_state["enzymes"][f"{gene_id}_activity"] = 1.0
-        if target_params[gene_id].get("inhibition_type") == "irreversible":
-            initial_state["enzymes"][f"{gene_id}_active_fraction"] = 1.0
-
-    # Also run WT FBA for comparison
-    import cobra
-    wt_model = cobra.io.read_sbml_model("src/iPS189.xml")
-    wt_model.objective = "Biomass"
-    wt_sol = wt_model.optimize()
-    wt_growth = float(wt_sol.objective_value) if wt_sol.status == "optimal" else 0.0
-    wt_fluxes = {rxn.id: float(wt_sol.fluxes.get(rxn.id, 0)) for rxn in wt_model.reactions}
-
-    # Create and run engine
-    composite_state = composite.generate()
-    engine = Engine(
-        processes=composite_state["processes"],
-        topology=composite_state["topology"],
-        initial_state=initial_state,
-        emitter="timeseries",
+    print(f"🔬 Running hybrid simulation: {drug_name} @ {extracellular_concentration} µM for {total_time}s")
+    result = _run_manual_simulation(
+        drug_name=drug_name,
+        extracellular_concentration=extracellular_concentration,
+        total_time=total_time,
+        emit_step=emit_step,
     )
 
-    engine.update(total_time)
-    timeseries = engine.emitter.get_timeseries()
+    # Debug summary
+    if result["drug_intracellular"]:
+        peak_drug = max(result["drug_intracellular"])
+        print(f"  → Peak intracellular [Drug]: {peak_drug:.4f} µM")
+    for gid, acts in result.get("enzyme_activities", {}).items():
+        if acts:
+            print(f"  → {gid} final activity: {acts[-1]:.4f}")
+    if result["growth_rate"]:
+        print(f"  → Final growth rate: {result['growth_rate'][-1]:.4f} (WT: {result['wt_growth']:.4f})")
 
-    # Extract results
-    times = timeseries.get("time", [0.0])
-    drug_intra = []
-    enzyme_acts = {gid: [] for gid in target_params}
-    growth_rates = []
-    flux_series = {}
-
-    for t_idx, t in enumerate(times):
-        # Drug concentration
-        cyto = timeseries.get(("cytoplasm", "drug_concentration"), [0.0])
-        drug_intra.append(cyto[t_idx] if t_idx < len(cyto) else 0.0)
-
-        # Enzyme activities
-        for gid in target_params:
-            key = ("enzymes", f"{gid}_activity")
-            vals = timeseries.get(key, [1.0])
-            enzyme_acts[gid].append(vals[t_idx] if t_idx < len(vals) else 1.0)
-
-        # Growth rate
-        gr_vals = timeseries.get(("global", "growth_rate"), [0.0])
-        growth_rates.append(gr_vals[t_idx] if t_idx < len(gr_vals) else 0.0)
-
-    # Get final fluxes
-    final_fluxes = {}
-    for rxn_id in wt_fluxes:
-        key = ("fluxes", rxn_id)
-        vals = timeseries.get(key, [0.0])
-        final_fluxes[rxn_id] = vals[-1] if vals else 0.0
-
-    return {
-        "time": times,
-        "drug_intracellular": drug_intra,
-        "enzyme_activities": enzyme_acts,
-        "growth_rate": growth_rates,
-        "fluxes": final_fluxes,
-        "wt_growth": wt_growth,
-        "wt_fluxes": wt_fluxes,
-    }
+    return result

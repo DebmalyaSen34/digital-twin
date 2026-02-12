@@ -1,0 +1,1307 @@
+Reaction_Name,Gene_ID,Pathway,Metabolite_ID,name,formula,charge,"formula, neutral",KEGG ID,CAS number   
+N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,MG041,Transport,acgam,N-Acetyl-D-glucosamine,C8H15NO6,0.0,,C00140,7512-17-6
+N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,MG041,Transport,acgam6p,N-Acetyl-D-glucosamine 6-phosphate,C8H14NO9P,-2.0,C8H16NO9P,C00357,102029-88-9
+N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,MG429,Transport,acgam,N-Acetyl-D-glucosamine,C8H15NO6,0.0,,C00140,7512-17-6
+N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,MG429,Transport,acgam6p,N-Acetyl-D-glucosamine 6-phosphate,C8H14NO9P,-2.0,C8H16NO9P,C00357,102029-88-9
+N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+acetate kinase,MG357,Carbohydrates and related molecules,ac,Acetate,C2H3O2,-1.0,C2H4O2,C00033,71-50-1
+acetate kinase,MG357,Carbohydrates and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+acetate kinase,MG357,Carbohydrates and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+acetate kinase,MG357,Carbohydrates and related molecules,actp,Acetyl phosphate,C2H3O5P,-2.0,C2H5O5P,C00227,19926-71-7
+adenylate kinase,MG171,Nucleotide Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+adenylate kinase,MG171,Nucleotide Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+adenylate kinase,MG171,Nucleotide Metabolism,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+adenylate kinase (Inorganic triphosphate),MG171,Nucleotide Metabolism,pppi,Inorganic triphosphate,HO10P3,-4.0,H5O10P3,C03279,
+adenylate kinase (Inorganic triphosphate),MG171,Nucleotide Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+adenylate kinase (Inorganic triphosphate),MG171,Nucleotide Metabolism,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+adenylate kinase (Inorganic triphosphate),MG171,Nucleotide Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+adenine phosphoribosyltransferase,MG276,Nucleotide Metabolism,prpp,5-Phospho-alpha-D-ribose 1-diphosphate,C5H8O14P3,-5.0,C5H13O14P3,C00119,
+adenine phosphoribosyltransferase,MG276,Nucleotide Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+adenine phosphoribosyltransferase,MG276,Nucleotide Metabolism,ade,Adenine,C5H5N5,0.0,,C00147,73-24-5
+adenine phosphoribosyltransferase,MG276,Nucleotide Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+1-acylglycerol-3-phosphate O-acyltransferase,MG212,Lipid & Cell Membrane Metabolism,acoa,Acyl-CoA,C22H31N7O17P3RS,-4.0,C22H35N7O17P3RS,C00040,
+1-acylglycerol-3-phosphate O-acyltransferase,MG212,Lipid & Cell Membrane Metabolism,12dag3p,"1,2-Diacyl-sn-glycerol 3-phosphate",C5H5O8PR2,-2.0,C5H7O8PR2,C00416,
+1-acylglycerol-3-phosphate O-acyltransferase,MG212,Lipid & Cell Membrane Metabolism,coa,Coenzyme A,C21H32N7O16P3S,-4.0,C21H36N7O16P3S,C00010,85-61-0
+1-acylglycerol-3-phosphate O-acyltransferase,MG212,Lipid & Cell Membrane Metabolism,1ag3p,1-Acyl-sn-glycerol 3-phosphate,C4H6O7PR,-2.0,C4H8O7PR,C00681,
+2-oxoglutarate dehydrogenase,MG271,Carbohydrates and related molecules,succoa,Succinyl-CoA,C25H35N7O19P3S,-5.0,C25H40N7O19P3S,C00091,604-98-8
+2-oxoglutarate dehydrogenase,MG271,Carbohydrates and related molecules,akg,2-Oxoglutarate,C5H4O5,-2.0,C5H6O5,C00026,328-50-7
+2-oxoglutarate dehydrogenase,MG271,Carbohydrates and related molecules,co2,CO2,CO2,0.0,,C00011,124-38-9
+2-oxoglutarate dehydrogenase,MG271,Carbohydrates and related molecules,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+2-oxoglutarate dehydrogenase,MG271,Carbohydrates and related molecules,coa,Coenzyme A,C21H32N7O16P3S,-4.0,C21H36N7O16P3S,C00010,85-61-0
+2-oxoglutarate dehydrogenase,MG271,Carbohydrates and related molecules,nadh,Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2,-2.0,C21H29N7O14P2,C00004,58-68-4
+Alanyl-tRNA synthetase,MG292,Alanine Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Alanyl-tRNA synthetase,MG292,Alanine Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Alanyl-tRNA synthetase,MG292,Alanine Metabolism,trnaala,tRNA(Ala),HOR,0.0,,C01635,
+Alanyl-tRNA synthetase,MG292,Alanine Metabolism,ala-L,L-Alanine,C3H7NO2,0.0,C3H7NO2,C00041,56-41-7
+Alanyl-tRNA synthetase,MG292,Alanine Metabolism,alatrna,L-Alanyl-tRNA(Ala),C3H6NOR,1.0,,C00886,
+Alanyl-tRNA synthetase,MG292,Alanine Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+arbutin transport via PEP:Pyr PTS,MG041,Transport,arbt,Arbutin,C12H16O7,0.0,,C06186,
+arbutin transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+arbutin transport via PEP:Pyr PTS,MG041,Transport,arbt6p,Arbutin 6-phosphate,C12H15O10P,-2.0,C12H17O10P,C06187,
+arbutin transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+arbutin transport via PEP:Pyr PTS,MG429,Transport,arbt,Arbutin,C12H16O7,0.0,,C06186,
+arbutin transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+arbutin transport via PEP:Pyr PTS,MG429,Transport,arbt6p,Arbutin 6-phosphate,C12H15O10P,-2.0,C12H17O10P,C06187,
+arbutin transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+Arginyl-tRNA synthetase,MG378,Amino acids and related molecules,arg-L,L-Arginine,C6H15N4O2,1.0,C6H14N4O2,C00062,74-79-3
+Arginyl-tRNA synthetase,MG378,Amino acids and related molecules,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Arginyl-tRNA synthetase,MG378,Amino acids and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Arginyl-tRNA synthetase,MG378,Amino acids and related molecules,trnaarg,tRNA(Arg),HOR,0.0,,C01636,
+Arginyl-tRNA synthetase,MG378,Amino acids and related molecules,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Arginyl-tRNA synthetase,MG378,Amino acids and related molecules,argtrna,L-Arginyl-tRNA(Arg),C6H14N4OR,2.0,,C02163,
+Asparaginyl-tRNA synthetase,MG113,tRNA Charging,asntrna,L-Asparaginyl-tRNA(Asn),C4H7N2O2R,1.0,,C03402,
+Asparaginyl-tRNA synthetase,MG113,tRNA Charging,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Asparaginyl-tRNA synthetase,MG113,tRNA Charging,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Asparaginyl-tRNA synthetase,MG113,tRNA Charging,asn-L,L-Asparagine,C4H8N2O3,0.0,C4H8N2O3,C00152,70-47-3
+Asparaginyl-tRNA synthetase,MG113,tRNA Charging,trnaasn,tRNA(Asn),HOR,0.0,,C01637,
+Asparaginyl-tRNA synthetase,MG113,tRNA Charging,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Aspartyl-tRNA synthetase,MG036,tRNA Charging,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Aspartyl-tRNA synthetase,MG036,tRNA Charging,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Aspartyl-tRNA synthetase,MG036,tRNA Charging,trnaasp,tRNA(Asp),HOR,0.0,,C01638,
+Aspartyl-tRNA synthetase,MG036,tRNA Charging,asp-L,L-Aspartate,C4H6NO4,-1.0,C4H7NO4,C00049,56-84-8
+Aspartyl-tRNA synthetase,MG036,tRNA Charging,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Aspartyl-tRNA synthetase,MG036,tRNA Charging,asptrna,L-Aspartyl-tRNA(Asp),C4H5NO3R,0.0,,C02984,
+ATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+ATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,itp,ITP,C10H11N4O14P3,-4.0,C10H15N4O14P3,C00081,132-06-9
+ATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,nh4,Ammonium,H4N,1.0,H3N,C01342,14798-03-9
+ATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,h,H+,H,1.0,,C00080,12408-02-5
+ATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ATP synthase (four protons for one ATP),MG399,Oxidative Phosphorylation,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+ATP synthase (four protons for one ATP),MG399,Oxidative Phosphorylation,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ATP synthase (four protons for one ATP),MG399,Oxidative Phosphorylation,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+ATP synthase (four protons for one ATP),MG399,Oxidative Phosphorylation,h,H+,H,1.0,,C00080,12408-02-5
+ATP synthase (four protons for one ATP),MG399,Oxidative Phosphorylation,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ATP synthase (four protons for one ATP),MG400,Oxidative Phosphorylation,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+ATP synthase (four protons for one ATP),MG400,Oxidative Phosphorylation,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ATP synthase (four protons for one ATP),MG400,Oxidative Phosphorylation,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+ATP synthase (four protons for one ATP),MG400,Oxidative Phosphorylation,h,H+,H,1.0,,C00080,12408-02-5
+ATP synthase (four protons for one ATP),MG400,Oxidative Phosphorylation,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ATP synthase (four protons for one ATP),MG401,Oxidative Phosphorylation,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+ATP synthase (four protons for one ATP),MG401,Oxidative Phosphorylation,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ATP synthase (four protons for one ATP),MG401,Oxidative Phosphorylation,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+ATP synthase (four protons for one ATP),MG401,Oxidative Phosphorylation,h,H+,H,1.0,,C00080,12408-02-5
+ATP synthase (four protons for one ATP),MG401,Oxidative Phosphorylation,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ATP synthase (four protons for one ATP),MG402,Oxidative Phosphorylation,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+ATP synthase (four protons for one ATP),MG402,Oxidative Phosphorylation,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ATP synthase (four protons for one ATP),MG402,Oxidative Phosphorylation,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+ATP synthase (four protons for one ATP),MG402,Oxidative Phosphorylation,h,H+,H,1.0,,C00080,12408-02-5
+ATP synthase (four protons for one ATP),MG402,Oxidative Phosphorylation,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ATP synthase (four protons for one ATP),MG403,Oxidative Phosphorylation,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+ATP synthase (four protons for one ATP),MG403,Oxidative Phosphorylation,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ATP synthase (four protons for one ATP),MG403,Oxidative Phosphorylation,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+ATP synthase (four protons for one ATP),MG403,Oxidative Phosphorylation,h,H+,H,1.0,,C00080,12408-02-5
+ATP synthase (four protons for one ATP),MG403,Oxidative Phosphorylation,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ATP synthase (four protons for one ATP),MG404,Oxidative Phosphorylation,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+ATP synthase (four protons for one ATP),MG404,Oxidative Phosphorylation,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ATP synthase (four protons for one ATP),MG404,Oxidative Phosphorylation,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+ATP synthase (four protons for one ATP),MG404,Oxidative Phosphorylation,h,H+,H,1.0,,C00080,12408-02-5
+ATP synthase (four protons for one ATP),MG404,Oxidative Phosphorylation,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ATP synthase (four protons for one ATP),MG405,Oxidative Phosphorylation,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+ATP synthase (four protons for one ATP),MG405,Oxidative Phosphorylation,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ATP synthase (four protons for one ATP),MG405,Oxidative Phosphorylation,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+ATP synthase (four protons for one ATP),MG405,Oxidative Phosphorylation,h,H+,H,1.0,,C00080,12408-02-5
+ATP synthase (four protons for one ATP),MG405,Oxidative Phosphorylation,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+calcium efflux  via ABC system,MG071,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+calcium efflux  via ABC system,MG071,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+calcium efflux  via ABC system,MG071,Transport,h,H+,H,1.0,,C00080,12408-02-5
+calcium efflux  via ABC system,MG071,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+calcium efflux  via ABC system,MG071,Transport,ca2,Calcium,Ca,2.0,,C00076,7440-70-2
+calcium efflux  via ABC system,MG071,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+CDPdiacylglycerol:sn-glycerol-3-phosphate 3-phosphatidyltransferase,MG114,Lipid & Cell Membrane Metabolism,glyc3p,Glycerol 3-phosphate,C3H7O6P,-2.0,C3H9O6P,C00093,
+CDPdiacylglycerol:sn-glycerol-3-phosphate 3-phosphatidyltransferase,MG114,Lipid & Cell Membrane Metabolism,pglyp,Phosphatidylglycerophosphate,C8H11O13P2R2,-3.0,C8H14O13P2R2,C03892,
+CDPdiacylglycerol:sn-glycerol-3-phosphate 3-phosphatidyltransferase,MG114,Lipid & Cell Membrane Metabolism,h,H+,H,1.0,,C00080,12408-02-5
+CDPdiacylglycerol:sn-glycerol-3-phosphate 3-phosphatidyltransferase,MG114,Lipid & Cell Membrane Metabolism,cdpdag,CDPdiacylglycerol,C14H17N3O15P2R2,-2.0,C14H19N3O15P2R2,C00269,
+CDPdiacylglycerol:sn-glycerol-3-phosphate 3-phosphatidyltransferase,MG114,Lipid & Cell Membrane Metabolism,cmp,CMP,C9H12N3O8P,-2.0,C9H14N3O8P,C00055,
+cellobiose transport via PEP:Pyr PTS,MG041,Transport,cellb,cellobiose,C12H22O11,0.0,,C00185,
+cellobiose transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+cellobiose transport via PEP:Pyr PTS,MG041,Transport,6pgg,"6-Phospho-beta-D-glucosyl-(1,4)-D-glucose",C12H21O14P,-2.0,C12H23O14P,C04534,
+cellobiose transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+cellobiose transport via PEP:Pyr PTS,MG429,Transport,cellb,cellobiose,C12H22O11,0.0,,C00185,
+cellobiose transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+cellobiose transport via PEP:Pyr PTS,MG429,Transport,6pgg,"6-Phospho-beta-D-glucosyl-(1,4)-D-glucose",C12H21O14P,-2.0,C12H23O14P,C04534,
+cellobiose transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+Choline kinase,MG356,Cell Envelope Biosynthesis,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Choline kinase,MG356,Cell Envelope Biosynthesis,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Choline kinase,MG356,Cell Envelope Biosynthesis,chol,Choline,C5H14NO,1.0,,C00114,123-41-1
+Choline kinase,MG356,Cell Envelope Biosynthesis,cholp,Choline phosphate,C5H13NO4P,-1.0,C5H15NO4P,C00588,
+Choline kinase,MG356,Cell Envelope Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+CO2 transporter via diffusion,s0001,Transport,co2,CO2,CO2,0.0,,C00011,124-38-9
+Cobalt transport via ABC system,MG179,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Cobalt transport via ABC system,MG179,Transport,cobalt2,Co2+,Co,2.0,,C00175,7440-48-4
+Cobalt transport via ABC system,MG179,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Cobalt transport via ABC system,MG179,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Cobalt transport via ABC system,MG179,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Cobalt transport via ABC system,MG179,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Cobalt transport via ABC system,MG180,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Cobalt transport via ABC system,MG180,Transport,cobalt2,Co2+,Co,2.0,,C00175,7440-48-4
+Cobalt transport via ABC system,MG180,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Cobalt transport via ABC system,MG180,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Cobalt transport via ABC system,MG180,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Cobalt transport via ABC system,MG180,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Cobalt transport via ABC system,MG181,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Cobalt transport via ABC system,MG181,Transport,cobalt2,Co2+,Co,2.0,,C00175,7440-48-4
+Cobalt transport via ABC system,MG181,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Cobalt transport via ABC system,MG181,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Cobalt transport via ABC system,MG181,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Cobalt transport via ABC system,MG181,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Cysteinyl-tRNA synthetase,MG253,tRNA Charging,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Cysteinyl-tRNA synthetase,MG253,tRNA Charging,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Cysteinyl-tRNA synthetase,MG253,tRNA Charging,cys-L,L-Cysteine,C3H7NO2S,0.0,C3H7NO2S,C00097,52-90-4
+Cysteinyl-tRNA synthetase,MG253,tRNA Charging,trnacys,tRNA(Cys),HOR,0.0,,C01639,
+Cysteinyl-tRNA synthetase,MG253,tRNA Charging,cystrna,L-Cysteinyl-tRNA(Cys),C3H6NOSR,1.0,,C03125,
+Cysteinyl-tRNA synthetase,MG253,tRNA Charging,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+cytidine deaminase,MG052,Purine and Pyrimidine Biosynthesis,uri,Uridine,C9H12N2O6,0.0,,C00299,58-96-8
+cytidine deaminase,MG052,Purine and Pyrimidine Biosynthesis,cytd,Cytidine,C9H13N3O5,0.0,,C00475,65-46-3
+cytidine deaminase,MG052,Purine and Pyrimidine Biosynthesis,nh4,Ammonium,H4N,1.0,H3N,C01342,14798-03-9
+cytidine deaminase,MG052,Purine and Pyrimidine Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+cytidine deaminase,MG052,Purine and Pyrimidine Biosynthesis,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+cytidine kinase (ATP),MG382,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+cytidine kinase (ATP),MG382,Nucleotides and nucleic acids,cytd,Cytidine,C9H13N3O5,0.0,,C00475,65-46-3
+cytidine kinase (ATP),MG382,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+cytidine kinase (ATP),MG382,Nucleotides and nucleic acids,h,H+,H,1.0,,C00080,12408-02-5
+cytidine kinase (ATP),MG382,Nucleotides and nucleic acids,cmp,CMP,C9H12N3O8P,-2.0,C9H14N3O8P,C00055,
+cytidine kinase (GTP),MG382,Nucleotides and nucleic acids,gdp,GDP,C10H12N5O11P2,-3.0,C10H15N5O11P2,C00035,146-91-8
+cytidine kinase (GTP),MG382,Nucleotides and nucleic acids,cytd,Cytidine,C9H13N3O5,0.0,,C00475,65-46-3
+cytidine kinase (GTP),MG382,Nucleotides and nucleic acids,gtp,GTP,C10H12N5O14P3,-4.0,C10H16N5O14P3,C00044,1986-01-01 00:00:00
+cytidine kinase (GTP),MG382,Nucleotides and nucleic acids,h,H+,H,1.0,,C00080,12408-02-5
+cytidine kinase (GTP),MG382,Nucleotides and nucleic acids,cmp,CMP,C9H12N3O8P,-2.0,C9H14N3O8P,C00055,
+cytidine kinase (ITP),MG382,Nucleotides and nucleic acids,itp,ITP,C10H11N4O14P3,-4.0,C10H15N4O14P3,C00081,132-06-9
+cytidine kinase (ITP),MG382,Nucleotides and nucleic acids,cytd,Cytidine,C9H13N3O5,0.0,,C00475,65-46-3
+cytidine kinase (ITP),MG382,Nucleotides and nucleic acids,h,H+,H,1.0,,C00080,12408-02-5
+cytidine kinase (ITP),MG382,Nucleotides and nucleic acids,idp,IDP,C10H11N4O11P2,-3.0,C10H14N4O11P2,C00104,1986-04-04 00:00:00
+cytidine kinase (ITP),MG382,Nucleotides and nucleic acids,cmp,CMP,C9H12N3O8P,-2.0,C9H14N3O8P,C00055,
+cytidylate kinase (CMP),MG330,Nucleotides and nucleic acids,cdp,CDP,C9H12N3O11P2,-3.0,C9H15N3O11P2,C00112,63-38-7
+cytidylate kinase (CMP),MG330,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+cytidylate kinase (CMP),MG330,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+cytidylate kinase (CMP),MG330,Nucleotides and nucleic acids,cmp,CMP,C9H12N3O8P,-2.0,C9H14N3O8P,C00055,
+cytidylate kinase (dCMP),MG330,Nucleotides and nucleic acids,dcmp,dCMP,C9H12N3O7P,-2.0,C9H14N3O7P,C00239,1032-65-1
+cytidylate kinase (dCMP),MG330,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+cytidylate kinase (dCMP),MG330,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+cytidylate kinase (dCMP),MG330,Nucleotides and nucleic acids,dcdp,dCDP,C9H12N3O10P2,-3.0,C9H15N3O10P2,C00705,
+deoxyadenylate kinase,MG171,Nucleotide Metabolism,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+deoxyadenylate kinase,MG171,Nucleotide Metabolism,dadp,dADP,C10H12N5O9P2,-3.0,C10H15N5O9P2,C00206,
+deoxyadenylate kinase,MG171,Nucleotide Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+deoxyadenylate kinase,MG171,Nucleotide Metabolism,damp,dAMP,C10H12N5O6P,-2.0,C10H14N5O6P,C00360,653-63-4
+dATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,ditp,dITP,C10H11N4O13P3,-4.0,C10H15N4O13P3,C01345,
+dATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,nh4,Ammonium,H4N,1.0,H3N,C01342,14798-03-9
+dATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,h,H+,H,1.0,,C00080,12408-02-5
+dATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,datp,dATP,C10H12N5O12P3,-4.0,C10H16N5O12P3,C00131,1927-31-7
+dATP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+deoxycytidine deaminase,MG052,Nucleotide Salvage Pathways,duri,Deoxyuridine,C9H12N2O5,0.0,,C00526,951-78-0
+deoxycytidine deaminase,MG052,Nucleotide Salvage Pathways,nh4,Ammonium,H4N,1.0,H3N,C01342,14798-03-9
+deoxycytidine deaminase,MG052,Nucleotide Salvage Pathways,dcyt,Deoxycytidine,C9H13N3O4,0.0,,C00881,951-77-9
+deoxycytidine deaminase,MG052,Nucleotide Salvage Pathways,h,H+,H,1.0,,C00080,12408-02-5
+deoxycytidine deaminase,MG052,Nucleotide Salvage Pathways,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+deoxyguanylate kinase (dGMP:ATP),MG107,Nucleotides and nucleic acids,dgdp,dGDP,C10H12N5O10P2,-3.0,,C00361,
+deoxyguanylate kinase (dGMP:ATP),MG107,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+deoxyguanylate kinase (dGMP:ATP),MG107,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+deoxyguanylate kinase (dGMP:ATP),MG107,Nucleotides and nucleic acids,dgmp,dGMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00362,902-04-5
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,nadp,Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3,-3.0,,C00006,53-59-8
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,fol,Folate,C19H18N7O6,-1.0,C19H19N7O6,C00504,
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,dhf,"7,8-Dihydrofolate",C19H19N7O6,-2.0,C19H21N7O6,C00415,4033-27-6
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,nadph,Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3,-4.0,C21H30N7O17P3,C00005,2646-71-1
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,thf,"5,6,7,8-Tetrahydrofolate",C19H21N7O6,-2.0,C19H23N7O6,C00101,135-16-0
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,nadph,Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3,-4.0,C21H30N7O17P3,C00005,2646-71-1
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,fol,Folate,C19H18N7O6,-1.0,C19H19N7O6,C00504,
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,nadp,Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3,-3.0,,C00006,53-59-8
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,thf,"5,6,7,8-Tetrahydrofolate",C19H21N7O6,-2.0,C19H23N7O6,C00101,135-16-0
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,dhf,"7,8-Dihydrofolate",C19H19N7O6,-2.0,C19H21N7O6,C00415,4033-27-6
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,nadph,Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3,-4.0,C21H30N7O17P3,C00005,2646-71-1
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+dihydrofolate reductase,MG228,Vitamins & Cofactor Biosynthesis,nadp,Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3,-3.0,,C00006,53-59-8
+Dipeptide transport via ABC system (ala-asp),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-asp),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-asp),MG077,Transport,ala-L-asp-L,L-alanyl-L-aspartate,C7H11N2O5,-1.0,C7H12N2O5,,
+Dipeptide transport via ABC system (ala-asp),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-asp),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-asp),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-asp),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-asp),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-asp),MG078,Transport,ala-L-asp-L,L-alanyl-L-aspartate,C7H11N2O5,-1.0,C7H12N2O5,,
+Dipeptide transport via ABC system (ala-asp),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-asp),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-asp),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-asp),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-asp),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-asp),MG079,Transport,ala-L-asp-L,L-alanyl-L-aspartate,C7H11N2O5,-1.0,C7H12N2O5,,
+Dipeptide transport via ABC system (ala-asp),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-asp),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-asp),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-asp),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-asp),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-asp),MG080,Transport,ala-L-asp-L,L-alanyl-L-aspartate,C7H11N2O5,-1.0,C7H12N2O5,,
+Dipeptide transport via ABC system (ala-asp),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-asp),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-asp),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-glu),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-glu),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-glu),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-glu),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-glu),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-glu),MG077,Transport,gly-glu-L,glycyl-L-glutamic acid,C7H11N2O5,-1.0,C7H12N2O5,,
+Dipeptide transport via ABC system (gly-glu),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-glu),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-glu),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-glu),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-glu),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-glu),MG078,Transport,gly-glu-L,glycyl-L-glutamic acid,C7H11N2O5,-1.0,C7H12N2O5,,
+Dipeptide transport via ABC system (gly-glu),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-glu),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-glu),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-glu),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-glu),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-glu),MG079,Transport,gly-glu-L,glycyl-L-glutamic acid,C7H11N2O5,-1.0,C7H12N2O5,,
+Dipeptide transport via ABC system (gly-glu),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-glu),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-glu),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-glu),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-glu),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-glu),MG080,Transport,gly-glu-L,glycyl-L-glutamic acid,C7H11N2O5,-1.0,C7H12N2O5,,
+Dipeptide transport via ABC system (gly-met),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-met),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-met),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-met),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-met),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-met),MG077,Transport,gly-met-L,N-Glycyl-L-methionine,C7H14N2O3S,0.0,C7H14N2O3S,,
+Dipeptide transport via ABC system (gly-met),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-met),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-met),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-met),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-met),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-met),MG078,Transport,gly-met-L,N-Glycyl-L-methionine,C7H14N2O3S,0.0,C7H14N2O3S,,
+Dipeptide transport via ABC system (gly-met),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-met),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-met),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-met),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-met),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-met),MG079,Transport,gly-met-L,N-Glycyl-L-methionine,C7H14N2O3S,0.0,C7H14N2O3S,,
+Dipeptide transport via ABC system (gly-met),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-met),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-met),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-met),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-met),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-met),MG080,Transport,gly-met-L,N-Glycyl-L-methionine,C7H14N2O3S,0.0,C7H14N2O3S,,
+Dipeptide transport via ABC system (met-ala),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (met-ala),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (met-ala),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (met-ala),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (met-ala),MG077,Transport,met-L-ala-L,met-L-ala-L,C8H16N2O3S,0.0,,,
+Dipeptide transport via ABC system (met-ala),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (met-ala),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (met-ala),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (met-ala),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (met-ala),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (met-ala),MG078,Transport,met-L-ala-L,met-L-ala-L,C8H16N2O3S,0.0,,,
+Dipeptide transport via ABC system (met-ala),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (met-ala),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (met-ala),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (met-ala),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (met-ala),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (met-ala),MG079,Transport,met-L-ala-L,met-L-ala-L,C8H16N2O3S,0.0,,,
+Dipeptide transport via ABC system (met-ala),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (met-ala),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (met-ala),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (met-ala),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (met-ala),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (met-ala),MG080,Transport,met-L-ala-L,met-L-ala-L,C8H16N2O3S,0.0,,,
+Dipeptide transport via ABC system (met-ala),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-asp),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-asp),MG077,Transport,gly-asp-L,N-glycyl-L-aspartic acid,C6H9N2O5,-1.0,C6H10N2O5,,
+Dipeptide transport via ABC system (gly-asp),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-asp),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-asp),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-asp),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-asp),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-asp),MG078,Transport,gly-asp-L,N-glycyl-L-aspartic acid,C6H9N2O5,-1.0,C6H10N2O5,,
+Dipeptide transport via ABC system (gly-asp),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-asp),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-asp),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-asp),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-asp),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-asp),MG079,Transport,gly-asp-L,N-glycyl-L-aspartic acid,C6H9N2O5,-1.0,C6H10N2O5,,
+Dipeptide transport via ABC system (gly-asp),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-asp),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-asp),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-asp),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-asp),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-asp),MG080,Transport,gly-asp-L,N-glycyl-L-aspartic acid,C6H9N2O5,-1.0,C6H10N2O5,,
+Dipeptide transport via ABC system (gly-asp),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-asp),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-asp),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-asp),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-pro-L),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-pro-L),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-pro-L),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-pro-L),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-pro-L),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-pro-L),MG077,Transport,gly-pro-L,"L-Proline, 1-glycyl-",C7H12N2O3,0.0,,,
+Dipeptide transport via ABC system (gly-pro-L),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-pro-L),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-pro-L),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-pro-L),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-pro-L),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-pro-L),MG078,Transport,gly-pro-L,"L-Proline, 1-glycyl-",C7H12N2O3,0.0,,,
+Dipeptide transport via ABC system (gly-pro-L),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-pro-L),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-pro-L),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-pro-L),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-pro-L),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-pro-L),MG079,Transport,gly-pro-L,"L-Proline, 1-glycyl-",C7H12N2O3,0.0,,,
+Dipeptide transport via ABC system (gly-pro-L),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-pro-L),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-pro-L),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-pro-L),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-pro-L),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-pro-L),MG080,Transport,gly-pro-L,"L-Proline, 1-glycyl-",C7H12N2O3,0.0,,,
+Dipeptide transport via ABC system (cgly),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (cgly),MG077,Transport,cgly,Cys-Gly,C5H10N2O3S,0.0,,C01419,19246-18-5
+Dipeptide transport via ABC system (cgly),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (cgly),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (cgly),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (cgly),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (cgly),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (cgly),MG078,Transport,cgly,Cys-Gly,C5H10N2O3S,0.0,,C01419,19246-18-5
+Dipeptide transport via ABC system (cgly),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (cgly),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (cgly),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (cgly),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (cgly),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (cgly),MG079,Transport,cgly,Cys-Gly,C5H10N2O3S,0.0,,C01419,19246-18-5
+Dipeptide transport via ABC system (cgly),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (cgly),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (cgly),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (cgly),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (cgly),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (cgly),MG080,Transport,cgly,Cys-Gly,C5H10N2O3S,0.0,,C01419,19246-18-5
+Dipeptide transport via ABC system (cgly),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (cgly),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (cgly),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (cgly),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gln),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-gln),MG077,Transport,ala-L-gln-L,ala-L-gln-L,C8H15N3O4,0.0,C8H15N3O4,,
+Dipeptide transport via ABC system (ala-gln),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-gln),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-gln),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-gln),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gln),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-gln),MG078,Transport,ala-L-gln-L,ala-L-gln-L,C8H15N3O4,0.0,C8H15N3O4,,
+Dipeptide transport via ABC system (ala-gln),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-gln),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-gln),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-gln),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gln),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-gln),MG079,Transport,ala-L-gln-L,ala-L-gln-L,C8H15N3O4,0.0,C8H15N3O4,,
+Dipeptide transport via ABC system (ala-gln),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-gln),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-gln),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-gln),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gln),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-gln),MG080,Transport,ala-L-gln-L,ala-L-gln-L,C8H15N3O4,0.0,C8H15N3O4,,
+Dipeptide transport via ABC system (ala-gln),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-gln),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-gln),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-gln),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-glu),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-glu),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-glu),MG077,Transport,ala-L-glu-L,ala-L-glu-L,C8H15N3O4,0.0,C8H15N3O4,,
+Dipeptide transport via ABC system (ala-glu),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-glu),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-glu),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-glu),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-glu),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-glu),MG078,Transport,ala-L-glu-L,ala-L-glu-L,C8H15N3O4,0.0,C8H15N3O4,,
+Dipeptide transport via ABC system (ala-glu),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-glu),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-glu),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-glu),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-glu),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-glu),MG079,Transport,ala-L-glu-L,ala-L-glu-L,C8H15N3O4,0.0,C8H15N3O4,,
+Dipeptide transport via ABC system (ala-glu),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-glu),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-glu),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-glu),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-glu),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-glu),MG080,Transport,ala-L-glu-L,ala-L-glu-L,C8H15N3O4,0.0,C8H15N3O4,,
+Dipeptide transport via ABC system (ala-glu),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-glu),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-glu),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gly),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-gly),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-gly),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-gly),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-gly),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gly),MG077,Transport,L-alagly,L-alanylglycine,C5H10N2O3,0.0,C5H10N2O3,,
+Dipeptide transport via ABC system (ala-gly),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-gly),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-gly),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-gly),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-gly),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gly),MG078,Transport,L-alagly,L-alanylglycine,C5H10N2O3,0.0,C5H10N2O3,,
+Dipeptide transport via ABC system (ala-gly),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-gly),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-gly),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-gly),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-gly),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gly),MG079,Transport,L-alagly,L-alanylglycine,C5H10N2O3,0.0,C5H10N2O3,,
+Dipeptide transport via ABC system (ala-gly),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-gly),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-gly),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-gly),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-gly),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-gly),MG080,Transport,L-alagly,L-alanylglycine,C5H10N2O3,0.0,C5H10N2O3,,
+Dipeptide transport via ABC system (ala-his),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-his),MG077,Transport,ala-L-his-L,Alanylhistidine,C9H14N4O3,0.0,C9H14N4O3,,
+Dipeptide transport via ABC system (ala-his),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-his),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-his),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-his),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-his),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-his),MG078,Transport,ala-L-his-L,Alanylhistidine,C9H14N4O3,0.0,C9H14N4O3,,
+Dipeptide transport via ABC system (ala-his),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-his),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-his),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-his),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-his),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-his),MG079,Transport,ala-L-his-L,Alanylhistidine,C9H14N4O3,0.0,C9H14N4O3,,
+Dipeptide transport via ABC system (ala-his),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-his),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-his),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-his),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-his),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-his),MG080,Transport,ala-L-his-L,Alanylhistidine,C9H14N4O3,0.0,C9H14N4O3,,
+Dipeptide transport via ABC system (ala-his),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-his),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-his),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-his),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-leu),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-leu),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-leu),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-leu),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-leu),MG077,Transport,ala-L-leu-L,N-L-Alanyl-L-leucine,C9H18N2O3,0.0,C9H18N2O3,,
+Dipeptide transport via ABC system (ala-leu),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-leu),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-leu),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-leu),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-leu),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-leu),MG078,Transport,ala-L-leu-L,N-L-Alanyl-L-leucine,C9H18N2O3,0.0,C9H18N2O3,,
+Dipeptide transport via ABC system (ala-leu),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-leu),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-leu),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-leu),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-leu),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-leu),MG079,Transport,ala-L-leu-L,N-L-Alanyl-L-leucine,C9H18N2O3,0.0,C9H18N2O3,,
+Dipeptide transport via ABC system (ala-leu),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-leu),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-leu),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-leu),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-leu),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-leu),MG080,Transport,ala-L-leu-L,N-L-Alanyl-L-leucine,C9H18N2O3,0.0,C9H18N2O3,,
+Dipeptide transport via ABC system (ala-leu),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-thr),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-thr),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-thr),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-thr),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-thr),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-thr),MG077,Transport,ala-L-Thr-L,,,,,,
+Dipeptide transport via ABC system (ala-thr),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-thr),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-thr),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-thr),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-thr),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-thr),MG078,Transport,ala-L-Thr-L,,,,,,
+Dipeptide transport via ABC system (ala-thr),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-thr),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-thr),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-thr),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-thr),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-thr),MG079,Transport,ala-L-Thr-L,,,,,,
+Dipeptide transport via ABC system (ala-thr),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (ala-thr),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (ala-thr),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (ala-thr),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (ala-thr),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (ala-thr),MG080,Transport,ala-L-Thr-L,,,,,,
+Dipeptide transport via ABC system (gly-asn),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-asn),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-asn),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-asn),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-asn),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-asn),MG077,Transport,gly-asn-L,glycyl-L-asparagine,C6H11N3O4,0.0,C6H11N3O4,,
+Dipeptide transport via ABC system (gly-asn),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-asn),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-asn),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-asn),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-asn),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-asn),MG078,Transport,gly-asn-L,glycyl-L-asparagine,C6H11N3O4,0.0,C6H11N3O4,,
+Dipeptide transport via ABC system (gly-asn),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-asn),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-asn),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-asn),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-asn),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-asn),MG079,Transport,gly-asn-L,glycyl-L-asparagine,C6H11N3O4,0.0,C6H11N3O4,,
+Dipeptide transport via ABC system (gly-asn),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-asn),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-asn),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-asn),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-asn),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-asn),MG080,Transport,gly-asn-L,glycyl-L-asparagine,C6H11N3O4,0.0,C6H11N3O4,,
+Dipeptide transport via ABC system (gly-gln),MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-gln),MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-gln),MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-gln),MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-gln),MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-gln),MG077,Transport,gly-gln-L,L-Glycylglutamine,C7H13N3O4,0.0,C7H13N3O4,,
+Dipeptide transport via ABC system (gly-gln),MG078,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-gln),MG078,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-gln),MG078,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-gln),MG078,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-gln),MG078,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-gln),MG078,Transport,gly-gln-L,L-Glycylglutamine,C7H13N3O4,0.0,C7H13N3O4,,
+Dipeptide transport via ABC system (gly-gln),MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-gln),MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-gln),MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-gln),MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-gln),MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-gln),MG079,Transport,gly-gln-L,L-Glycylglutamine,C7H13N3O4,0.0,C7H13N3O4,,
+Dipeptide transport via ABC system (gly-gln),MG080,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Dipeptide transport via ABC system (gly-gln),MG080,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Dipeptide transport via ABC system (gly-gln),MG080,Transport,h,H+,H,1.0,,C00080,12408-02-5
+Dipeptide transport via ABC system (gly-gln),MG080,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Dipeptide transport via ABC system (gly-gln),MG080,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Dipeptide transport via ABC system (gly-gln),MG080,Transport,gly-gln-L,L-Glycylglutamine,C7H13N3O4,0.0,C7H13N3O4,,
+Deoxyribose-phosphate aldolase,MG050,Nucleotides and nucleic acids,acald,Acetaldehyde,C2H4O,0.0,,C00084,75-07-0
+Deoxyribose-phosphate aldolase,MG050,Nucleotides and nucleic acids,g3p,Glyceraldehyde 3-phosphate,C3H5O6P,-2.0,C3H7O6P,C00661,142-10-9
+Deoxyribose-phosphate aldolase,MG050,Nucleotides and nucleic acids,2dr5p,2-Deoxy-D-ribose 5-phosphate,C5H9O7P,-2.0,C5H11O7P,C00673,102916-66-5
+dTMP kinase,MG006,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+dTMP kinase,MG006,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+dTMP kinase,MG006,Nucleotides and nucleic acids,dtmp,dTMP,C10H13N2O8P,-2.0,C10H15N2O8P,C00364,365-07-1
+dTMP kinase,MG006,Nucleotides and nucleic acids,dtdp,dTDP,C10H13N2O11P2,-3.0,C10H16N2O11P2,C00363,
+purine-nucleoside phosphatase (deoxyuridine),MG051,Nucleotides and nucleic acids,ura,Uracil,C4H4N2O2,0.0,,C00106,66-22-8
+purine-nucleoside phosphatase (deoxyuridine),MG051,Nucleotides and nucleic acids,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+purine-nucleoside phosphatase (deoxyuridine),MG051,Nucleotides and nucleic acids,duri,Deoxyuridine,C9H12N2O5,0.0,,C00526,951-78-0
+purine-nucleoside phosphatase (deoxyuridine),MG051,Nucleotides and nucleic acids,2dr1p,2-Deoxy-D-ribose 1-phosphate,C5H9O7P,-2.0,C5H11O7P,C00672,
+1-deoxy-D-xylulose 5-phosphate synthase,MG066,Carbohydrates and related molecules,dxyl5p,1-deoxy-D-xylulose 5-phosphate,C5H9O7P,-2.0,C5H11O7P,C11437,
+1-deoxy-D-xylulose 5-phosphate synthase,MG066,Carbohydrates and related molecules,co2,CO2,CO2,0.0,,C00011,124-38-9
+1-deoxy-D-xylulose 5-phosphate synthase,MG066,Carbohydrates and related molecules,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+1-deoxy-D-xylulose 5-phosphate synthase,MG066,Carbohydrates and related molecules,h,H+,H,1.0,,C00080,12408-02-5
+1-deoxy-D-xylulose 5-phosphate synthase,MG066,Carbohydrates and related molecules,g3p,Glyceraldehyde 3-phosphate,C3H5O6P,-2.0,C3H7O6P,C00661,142-10-9
+enolase,MG407,Central Metabolism,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+enolase,MG407,Central Metabolism,2pg,D-Glycerate 2-phosphate,C3H4O7P,-3.0,C3H7O7P,C00631,
+enolase,MG407,Central Metabolism,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+fructose-1-phosphate kinase,MG063,Carbohydrates and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+fructose-1-phosphate kinase,MG063,Carbohydrates and related molecules,fdp,"D-Fructose 1,6-bisphosphate",C6H10O12P2,-4.0,C6H14O12P2,C00354,488-69-7
+fructose-1-phosphate kinase,MG063,Carbohydrates and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+fructose-1-phosphate kinase,MG063,Carbohydrates and related molecules,h,H+,H,1.0,,C00080,12408-02-5
+fructose-1-phosphate kinase,MG063,Carbohydrates and related molecules,f1p,D-Fructose 1-phosphate,C6H11O9P,-2.0,C6H13O9P,C02976,15978-08-2
+fructose-bisphosphate aldolase,MG023,Carbohydrates and related molecules,fdp,"D-Fructose 1,6-bisphosphate",C6H10O12P2,-4.0,C6H14O12P2,C00354,488-69-7
+fructose-bisphosphate aldolase,MG023,Carbohydrates and related molecules,g3p,Glyceraldehyde 3-phosphate,C3H5O6P,-2.0,C3H7O6P,C00661,142-10-9
+fructose-bisphosphate aldolase,MG023,Carbohydrates and related molecules,dhap,Dihydroxyacetone phosphate,C3H5O6P,-2.0,C3H7O6P,C00111,1957-04-05 00:00:00
+D-Fructose 1-phosphate D-glyceraldehyde-3-phosphate-lyase,MG023,Carbohydrates and related molecules,f1p,D-Fructose 1-phosphate,C6H11O9P,-2.0,C6H13O9P,C02976,15978-08-2
+D-Fructose 1-phosphate D-glyceraldehyde-3-phosphate-lyase,MG023,Carbohydrates and related molecules,dhap,Dihydroxyacetone phosphate,C3H5O6P,-2.0,C3H7O6P,C00111,1957-04-05 00:00:00
+D-Fructose 1-phosphate D-glyceraldehyde-3-phosphate-lyase,MG023,Carbohydrates and related molecules,glyald,D-Glyceraldehyde,C3H6O3,0.0,,C00577,453-17-8
+Methionyl-tRNA formyltransferase,MG365,Amino acids and related molecules,10fthf,10-Formyltetrahydrofolate,C20H21N7O7,-2.0,C20H23N7O7,C00234,
+Methionyl-tRNA formyltransferase,MG365,Amino acids and related molecules,fmettrna,N-Formylmethionyl-tRNA,C6H9NO2SR,0.0,,C03294,
+Methionyl-tRNA formyltransferase,MG365,Amino acids and related molecules,thf,"5,6,7,8-Tetrahydrofolate",C19H21N7O6,-2.0,C19H23N7O6,C00101,135-16-0
+Methionyl-tRNA formyltransferase,MG365,Amino acids and related molecules,mettrna,L-Methionyl-tRNA (Met),C5H10NOSR,1.0,,C02430,
+FMN adenylyltransferase,MG145,Coenzymes and prosthetic groups,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+FMN adenylyltransferase,MG145,Coenzymes and prosthetic groups,fad,Flavin adenine dinucleotide oxidized,C27H31N9O15P2,-2.0,C27H33N9O15P2,C00016,146-14-5
+FMN adenylyltransferase,MG145,Coenzymes and prosthetic groups,fmn,FMN,C17H19N4O9P,-2.0,C17H21N4O9P,C00061,146-17-8
+FMN adenylyltransferase,MG145,Coenzymes and prosthetic groups,h,H+,H,1.0,,C00080,12408-02-5
+FMN adenylyltransferase,MG145,Coenzymes and prosthetic groups,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+D-fructose transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-fructose transport via PEP:Pyr PTS,MG429,Transport,fru,D-Fructose,C6H12O6,0.0,,C00095,57-48-7
+D-fructose transport via PEP:Pyr PTS,MG429,Transport,f1p,D-Fructose 1-phosphate,C6H11O9P,-2.0,C6H13O9P,C02976,15978-08-2
+D-fructose transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+D-fructose transport via PEP:Pyr PTS,MG062,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-fructose transport via PEP:Pyr PTS,MG062,Transport,fru,D-Fructose,C6H12O6,0.0,,C00095,57-48-7
+D-fructose transport via PEP:Pyr PTS,MG062,Transport,f1p,D-Fructose 1-phosphate,C6H11O9P,-2.0,C6H13O9P,C02976,15978-08-2
+D-fructose transport via PEP:Pyr PTS,MG062,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+D-fructose transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-fructose transport via PEP:Pyr PTS,MG041,Transport,fru,D-Fructose,C6H12O6,0.0,,C00095,57-48-7
+D-fructose transport via PEP:Pyr PTS,MG041,Transport,f1p,D-Fructose 1-phosphate,C6H11O9P,-2.0,C6H13O9P,C02976,15978-08-2
+D-fructose transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+glycerol-3-phosphate dehydrogenase (menaquinone 7),MG260,Carbohydrates and related molecules,mql7,Menaquinol 7,C46H66O2,0.0,,C05819,
+glycerol-3-phosphate dehydrogenase (menaquinone 7),MG260,Carbohydrates and related molecules,mqn7,Menaquinone 7,C46H64O2,0.0,,C00828,
+glycerol-3-phosphate dehydrogenase (menaquinone 7),MG260,Carbohydrates and related molecules,glyc3p,Glycerol 3-phosphate,C3H7O6P,-2.0,C3H9O6P,C00093,
+glycerol-3-phosphate dehydrogenase (menaquinone 7),MG260,Carbohydrates and related molecules,dhap,Dihydroxyacetone phosphate,C3H5O6P,-2.0,C3H7O6P,C00111,1957-04-05 00:00:00
+Glucose-6-phosphate isomerase,MG111,Carbohydrates and related molecules,g6p,D-Glucose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00092,56-73-5
+Glucose-6-phosphate isomerase,MG111,Carbohydrates and related molecules,g6p-B,beta-D-glucose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,,
+D-galactose transport via ABC system,MG119,Transport,gal,D-Galactose,C6H12O6,0.0,,C00124,59-23-4
+D-galactose transport via ABC system,MG119,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+D-galactose transport via ABC system,MG119,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+D-galactose transport via ABC system,MG119,Transport,h,H+,H,1.0,,C00080,12408-02-5
+D-galactose transport via ABC system,MG119,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+D-galactose transport via ABC system,MG119,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+UTP-glucose-1-phosphate uridylyltransferase,MG453,Lipid & Cell Membrane Metabolism,g1p,D-Glucose 1-phosphate,C6H11O9P,-2.0,C6H13O9P,C00103,59-56-3
+UTP-glucose-1-phosphate uridylyltransferase,MG453,Lipid & Cell Membrane Metabolism,udpg,UDPglucose,C15H22N2O17P2,-2.0,C15H24N2O17P2,C00029,
+UTP-glucose-1-phosphate uridylyltransferase,MG453,Lipid & Cell Membrane Metabolism,h,H+,H,1.0,,C00080,12408-02-5
+UTP-glucose-1-phosphate uridylyltransferase,MG453,Lipid & Cell Membrane Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+UTP-glucose-1-phosphate uridylyltransferase,MG453,Lipid & Cell Membrane Metabolism,utp,UTP,C9H11N2O15P3,-4.0,C9H15N2O15P3,C00075,63-39-8
+D-glucosamine transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-glucosamine transport via PEP:Pyr PTS,MG041,Transport,gam,D-Glucosamine,C6H14NO5,1.0,C6H13NO5,C00329,3416-24-8
+D-glucosamine transport via PEP:Pyr PTS,MG041,Transport,gam6p,D-Glucosamine 6-phosphate,C6H13NO8P,-1.0,C6H14NO8P,C00352,3616-42-0
+D-glucosamine transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+D-glucosamine transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-glucosamine transport via PEP:Pyr PTS,MG429,Transport,gam,D-Glucosamine,C6H14NO5,1.0,C6H13NO5,C00329,3416-24-8
+D-glucosamine transport via PEP:Pyr PTS,MG429,Transport,gam6p,D-Glucosamine 6-phosphate,C6H13NO8P,-1.0,C6H14NO8P,C00352,3616-42-0
+D-glucosamine transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+glyceraldehyde-3-phosphate dehydrogenase (NAD),MG301,Central Metabolism,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+glyceraldehyde-3-phosphate dehydrogenase (NAD),MG301,Central Metabolism,nadh,Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2,-2.0,C21H29N7O14P2,C00004,58-68-4
+glyceraldehyde-3-phosphate dehydrogenase (NAD),MG301,Central Metabolism,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+glyceraldehyde-3-phosphate dehydrogenase (NAD),MG301,Central Metabolism,h,H+,H,1.0,,C00080,12408-02-5
+glyceraldehyde-3-phosphate dehydrogenase (NAD),MG301,Central Metabolism,13dpg,3-Phospho-D-glyceroyl phosphate,C3H4O10P2,-4.0,C3H8O10P2,C00236,
+glyceraldehyde-3-phosphate dehydrogenase (NAD),MG301,Central Metabolism,g3p,Glyceraldehyde 3-phosphate,C3H5O6P,-2.0,C3H7O6P,C00661,142-10-9
+glycine hydroxymethyltransferase,MG394,Amino Acid Metabolism,ser-L,L-Serine,C3H7NO3,0.0,C3H7NO3,C00065,56-45-1
+glycine hydroxymethyltransferase,MG394,Amino Acid Metabolism,thf,"5,6,7,8-Tetrahydrofolate",C19H21N7O6,-2.0,C19H23N7O6,C00101,135-16-0
+glycine hydroxymethyltransferase,MG394,Amino Acid Metabolism,gly,Glycine,C2H5NO2,0.0,C2H5NO2,C00037,56-40-6
+glycine hydroxymethyltransferase,MG394,Amino Acid Metabolism,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+glycine hydroxymethyltransferase,MG394,Amino Acid Metabolism,mlthf,"5,10-Methylenetetrahydrofolate",C20H21N7O6,-2.0,C20H23N7O6,C00143,
+guanylate kinase (GMP:ATP),MG107,Nucleotides and nucleic acids,gdp,GDP,C10H12N5O11P2,-3.0,C10H15N5O11P2,C00035,146-91-8
+guanylate kinase (GMP:ATP),MG107,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+guanylate kinase (GMP:ATP),MG107,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+guanylate kinase (GMP:ATP),MG107,Nucleotides and nucleic acids,gmp,GMP,C10H12N5O8P,-2.0,,C00144,85-32-5
+guanylate kinase (GMP:dATP),MG107,Nucleotides and nucleic acids,gdp,GDP,C10H12N5O11P2,-3.0,C10H15N5O11P2,C00035,146-91-8
+guanylate kinase (GMP:dATP),MG107,Nucleotides and nucleic acids,datp,dATP,C10H12N5O12P3,-4.0,C10H16N5O12P3,C00131,1927-31-7
+guanylate kinase (GMP:dATP),MG107,Nucleotides and nucleic acids,gmp,GMP,C10H12N5O8P,-2.0,,C00144,85-32-5
+guanylate kinase (GMP:dATP),MG107,Nucleotides and nucleic acids,dadp,dADP,C10H12N5O9P2,-3.0,C10H15N5O9P2,C00206,
+D-glucose transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-glucose transport via PEP:Pyr PTS,MG429,Transport,g6p,D-Glucose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00092,56-73-5
+D-glucose transport via PEP:Pyr PTS,MG429,Transport,glc-D,D-Glucose,C6H12O6,0.0,,C00031,50-99-7
+D-glucose transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+D-glucose transport via PEP:Pyr PTS,MG069,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-glucose transport via PEP:Pyr PTS,MG069,Transport,g6p,D-Glucose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00092,56-73-5
+D-glucose transport via PEP:Pyr PTS,MG069,Transport,glc-D,D-Glucose,C6H12O6,0.0,,C00031,50-99-7
+D-glucose transport via PEP:Pyr PTS,MG069,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+D-glucose transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-glucose transport via PEP:Pyr PTS,MG041,Transport,g6p,D-Glucose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00092,56-73-5
+D-glucose transport via PEP:Pyr PTS,MG041,Transport,glc-D,D-Glucose,C6H12O6,0.0,,C00031,50-99-7
+D-glucose transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+glutamine-N5 methyltransferase,MG259,glutamine-N5 methyltransferase pathway,ahcys,S-Adenosyl-L-homocysteine,C14H20N6O5S,0.0,C14H20N6O5S,C00021,979-92-0
+glutamine-N5 methyltransferase,MG259,glutamine-N5 methyltransferase pathway,gln-L,L-Glutamine,C5H10N2O3,0.0,C5H10N2O3,C00064,56-85-9
+glutamine-N5 methyltransferase,MG259,glutamine-N5 methyltransferase pathway,amet,S-Adenosyl-L-methionine,C15H23N6O5S,1.0,C15H23N6O5S,C00019,29908-03-0
+glutamine-N5 methyltransferase,MG259,glutamine-N5 methyltransferase pathway,C03153,N5-Methyl-L-glutamine,C6H12N2O3,-1.0,C6H13N2O3,C03153,
+Glutamyl-tRNA synthetase,MG462,Other function,trnaglu,tRNA (Glu),HOR,0.0,,C01641,
+Glutamyl-tRNA synthetase,MG462,Other function,glu-L,L-Glutamate,C5H8NO4,-1.0,C5H9NO4,C00025,56-86-0
+Glutamyl-tRNA synthetase,MG462,Other function,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Glutamyl-tRNA synthetase,MG462,Other function,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Glutamyl-tRNA synthetase,MG462,Other function,glutrna,L-Glutamyl-tRNA(Glu),C5H7NO3R,0.0,C5H7NO3R,C02987,
+Glutamyl-tRNA synthetase,MG462,Other function,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+glutamyl-tRNA(Gln) amidotransferase,MG098,Amino acids and related molecules,glutrna,L-Glutamyl-tRNA(Glu),C5H7NO3R,0.0,C5H7NO3R,C02987,
+glutamyl-tRNA(Gln) amidotransferase,MG098,Amino acids and related molecules,glu-L,L-Glutamate,C5H8NO4,-1.0,C5H9NO4,C00025,56-86-0
+glutamyl-tRNA(Gln) amidotransferase,MG098,Amino acids and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+glutamyl-tRNA(Gln) amidotransferase,MG098,Amino acids and related molecules,glntrna,L-Glutaminyl-tRNA(Gln),C5H9N2O2R,1.0,,C02282,
+glutamyl-tRNA(Gln) amidotransferase,MG098,Amino acids and related molecules,gln-L,L-Glutamine,C5H10N2O3,0.0,C5H10N2O3,C00064,56-85-9
+glutamyl-tRNA(Gln) amidotransferase,MG098,Amino acids and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+glutamyl-tRNA(Gln) amidotransferase,MG098,Amino acids and related molecules,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+glutamyl-tRNA(Gln) amidotransferase,MG099,Amino acids and related molecules,glutrna,L-Glutamyl-tRNA(Glu),C5H7NO3R,0.0,C5H7NO3R,C02987,
+glutamyl-tRNA(Gln) amidotransferase,MG099,Amino acids and related molecules,glu-L,L-Glutamate,C5H8NO4,-1.0,C5H9NO4,C00025,56-86-0
+glutamyl-tRNA(Gln) amidotransferase,MG099,Amino acids and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+glutamyl-tRNA(Gln) amidotransferase,MG099,Amino acids and related molecules,glntrna,L-Glutaminyl-tRNA(Gln),C5H9N2O2R,1.0,,C02282,
+glutamyl-tRNA(Gln) amidotransferase,MG099,Amino acids and related molecules,gln-L,L-Glutamine,C5H10N2O3,0.0,C5H10N2O3,C00064,56-85-9
+glutamyl-tRNA(Gln) amidotransferase,MG099,Amino acids and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+glutamyl-tRNA(Gln) amidotransferase,MG099,Amino acids and related molecules,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+glutamyl-tRNA(Gln) amidotransferase,MG100,Amino acids and related molecules,glutrna,L-Glutamyl-tRNA(Glu),C5H7NO3R,0.0,C5H7NO3R,C02987,
+glutamyl-tRNA(Gln) amidotransferase,MG100,Amino acids and related molecules,glu-L,L-Glutamate,C5H8NO4,-1.0,C5H9NO4,C00025,56-86-0
+glutamyl-tRNA(Gln) amidotransferase,MG100,Amino acids and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+glutamyl-tRNA(Gln) amidotransferase,MG100,Amino acids and related molecules,glntrna,L-Glutaminyl-tRNA(Gln),C5H9N2O2R,1.0,,C02282,
+glutamyl-tRNA(Gln) amidotransferase,MG100,Amino acids and related molecules,gln-L,L-Glutamine,C5H10N2O3,0.0,C5H10N2O3,C00064,56-85-9
+glutamyl-tRNA(Gln) amidotransferase,MG100,Amino acids and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+glutamyl-tRNA(Gln) amidotransferase,MG100,Amino acids and related molecules,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+sn-Glycerol 3-phosphate transport via ABC system,MG187,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+sn-Glycerol 3-phosphate transport via ABC system,MG187,Transport,glyc3p,Glycerol 3-phosphate,C3H7O6P,-2.0,C3H9O6P,C00093,
+sn-Glycerol 3-phosphate transport via ABC system,MG187,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+sn-Glycerol 3-phosphate transport via ABC system,MG187,Transport,h,H+,H,1.0,,C00080,12408-02-5
+sn-Glycerol 3-phosphate transport via ABC system,MG187,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+sn-Glycerol 3-phosphate transport via ABC system,MG187,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+sn-Glycerol 3-phosphate transport via ABC system,MG188,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+sn-Glycerol 3-phosphate transport via ABC system,MG188,Transport,glyc3p,Glycerol 3-phosphate,C3H7O6P,-2.0,C3H9O6P,C00093,
+sn-Glycerol 3-phosphate transport via ABC system,MG188,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+sn-Glycerol 3-phosphate transport via ABC system,MG188,Transport,h,H+,H,1.0,,C00080,12408-02-5
+sn-Glycerol 3-phosphate transport via ABC system,MG188,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+sn-Glycerol 3-phosphate transport via ABC system,MG188,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+sn-Glycerol 3-phosphate transport via ABC system,MG189,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+sn-Glycerol 3-phosphate transport via ABC system,MG189,Transport,glyc3p,Glycerol 3-phosphate,C3H7O6P,-2.0,C3H9O6P,C00093,
+sn-Glycerol 3-phosphate transport via ABC system,MG189,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+sn-Glycerol 3-phosphate transport via ABC system,MG189,Transport,h,H+,H,1.0,,C00080,12408-02-5
+sn-Glycerol 3-phosphate transport via ABC system,MG189,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+sn-Glycerol 3-phosphate transport via ABC system,MG189,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+glycerol transport,MG033,Transport,glyc,Glycerol,C3H8O3,0.0,,C00116,56-81-5
+glycerol kinase,MG038,Alternate Carbon Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+glycerol kinase,MG038,Alternate Carbon Metabolism,glyc3p,Glycerol 3-phosphate,C3H7O6P,-2.0,C3H9O6P,C00093,
+glycerol kinase,MG038,Alternate Carbon Metabolism,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+glycerol kinase,MG038,Alternate Carbon Metabolism,h,H+,H,1.0,,C00080,12408-02-5
+glycerol kinase,MG038,Alternate Carbon Metabolism,glyc,Glycerol,C3H8O3,0.0,,C00116,56-81-5
+Glycyl-tRNA synthetase,MG251,Glycine and Serine Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Glycyl-tRNA synthetase,MG251,Glycine and Serine Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Glycyl-tRNA synthetase,MG251,Glycine and Serine Metabolism,glytrna,Glycyl-tRNA(Gly),C2H4NOR,1.0,,C02412,
+Glycyl-tRNA synthetase,MG251,Glycine and Serine Metabolism,trnagly,tRNA(Gly),HOR,0.0,,C01642,
+Glycyl-tRNA synthetase,MG251,Glycine and Serine Metabolism,gly,Glycine,C2H5NO2,0.0,C2H5NO2,C00037,56-40-6
+Glycyl-tRNA synthetase,MG251,Glycine and Serine Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+GTP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,xtp,XTP,C10H11N4O15P3,-4.0,C10H15N4O15P3,C00700,
+GTP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,gtp,GTP,C10H12N5O14P3,-4.0,C10H16N5O14P3,C00044,1986-01-01 00:00:00
+GTP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,nh4,Ammonium,H4N,1.0,H3N,C01342,14798-03-9
+GTP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,h,H+,H,1.0,,C00080,12408-02-5
+GTP amine hydrolysis (spontaneous),s0001,Nucleotide Salvage Pathway,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+guanine phosphoribosyltransferase,MG458,Nucleotides and nucleic acids,prpp,5-Phospho-alpha-D-ribose 1-diphosphate,C5H8O14P3,-5.0,C5H13O14P3,C00119,
+guanine phosphoribosyltransferase,MG458,Nucleotides and nucleic acids,gmp,GMP,C10H12N5O8P,-2.0,,C00144,85-32-5
+guanine phosphoribosyltransferase,MG458,Nucleotides and nucleic acids,gua,Guanine,C5H5N5O,0.0,,C00242,73-40-5
+guanine phosphoribosyltransferase,MG458,Nucleotides and nucleic acids,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+H2O transport via diffusion,s0001,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+Histidyl-tRNA synthetase,MG035,tRNA Charging,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Histidyl-tRNA synthetase,MG035,tRNA Charging,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Histidyl-tRNA synthetase,MG035,tRNA Charging,histrna,L-Histidyl-tRNA(His),C6H8N3OR,1.0,,C02988,
+Histidyl-tRNA synthetase,MG035,tRNA Charging,trnahis,tRNA(His),HOR,0.0,,C01643,
+Histidyl-tRNA synthetase,MG035,tRNA Charging,his-L,L-Histidine,C6H9N3O2,0.0,C6H9N3O2,C00135,71-00-1
+Histidyl-tRNA synthetase,MG035,tRNA Charging,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+hypoxanthine phosphoribosyltransferase (Hypoxanthine),MG458,Nucleotides and nucleic acids,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+hypoxanthine phosphoribosyltransferase (Hypoxanthine),MG458,Nucleotides and nucleic acids,imp,IMP,C10H11N4O8P,-2.0,C10H13N4O8P,C00130,131-99-7
+hypoxanthine phosphoribosyltransferase (Hypoxanthine),MG458,Nucleotides and nucleic acids,prpp,5-Phospho-alpha-D-ribose 1-diphosphate,C5H8O14P3,-5.0,C5H13O14P3,C00119,
+hypoxanthine phosphoribosyltransferase (Hypoxanthine),MG458,Nucleotides and nucleic acids,hxan,Hypoxanthine,C5H4N4O,0.0,,C00262,68-94-0
+Isoleucyl-tRNA synthetase,MG345,"Valine, Leucine, and Isoleucine Metabolism",amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Isoleucyl-tRNA synthetase,MG345,"Valine, Leucine, and Isoleucine Metabolism",atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Isoleucyl-tRNA synthetase,MG345,"Valine, Leucine, and Isoleucine Metabolism",trnaile,tRNA(Ile),HOR,0.0,,C01644,
+Isoleucyl-tRNA synthetase,MG345,"Valine, Leucine, and Isoleucine Metabolism",ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Isoleucyl-tRNA synthetase,MG345,"Valine, Leucine, and Isoleucine Metabolism",iletrna,L-Isoleucyl-tRNA(Ile),C6H12NOR,1.0,,C03127,
+Isoleucyl-tRNA synthetase,MG345,"Valine, Leucine, and Isoleucine Metabolism",ile-L,L-Isoleucine,C6H13NO2,0.0,C6H13NO2,C00407,73-32-5
+inositol catabolic reactions (lumped),MG023,Carbohydrates and related molecules,msa,Malonate semialdehyde,C3H3O3,-1.0,C3H4O3,C00222,
+inositol catabolic reactions (lumped),MG023,Carbohydrates and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+inositol catabolic reactions (lumped),MG023,Carbohydrates and related molecules,dhap,Dihydroxyacetone phosphate,C3H5O6P,-2.0,C3H7O6P,C00111,1957-04-05 00:00:00
+inositol catabolic reactions (lumped),MG023,Carbohydrates and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+inositol catabolic reactions (lumped),MG023,Carbohydrates and related molecules,h,H+,H,1.0,,C00080,12408-02-5
+inositol catabolic reactions (lumped),MG023,Carbohydrates and related molecules,2ins,2-Inosose,C6H10O6,0.0,,C00691,
+potassium irreversible transport via proton symporter,MG323,Transport,h,H+,H,1.0,,C00080,12408-02-5
+potassium irreversible transport via proton symporter,MG323,Transport,k,Potassium,K,1.0,,C00238,
+L-lactate dehydrogenase,MG460,Membrane bioenergetics,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+L-lactate dehydrogenase,MG460,Membrane bioenergetics,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+L-lactate dehydrogenase,MG460,Membrane bioenergetics,nadh,Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2,-2.0,C21H29N7O14P2,C00004,58-68-4
+L-lactate dehydrogenase,MG460,Membrane bioenergetics,h,H+,H,1.0,,C00080,12408-02-5
+L-lactate dehydrogenase,MG460,Membrane bioenergetics,lac-L,L-Lactate,C3H5O3,-1.0,C3H6O3,C00186,79-33-4
+Leucyl-tRNA synthetase,MG266,"Valine, Leucine, and Isoleucine Metabolism",amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Leucyl-tRNA synthetase,MG266,"Valine, Leucine, and Isoleucine Metabolism",atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Leucyl-tRNA synthetase,MG266,"Valine, Leucine, and Isoleucine Metabolism",leutrna,L-Leucyl-tRNA(Leu),C6H12NOR,1.0,,C02047,
+Leucyl-tRNA synthetase,MG266,"Valine, Leucine, and Isoleucine Metabolism",trnaleu,tRNA(Leu),HOR,0.0,,C01645,
+Leucyl-tRNA synthetase,MG266,"Valine, Leucine, and Isoleucine Metabolism",leu-L,L-Leucine,C6H13NO2,0.0,C6H13NO2,C00123,61-90-5
+Leucyl-tRNA synthetase,MG266,"Valine, Leucine, and Isoleucine Metabolism",ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Lysyl-tRNA synthetase,MG136,Threonine and Lysine Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Lysyl-tRNA synthetase,MG136,Threonine and Lysine Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Lysyl-tRNA synthetase,MG136,Threonine and Lysine Metabolism,lystrna,L-Lysine-tRNA (Lys),C6H14N2OR,2.0,,C01931,
+Lysyl-tRNA synthetase,MG136,Threonine and Lysine Metabolism,lys-L,L-Lysine,C6H15N2O2,1.0,C6H14N2O2,C00047,56-87-1
+Lysyl-tRNA synthetase,MG136,Threonine and Lysine Metabolism,trnalys,tRNA(Lys),HOR,0.0,,C01646,
+Lysyl-tRNA synthetase,MG136,Threonine and Lysine Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+maltose transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+maltose transport via PEP:Pyr PTS,MG041,Transport,malt,Maltose,C12H22O11,0.0,,C00208,69-79-4
+maltose transport via PEP:Pyr PTS,MG041,Transport,malt6p,Maltose 6'-phosphate,C12H21O14P,-2.0,C12H23O14P,C02995,
+maltose transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+maltose transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+maltose transport via PEP:Pyr PTS,MG429,Transport,malt,Maltose,C12H22O11,0.0,,C00208,69-79-4
+maltose transport via PEP:Pyr PTS,MG429,Transport,malt6p,Maltose 6'-phosphate,C12H21O14P,-2.0,C12H23O14P,C02995,
+maltose transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+D-mannose transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-mannose transport via PEP:Pyr PTS,MG041,Transport,man6p,D-Mannose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00275,
+D-mannose transport via PEP:Pyr PTS,MG041,Transport,man,D-Mannose,C6H12O6,0.0,,C00159,3458-28-4
+D-mannose transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+D-mannose transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+D-mannose transport via PEP:Pyr PTS,MG429,Transport,man6p,D-Mannose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00275,
+D-mannose transport via PEP:Pyr PTS,MG429,Transport,man,D-Mannose,C6H12O6,0.0,,C00159,3458-28-4
+D-mannose transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+methionine adenosyltransferase,MG047,Methionine Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+methionine adenosyltransferase,MG047,Methionine Metabolism,met-L,L-Methionine,C5H11NO2S,0.0,C5H11NO2S,C00073,63-68-3
+methionine adenosyltransferase,MG047,Methionine Metabolism,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+methionine adenosyltransferase,MG047,Methionine Metabolism,amet,S-Adenosyl-L-methionine,C15H23N6O5S,1.0,C15H23N6O5S,C00019,29908-03-0
+methionine adenosyltransferase,MG047,Methionine Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+methionine adenosyltransferase,MG047,Methionine Metabolism,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+L-methionine R-oxide reductase (trdrd),MG448,Amino acids and related molecules,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+L-methionine R-oxide reductase (trdrd),MG448,Amino acids and related molecules,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+L-methionine R-oxide reductase (trdrd),MG448,Amino acids and related molecules,met-L,L-Methionine,C5H11NO2S,0.0,C5H11NO2S,C00073,63-68-3
+L-methionine R-oxide reductase (trdrd),MG448,Amino acids and related molecules,metox-R,L-methionine R-oxide,C5H11NO3S,0.0,,,
+L-methionine R-oxide reductase (trdrd),MG448,Amino acids and related molecules,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+L-methionine R-oxide (H2O2),MG448,Amino acids and related molecules,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+L-methionine R-oxide (H2O2),MG448,Amino acids and related molecules,h2o2,Hydrogen peroxide,H2O2,0.0,,C00027,7722-84-1
+L-methionine R-oxide (H2O2),MG448,Amino acids and related molecules,metox-R,L-methionine R-oxide,C5H11NO3S,0.0,,,
+L-methionine R-oxide (H2O2),MG448,Amino acids and related molecules,met-L,L-Methionine,C5H11NO2S,0.0,C5H11NO2S,C00073,63-68-3
+L-methionine-S-oxide reductase (trdrd),MG408,Amino acids and related molecules,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+L-methionine-S-oxide reductase (trdrd),MG408,Amino acids and related molecules,metox,L-Methionine S-oxide,C5H11NO3S,0.0,,C02989,
+L-methionine-S-oxide reductase (trdrd),MG408,Amino acids and related molecules,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+L-methionine-S-oxide reductase (trdrd),MG408,Amino acids and related molecules,met-L,L-Methionine,C5H11NO2S,0.0,C5H11NO2S,C00073,63-68-3
+L-methionine-S-oxide reductase (trdrd),MG408,Amino acids and related molecules,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+L-methionine S-oxide reductase (H2O2),MG408,Amino acids and related molecules,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+L-methionine S-oxide reductase (H2O2),MG408,Amino acids and related molecules,h2o2,Hydrogen peroxide,H2O2,0.0,,C00027,7722-84-1
+L-methionine S-oxide reductase (H2O2),MG408,Amino acids and related molecules,metox,L-Methionine S-oxide,C5H11NO3S,0.0,,C02989,
+L-methionine S-oxide reductase (H2O2),MG408,Amino acids and related molecules,met-L,L-Methionine,C5H11NO2S,0.0,C5H11NO2S,C00073,63-68-3
+Methionyl-tRNA synthetase,MG021,Other function,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Methionyl-tRNA synthetase,MG021,Other function,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Methionyl-tRNA synthetase,MG021,Other function,met-L,L-Methionine,C5H11NO2S,0.0,C5H11NO2S,C00073,63-68-3
+Methionyl-tRNA synthetase,MG021,Other function,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Methionyl-tRNA synthetase,MG021,Other function,mettrna,L-Methionyl-tRNA (Met),C5H10NOSR,1.0,,C02430,
+Methionyl-tRNA synthetase,MG021,Other function,trnamet,tRNA(Met),HOR,0.0,,C01647,
+mannitol transport via PEP:Pyr PTS,MG041,Transport,mnl1p,D-Mannitol 1-phosphate,C6H13O9P,-2.0,C6H15O9P,C00644,
+mannitol transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+mannitol transport via PEP:Pyr PTS,MG041,Transport,mnl,D-Mannitol,C6H14O6,0.0,,C00392,69-65-8
+mannitol transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+mannitol transport via PEP:Pyr PTS,MG429,Transport,mnl1p,D-Mannitol 1-phosphate,C6H13O9P,-2.0,C6H15O9P,C00644,
+mannitol transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+mannitol transport via PEP:Pyr PTS,MG429,Transport,mnl,D-Mannitol,C6H14O6,0.0,,C00392,69-65-8
+mannitol transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+methenyltetrahydrofolate cyclohydrolase,MG013,Coenzymes and prosthetic groups,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+methenyltetrahydrofolate cyclohydrolase,MG013,Coenzymes and prosthetic groups,methf,"5,10-Methenyltetrahydrofolate",C20H20N7O6,-1.0,C20H22N7O6,C00445,
+methenyltetrahydrofolate cyclohydrolase,MG013,Coenzymes and prosthetic groups,h,H+,H,1.0,,C00080,12408-02-5
+methenyltetrahydrofolate cyclohydrolase,MG013,Coenzymes and prosthetic groups,10fthf,10-Formyltetrahydrofolate,C20H21N7O7,-2.0,C20H23N7O7,C00234,
+methylenetetrahydrofolate dehydrogenase (NADP),MG013,Coenzymes and prosthetic groups,methf,"5,10-Methenyltetrahydrofolate",C20H20N7O6,-1.0,C20H22N7O6,C00445,
+methylenetetrahydrofolate dehydrogenase (NADP),MG013,Coenzymes and prosthetic groups,nadp,Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3,-3.0,,C00006,53-59-8
+methylenetetrahydrofolate dehydrogenase (NADP),MG013,Coenzymes and prosthetic groups,mlthf,"5,10-Methylenetetrahydrofolate",C20H21N7O6,-2.0,C20H23N7O6,C00143,
+methylenetetrahydrofolate dehydrogenase (NADP),MG013,Coenzymes and prosthetic groups,nadph,Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3,-4.0,C21H30N7O17P3,C00005,2646-71-1
+NADH dehydrogenase (Menaquinone 7 & 2 protons),MG275,Energy Metabolism,mqn7,Menaquinone 7,C46H64O2,0.0,,C00828,
+NADH dehydrogenase (Menaquinone 7 & 2 protons),MG275,Energy Metabolism,mql7,Menaquinol 7,C46H66O2,0.0,,C05819,
+NADH dehydrogenase (Menaquinone 7 & 2 protons),MG275,Energy Metabolism,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+NADH dehydrogenase (Menaquinone 7 & 2 protons),MG275,Energy Metabolism,nadh,Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2,-2.0,C21H29N7O14P2,C00004,58-68-4
+NADH dehydrogenase (Menaquinone 7 & 2 protons),MG275,Energy Metabolism,h,H+,H,1.0,,C00080,12408-02-5
+NAD kinase,MG128,Cofactor and Prosthetic Group Biosynthesis,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+NAD kinase,MG128,Cofactor and Prosthetic Group Biosynthesis,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+NAD kinase,MG128,Cofactor and Prosthetic Group Biosynthesis,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+NAD kinase,MG128,Cofactor and Prosthetic Group Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+NAD kinase,MG128,Cofactor and Prosthetic Group Biosynthesis,nadp,Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3,-3.0,,C00006,53-59-8
+NAD synthase (nh4),MG383,Vitamins & Cofactor Biosynthesis,dnad,Deamino-NAD+,C21H24N6O15P2,-2.0,C21H27N6O15P2,C00857,
+NAD synthase (nh4),MG383,Vitamins & Cofactor Biosynthesis,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+NAD synthase (nh4),MG383,Vitamins & Cofactor Biosynthesis,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+NAD synthase (nh4),MG383,Vitamins & Cofactor Biosynthesis,nh4,Ammonium,H4N,1.0,H3N,C01342,14798-03-9
+NAD synthase (nh4),MG383,Vitamins & Cofactor Biosynthesis,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+NAD synthase (nh4),MG383,Vitamins & Cofactor Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+NAD synthase (nh4),MG383,Vitamins & Cofactor Biosynthesis,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+nicotinic acid mononucleotide pyrophosphorylase,MG037,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+nicotinic acid mononucleotide pyrophosphorylase,MG037,Nucleotides and nucleic acids,nac,Nicotinate,C6H4NO2,-1.0,C6H5NO2,C00253,59-67-6
+nicotinic acid mononucleotide pyrophosphorylase,MG037,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+nicotinic acid mononucleotide pyrophosphorylase,MG037,Nucleotides and nucleic acids,nicrnt,Nicotinate D-ribonucleotide,C11H12NO9P,-2.0,C11H15NO9P,C01185,
+nicotinic acid mononucleotide pyrophosphorylase,MG037,Nucleotides and nucleic acids,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+nicotinic acid mononucleotide pyrophosphorylase,MG037,Nucleotides and nucleic acids,prpp,5-Phospho-alpha-D-ribose 1-diphosphate,C5H8O14P3,-5.0,C5H13O14P3,C00119,
+nicotinic acid mononucleotide pyrophosphorylase,MG037,Nucleotides and nucleic acids,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+nicotinic acid mononucleotide pyrophosphorylase,MG037,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ammonia transport via diffusion,s0001,Transport,nh4,Ammonium,H4N,1.0,H3N,C01342,14798-03-9
+nickel transport via ABC system,MG077,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+nickel transport via ABC system,MG077,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+nickel transport via ABC system,MG077,Transport,h,H+,H,1.0,,C00080,12408-02-5
+nickel transport via ABC system,MG077,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+nickel transport via ABC system,MG077,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+nickel transport via ABC system,MG077,Transport,ni2,Nickel,Ni,2.0,,C00291,
+nickel transport via ABC system,MG079,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+nickel transport via ABC system,MG079,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+nickel transport via ABC system,MG079,Transport,h,H+,H,1.0,,C00080,12408-02-5
+nickel transport via ABC system,MG079,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+nickel transport via ABC system,MG079,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+nickel transport via ABC system,MG079,Transport,ni2,Nickel,Ni,2.0,,C00291,
+nicotinamide-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+nicotinamide-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,nmn,NMN,C11H14N2O8P,-1.0,,C00455,1094-61-7
+nicotinamide-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+nicotinamide-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,h,H+,H,1.0,,C00080,12408-02-5
+nicotinamide-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+nicotinate-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,dnad,Deamino-NAD+,C21H24N6O15P2,-2.0,C21H27N6O15P2,C00857,
+nicotinate-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+nicotinate-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,nicrnt,Nicotinate D-ribonucleotide,C11H12NO9P,-2.0,C11H15NO9P,C01185,
+nicotinate-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,h,H+,H,1.0,,C00080,12408-02-5
+nicotinate-nucleotide adenylyltransferase,MG240,Coenzymes and prosthetic groups,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+2-octaprenyl-6-hydroxyphenol methylase,MG463,Quinone Biosynthesis,ahcys,S-Adenosyl-L-homocysteine,C14H20N6O5S,0.0,C14H20N6O5S,C00021,979-92-0
+2-octaprenyl-6-hydroxyphenol methylase,MG463,Quinone Biosynthesis,2ohph_5,,,,,,
+2-octaprenyl-6-hydroxyphenol methylase,MG463,Quinone Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+2-octaprenyl-6-hydroxyphenol methylase,MG463,Quinone Biosynthesis,amet,S-Adenosyl-L-methionine,C15H23N6O5S,1.0,C15H23N6O5S,C00019,29908-03-0
+2-octaprenyl-6-hydroxyphenol methylase,MG463,Quinone Biosynthesis,2omph_5,,,,,,
+phosphate butyryltransferase,MG299,Carbohydrates and related molecules,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+phosphate butyryltransferase,MG299,Carbohydrates and related molecules,btcoa,Butanoyl-CoA,C25H38N7O17P3S,-4.0,C25H42N7O17P3S,C00136,
+phosphate butyryltransferase,MG299,Carbohydrates and related molecules,coa,Coenzyme A,C21H32N7O16P3S,-4.0,C21H36N7O16P3S,C00010,85-61-0
+phosphate butyryltransferase,MG299,Carbohydrates and related molecules,butpi,Butanoyl phosphate,C4H7O5P,-2.0,C4H9O5P,C02527,
+pyruvate dehydrogenase,MG273,Central Metabolism,co2,CO2,CO2,0.0,,C00011,124-38-9
+pyruvate dehydrogenase,MG273,Central Metabolism,accoa,Acetyl-CoA,C23H34N7O17P3S,-4.0,C23H38N7O17P3S,C00024,72-89-9
+pyruvate dehydrogenase,MG273,Central Metabolism,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+pyruvate dehydrogenase,MG273,Central Metabolism,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+pyruvate dehydrogenase,MG273,Central Metabolism,coa,Coenzyme A,C21H32N7O16P3S,-4.0,C21H36N7O16P3S,C00010,85-61-0
+pyruvate dehydrogenase,MG273,Central Metabolism,nadh,Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2,-2.0,C21H29N7O14P2,C00004,58-68-4
+pyruvate dehydrogenase,MG274,Central Metabolism,co2,CO2,CO2,0.0,,C00011,124-38-9
+pyruvate dehydrogenase,MG274,Central Metabolism,accoa,Acetyl-CoA,C23H34N7O17P3S,-4.0,C23H38N7O17P3S,C00024,72-89-9
+pyruvate dehydrogenase,MG274,Central Metabolism,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+pyruvate dehydrogenase,MG274,Central Metabolism,nad,Nicotinamide adenine dinucleotide,C21H26N7O14P2,-1.0,C21H28N7O14P2,C00003,53-84-9
+pyruvate dehydrogenase,MG274,Central Metabolism,coa,Coenzyme A,C21H32N7O16P3S,-4.0,C21H36N7O16P3S,C00010,85-61-0
+pyruvate dehydrogenase,MG274,Central Metabolism,nadh,Nicotinamide adenine dinucleotide - reduced,C21H27N7O14P2,-2.0,C21H29N7O14P2,C00004,58-68-4
+phosphofructokinase,MG215,Glycolysis/Gluconeogenesis,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+phosphofructokinase,MG215,Glycolysis/Gluconeogenesis,f6p,D-Fructose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00085,643-13-0
+phosphofructokinase,MG215,Glycolysis/Gluconeogenesis,fdp,"D-Fructose 1,6-bisphosphate",C6H10O12P2,-4.0,C6H14O12P2,C00354,488-69-7
+phosphofructokinase,MG215,Glycolysis/Gluconeogenesis,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+phosphofructokinase,MG215,Glycolysis/Gluconeogenesis,h,H+,H,1.0,,C00080,12408-02-5
+glucose-6-phosphate isomerase,MG111,Carbohydrates and related molecules,g6p,D-Glucose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00092,56-73-5
+glucose-6-phosphate isomerase,MG111,Carbohydrates and related molecules,f6p,D-Fructose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00085,643-13-0
+phosphoglycerate kinase,MG300,Carbohydrates and related molecules,3pg,3-Phospho-D-glycerate,C3H4O7P,-3.0,C3H7O7P,C00197,
+phosphoglycerate kinase,MG300,Carbohydrates and related molecules,13dpg,3-Phospho-D-glyceroyl phosphate,C3H4O10P2,-4.0,C3H8O10P2,C00236,
+phosphoglycerate kinase,MG300,Carbohydrates and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+phosphoglycerate kinase,MG300,Carbohydrates and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+phosphoglycerate mutase,MG430,Carbohydrates and related molecules,2pg,D-Glycerate 2-phosphate,C3H4O7P,-3.0,C3H7O7P,C00631,
+phosphoglycerate mutase,MG430,Carbohydrates and related molecules,3pg,3-Phospho-D-glycerate,C3H4O7P,-3.0,C3H7O7P,C00197,
+Phenylalanyl-tRNA synthetase,MG194,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",phetrna,L-Phenylalanyl-tRNA(Phe),C9H10NOR,1.0,,C03511,
+Phenylalanyl-tRNA synthetase,MG194,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Phenylalanyl-tRNA synthetase,MG194,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Phenylalanyl-tRNA synthetase,MG194,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",phe-L,L-Phenylalanine,C9H11NO2,0.0,C9H11NO2,C00079,63-91-2
+Phenylalanyl-tRNA synthetase,MG194,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Phenylalanyl-tRNA synthetase,MG194,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",trnaphe,tRNA(Phe),HOR,0.0,,C01648,
+Phenylalanyl-tRNA synthetase,MG195,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",phetrna,L-Phenylalanyl-tRNA(Phe),C9H10NOR,1.0,,C03511,
+Phenylalanyl-tRNA synthetase,MG195,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Phenylalanyl-tRNA synthetase,MG195,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Phenylalanyl-tRNA synthetase,MG195,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",phe-L,L-Phenylalanine,C9H11NO2,0.0,C9H11NO2,C00079,63-91-2
+Phenylalanyl-tRNA synthetase,MG195,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Phenylalanyl-tRNA synthetase,MG195,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",trnaphe,tRNA(Phe),HOR,0.0,,C01648,
+phosphate transport via ABC system,MG410,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+phosphate transport via ABC system,MG410,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+phosphate transport via ABC system,MG410,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+phosphate transport via ABC system,MG410,Transport,h,H+,H,1.0,,C00080,12408-02-5
+phosphate transport via ABC system,MG410,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+phosphate transport via ABC system,MG411,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+phosphate transport via ABC system,MG411,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+phosphate transport via ABC system,MG411,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+phosphate transport via ABC system,MG411,Transport,h,H+,H,1.0,,C00080,12408-02-5
+phosphate transport via ABC system,MG411,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+phosphomannomutase,MG053,Carbohydrates and related molecules,man6p,D-Mannose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00275,
+phosphomannomutase,MG053,Carbohydrates and related molecules,man1p,D-Mannose 1-phosphate,C6H11O9P,-2.0,C6H13O9P,C03812,
+inorganic diphosphatase,MG351,Anaplerotic Reactions,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+inorganic diphosphatase,MG351,Anaplerotic Reactions,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+inorganic diphosphatase,MG351,Anaplerotic Reactions,h,H+,H,1.0,,C00080,12408-02-5
+inorganic diphosphatase,MG351,Anaplerotic Reactions,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Propionate kinase,MG357,Carbohydrates and related molecules,ppap,Propanoyl phosphate,C3H5O5P,-2.0,,C02876,
+Propionate kinase,MG357,Carbohydrates and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Propionate kinase,MG357,Carbohydrates and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+Propionate kinase,MG357,Carbohydrates and related molecules,ppa,Propionate (n-C3:0),C3H5O2,-1.0,C3H6O2,C00163,1979-09-04 00:00:00
+Prolyl-tRNA synthetase,MG283,Arginine and Proline Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Prolyl-tRNA synthetase,MG283,Arginine and Proline Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Prolyl-tRNA synthetase,MG283,Arginine and Proline Metabolism,trnapro,tRNA(Pro),HOR,0.0,,C01649,
+Prolyl-tRNA synthetase,MG283,Arginine and Proline Metabolism,pro-L,L-Proline,C5H9NO2,0.0,C5H9NO2,C00148,147-85-3
+Prolyl-tRNA synthetase,MG283,Arginine and Proline Metabolism,protrna,L-Prolyl-tRNA(Pro),C5H8NOR,1.0,,C02702,
+Prolyl-tRNA synthetase,MG283,Arginine and Proline Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+phosphoribosylpyrophosphate synthetase,MG058,Nucleotides and nucleic acids,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+phosphoribosylpyrophosphate synthetase,MG058,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+phosphoribosylpyrophosphate synthetase,MG058,Nucleotides and nucleic acids,r5p,alpha-D-Ribose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00117,4300-28-1
+phosphoribosylpyrophosphate synthetase,MG058,Nucleotides and nucleic acids,h,H+,H,1.0,,C00080,12408-02-5
+phosphoribosylpyrophosphate synthetase,MG058,Nucleotides and nucleic acids,prpp,5-Phospho-alpha-D-ribose 1-diphosphate,C5H8O14P3,-5.0,C5H13O14P3,C00119,
+pseudouridylate synthase,MG370,pseudouridylate synthase pathway,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+pseudouridylate synthase,MG370,pseudouridylate synthase pathway,ura,Uracil,C4H4N2O2,0.0,,C00106,66-22-8
+pseudouridylate synthase,MG370,pseudouridylate synthase pathway,r5p,alpha-D-Ribose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00117,4300-28-1
+pseudouridylate synthase,MG370,pseudouridylate synthase pathway,psd5p,Pseudouridine 5'-phosphate,C9H11N2O9P,-2.0,C9H13N2O9P,C01168,
+pseudouridylate synthase,MG209,pseudouridylate synthase pathway,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+pseudouridylate synthase,MG209,pseudouridylate synthase pathway,ura,Uracil,C4H4N2O2,0.0,,C00106,66-22-8
+pseudouridylate synthase,MG209,pseudouridylate synthase pathway,r5p,alpha-D-Ribose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00117,4300-28-1
+pseudouridylate synthase,MG209,pseudouridylate synthase pathway,psd5p,Pseudouridine 5'-phosphate,C9H11N2O9P,-2.0,C9H13N2O9P,C01168,
+Phosphate acetyltransferase,MG299,Carbohydrates and related molecules,coa,Coenzyme A,C21H32N7O16P3S,-4.0,C21H36N7O16P3S,C00010,85-61-0
+Phosphate acetyltransferase,MG299,Carbohydrates and related molecules,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+Phosphate acetyltransferase,MG299,Carbohydrates and related molecules,ppap,Propanoyl phosphate,C3H5O5P,-2.0,,C02876,
+Phosphate acetyltransferase,MG299,Carbohydrates and related molecules,ppcoa,Propanoyl-CoA,C24H36N7O17P3S,-4.0,C24H40N7O17P3S,C00100,317-66-8
+phosphotransacetylase,MG299,Carbohydrates and related molecules,coa,Coenzyme A,C21H32N7O16P3S,-4.0,C21H36N7O16P3S,C00010,85-61-0
+phosphotransacetylase,MG299,Carbohydrates and related molecules,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+phosphotransacetylase,MG299,Carbohydrates and related molecules,accoa,Acetyl-CoA,C23H34N7O17P3S,-4.0,C23H38N7O17P3S,C00024,72-89-9
+phosphotransacetylase,MG299,Carbohydrates and related molecules,actp,Acetyl phosphate,C2H3O5P,-2.0,C2H5O5P,C00227,19926-71-7
+putrescine transport via ABC system,MG042,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+putrescine transport via ABC system,MG042,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+putrescine transport via ABC system,MG042,Transport,h,H+,H,1.0,,C00080,12408-02-5
+putrescine transport via ABC system,MG042,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+putrescine transport via ABC system,MG042,Transport,ptrc,Putrescine,C4H14N2,2.0,C4H12N2,C00134,110-60-1
+putrescine transport via ABC system,MG042,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+putrescine transport via ABC system,MG043,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+putrescine transport via ABC system,MG043,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+putrescine transport via ABC system,MG043,Transport,h,H+,H,1.0,,C00080,12408-02-5
+putrescine transport via ABC system,MG043,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+putrescine transport via ABC system,MG043,Transport,ptrc,Putrescine,C4H14N2,2.0,C4H12N2,C00134,110-60-1
+putrescine transport via ABC system,MG043,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+putrescine transport via ABC system,MG044,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+putrescine transport via ABC system,MG044,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+putrescine transport via ABC system,MG044,Transport,h,H+,H,1.0,,C00080,12408-02-5
+putrescine transport via ABC system,MG044,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+putrescine transport via ABC system,MG044,Transport,ptrc,Putrescine,C4H14N2,2.0,C4H12N2,C00134,110-60-1
+putrescine transport via ABC system,MG044,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+putrescine/ornithine antiporter,MG226,Transport,orn-L,L-Ornithine,C5H13N2O2,1.0,C5H12N2O2,"C01602, C00077",
+putrescine/ornithine antiporter,MG226,Transport,ptrc,Putrescine,C4H14N2,2.0,C4H12N2,C00134,110-60-1
+"putrescine transport in via proton symport, reversible",MG226,Transport,h,H+,H,1.0,,C00080,12408-02-5
+"putrescine transport in via proton symport, reversible",MG226,Transport,ptrc,Putrescine,C4H14N2,2.0,C4H12N2,C00134,110-60-1
+"putrescine transport in via proton symport, reversible",MG225,Transport,h,H+,H,1.0,,C00080,12408-02-5
+"putrescine transport in via proton symport, reversible",MG225,Transport,ptrc,Putrescine,C4H14N2,2.0,C4H12N2,C00134,110-60-1
+purine-nucleoside phosphorylase (Adenosine),MG049,Nucleotide Salvage Pathways,r1p,alpha-D-Ribose 1-phosphate,C5H9O8P,-2.0,C5H11O8P,C00442,58459-37-3
+purine-nucleoside phosphorylase (Adenosine),MG049,Nucleotide Salvage Pathways,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+purine-nucleoside phosphorylase (Adenosine),MG049,Nucleotide Salvage Pathways,ade,Adenine,C5H5N5,0.0,,C00147,73-24-5
+purine-nucleoside phosphorylase (Adenosine),MG049,Nucleotide Salvage Pathways,adn,Adenosine,C10H13N5O4,0.0,,C00212,58-61-7
+purine-nucleoside phosphorylase (Deoxyadenosine),MG049,Nucleotide Salvage Pathways,ade,Adenine,C5H5N5,0.0,,C00147,73-24-5
+purine-nucleoside phosphorylase (Deoxyadenosine),MG049,Nucleotide Salvage Pathways,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+purine-nucleoside phosphorylase (Deoxyadenosine),MG049,Nucleotide Salvage Pathways,2dr1p,2-Deoxy-D-ribose 1-phosphate,C5H9O7P,-2.0,C5H11O7P,C00672,
+purine-nucleoside phosphorylase (Deoxyadenosine),MG049,Nucleotide Salvage Pathways,dad-2,Deoxyadenosine,C10H13N5O3,0.0,,C00559,958-09-8
+purine-nucleoside phosphorylase (Guanosine),MG049,Nucleotide Salvage Pathways,r1p,alpha-D-Ribose 1-phosphate,C5H9O8P,-2.0,C5H11O8P,C00442,58459-37-3
+purine-nucleoside phosphorylase (Guanosine),MG049,Nucleotide Salvage Pathways,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+purine-nucleoside phosphorylase (Guanosine),MG049,Nucleotide Salvage Pathways,gua,Guanine,C5H5N5O,0.0,,C00242,73-40-5
+purine-nucleoside phosphorylase (Guanosine),MG049,Nucleotide Salvage Pathways,gsn,Guanosine,C10H13N5O5,0.0,,C00387,118-00-3
+purine-nucleoside phosphorylase (Deoxyguanosine),MG049,Nucleotide Salvage Pathways,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+purine-nucleoside phosphorylase (Deoxyguanosine),MG049,Nucleotide Salvage Pathways,dgsn,Deoxyguanosine,C10H13N5O4,0.0,,C00330,961-07-9
+purine-nucleoside phosphorylase (Deoxyguanosine),MG049,Nucleotide Salvage Pathways,gua,Guanine,C5H5N5O,0.0,,C00242,73-40-5
+purine-nucleoside phosphorylase (Deoxyguanosine),MG049,Nucleotide Salvage Pathways,2dr1p,2-Deoxy-D-ribose 1-phosphate,C5H9O7P,-2.0,C5H11O7P,C00672,
+purine-nucleoside phosphorylase (Inosine),MG049,Nucleotide Salvage Pathways,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+purine-nucleoside phosphorylase (Inosine),MG049,Nucleotide Salvage Pathways,ins,Inosine,C10H12N4O5,0.0,,C00294,58-63-9
+purine-nucleoside phosphorylase (Inosine),MG049,Nucleotide Salvage Pathways,r1p,alpha-D-Ribose 1-phosphate,C5H9O8P,-2.0,C5H11O8P,C00442,58459-37-3
+purine-nucleoside phosphorylase (Inosine),MG049,Nucleotide Salvage Pathways,hxan,Hypoxanthine,C5H4N4O,0.0,,C00262,68-94-0
+purine-nucleoside phosphorylase (Deoxyinosine),MG049,Nucleotide Salvage Pathways,hxan,Hypoxanthine,C5H4N4O,0.0,,C00262,68-94-0
+purine-nucleoside phosphorylase (Deoxyinosine),MG049,Nucleotide Salvage Pathways,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+purine-nucleoside phosphorylase (Deoxyinosine),MG049,Nucleotide Salvage Pathways,2dr1p,2-Deoxy-D-ribose 1-phosphate,C5H9O7P,-2.0,C5H11O7P,C00672,
+purine-nucleoside phosphorylase (Deoxyinosine),MG049,Nucleotide Salvage Pathways,din,Deoxyinosine,C10H12N4O4,0.0,,C05512,890-38-0
+purine-nucleoside phosphorylase (Xanthosine),MG049,Nucleotide Salvage Pathways,xtsn,Xanthosine,C10H12N4O6,0.0,,C01762,146-80-5
+purine-nucleoside phosphorylase (Xanthosine),MG049,Nucleotide Salvage Pathways,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+purine-nucleoside phosphorylase (Xanthosine),MG049,Nucleotide Salvage Pathways,r1p,alpha-D-Ribose 1-phosphate,C5H9O8P,-2.0,C5H11O8P,C00442,58459-37-3
+purine-nucleoside phosphorylase (Xanthosine),MG049,Nucleotide Salvage Pathways,xan,Xanthine,C5H4N4O2,0.0,,C00385,69-89-6
+pyruvate kinase,MG216,Carbohydrates and related molecules,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+pyruvate kinase,MG216,Carbohydrates and related molecules,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+pyruvate kinase,MG216,Carbohydrates and related molecules,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+pyruvate kinase,MG216,Carbohydrates and related molecules,h,H+,H,1.0,,C00080,12408-02-5
+pyruvate kinase,MG216,Carbohydrates and related molecules,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+pyrimidine-nucleoside phosphorylase (cytosine),MG051,Nucleotides and nucleic acids,r1p,alpha-D-Ribose 1-phosphate,C5H9O8P,-2.0,C5H11O8P,C00442,58459-37-3
+pyrimidine-nucleoside phosphorylase (cytosine),MG051,Nucleotides and nucleic acids,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+pyrimidine-nucleoside phosphorylase (cytosine),MG051,Nucleotides and nucleic acids,cytd,Cytidine,C9H13N3O5,0.0,,C00475,65-46-3
+pyrimidine-nucleoside phosphorylase (cytosine),MG051,Nucleotides and nucleic acids,csn,Cytosine,C4H5N3O,0.0,,C00380,71-30-7
+pyrimidine-nucleoside phosphorylase (uracil),MG051,Nucleotides and nucleic acids,uri,Uridine,C9H12N2O6,0.0,,C00299,58-96-8
+pyrimidine-nucleoside phosphorylase (uracil),MG051,Nucleotides and nucleic acids,r1p,alpha-D-Ribose 1-phosphate,C5H9O8P,-2.0,C5H11O8P,C00442,58459-37-3
+pyrimidine-nucleoside phosphorylase (uracil),MG051,Nucleotides and nucleic acids,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+pyrimidine-nucleoside phosphorylase (uracil),MG051,Nucleotides and nucleic acids,ura,Uracil,C4H4N2O2,0.0,,C00106,66-22-8
+riboflavin kinase,MG145,Coenzymes and prosthetic groups,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+riboflavin kinase,MG145,Coenzymes and prosthetic groups,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+riboflavin kinase,MG145,Coenzymes and prosthetic groups,fmn,FMN,C17H19N4O9P,-2.0,C17H21N4O9P,C00061,146-17-8
+riboflavin kinase,MG145,Coenzymes and prosthetic groups,h,H+,H,1.0,,C00080,12408-02-5
+riboflavin kinase,MG145,Coenzymes and prosthetic groups,ribflv,Riboflavin,C17H20N4O6,0.0,,C00255,83-88-5
+D-ribose transport via ABC system,MG119,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+D-ribose transport via ABC system,MG119,Transport,rib-D,D-Ribose,C5H10O5,0.0,,C00121,50-69-1
+D-ribose transport via ABC system,MG119,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+D-ribose transport via ABC system,MG119,Transport,h,H+,H,1.0,,C00080,12408-02-5
+D-ribose transport via ABC system,MG119,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+D-ribose transport via ABC system,MG119,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (ADP),MG229,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (ADP),MG229,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (ADP),MG229,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ribonucleoside-diphosphate reductase (ADP),MG229,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (ADP),MG229,Nucleotides and nucleic acids,dadp,dADP,C10H12N5O9P2,-3.0,C10H15N5O9P2,C00206,
+ribonucleoside-diphosphate reductase (ADP),MG230,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (ADP),MG230,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (ADP),MG230,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ribonucleoside-diphosphate reductase (ADP),MG230,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (ADP),MG230,Nucleotides and nucleic acids,dadp,dADP,C10H12N5O9P2,-3.0,C10H15N5O9P2,C00206,
+ribonucleoside-diphosphate reductase (ADP),MG231,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (ADP),MG231,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (ADP),MG231,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+ribonucleoside-diphosphate reductase (ADP),MG231,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (ADP),MG231,Nucleotides and nucleic acids,dadp,dADP,C10H12N5O9P2,-3.0,C10H15N5O9P2,C00206,
+ribonucleoside-diphosphate reductase (GDP),MG229,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (GDP),MG229,Nucleotides and nucleic acids,gdp,GDP,C10H12N5O11P2,-3.0,C10H15N5O11P2,C00035,146-91-8
+ribonucleoside-diphosphate reductase (GDP),MG229,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (GDP),MG229,Nucleotides and nucleic acids,dgdp,dGDP,C10H12N5O10P2,-3.0,,C00361,
+ribonucleoside-diphosphate reductase (GDP),MG229,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (GDP),MG230,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (GDP),MG230,Nucleotides and nucleic acids,gdp,GDP,C10H12N5O11P2,-3.0,C10H15N5O11P2,C00035,146-91-8
+ribonucleoside-diphosphate reductase (GDP),MG230,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (GDP),MG230,Nucleotides and nucleic acids,dgdp,dGDP,C10H12N5O10P2,-3.0,,C00361,
+ribonucleoside-diphosphate reductase (GDP),MG230,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (GDP),MG231,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (GDP),MG231,Nucleotides and nucleic acids,gdp,GDP,C10H12N5O11P2,-3.0,C10H15N5O11P2,C00035,146-91-8
+ribonucleoside-diphosphate reductase (GDP),MG231,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (GDP),MG231,Nucleotides and nucleic acids,dgdp,dGDP,C10H12N5O10P2,-3.0,,C00361,
+ribonucleoside-diphosphate reductase (GDP),MG231,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (CDP),MG229,Nucleotide Salvage Pathways,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (CDP),MG229,Nucleotide Salvage Pathways,dcdp,dCDP,C9H12N3O10P2,-3.0,C9H15N3O10P2,C00705,
+ribonucleoside-diphosphate reductase (CDP),MG229,Nucleotide Salvage Pathways,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (CDP),MG229,Nucleotide Salvage Pathways,cdp,CDP,C9H12N3O11P2,-3.0,C9H15N3O11P2,C00112,63-38-7
+ribonucleoside-diphosphate reductase (CDP),MG229,Nucleotide Salvage Pathways,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (CDP),MG230,Nucleotide Salvage Pathways,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (CDP),MG230,Nucleotide Salvage Pathways,dcdp,dCDP,C9H12N3O10P2,-3.0,C9H15N3O10P2,C00705,
+ribonucleoside-diphosphate reductase (CDP),MG230,Nucleotide Salvage Pathways,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (CDP),MG230,Nucleotide Salvage Pathways,cdp,CDP,C9H12N3O11P2,-3.0,C9H15N3O11P2,C00112,63-38-7
+ribonucleoside-diphosphate reductase (CDP),MG230,Nucleotide Salvage Pathways,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (CDP),MG231,Nucleotide Salvage Pathways,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (CDP),MG231,Nucleotide Salvage Pathways,dcdp,dCDP,C9H12N3O10P2,-3.0,C9H15N3O10P2,C00705,
+ribonucleoside-diphosphate reductase (CDP),MG231,Nucleotide Salvage Pathways,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (CDP),MG231,Nucleotide Salvage Pathways,cdp,CDP,C9H12N3O11P2,-3.0,C9H15N3O11P2,C00112,63-38-7
+ribonucleoside-diphosphate reductase (CDP),MG231,Nucleotide Salvage Pathways,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (UDP),MG229,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (UDP),MG229,Nucleotides and nucleic acids,dudp,dUDP,C9H11N2O11P2,-3.0,C9H14N2O11P2,C01346,
+ribonucleoside-diphosphate reductase (UDP),MG229,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (UDP),MG229,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (UDP),MG229,Nucleotides and nucleic acids,udp,UDP,C9H11N2O12P2,-3.0,C9H14N2O12P2,C00015,58-98-0
+ribonucleoside-diphosphate reductase (UDP),MG230,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (UDP),MG230,Nucleotides and nucleic acids,dudp,dUDP,C9H11N2O11P2,-3.0,C9H14N2O11P2,C01346,
+ribonucleoside-diphosphate reductase (UDP),MG230,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (UDP),MG230,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (UDP),MG230,Nucleotides and nucleic acids,udp,UDP,C9H11N2O12P2,-3.0,C9H14N2O12P2,C00015,58-98-0
+ribonucleoside-diphosphate reductase (UDP),MG231,Nucleotides and nucleic acids,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+ribonucleoside-diphosphate reductase (UDP),MG231,Nucleotides and nucleic acids,dudp,dUDP,C9H11N2O11P2,-3.0,C9H14N2O11P2,C01346,
+ribonucleoside-diphosphate reductase (UDP),MG231,Nucleotides and nucleic acids,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+ribonucleoside-diphosphate reductase (UDP),MG231,Nucleotides and nucleic acids,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+ribonucleoside-diphosphate reductase (UDP),MG231,Nucleotides and nucleic acids,udp,UDP,C9H11N2O12P2,-3.0,C9H14N2O12P2,C00015,58-98-0
+ribulose 5-phosphate 3-epimerase,MG112,Pentose Phosphate Pathway,ru5p-D,D-Ribulose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00199,4151-19-3
+ribulose 5-phosphate 3-epimerase,MG112,Pentose Phosphate Pathway,xu5p-D,D-Xylulose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00231,
+ribose-5-phosphate isomerase,MG396,Carbohydrates and related molecules,r5p,alpha-D-Ribose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00117,4300-28-1
+ribose-5-phosphate isomerase,MG396,Carbohydrates and related molecules,ru5p-D,D-Ribulose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00199,4151-19-3
+salicin transport via PEP:Pyr PTS,MG041,Transport,salc6p,Salicin 6-phosphate,C13H17O10P,-2.0,C13H19O10P,C06188,
+salicin transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+salicin transport via PEP:Pyr PTS,MG041,Transport,salcn,Salicin,C13H18O7,0.0,,C01451,
+salicin transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+salicin transport via PEP:Pyr PTS,MG429,Transport,salc6p,Salicin 6-phosphate,C13H17O10P,-2.0,C13H19O10P,C06188,
+salicin transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+salicin transport via PEP:Pyr PTS,MG429,Transport,salcn,Salicin,C13H18O7,0.0,,C01451,
+salicin transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+Seryl-tRNA synthetase,MG005,Glycine and Serine Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Seryl-tRNA synthetase,MG005,Glycine and Serine Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Seryl-tRNA synthetase,MG005,Glycine and Serine Metabolism,ser-L,L-Serine,C3H7NO3,0.0,C3H7NO3,C00065,56-45-1
+Seryl-tRNA synthetase,MG005,Glycine and Serine Metabolism,sertrna,L-Seryl-tRNA(Ser),C3H6NO2R,1.0,,C02553,
+Seryl-tRNA synthetase,MG005,Glycine and Serine Metabolism,trnaser,tRNA(Ser),HOR,0.0,,C01650,
+Seryl-tRNA synthetase,MG005,Glycine and Serine Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+spermidine transport via ABC system,MG042,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+spermidine transport via ABC system,MG042,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+spermidine transport via ABC system,MG042,Transport,spmd,Spermidine,C7H22N3,3.0,C7H19N3,C00315,124-20-9
+spermidine transport via ABC system,MG042,Transport,h,H+,H,1.0,,C00080,12408-02-5
+spermidine transport via ABC system,MG042,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+spermidine transport via ABC system,MG042,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+spermidine transport via ABC system,MG043,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+spermidine transport via ABC system,MG043,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+spermidine transport via ABC system,MG043,Transport,spmd,Spermidine,C7H22N3,3.0,C7H19N3,C00315,124-20-9
+spermidine transport via ABC system,MG043,Transport,h,H+,H,1.0,,C00080,12408-02-5
+spermidine transport via ABC system,MG043,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+spermidine transport via ABC system,MG043,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+spermidine transport via ABC system,MG044,Transport,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+spermidine transport via ABC system,MG044,Transport,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+spermidine transport via ABC system,MG044,Transport,spmd,Spermidine,C7H22N3,3.0,C7H19N3,C00315,124-20-9
+spermidine transport via ABC system,MG044,Transport,h,H+,H,1.0,,C00080,12408-02-5
+spermidine transport via ABC system,MG044,Transport,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+spermidine transport via ABC system,MG044,Transport,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+sucrose transport via PEP:Pyr PTS,MG041,Transport,sucr,Sucrose,C12H22O11,0.0,,C00089,57-50-1
+sucrose transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+sucrose transport via PEP:Pyr PTS,MG041,Transport,suc6p,Sucrose 6-phosphate,C12H21O14P,-2.0,C12H23O14P,C02591,
+sucrose transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+sucrose transport via PEP:Pyr PTS,MG429,Transport,sucr,Sucrose,C12H22O11,0.0,,C00089,57-50-1
+sucrose transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+sucrose transport via PEP:Pyr PTS,MG429,Transport,suc6p,Sucrose 6-phosphate,C12H21O14P,-2.0,C12H23O14P,C02591,
+sucrose transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+minor teichoic acid synthesis (n=30),MG025,Cell Envelope Biosynthesis,uacgala,UDP-N-acetyl-D-galactosamine,C17H25N3O17P2,-2.0,C17H27N3O17P2,C00203,
+minor teichoic acid synthesis (n=30),MG025,Cell Envelope Biosynthesis,ump,UMP,C9H11N2O9P,-2.0,C9H13N2O9P,C00105,58-97-9
+minor teichoic acid synthesis (n=30),MG025,Cell Envelope Biosynthesis,udpg,UDPglucose,C15H22N2O17P2,-2.0,C15H24N2O17P2,C00029,
+minor teichoic acid synthesis (n=30),MG025,Cell Envelope Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+minor teichoic acid synthesis (n=30),MG025,Cell Envelope Biosynthesis,tcam,"minor teichoic acid (acetylgalactosamine glucose phosphate, n=30)",C420H750N30O420P30,-30.0,C420H780N30O420P30,,
+minor teichoic acid synthesis (n=30),MG025,Cell Envelope Biosynthesis,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+minor teichoic acid synthesis (n=30),MG025,Cell Envelope Biosynthesis,udp,UDP,C9H11N2O12P2,-3.0,C9H14N2O12P2,C00015,58-98-0
+"teichuronic acid (n=45), unlinked, GalNAc-GlcA repeated",MG075,Cell Envelope Biosynthesis,uacgala,UDP-N-acetyl-D-galactosamine,C17H25N3O17P2,-2.0,C17H27N3O17P2,C00203,
+"teichuronic acid (n=45), unlinked, GalNAc-GlcA repeated",MG075,Cell Envelope Biosynthesis,ump,UMP,C9H11N2O9P,-2.0,C9H13N2O9P,C00105,58-97-9
+"teichuronic acid (n=45), unlinked, GalNAc-GlcA repeated",MG075,Cell Envelope Biosynthesis,udpglcur,UDP-D-glucuronate,C15H19N2O18P2,-3.0,C15H22N2O18P2,C00167,
+"teichuronic acid (n=45), unlinked, GalNAc-GlcA repeated",MG075,Cell Envelope Biosynthesis,teich-45,"teichuronic acid (GlcA + GalNac, 45 repeating unit)",C630H945N45O630P45,-45.0,,,
+"teichuronic acid (n=45), unlinked, GalNAc-GlcA repeated",MG075,Cell Envelope Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+"teichuronic acid (n=45), unlinked, GalNAc-GlcA repeated",MG075,Cell Envelope Biosynthesis,udp,UDP,C9H11N2O12P2,-3.0,C9H14N2O12P2,C00015,58-98-0
+thiol peroxidase,MG124,thiol peroxidase pathway,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+thiol peroxidase,MG124,thiol peroxidase pathway,h2o2,Hydrogen peroxide,H2O2,0.0,,C00027,7722-84-1
+thiol peroxidase,MG124,thiol peroxidase pathway,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+thiol peroxidase,MG124,thiol peroxidase pathway,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+Threonyl-tRNA synthetase,MG375,Threonine and Lysine Metabolism,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Threonyl-tRNA synthetase,MG375,Threonine and Lysine Metabolism,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Threonyl-tRNA synthetase,MG375,Threonine and Lysine Metabolism,thr-L,L-Threonine,C4H9NO3,0.0,C4H9NO3,C00188,72-19-5
+Threonyl-tRNA synthetase,MG375,Threonine and Lysine Metabolism,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Threonyl-tRNA synthetase,MG375,Threonine and Lysine Metabolism,thrtrna,L-Threonyl-tRNA(Thr),C4H8NO2R,1.0,,C02992,
+Threonyl-tRNA synthetase,MG375,Threonine and Lysine Metabolism,trnathr,tRNA(Thr),HOR,0.0,,C01651,
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,cys-L,L-Cysteine,C3H7NO2S,0.0,C3H7NO2S,C00097,52-90-4
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,dxyl5p,1-deoxy-D-xylulose 5-phosphate,C5H9O7P,-2.0,C5H11O7P,C11437,
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,ala-L,L-Alanine,C3H7NO2,0.0,C3H7NO2,C00041,56-41-7
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,co2,CO2,CO2,0.0,,C00011,124-38-9
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,tyr-L,L-Tyrosine,C9H11NO3,0.0,C9H11NO3,C00082,60-18-4
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,h,H+,H,1.0,,C00080,12408-02-5
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,4mpetz,4-Methyl-5-(2-phosphoethyl)-thiazole,C6H8NO4PS,-2.0,C6H10NO4PS,C04327,
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,4hba,4-Hydroxy-benzyl alcohol,C7H8O2,0.0,,,
+thiazole phosphate synthesis,MG372,Cofactor and Prosthetic Group Biosynthesis,h2o,H2O,H2O,0.0,,C00001,7732-18-5
+transketolase,MG066,Carbohydrates and related molecules,s7p,Sedoheptulose 7-phosphate,C7H13O10P,-2.0,C7H15O10P,C00281,
+transketolase,MG066,Carbohydrates and related molecules,r5p,alpha-D-Ribose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00117,4300-28-1
+transketolase,MG066,Carbohydrates and related molecules,g3p,Glyceraldehyde 3-phosphate,C3H5O6P,-2.0,C3H7O6P,C00661,142-10-9
+transketolase,MG066,Carbohydrates and related molecules,xu5p-D,D-Xylulose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00231,
+transketolase,MG066,Carbohydrates and related molecules,g3p,Glyceraldehyde 3-phosphate,C3H5O6P,-2.0,C3H7O6P,C00661,142-10-9
+transketolase,MG066,Carbohydrates and related molecules,xu5p-D,D-Xylulose 5-phosphate,C5H9O8P,-2.0,C5H11O8P,C00231,
+transketolase,MG066,Carbohydrates and related molecules,e4p,D-Erythrose 4-phosphate,C4H7O7P,-2.0,C4H9O7P,C00279,585-18-2
+transketolase,MG066,Carbohydrates and related molecules,f6p,D-Fructose 6-phosphate,C6H11O9P,-2.0,C6H13O9P,C00085,643-13-0
+thymidine kinase (ATP:thymidine),MG034,Nucleotide Salvage Pathway,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+thymidine kinase (ATP:thymidine),MG034,Nucleotide Salvage Pathway,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+thymidine kinase (ATP:thymidine),MG034,Nucleotide Salvage Pathway,h,H+,H,1.0,,C00080,12408-02-5
+thymidine kinase (ATP:thymidine),MG034,Nucleotide Salvage Pathway,thymd,Thymidine,C10H14N2O5,0.0,,C00214,50-89-5
+thymidine kinase (ATP:thymidine),MG034,Nucleotide Salvage Pathway,dtmp,dTMP,C10H13N2O8P,-2.0,C10H15N2O8P,C00364,365-07-1
+thymidine phosphorylase,MG051,Nucleotides and nucleic acids,thym,Thymine,C5H6N2O2,0.0,,C00178,65-71-4
+thymidine phosphorylase,MG051,Nucleotides and nucleic acids,pi,Phosphate,HO4P,-2.0,H3O4P,C00009,14265-44-2
+thymidine phosphorylase,MG051,Nucleotides and nucleic acids,thymd,Thymidine,C10H14N2O5,0.0,,C00214,50-89-5
+thymidine phosphorylase,MG051,Nucleotides and nucleic acids,2dr1p,2-Deoxy-D-ribose 1-phosphate,C5H9O7P,-2.0,C5H11O7P,C00672,
+thymidylate synthase,MG227,Nucleotides and nucleic acids,mlthf,"5,10-Methylenetetrahydrofolate",C20H21N7O6,-2.0,C20H23N7O6,C00143,
+thymidylate synthase,MG227,Nucleotides and nucleic acids,dump,dUMP,C9H11N2O8P,-2.0,C9H13N2O8P,C00365,964-26-1
+thymidylate synthase,MG227,Nucleotides and nucleic acids,dhf,"7,8-Dihydrofolate",C19H19N7O6,-2.0,C19H21N7O6,C00415,4033-27-6
+thymidylate synthase,MG227,Nucleotides and nucleic acids,dtmp,dTMP,C10H13N2O8P,-2.0,C10H15N2O8P,C00364,365-07-1
+triose-phosphate isomerase,MG431,Carbohydrates and related molecules,dhap,Dihydroxyacetone phosphate,C3H5O6P,-2.0,C3H7O6P,C00111,1957-04-05 00:00:00
+triose-phosphate isomerase,MG431,Carbohydrates and related molecules,g3p,Glyceraldehyde 3-phosphate,C3H5O6P,-2.0,C3H7O6P,C00661,142-10-9
+thioredoxin reductase (NADPH),MG102,Membrane bioenergetics,trdox,Oxidized thioredoxin,C6H7NO2S2R2,0.0,,C00343,
+thioredoxin reductase (NADPH),MG102,Membrane bioenergetics,trdrd,Reduced thioredoxin,C6H9NO2S2R2,0.0,,C00342,
+thioredoxin reductase (NADPH),MG102,Membrane bioenergetics,nadph,Nicotinamide adenine dinucleotide phosphate - reduced,C21H26N7O17P3,-4.0,C21H30N7O17P3,C00005,2646-71-1
+thioredoxin reductase (NADPH),MG102,Membrane bioenergetics,h,H+,H,1.0,,C00080,12408-02-5
+thioredoxin reductase (NADPH),MG102,Membrane bioenergetics,nadp,Nicotinamide adenine dinucleotide phosphate,C21H25N7O17P3,-3.0,,C00006,53-59-8
+trehalose transport via PEP:Pyr PTS,MG041,Transport,tre6p,"alpha,alpha'-Trehalose 6-phosphate",C12H21O14P,-2.0,C12H23O14P,C00689,4484-88-2
+trehalose transport via PEP:Pyr PTS,MG041,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+trehalose transport via PEP:Pyr PTS,MG041,Transport,tre,Trehalose,C12H22O11,0.0,,C01083,99-20-7
+trehalose transport via PEP:Pyr PTS,MG041,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+trehalose transport via PEP:Pyr PTS,MG429,Transport,tre6p,"alpha,alpha'-Trehalose 6-phosphate",C12H21O14P,-2.0,C12H23O14P,C00689,4484-88-2
+trehalose transport via PEP:Pyr PTS,MG429,Transport,pep,Phosphoenolpyruvate,C3H2O6P,-3.0,C3H5O6P,C00074,138-08-9
+trehalose transport via PEP:Pyr PTS,MG429,Transport,tre,Trehalose,C12H22O11,0.0,,C01083,99-20-7
+trehalose transport via PEP:Pyr PTS,MG429,Transport,pyr,Pyruvate,C3H3O3,-1.0,C3H4O3,C00022,127-17-3
+Tryptophanyl-tRNA synthetase,MG126,tRNA Charging,trptrna,L-Tryptophanyl-tRNA(Trp),C11H11N2OR,1.0,,C03512,
+Tryptophanyl-tRNA synthetase,MG126,tRNA Charging,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Tryptophanyl-tRNA synthetase,MG126,tRNA Charging,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Tryptophanyl-tRNA synthetase,MG126,tRNA Charging,trnatrp,tRNA(Trp),HOR,0.0,,C01652,
+Tryptophanyl-tRNA synthetase,MG126,tRNA Charging,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Tryptophanyl-tRNA synthetase,MG126,tRNA Charging,trp-L,L-Tryptophan,C11H12N2O2,0.0,C11H12N2O2,C00078,73-22-3
+Tyrosyl-tRNA synthetase,MG455,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Tyrosyl-tRNA synthetase,MG455,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Tyrosyl-tRNA synthetase,MG455,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",trnatyr,tRNA(Tyr),HOR,0.0,,C00787,
+Tyrosyl-tRNA synthetase,MG455,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",tyr-L,L-Tyrosine,C9H11NO3,0.0,C9H11NO3,C00082,60-18-4
+Tyrosyl-tRNA synthetase,MG455,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+Tyrosyl-tRNA synthetase,MG455,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",tyrtrna,L-Tyrosyl-tRNA(Tyr),C9H10NO2R,1.0,,C02839,
+UDP-N-acetylglucosamine 4-epimerase,MG118,Carbohydrates and related molecules,uacgala,UDP-N-acetyl-D-galactosamine,C17H25N3O17P2,-2.0,C17H27N3O17P2,C00203,
+UDP-N-acetylglucosamine 4-epimerase,MG118,Carbohydrates and related molecules,uacgam,UDP-N-acetyl-D-glucosamine,C17H25N3O17P2,-2.0,C17H27N3O17P2,C00043,
+UDPglucose 4-epimerase,MG118,Carbohydrates and related molecules,udpg,UDPglucose,C15H22N2O17P2,-2.0,C15H24N2O17P2,C00029,
+UDPglucose 4-epimerase,MG118,Carbohydrates and related molecules,udpgal,UDPgalactose,C15H22N2O17P2,-2.0,C15H24N2O17P2,C00052,
+UDPgalactopyranose mutase,MG137,Cell Envelope Biosynthesis,udpgalfur,"UDP-D-galacto-1,4-furanose",C15H22N2O17P2,-2.0,C15H24N2O17P2,C03733,638-23-3
+UDPgalactopyranose mutase,MG137,Cell Envelope Biosynthesis,udpgal,UDPgalactose,C15H22N2O17P2,-2.0,C15H24N2O17P2,C00052,
+uracil phosphoribosyltransferase,MG030,Nucleotides and nucleic acids,ura,Uracil,C4H4N2O2,0.0,,C00106,66-22-8
+uracil phosphoribosyltransferase,MG030,Nucleotides and nucleic acids,prpp,5-Phospho-alpha-D-ribose 1-diphosphate,C5H8O14P3,-5.0,C5H13O14P3,C00119,
+uracil phosphoribosyltransferase,MG030,Nucleotides and nucleic acids,ump,UMP,C9H11N2O9P,-2.0,C9H13N2O9P,C00105,58-97-9
+uracil phosphoribosyltransferase,MG030,Nucleotides and nucleic acids,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00
+uridylate kinase (UMP),MG330,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+uridylate kinase (UMP),MG330,Nucleotides and nucleic acids,udp,UDP,C9H11N2O12P2,-3.0,C9H14N2O12P2,C00015,58-98-0
+uridylate kinase (UMP),MG330,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+uridylate kinase (UMP),MG330,Nucleotides and nucleic acids,ump,UMP,C9H11N2O9P,-2.0,C9H13N2O9P,C00105,58-97-9
+uridylate kinase (UMP),MG434,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+uridylate kinase (UMP),MG434,Nucleotides and nucleic acids,udp,UDP,C9H11N2O12P2,-3.0,C9H14N2O12P2,C00015,58-98-0
+uridylate kinase (UMP),MG434,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+uridylate kinase (UMP),MG434,Nucleotides and nucleic acids,ump,UMP,C9H11N2O9P,-2.0,C9H13N2O9P,C00105,58-97-9
+uridylate kinase (dUMP),MG330,Nucleotides and nucleic acids,dudp,dUDP,C9H11N2O11P2,-3.0,C9H14N2O11P2,C01346,
+uridylate kinase (dUMP),MG330,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+uridylate kinase (dUMP),MG330,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+uridylate kinase (dUMP),MG330,Nucleotides and nucleic acids,dump,dUMP,C9H11N2O8P,-2.0,C9H13N2O8P,C00365,964-26-1
+uridylate kinase (dUMP),MG434,Nucleotides and nucleic acids,dudp,dUDP,C9H11N2O11P2,-3.0,C9H14N2O11P2,C01346,
+uridylate kinase (dUMP),MG434,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+uridylate kinase (dUMP),MG434,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+uridylate kinase (dUMP),MG434,Nucleotides and nucleic acids,dump,dUMP,C9H11N2O8P,-2.0,C9H13N2O8P,C00365,964-26-1
+uridine kinase (ATP:Uridine),MG382,Nucleotides and nucleic acids,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+uridine kinase (ATP:Uridine),MG382,Nucleotides and nucleic acids,ump,UMP,C9H11N2O9P,-2.0,C9H13N2O9P,C00105,58-97-9
+uridine kinase (ATP:Uridine),MG382,Nucleotides and nucleic acids,uri,Uridine,C9H12N2O6,0.0,,C00299,58-96-8
+uridine kinase (ATP:Uridine),MG382,Nucleotides and nucleic acids,adp,ADP,C10H12N5O10P2,-3.0,C10H15N5O10P2,C00008,58-64-0
+uridine kinase (ATP:Uridine),MG382,Nucleotides and nucleic acids,h,H+,H,1.0,,C00080,12408-02-5
+uridine kinase (GTP:Uridine),MG382,Nucleotides and nucleic acids,ump,UMP,C9H11N2O9P,-2.0,C9H13N2O9P,C00105,58-97-9
+uridine kinase (GTP:Uridine),MG382,Nucleotides and nucleic acids,uri,Uridine,C9H12N2O6,0.0,,C00299,58-96-8
+uridine kinase (GTP:Uridine),MG382,Nucleotides and nucleic acids,gdp,GDP,C10H12N5O11P2,-3.0,C10H15N5O11P2,C00035,146-91-8
+uridine kinase (GTP:Uridine),MG382,Nucleotides and nucleic acids,gtp,GTP,C10H12N5O14P3,-4.0,C10H16N5O14P3,C00044,1986-01-01 00:00:00
+uridine kinase (GTP:Uridine),MG382,Nucleotides and nucleic acids,h,H+,H,1.0,,C00080,12408-02-5
+uridine kinase (ITP:Uridine),MG382,Nucleotides and nucleic acids,ump,UMP,C9H11N2O9P,-2.0,C9H13N2O9P,C00105,58-97-9
+uridine kinase (ITP:Uridine),MG382,Nucleotides and nucleic acids,itp,ITP,C10H11N4O14P3,-4.0,C10H15N4O14P3,C00081,132-06-9
+uridine kinase (ITP:Uridine),MG382,Nucleotides and nucleic acids,uri,Uridine,C9H12N2O6,0.0,,C00299,58-96-8
+uridine kinase (ITP:Uridine),MG382,Nucleotides and nucleic acids,h,H+,H,1.0,,C00080,12408-02-5
+uridine kinase (ITP:Uridine),MG382,Nucleotides and nucleic acids,idp,IDP,C10H11N4O11P2,-3.0,C10H14N4O11P2,C00104,1986-04-04 00:00:00
+Valyl-tRNA synthetase,MG334,tRNA Charging,amp,AMP,C10H12N5O7P,-2.0,C10H14N5O7P,C00020,61-19-8
+Valyl-tRNA synthetase,MG334,tRNA Charging,atp,ATP,C10H12N5O13P3,-4.0,C10H16N5O13P3,C00002,56-65-5
+Valyl-tRNA synthetase,MG334,tRNA Charging,val-L,L-Valine,C5H11NO2,0.0,C5H11NO2,C00183,72-18-4
+Valyl-tRNA synthetase,MG334,tRNA Charging,trnaval,tRNA(Val),HOR,0.0,,C01653,
+Valyl-tRNA synthetase,MG334,tRNA Charging,valtrna,L-Valyl-tRNA(Val),C5H10NOR,1.0,,C02554,
+Valyl-tRNA synthetase,MG334,tRNA Charging,ppi,Diphosphate,HO7P2,-3.0,H4O7P2,C00013,2466-09-03 00:00:00

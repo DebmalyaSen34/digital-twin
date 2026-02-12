@@ -1,0 +1,266 @@
+ID,Name,Equation,Pathway,Protein,Gene
+ACGApts,N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,acgam[e] + pep[c] --> acgam6p[c] + pyr[c],Transport,,MG041
+ACGApts,N-Acetyl-D-glucosamine transport via PEP:Pyr PTS,acgam[e] + pep[c] --> acgam6p[c] + pyr[c],Transport,,MG429
+ACKr,acetate kinase,[c] : ac + atp <==> actp + adp,Carbohydrates and related molecules,EC-2.7.2.1,MG357
+ADK1,adenylate kinase,[c] : amp + atp <==> (2) adp,Nucleotide Metabolism,EC-2.7.4.3,MG171
+ADK2,adenylate kinase (Inorganic triphosphate),[c] : amp + pppi <==> adp + ppi,Nucleotide Metabolism,EC-2.7.4.3,MG171
+ADPT,adenine phosphoribosyltransferase,[c] : ade + prpp --> amp + ppi,Nucleotide Metabolism,EC-2.4.2.7,MG276
+AGPAT,1-acylglycerol-3-phosphate O-acyltransferase,[c] : 1ag3p + acoa --> 12dag3p + coa,Lipid & Cell Membrane Metabolism,EC-2.3.1.51,MG212
+AKGD,2-oxoglutarate dehydrogenase,[c] : akg + coa + nad --> co2 + nadh + succoa,Carbohydrates and related molecules,,MG271
+ALATRS,Alanyl-tRNA synthetase,[c] : ala-L + atp + trnaala --> alatrna + amp + ppi,Alanine Metabolism,EC-6.1.1.7,MG292
+ARBTpts,arbutin transport via PEP:Pyr PTS,arbt[e] + pep[c] --> arbt6p[c] + pyr[c],Transport,,MG041
+ARBTpts,arbutin transport via PEP:Pyr PTS,arbt[e] + pep[c] --> arbt6p[c] + pyr[c],Transport,,MG429
+ARGTRS,Arginyl-tRNA synthetase,[c] : arg-L + atp + trnaarg --> amp + argtrna + ppi,Amino acids and related molecules,EC-6.1.1.19,MG378
+ASNTRS,Asparaginyl-tRNA synthetase,[c] : asn-L + atp + trnaasn --> amp + asntrna + ppi,tRNA Charging,EC-6.1.1.22,MG113
+ASPTRS,Aspartyl-tRNA synthetase,[c] : asp-L + atp + trnaasp --> amp + asptrna + ppi,tRNA Charging,EC-6.1.1.12,MG036
+ATPHs,ATP amine hydrolysis (spontaneous),[c] : atp + h + h2o --> itp + nh4,Nucleotide Salvage Pathway,,s0001
+ATPS4r,ATP synthase (four protons for one ATP),adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c],Oxidative Phosphorylation,"EC-3.6.3.14, ",MG399
+ATPS4r,ATP synthase (four protons for one ATP),adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c],Oxidative Phosphorylation,"EC-3.6.3.14, ",MG400
+ATPS4r,ATP synthase (four protons for one ATP),adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c],Oxidative Phosphorylation,"EC-3.6.3.14, ",MG401
+ATPS4r,ATP synthase (four protons for one ATP),adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c],Oxidative Phosphorylation,"EC-3.6.3.14, ",MG402
+ATPS4r,ATP synthase (four protons for one ATP),adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c],Oxidative Phosphorylation,"EC-3.6.3.14, ",MG403
+ATPS4r,ATP synthase (four protons for one ATP),adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c],Oxidative Phosphorylation,"EC-3.6.3.14, ",MG404
+ATPS4r,ATP synthase (four protons for one ATP),adp[c] + (4) h[e] + pi[c] <==> atp[c] + (3) h[c] + h2o[c],Oxidative Phosphorylation,"EC-3.6.3.14, ",MG405
+CA2abc,calcium efflux  via ABC system,atp[c] + ca2[e] + h2o[c] --> adp[c] + ca2[c] + h[c] + pi[c],Transport,,MG071
+CDGPT,CDPdiacylglycerol:sn-glycerol-3-phosphate 3-phosphatidyltransferase,[c] : cdpdag + glyc3p --> cmp + h + pglyp,Lipid & Cell Membrane Metabolism,EC-2.7.8.5,MG114
+CELBpts,cellobiose transport via PEP:Pyr PTS,cellb[e] + pep[c] --> 6pgg[c] + pyr[c],Transport,,MG041
+CELBpts,cellobiose transport via PEP:Pyr PTS,cellb[e] + pep[c] --> 6pgg[c] + pyr[c],Transport,,MG429
+CHOLK,Choline kinase,[c] : atp + chol --> adp + cholp + h,Cell Envelope Biosynthesis,EC-2.7.1.32,MG356
+CO2t,CO2 transporter via diffusion,co2[e] <==> co2[c],Transport,,s0001
+Coabc,Cobalt transport via ABC system,atp[c] + cobalt2[e] + h2o[c] --> adp[c] + cobalt2[c] + h[c] + pi[c],Transport,,MG179
+Coabc,Cobalt transport via ABC system,atp[c] + cobalt2[e] + h2o[c] --> adp[c] + cobalt2[c] + h[c] + pi[c],Transport,,MG180
+Coabc,Cobalt transport via ABC system,atp[c] + cobalt2[e] + h2o[c] --> adp[c] + cobalt2[c] + h[c] + pi[c],Transport,,MG181
+CYSTRS,Cysteinyl-tRNA synthetase,[c] : atp + cys-L + trnacys --> amp + cystrna + ppi,tRNA Charging,EC-6.1.1.16,MG253
+CYTD,cytidine deaminase,[c] : cytd + h + h2o --> nh4 + uri,Purine and Pyrimidine Biosynthesis,EC-3.5.4.5,MG052
+CYTDK1,cytidine kinase (ATP),[c] : atp + cytd --> adp + cmp + h,Nucleotides and nucleic acids,,MG382
+CYTDK2,cytidine kinase (GTP),[c] : cytd + gtp --> cmp + gdp + h,Nucleotides and nucleic acids,,MG382
+CYTDK3,cytidine kinase (ITP),[c] : cytd + itp --> cmp + h + idp,Nucleotides and nucleic acids,,MG382
+CYTK1,cytidylate kinase (CMP),[c] : atp + cmp <==> adp + cdp,Nucleotides and nucleic acids,EC-2.7.4.14,MG330
+CYTK2,cytidylate kinase (dCMP),[c] : atp + dcmp <==> adp + dcdp,Nucleotides and nucleic acids,EC-2.7.4.14,MG330
+DADK,deoxyadenylate kinase,[c] : atp + damp <==> adp + dadp,Nucleotide Metabolism,EC-2.7.4.11,MG171
+DATPHs,dATP amine hydrolysis (spontaneous),[c] : datp + h + h2o --> ditp + nh4,Nucleotide Salvage Pathway,,s0001
+DCYTD,deoxycytidine deaminase,[c] : dcyt + h + h2o --> duri + nh4,Nucleotide Salvage Pathways,EC-3.5.4.14,MG052
+DGK1,deoxyguanylate kinase (dGMP:ATP),[c] : atp + dgmp <==> adp + dgdp,Nucleotides and nucleic acids,,MG107
+DHFOR2,dihydrofolate reductase,[c] : dhf + nadp <==> fol + nadph,Vitamins & Cofactor Biosynthesis,EC-1.5.1.3,MG228
+DHFOR3,dihydrofolate reductase,[c] : fol + h + (2) nadph <==> (2) nadp + thf,Vitamins & Cofactor Biosynthesis,EC-1.5.1.3,MG228
+DHFR,dihydrofolate reductase,[c] : dhf + h + nadph <==> nadp + thf,Vitamins & Cofactor Biosynthesis,EC-1.5.1.3,MG228
+DIPEPabc1,Dipeptide transport via ABC system (ala-asp),ala-L-asp-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-asp-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc1,Dipeptide transport via ABC system (ala-asp),ala-L-asp-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-asp-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc1,Dipeptide transport via ABC system (ala-asp),ala-L-asp-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-asp-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc1,Dipeptide transport via ABC system (ala-asp),ala-L-asp-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-asp-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc10,Dipeptide transport via ABC system (gly-glu),atp[c] + gly-glu-L[e] + h2o[c] --> adp[c] + gly-glu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc10,Dipeptide transport via ABC system (gly-glu),atp[c] + gly-glu-L[e] + h2o[c] --> adp[c] + gly-glu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc10,Dipeptide transport via ABC system (gly-glu),atp[c] + gly-glu-L[e] + h2o[c] --> adp[c] + gly-glu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc10,Dipeptide transport via ABC system (gly-glu),atp[c] + gly-glu-L[e] + h2o[c] --> adp[c] + gly-glu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc11,Dipeptide transport via ABC system (gly-met),atp[c] + gly-met-L[e] + h2o[c] --> adp[c] + gly-met-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc11,Dipeptide transport via ABC system (gly-met),atp[c] + gly-met-L[e] + h2o[c] --> adp[c] + gly-met-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc11,Dipeptide transport via ABC system (gly-met),atp[c] + gly-met-L[e] + h2o[c] --> adp[c] + gly-met-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc11,Dipeptide transport via ABC system (gly-met),atp[c] + gly-met-L[e] + h2o[c] --> adp[c] + gly-met-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc12,Dipeptide transport via ABC system (met-ala),atp[c] + h2o[c] + met-L-ala-L[e] --> adp[c] + h[c] + met-L-ala-L[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc12,Dipeptide transport via ABC system (met-ala),atp[c] + h2o[c] + met-L-ala-L[e] --> adp[c] + h[c] + met-L-ala-L[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc12,Dipeptide transport via ABC system (met-ala),atp[c] + h2o[c] + met-L-ala-L[e] --> adp[c] + h[c] + met-L-ala-L[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc12,Dipeptide transport via ABC system (met-ala),atp[c] + h2o[c] + met-L-ala-L[e] --> adp[c] + h[c] + met-L-ala-L[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc13,Dipeptide transport via ABC system (gly-asp),atp[c] + gly-asp-L[e] + h2o[c] --> adp[c] + gly-asp-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc13,Dipeptide transport via ABC system (gly-asp),atp[c] + gly-asp-L[e] + h2o[c] --> adp[c] + gly-asp-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc13,Dipeptide transport via ABC system (gly-asp),atp[c] + gly-asp-L[e] + h2o[c] --> adp[c] + gly-asp-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc13,Dipeptide transport via ABC system (gly-asp),atp[c] + gly-asp-L[e] + h2o[c] --> adp[c] + gly-asp-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc14,Dipeptide transport via ABC system (gly-pro-L),atp[c] + gly-pro-L[e] + h2o[c] --> adp[c] + gly-pro-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc14,Dipeptide transport via ABC system (gly-pro-L),atp[c] + gly-pro-L[e] + h2o[c] --> adp[c] + gly-pro-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc14,Dipeptide transport via ABC system (gly-pro-L),atp[c] + gly-pro-L[e] + h2o[c] --> adp[c] + gly-pro-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc14,Dipeptide transport via ABC system (gly-pro-L),atp[c] + gly-pro-L[e] + h2o[c] --> adp[c] + gly-pro-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc15,Dipeptide transport via ABC system (cgly),atp[c] + cgly[e] + h2o[c] --> adp[c] + cgly[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc15,Dipeptide transport via ABC system (cgly),atp[c] + cgly[e] + h2o[c] --> adp[c] + cgly[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc15,Dipeptide transport via ABC system (cgly),atp[c] + cgly[e] + h2o[c] --> adp[c] + cgly[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc15,Dipeptide transport via ABC system (cgly),atp[c] + cgly[e] + h2o[c] --> adp[c] + cgly[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc2,Dipeptide transport via ABC system (ala-gln),ala-L-gln-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-gln-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc2,Dipeptide transport via ABC system (ala-gln),ala-L-gln-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-gln-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc2,Dipeptide transport via ABC system (ala-gln),ala-L-gln-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-gln-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc2,Dipeptide transport via ABC system (ala-gln),ala-L-gln-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-gln-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc3,Dipeptide transport via ABC system (ala-glu),ala-L-glu-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-glu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc3,Dipeptide transport via ABC system (ala-glu),ala-L-glu-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-glu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc3,Dipeptide transport via ABC system (ala-glu),ala-L-glu-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-glu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc3,Dipeptide transport via ABC system (ala-glu),ala-L-glu-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-glu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc4,Dipeptide transport via ABC system (ala-gly),L-alagly[e] + atp[c] + h2o[c] --> L-alagly[c] + adp[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc4,Dipeptide transport via ABC system (ala-gly),L-alagly[e] + atp[c] + h2o[c] --> L-alagly[c] + adp[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc4,Dipeptide transport via ABC system (ala-gly),L-alagly[e] + atp[c] + h2o[c] --> L-alagly[c] + adp[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc4,Dipeptide transport via ABC system (ala-gly),L-alagly[e] + atp[c] + h2o[c] --> L-alagly[c] + adp[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc5,Dipeptide transport via ABC system (ala-his),ala-L-his-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-his-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc5,Dipeptide transport via ABC system (ala-his),ala-L-his-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-his-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc5,Dipeptide transport via ABC system (ala-his),ala-L-his-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-his-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc5,Dipeptide transport via ABC system (ala-his),ala-L-his-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-his-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc6,Dipeptide transport via ABC system (ala-leu),ala-L-leu-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-leu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc6,Dipeptide transport via ABC system (ala-leu),ala-L-leu-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-leu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc6,Dipeptide transport via ABC system (ala-leu),ala-L-leu-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-leu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc6,Dipeptide transport via ABC system (ala-leu),ala-L-leu-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-leu-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc7,Dipeptide transport via ABC system (ala-thr),ala-L-Thr-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-Thr-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc7,Dipeptide transport via ABC system (ala-thr),ala-L-Thr-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-Thr-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc7,Dipeptide transport via ABC system (ala-thr),ala-L-Thr-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-Thr-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc7,Dipeptide transport via ABC system (ala-thr),ala-L-Thr-L[e] + atp[c] + h2o[c] --> adp[c] + ala-L-Thr-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc8,Dipeptide transport via ABC system (gly-asn),atp[c] + gly-asn-L[e] + h2o[c] --> adp[c] + gly-asn-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc8,Dipeptide transport via ABC system (gly-asn),atp[c] + gly-asn-L[e] + h2o[c] --> adp[c] + gly-asn-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc8,Dipeptide transport via ABC system (gly-asn),atp[c] + gly-asn-L[e] + h2o[c] --> adp[c] + gly-asn-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc8,Dipeptide transport via ABC system (gly-asn),atp[c] + gly-asn-L[e] + h2o[c] --> adp[c] + gly-asn-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DIPEPabc9,Dipeptide transport via ABC system (gly-gln),atp[c] + gly-gln-L[e] + h2o[c] --> adp[c] + gly-gln-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG077
+DIPEPabc9,Dipeptide transport via ABC system (gly-gln),atp[c] + gly-gln-L[e] + h2o[c] --> adp[c] + gly-gln-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG078
+DIPEPabc9,Dipeptide transport via ABC system (gly-gln),atp[c] + gly-gln-L[e] + h2o[c] --> adp[c] + gly-gln-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG079
+DIPEPabc9,Dipeptide transport via ABC system (gly-gln),atp[c] + gly-gln-L[e] + h2o[c] --> adp[c] + gly-gln-L[c] + h[c] + pi[c],Transport,TC-3.A.1.5,MG080
+DRPAr,Deoxyribose-phosphate aldolase,[c] : 2dr5p <==> acald + g3p,Nucleotides and nucleic acids,EC-4.1.2.4,MG050
+DTMPK,dTMP kinase,[c] : atp + dtmp <==> adp + dtdp,Nucleotides and nucleic acids,EC-2.7.4.9,MG006
+DURIPP,purine-nucleoside phosphatase (deoxyuridine),[c] : duri + pi <==> 2dr1p + ura,Nucleotides and nucleic acids,EC-2.4.2.2,MG051
+DXPS,1-deoxy-D-xylulose 5-phosphate synthase,[c] : g3p + h + pyr --> co2 + dxyl5p,Carbohydrates and related molecules,,MG066
+ENO,enolase,[c] : 2pg <==> h2o + pep,Central Metabolism,EC-4.2.1.11,MG407
+F1PK,fructose-1-phosphate kinase,[c] : atp + f1p --> adp + fdp + h,Carbohydrates and related molecules,EC-2.7.1.56,MG063
+FBA,fructose-bisphosphate aldolase,[c] : fdp <==> dhap + g3p,Carbohydrates and related molecules,EC-4.1.2.13,MG023
+FBA2,D-Fructose 1-phosphate D-glyceraldehyde-3-phosphate-lyase,[c] : f1p <==> dhap + glyald,Carbohydrates and related molecules,EC-4.1.2.13,MG023
+FMETTRS,Methionyl-tRNA formyltransferase,[c] : 10fthf + mettrna --> fmettrna + thf,Amino acids and related molecules,EC-2.1.2.9,MG365
+FMNATr,FMN adenylyltransferase,[c] : atp + fmn + h <==> fad + ppi,Coenzymes and prosthetic groups,EC-2.7.7.2,MG145
+FRUpts,D-fructose transport via PEP:Pyr PTS,fru[e] + pep[c] --> f1p[c] + pyr[c],Transport,,MG429
+FRUpts,D-fructose transport via PEP:Pyr PTS,fru[e] + pep[c] --> f1p[c] + pyr[c],Transport,,MG062
+FRUpts,D-fructose transport via PEP:Pyr PTS,fru[e] + pep[c] --> f1p[c] + pyr[c],Transport,,MG041
+G3PD4,glycerol-3-phosphate dehydrogenase (menaquinone 7),[c] : glyc3p + mqn7 --> dhap + mql7,Carbohydrates and related molecules,EC-1.1.99.5,MG260
+G6PI,Glucose-6-phosphate isomerase,[c] : g6p <==> g6p-B,Carbohydrates and related molecules,EC-5.3.1.9,MG111
+GALabc,D-galactose transport via ABC system,atp[c] + gal[e] + h2o[c] --> adp[c] + gal[c] + h[c] + pi[c],Transport,,MG119
+GALU,UTP-glucose-1-phosphate uridylyltransferase,[c] : g1p + h + utp <==> ppi + udpg,Lipid & Cell Membrane Metabolism,EC-2.7.7.9,MG453
+GAMpts,D-glucosamine transport via PEP:Pyr PTS,gam[e] + pep[c] --> gam6p[c] + pyr[c],Transport,,MG041
+GAMpts,D-glucosamine transport via PEP:Pyr PTS,gam[e] + pep[c] --> gam6p[c] + pyr[c],Transport,,MG429
+GAPD,glyceraldehyde-3-phosphate dehydrogenase (NAD),[c] : g3p + nad + pi <==> 13dpg + h + nadh,Central Metabolism,EC-1.2.1.12,MG301
+GHMT,glycine hydroxymethyltransferase,[c] : ser-L + thf <==> gly + h2o + mlthf,Amino Acid Metabolism,EC-2.1.2.1,MG394
+GK1,guanylate kinase (GMP:ATP),[c] : atp + gmp <==> adp + gdp,Nucleotides and nucleic acids,EC-2.7.4.8,MG107
+GK2,guanylate kinase (GMP:dATP),[c] : datp + gmp <==> dadp + gdp,Nucleotides and nucleic acids,EC-2.7.4.8,MG107
+GLCpts,D-glucose transport via PEP:Pyr PTS,glc-D[e] + pep[c] --> g6p[c] + pyr[c],Transport,,MG429
+GLCpts,D-glucose transport via PEP:Pyr PTS,glc-D[e] + pep[c] --> g6p[c] + pyr[c],Transport,,MG069
+GLCpts,D-glucose transport via PEP:Pyr PTS,glc-D[e] + pep[c] --> g6p[c] + pyr[c],Transport,,MG041
+GLNMT,glutamine-N5 methyltransferase,[c] : gln-L + amet --> ahcys + C03153,glutamine-N5 methyltransferase pathway,,MG259
+GLUTRS,Glutamyl-tRNA synthetase,[c] : atp + glu-L + trnaglu --> amp + glutrna + ppi,Other function,EC-6.1.1.17,MG462
+GLXAT,glutamyl-tRNA(Gln) amidotransferase,[c] : atp + gln-L + glutrna <==> glu-L + adp + glntrna + pi,Amino acids and related molecules,,MG098
+GLXAT,glutamyl-tRNA(Gln) amidotransferase,[c] : atp + gln-L + glutrna <==> glu-L + adp + glntrna + pi,Amino acids and related molecules,,MG099
+GLXAT,glutamyl-tRNA(Gln) amidotransferase,[c] : atp + gln-L + glutrna <==> glu-L + adp + glntrna + pi,Amino acids and related molecules,,MG100
+GLYC3Pabc,sn-Glycerol 3-phosphate transport via ABC system,atp[c] + glyc3p[e] + h2o[c] --> adp[c] + glyc3p[c] + h[c] + pi[c],Transport,,MG187
+GLYC3Pabc,sn-Glycerol 3-phosphate transport via ABC system,atp[c] + glyc3p[e] + h2o[c] --> adp[c] + glyc3p[c] + h[c] + pi[c],Transport,,MG188
+GLYC3Pabc,sn-Glycerol 3-phosphate transport via ABC system,atp[c] + glyc3p[e] + h2o[c] --> adp[c] + glyc3p[c] + h[c] + pi[c],Transport,,MG189
+GLYCt,glycerol transport,glyc[c] <==> glyc[e],Transport,,MG033
+GLYK,glycerol kinase,[c] : atp + glyc --> adp + glyc3p + h,Alternate Carbon Metabolism,EC-2.7.1.30,MG038
+GLYTRS,Glycyl-tRNA synthetase,[c] : atp + gly + trnagly --> amp + glytrna + ppi,Glycine and Serine Metabolism,EC-6.1.1.14,MG251
+GTPHs,GTP amine hydrolysis (spontaneous),[c] : gtp + h + h2o --> nh4 + xtp,Nucleotide Salvage Pathway,,s0001
+GUAPRTr,guanine phosphoribosyltransferase,[c] : gua + prpp <==> gmp + ppi,Nucleotides and nucleic acids,,MG458
+H2Ot5,H2O transport via diffusion,h2o[e] <==> h2o[c],Transport,,s0001
+HISTRS,Histidyl-tRNA synthetase,[c] : atp + his-L + trnahis --> amp + histrna + ppi,tRNA Charging,EC-6.1.1.21,MG035
+HXPRTr,hypoxanthine phosphoribosyltransferase (Hypoxanthine),[c] : hxan + prpp <==> imp + ppi,Nucleotides and nucleic acids,EC-2.4.2.8,MG458
+ILETRS,Isoleucyl-tRNA synthetase,[c] : atp + ile-L + trnaile --> amp + iletrna + ppi,"Valine, Leucine, and Isoleucine Metabolism",EC-6.1.1.5,MG345
+INSCR,inositol catabolic reactions (lumped),[c] : 2ins + atp --> adp + dhap + (2) h + msa,Carbohydrates and related molecules,,MG023
+Kt2i,potassium irreversible transport via proton symporter,h[e] + k[e] --> h[c] + k[c],Transport,TC-2.A.37,MG323
+LDH_L,L-lactate dehydrogenase,[c] : lac-L + nad <==> h + nadh + pyr,Membrane bioenergetics,EC-1.1.1.27,MG460
+LEUTRS,Leucyl-tRNA synthetase,[c] : atp + leu-L + trnaleu --> amp + leutrna + ppi,"Valine, Leucine, and Isoleucine Metabolism",EC-6.1.1.4,MG266
+LYSTRS,Lysyl-tRNA synthetase,[c] : atp + lys-L + trnalys --> amp + lystrna + ppi,Threonine and Lysine Metabolism,EC-6.1.1.6,MG136
+MALTpts,maltose transport via PEP:Pyr PTS,malt[e] + pep[c] --> malt6p[c] + pyr[c],Transport,,MG041
+MALTpts,maltose transport via PEP:Pyr PTS,malt[e] + pep[c] --> malt6p[c] + pyr[c],Transport,,MG429
+MANpts,D-mannose transport via PEP:Pyr PTS,man[e] + pep[c] --> man6p[c] + pyr[c],Transport,,MG041
+MANpts,D-mannose transport via PEP:Pyr PTS,man[e] + pep[c] --> man6p[c] + pyr[c],Transport,,MG429
+METAT,methionine adenosyltransferase,[c] : atp + h2o + met-L --> amet + pi + ppi,Methionine Metabolism,EC-2.5.1.6,MG047
+METSR-R1,L-methionine R-oxide reductase (trdrd),[c] : metox-R + trdrd --> h2o + met-L + trdox,Amino acids and related molecules,,MG448
+METSR-R2,L-methionine R-oxide (H2O2),[c] : h2o2 + met-L --> h2o + metox-R,Amino acids and related molecules,,MG448
+METSR-S1,L-methionine-S-oxide reductase (trdrd),[c] : metox + trdrd --> h2o + met-L + trdox,Amino acids and related molecules,,MG408
+METSR-S2,L-methionine S-oxide reductase (H2O2),[c] : h2o2 + met-L --> h2o + metox,Amino acids and related molecules,,MG408
+METTRS,Methionyl-tRNA synthetase,[c] : atp + met-L + trnamet --> amp + mettrna + ppi,Other function,EC-6.1.1.10,MG021
+MNLpts,mannitol transport via PEP:Pyr PTS,mnl[e] + pep[c] --> mnl1p[c] + pyr[c],Transport,,MG041
+MNLpts,mannitol transport via PEP:Pyr PTS,mnl[e] + pep[c] --> mnl1p[c] + pyr[c],Transport,,MG429
+MTHFC,methenyltetrahydrofolate cyclohydrolase,[c] : h2o + methf <==> 10fthf + h,Coenzymes and prosthetic groups,EC-3.5.4.9,MG013
+MTHFD,methylenetetrahydrofolate dehydrogenase (NADP),[c] : mlthf + nadp <==> methf + nadph,Coenzymes and prosthetic groups,EC-1.5.1.5,MG013
+NADH5,NADH dehydrogenase (Menaquinone 7 & 2 protons),(3) h[c] + mqn7[c] + nadh[c] --> (2) h[e] + mql7[c] + nad[c],Energy Metabolism,"EC-1.6.5.3, ",MG275
+NADK,NAD kinase,[c] : atp + nad --> adp + h + nadp,Cofactor and Prosthetic Group Biosynthesis,EC-2.7.1.23,MG128
+NADS1,NAD synthase (nh4),[c] : atp + dnad + nh4 --> amp + h + nad + ppi,Vitamins & Cofactor Biosynthesis,EC-6.3.1.5,MG383
+NAMNPP,nicotinic acid mononucleotide pyrophosphorylase,[c] : atp + h2o + nac + prpp --> adp + nicrnt + pi + ppi,Nucleotides and nucleic acids,,MG037
+NH4t,ammonia transport via diffusion,nh4[e] <==> nh4[c],Transport,,s0001
+NIabc,nickel transport via ABC system,atp[c] + h2o[c] + ni2[e] --> adp[c] + h[c] + ni2[c] + pi[c],Transport,,MG077
+NIabc,nickel transport via ABC system,atp[c] + h2o[c] + ni2[e] --> adp[c] + h[c] + ni2[c] + pi[c],Transport,,MG079
+NMNATr,nicotinamide-nucleotide adenylyltransferase,[c] : atp + h + nmn <==> nad + ppi,Coenzymes and prosthetic groups,EC-2.7.7.1,MG240
+NNATr,nicotinate-nucleotide adenylyltransferase,[c] : atp + h + nicrnt <==> dnad + ppi,Coenzymes and prosthetic groups,EC-2.7.7.18,MG240
+OHPHM,2-octaprenyl-6-hydroxyphenol methylase,[c] : 2ohph_5 + amet --> 2omph_5 + ahcys + h,Quinone Biosynthesis,,MG463
+PBUTT,phosphate butyryltransferase,[c] : btcoa + pi <==> butpi + coa,Carbohydrates and related molecules,EC-2.3.1.19,MG299
+PDH,pyruvate dehydrogenase,[c] : coa + nad + pyr --> accoa + co2 + nadh,Central Metabolism,EC-1.2.1.51,MG273
+PDH,pyruvate dehydrogenase,[c] : coa + nad + pyr --> accoa + co2 + nadh,Central Metabolism,EC-1.2.1.51,MG274
+PFK,phosphofructokinase,[c] : atp + f6p --> adp + fdp + h,Glycolysis/Gluconeogenesis,EC-2.7.1.11,MG215
+PGI,glucose-6-phosphate isomerase,[c] : g6p <==> f6p,Carbohydrates and related molecules,EC-5.3.1.9,MG111
+PGK,phosphoglycerate kinase,[c] : 13dpg + adp <==> 3pg + atp,Carbohydrates and related molecules,EC-2.7.2.3,MG300
+PGM,phosphoglycerate mutase,[c] : 3pg <==> 2pg,Carbohydrates and related molecules,EC-5.4.2.1,MG430
+PHETRS,Phenylalanyl-tRNA synthetase,[c] : atp + phe-L + trnaphe --> amp + phetrna + ppi,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",EC-6.1.1.20,MG194
+PHETRS,Phenylalanyl-tRNA synthetase,[c] : atp + phe-L + trnaphe --> amp + phetrna + ppi,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",EC-6.1.1.20,MG195
+PIabc,phosphate transport via ABC system,atp[c] + h2o[c] + pi[e] --> adp[c] + h[c] + (2) pi[c],Transport,TC-3.A.1.7,MG410
+PIabc,phosphate transport via ABC system,atp[c] + h2o[c] + pi[e] --> adp[c] + h[c] + (2) pi[c],Transport,TC-3.A.1.7,MG411
+PMANM,phosphomannomutase,[c] : man1p <==> man6p,Carbohydrates and related molecules,EC-5.4.2.8,MG053
+PPA,inorganic diphosphatase,[c] : h2o + ppi --> h + (2) pi,Anaplerotic Reactions,EC-3.6.1.1,MG351
+PPAK,Propionate kinase,[c] : adp + ppap <==> atp + ppa,Carbohydrates and related molecules,,MG357
+PROTRS,Prolyl-tRNA synthetase,[c] : atp + pro-L + trnapro --> amp + ppi + protrna,Arginine and Proline Metabolism,EC-6.1.1.15,MG283
+PRPPS,phosphoribosylpyrophosphate synthetase,[c] : atp + r5p <==> amp + h + prpp,Nucleotides and nucleic acids,EC-2.7.6.1,MG058
+PSUDS,pseudouridylate synthase,[c] : r5p + ura --> h2o + psd5p,pseudouridylate synthase pathway,EC-4.2.1.70,MG370
+PSUDS,pseudouridylate synthase,[c] : r5p + ura --> h2o + psd5p,pseudouridylate synthase pathway,EC-4.2.1.70,MG209
+PTA2r,Phosphate acetyltransferase,[c] : pi + ppcoa <==> coa + ppap,Carbohydrates and related molecules,,MG299
+PTAr,phosphotransacetylase,[c] : accoa + pi <==> actp + coa,Carbohydrates and related molecules,EC-2.3.1.8,MG299
+PTRCabc,putrescine transport via ABC system,atp[c] + h2o[c] + ptrc[e] --> adp[c] + h[c] + pi[c] + ptrc[c],Transport,TC-3.A.1.11,MG042
+PTRCabc,putrescine transport via ABC system,atp[c] + h2o[c] + ptrc[e] --> adp[c] + h[c] + pi[c] + ptrc[c],Transport,TC-3.A.1.11,MG043
+PTRCabc,putrescine transport via ABC system,atp[c] + h2o[c] + ptrc[e] --> adp[c] + h[c] + pi[c] + ptrc[c],Transport,TC-3.A.1.11,MG044
+PTRCORNt7,putrescine/ornithine antiporter,orn-L[c] + ptrc[e] <==> orn-L[e] + ptrc[c],Transport,,MG226
+PTRCt2,"putrescine transport in via proton symport, reversible",h[e] + ptrc[e] <==> h[c] + ptrc[c],Transport,,MG226
+PTRCt2,"putrescine transport in via proton symport, reversible",h[e] + ptrc[e] <==> h[c] + ptrc[c],Transport,,MG225
+PUNP1,purine-nucleoside phosphorylase (Adenosine),[c] : adn + pi <==> ade + r1p,Nucleotide Salvage Pathways,EC-2.4.2.1,MG049
+PUNP2,purine-nucleoside phosphorylase (Deoxyadenosine),[c] : dad-2 + pi <==> 2dr1p + ade,Nucleotide Salvage Pathways,EC-2.4.2.1,MG049
+PUNP3,purine-nucleoside phosphorylase (Guanosine),[c] : gsn + pi <==> gua + r1p,Nucleotide Salvage Pathways,EC-2.4.2.1,MG049
+PUNP4,purine-nucleoside phosphorylase (Deoxyguanosine),[c] : dgsn + pi <==> 2dr1p + gua,Nucleotide Salvage Pathways,EC-2.4.2.1,MG049
+PUNP5,purine-nucleoside phosphorylase (Inosine),[c] : ins + pi <==> hxan + r1p,Nucleotide Salvage Pathways,EC-2.4.2.1,MG049
+PUNP6,purine-nucleoside phosphorylase (Deoxyinosine),[c] : din + pi <==> 2dr1p + hxan,Nucleotide Salvage Pathways,EC-2.4.2.1,MG049
+PUNP7,purine-nucleoside phosphorylase (Xanthosine),[c] : pi + xtsn <==> r1p + xan,Nucleotide Salvage Pathways,EC-2.4.2.1,MG049
+PYK,pyruvate kinase,[c] : adp + h + pep --> atp + pyr,Carbohydrates and related molecules,EC-2.7.1.40,MG216
+PYNP1r,pyrimidine-nucleoside phosphorylase (cytosine),[c] : csn + r1p <==> cytd + pi,Nucleotides and nucleic acids,EC-2.4.2.2,MG051
+PYNP2,pyrimidine-nucleoside phosphorylase (uracil),[c] : pi + uri <==> r1p + ura,Nucleotides and nucleic acids,EC-2.4.2.2,MG051
+RBFK,riboflavin kinase,[c] : atp + ribflv --> adp + fmn + h,Coenzymes and prosthetic groups,EC-2.7.1.26,MG145
+RIBabc,D-ribose transport via ABC system,atp[c] + h2o[c] + rib-D[e] --> adp[c] + h[c] + pi[c] + rib-D[c],Transport,TC-3.A.1.2,MG119
+RNDR1,ribonucleoside-diphosphate reductase (ADP),[c] : adp + trdrd --> dadp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG229
+RNDR1,ribonucleoside-diphosphate reductase (ADP),[c] : adp + trdrd --> dadp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG230
+RNDR1,ribonucleoside-diphosphate reductase (ADP),[c] : adp + trdrd --> dadp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG231
+RNDR2,ribonucleoside-diphosphate reductase (GDP),[c] : gdp + trdrd --> dgdp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG229
+RNDR2,ribonucleoside-diphosphate reductase (GDP),[c] : gdp + trdrd --> dgdp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG230
+RNDR2,ribonucleoside-diphosphate reductase (GDP),[c] : gdp + trdrd --> dgdp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG231
+RNDR3,ribonucleoside-diphosphate reductase (CDP),[c] : cdp + trdrd --> dcdp + h2o + trdox,Nucleotide Salvage Pathways,EC-1.17.4.1,MG229
+RNDR3,ribonucleoside-diphosphate reductase (CDP),[c] : cdp + trdrd --> dcdp + h2o + trdox,Nucleotide Salvage Pathways,EC-1.17.4.1,MG230
+RNDR3,ribonucleoside-diphosphate reductase (CDP),[c] : cdp + trdrd --> dcdp + h2o + trdox,Nucleotide Salvage Pathways,EC-1.17.4.1,MG231
+RNDR4,ribonucleoside-diphosphate reductase (UDP),[c] : trdrd + udp --> dudp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG229
+RNDR4,ribonucleoside-diphosphate reductase (UDP),[c] : trdrd + udp --> dudp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG230
+RNDR4,ribonucleoside-diphosphate reductase (UDP),[c] : trdrd + udp --> dudp + h2o + trdox,Nucleotides and nucleic acids,EC-1.17.4.1,MG231
+RPE,ribulose 5-phosphate 3-epimerase,[c] : ru5p-D <==> xu5p-D,Pentose Phosphate Pathway,EC-5.1.3.1,MG112
+RPI,ribose-5-phosphate isomerase,[c] : r5p <==> ru5p-D,Carbohydrates and related molecules,EC-5.3.1.6,MG396
+SALCpts,salicin transport via PEP:Pyr PTS,pep[c] + salcn[e] --> pyr[c] + salc6p[c],Transport,,MG041
+SALCpts,salicin transport via PEP:Pyr PTS,pep[c] + salcn[e] --> pyr[c] + salc6p[c],Transport,,MG429
+SERTRS,Seryl-tRNA synthetase,[c] : atp + ser-L + trnaser --> amp + ppi + sertrna,Glycine and Serine Metabolism,EC-6.1.1.11,MG005
+SPMDabc,spermidine transport via ABC system,atp[c] + h2o[c] + spmd[e] --> adp[c] + h[c] + pi[c] + spmd[c],Transport,TC-3.A.1.11,MG042
+SPMDabc,spermidine transport via ABC system,atp[c] + h2o[c] + spmd[e] --> adp[c] + h[c] + pi[c] + spmd[c],Transport,TC-3.A.1.11,MG043
+SPMDabc,spermidine transport via ABC system,atp[c] + h2o[c] + spmd[e] --> adp[c] + h[c] + pi[c] + spmd[c],Transport,TC-3.A.1.11,MG044
+SUCpts,sucrose transport via PEP:Pyr PTS,pep[c] + sucr[e] --> pyr[c] + suc6p[c],Transport,,MG041
+SUCpts,sucrose transport via PEP:Pyr PTS,pep[c] + sucr[e] --> pyr[c] + suc6p[c],Transport,,MG429
+TECA4S,minor teichoic acid synthesis (n=30),[c] : (30) h2o + (30) uacgala + (30) udpg --> (60) h + tcam + (30) udp + (30) ump,Cell Envelope Biosynthesis,,MG025
+TEICH45,"teichuronic acid (n=45), unlinked, GalNAc-GlcA repeated",[c] : (45) uacgala + (45) udpglcur <==> (45) h + teich-45 + (45) udp + (45) ump,Cell Envelope Biosynthesis,,MG075
+THDPO,thiol peroxidase,[c] : h2o2 + trdrd --> (2) h2o + trdox,thiol peroxidase pathway,,MG124
+THRTRS,Threonyl-tRNA synthetase,[c] : atp + thr-L + trnathr --> amp + ppi + thrtrna,Threonine and Lysine Metabolism,EC-6.1.1.3,MG375
+THZPSN,thiazole phosphate synthesis,[c] : atp + cys-L + dxyl5p + tyr-L --> 4hba + 4mpetz + ala-L + amp + co2 + h + h2o + ppi,Cofactor and Prosthetic Group Biosynthesis,,MG372
+TKT1,transketolase,[c] : r5p + xu5p-D <==> g3p + s7p,Carbohydrates and related molecules,EC-2.2.1.1,MG066
+TKT2,transketolase,[c] : e4p + xu5p-D <==> f6p + g3p,Carbohydrates and related molecules,EC-2.2.1.1,MG066
+TMDK1,thymidine kinase (ATP:thymidine),[c] : atp + thymd --> adp + dtmp + h,Nucleotide Salvage Pathway,EC-2.7.1.21,MG034
+TMDPP,thymidine phosphorylase,[c] : pi + thymd <==> 2dr1p + thym,Nucleotides and nucleic acids,EC-2.4.2.4,MG051
+TMDS,thymidylate synthase,[c] : dump + mlthf --> dhf + dtmp,Nucleotides and nucleic acids,EC-2.1.1.45,MG227
+TPI,triose-phosphate isomerase,[c] : dhap <==> g3p,Carbohydrates and related molecules,EC-5.3.1.1,MG431
+TRDR,thioredoxin reductase (NADPH),[c] : h + nadph + trdox --> nadp + trdrd,Membrane bioenergetics,EC-1.8.1.9,MG102
+TREpts,trehalose transport via PEP:Pyr PTS,pep[c] + tre[e] --> pyr[c] + tre6p[c],Transport,,MG041
+TREpts,trehalose transport via PEP:Pyr PTS,pep[c] + tre[e] --> pyr[c] + tre6p[c],Transport,,MG429
+TRPTRS,Tryptophanyl-tRNA synthetase,[c] : atp + trnatrp + trp-L --> amp + ppi + trptrna,tRNA Charging,EC-6.1.1.2,MG126
+TYRTRS,Tyrosyl-tRNA synthetase,[c] : atp + trnatyr + tyr-L --> amp + ppi + tyrtrna,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",EC-6.1.1.1,MG455
+UAG4E,UDP-N-acetylglucosamine 4-epimerase,[c] : uacgam --> uacgala,Carbohydrates and related molecules,EC-5.1.3.7,MG118
+UDPG4E,UDPglucose 4-epimerase,[c] : udpg <==> udpgal,Carbohydrates and related molecules,EC-5.1.3.2,MG118
+UDPGALM,UDPgalactopyranose mutase,[c] : udpgal --> udpgalfur,Cell Envelope Biosynthesis,EC-5.4.99.9,MG137
+UPPRT,uracil phosphoribosyltransferase,[c] : prpp + ura --> ppi + ump,Nucleotides and nucleic acids,EC-2.4.2.9,MG030
+URIDK1,uridylate kinase (UMP),[c] : atp + ump --> adp + udp,Nucleotides and nucleic acids,,MG330
+URIDK1,uridylate kinase (UMP),[c] : atp + ump --> adp + udp,Nucleotides and nucleic acids,,MG434
+URIDK3,uridylate kinase (dUMP),[c] : atp + dump <==> adp + dudp,Nucleotides and nucleic acids,EC-2.7.4.4,MG330
+URIDK3,uridylate kinase (dUMP),[c] : atp + dump <==> adp + dudp,Nucleotides and nucleic acids,EC-2.7.4.4,MG434
+URIK1,uridine kinase (ATP:Uridine),[c] : atp + uri --> adp + h + ump,Nucleotides and nucleic acids,EC-2.7.1.48,MG382
+URIK2,uridine kinase (GTP:Uridine),[c] : gtp + uri --> gdp + h + ump,Nucleotides and nucleic acids,EC-2.7.1.48,MG382
+URIK3,uridine kinase (ITP:Uridine),[c] : itp + uri --> h + idp + ump,Nucleotides and nucleic acids,EC-2.7.1.48,MG382
+VALTRS,Valyl-tRNA synthetase,[c] : atp + trnaval + val-L --> amp + ppi + valtrna,tRNA Charging,EC-6.1.1.9,MG334

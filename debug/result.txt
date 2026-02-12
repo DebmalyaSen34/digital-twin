@@ -1,0 +1,1420 @@
+Loading Model...
+
+--- OPENING ALL GATES ---
+
+🟢 IT'S ALIVE! (Finally)
+   Max Growth Rate: 542.3379
+   (This confirms your Genome Integration was successful.)
+
+--- ID HUNTING RESULTS ---
+Model does not contain SBML fbc package information.
+SBML package 'layout' not supported by cobrapy, information is not parsed
+SBML package 'render' not supported by cobrapy, information is not parsed
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_10fthf_c "M_10_Formyltetrahydrofolate_C20H21N7O7">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_12dag3p_c "M_1_2_Diacyl_sn_glycerol_3_phosphate_C5H5O8PR2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_12dgr_c "M_1_2_Diacylglycerol_C5H6O5R2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_13dpg_c "M_3_Phospho_D_glyceroyl_phosphate_C3H4O10P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_1ag3p_c "M_1_Acyl_sn_glycerol_3_phosphate_C4H6O7PR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_2dr1p_c "M_2_Deoxy_D_ribose_1_phosphate_C5H9O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_2dr5p_c "M_2_Deoxy_D_ribose_5_phosphate_C5H9O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_2ins_c "M_2_Inosose_C6H10O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_2ohph_c "M_2_Octaprenyl_6_hydroxyphenol_C46H70O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_2omph_c "M_2_Octaprenyl_6_methoxyphenol_C47H72O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_2pg_c "M_D_Glycerate_2_phosphate_C3H4O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_3pg_c "M_3_Phospho_D_glycerate_C3H4O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_4hba_c "M_4_Hydroxy_benzyl_alcohol_C7H8O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_4mpetz_c "M_4_Methyl_5__2_phosphoethyl__thiazole_C6H8NO4PS">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_6pgg_c "M_6_Phospho_beta_D_glucosyl__1_4__D_glucose_C12H21O14P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_C03153_c "M_N5_Methyl_L_glutamine_C6H12N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_L_alagly_c "M_L_alanylglycine_C5H10N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_L_alagly_e "M_L_alanylglycine_C5H10N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ac_c "M_Acetate_C2H3O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ac_e "M_Acetate_C2H3O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_acald_c "M_Acetaldehyde_C2H4O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_accoa_c "M_Acetyl_CoA_C23H34N7O17P3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_acgam1p_c "M_N_Acetyl_D_glucosamine_1_phosphate_C8H14NO9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_acgam6p_c "M_N_Acetyl_D_glucosamine_6_phosphate_C8H14NO9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_acgam_e "M_N_Acetyl_D_glucosamine_C8H15NO6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_acoa_c "M_Acyl_CoA_C22H31N7O17P3RS">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_acoa_e "M_Acyl_CoA_C22H31N7O17P3RS">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_actp_c "M_Acetyl_phosphate_C2H3O5P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ade_c "M_Adenine_C5H5N5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ade_e "M_Adenine_C5H5N5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_adn_c "M_Adenosine_C10H13N5O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_adp_c "M_ADP_C10H12N5O10P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ahcys_c "M_S_Adenosyl_L_homocysteine_C14H20N6O5S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_akg_c "M_2_Oxoglutarate_C5H4O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_akg_e "M_2_Oxoglutarate_C5H4O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_asp_L_c "M_L_alanyl_L_aspartate_C7H11N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_asp_L_e "M_L_alanyl_L_aspartate_C7H11N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_gln_L_c "M_ala_L_gln_L_C8H15N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_gln_L_e "M_ala_L_gln_L_C8H15N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_glu_L_c "M_ala_L_glu_L_C8H15N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_glu_L_e "M_ala_L_glu_L_C8H15N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_his_L_c "M_Alanylhistidine_C9H14N4O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_his_L_e "M_Alanylhistidine_C9H14N4O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_leu_L_c "M_N_L_Alanyl_L_leucine_C9H18N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_leu_L_e "M_N_L_Alanyl_L_leucine_C9H18N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_thr_L_c "M_N_L_alanyl_L_threonine_C7H14N2O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_thr_L_e "M_N_L_alanyl_L_threonine_C7H14N2O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_c "M_L_Alanine_C3H7NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_alatrna_c "M_L_Alanyl_tRNA_Ala__C3H6NOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_amet_c "M_S_Adenosyl_L_methionine_C15H23N6O5S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_amp_c "M_AMP_C10H12N5O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_arbt6p_c "M_Arbutin_6_phosphate_C12H15O10P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_arbt_e "M_Arbutin_C12H16O7">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_arg_L_c "M_L_Arginine_C6H15N4O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_arg_L_e "M_L_Arginine_C6H15N4O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_argtrna_c "M_L_Arginyl_tRNA_Arg__C6H14N4OR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_asn_L_c "M_L_Asparagine_C4H8N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_asn_L_e "M_L_Asparagine_C4H8N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_asntrna_c "M_L_Asparaginyl_tRNA_Asn__C4H7N2O2R">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_asp_L_c "M_L_Aspartate_C4H6NO4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_asptrna_c "M_L_Aspartyl_tRNA_Asp__C4H5NO3R">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_atp_c "M_ATP_C10H12N5O13P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_btcoa_c "M_Butanoyl_CoA_C25H38N7O17P3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_butpi_c "M_Butanoyl_phosphate_C4H7O5P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ca2_c "M_Calcium_Ca">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ca2_e "M_Calcium_Ca">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cdp_c "M_CDP_C9H12N3O11P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cdpdag_c "M_CDPdiacylglycerol_C14H17N3O15P2R2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cellb_e "M_cellobiose_C12H22O11">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cgly_c "M_Cys_Gly_C5H10N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cgly_e "M_Cys_Gly_C5H10N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_chol_c "M_Choline_C5H14NO">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cholp_c "M_Choline_phosphate_C5H13NO4P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cl_c "M_Chloride_Cl">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cl_e "M_Chloride_Cl">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cmp_c "M_CMP_C9H12N3O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_co2_c "M_CO2_CO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_co2_e "M_CO2_CO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_coa_c "M_Coenzyme_A_C21H32N7O16P3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_coa_e "M_Coenzyme_A_C21H32N7O16P3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cobalt2_c "M_Co2__Co">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cobalt2_e "M_Co2__Co">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_csn_c "M_Cytosine_C4H5N3O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_csn_e "M_Cytosine_C4H5N3O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ctp_c "M_CTP_C9H12N3O14P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cu2_c "M_Cu2__Cu">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cu2_e "M_Cu2__Cu">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cys_L_c "M_L_Cysteine_C3H7NO2S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cystrna_c "M_L_Cysteinyl_tRNA_Cys__C3H6NOSR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cytd_c "M_Cytidine_C9H13N3O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_d12dg_c "M_diglucosyl_1_2_diacylglycerol_C4636H8672O1500">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dad_2_c "M_Deoxyadenosine_C10H13N5O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dadp_c "M_dADP_C10H12N5O9P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_damp_c "M_dAMP_C10H12N5O6P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_datp_c "M_dATP_C10H12N5O12P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_datp_e "M_dATP_C10H12N5O12P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dcdp_c "M_dCDP_C9H12N3O10P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dcmp_c "M_dCMP_C9H12N3O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dctp_c "M_dCTP_C9H12N3O13P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dcyt_c "M_Deoxycytidine_C9H13N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dgdp_c "M_dGDP_C10H12N5O10P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dgmp_c "M_dGMP_C10H12N5O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dgsn_c "M_Deoxyguanosine_C10H13N5O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dgtp_c "M_dGTP_C10H12N5O13P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dgtp_e "M_dGTP_C10H12N5O13P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dhap_c "M_Dihydroxyacetone_phosphate_C3H5O6P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dhf_c "M_7_8_Dihydrofolate_C19H19N7O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_din_c "M_Deoxyinosine_C10H12N4O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ditp_c "M_dITP_C10H11N4O13P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dnad_c "M_Deamino_NAD__C21H24N6O15P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dtdp_c "M_dTDP_C10H13N2O11P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dtmp_c "M_dTMP_C10H13N2O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dttp_c "M_dTTP_C10H13N2O14P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dudp_c "M_dUDP_C9H11N2O11P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dump_c "M_dUMP_C9H11N2O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_duri_c "M_Deoxyuridine_C9H12N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dutp_c "M_dUTP_C9H11N2O14P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dxyl5p_c "M_1_deoxy_D_xylulose_5_phosphate_C5H9O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_e4p_c "M_D_Erythrose_4_phosphate_C4H7O7P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_f1p_c "M_D_Fructose_1_phosphate_C6H11O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_f6p_c "M_D_Fructose_6_phosphate_C6H11O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fad_c "M_Flavin_adenine_dinucleotide_oxidized_C27H31N9O15P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fdp_c "M_D_Fructose_1_6_bisphosphate_C6H10O12P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fe2_c "M_Fe2__Fe">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fe2_e "M_Fe2__Fe">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fe3_c "M_Fe3__Fe">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fe3_e "M_Fe3__Fe">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fmettrna_c "M_N_Formylmethionyl_tRNA_C6H9NO2SR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fmn_c "M_FMN_C17H19N4O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fol_c "M_Folate_C19H18N7O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fol_e "M_Folate_C19H18N7O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fru_e "M_D_Fructose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_g1p_c "M_D_Glucose_1_phosphate_C6H11O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_g3p_c "M_Glyceraldehyde_3_phosphate_C3H5O6P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_g6p_B_c "M_beta_D_glucose_6_phosphate_C6H11O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_g6p_c "M_D_Glucose_6_phosphate_C6H11O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gal_c "M_D_Galactose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gal_e "M_D_Galactose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gam1p_c "M_D_Glucosamine_1_phosphate_C6H13NO8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gam6p_c "M_D_Glucosamine_6_phosphate_C6H13NO8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gam_e "M_D_Glucosamine_C6H14NO5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gdp_c "M_GDP_C10H12N5O11P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glc_D_e "M_D_Glucose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gln_L_c "M_L_Glutamine_C5H10N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glntrna_c "M_L_Glutaminyl_tRNA_Gln__C5H9N2O2R">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glu_L_c "M_L_Glutamate_C5H8NO4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glu_L_e "M_L_Glutamate_C5H8NO4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glutrna_c "M_L_Glutamyl_tRNA_Glu__C5H7NO3R">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_asn_L_c "M_glycyl_L_asparagine_C6H11N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_asn_L_e "M_glycyl_L_asparagine_C6H11N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_asp_L_c "M_N_glycyl_L_aspartic_acid_C6H9N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_asp_L_e "M_N_glycyl_L_aspartic_acid_C6H9N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_gln_L_c "M_L_Glycylglutamine_C7H13N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_gln_L_e "M_L_Glycylglutamine_C7H13N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_glu_L_c "M_glycyl_L_glutamic_acid_C7H11N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_glu_L_e "M_glycyl_L_glutamic_acid_C7H11N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_met_L_c "M_N_Glycyl_L_methionine_C7H14N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_met_L_e "M_N_Glycyl_L_methionine_C7H14N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_pro_L_c "M_L_Proline__1_glycyl__C7H12N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_pro_L_e "M_L_Proline__1_glycyl__C7H12N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_c "M_Glycine_C2H5NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glyald_c "M_D_Glyceraldehyde_C3H6O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glyc3p_c "M_Glycerol_3_phosphate_C3H7O6P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glyc3p_e "M_Glycerol_3_phosphate_C3H7O6P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glyc_c "M_Glycerol_C3H8O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glyc_e "M_Glycerol_C3H8O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glytrna_c "M_Glycyl_tRNA_Gly__C2H4NOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gmp_c "M_GMP_C10H12N5O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gsn_c "M_Guanosine_C10H13N5O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gtp_c "M_GTP_C10H12N5O14P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gtp_e "M_GTP_C10H12N5O14P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gua_c "M_Guanine_C5H5N5O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_h2o2_c "M_Hydrogen_peroxide_H2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_h2o_c "M_H2O_H2O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_h2o_e "M_H2O_H2O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_h_c "M_H__H">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_h_e "M_H__H">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_his_L_c "M_L_Histidine_C6H9N3O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_his_L_e "M_L_Histidine_C6H9N3O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_histrna_c "M_L_Histidyl_tRNA_His__C6H8N3OR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_hxan_c "M_Hypoxanthine_C5H4N4O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_idp_c "M_IDP_C10H11N4O11P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ile_L_c "M_L_Isoleucine_C6H13NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ile_L_e "M_L_Isoleucine_C6H13NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_iletrna_c "M_L_Isoleucyl_tRNA_Ile__C6H12NOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_imp_c "M_IMP_C10H11N4O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_inost_c "M_myo_Inositol_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ins_c "M_Inosine_C10H12N4O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_itp_c "M_ITP_C10H11N4O14P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_k_c "M_Potassium_K">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_k_e "M_Potassium_K">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_lac_L_c "M_L_Lactate_C3H5O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_lac_L_e "M_L_Lactate_C3H5O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_leu_L_c "M_L_Leucine_C6H13NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_leu_L_e "M_L_Leucine_C6H13NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_leutrna_c "M_L_Leucyl_tRNA_Leu__C6H12NOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_lys_L_c "M_L_Lysine_C6H15N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_lys_L_e "M_L_Lysine_C6H15N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_lystrna_c "M_L_Lysine_tRNA__Lys__C6H14N2OR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_m12dg_c "M_monoglucosyl_1_2_diacylglycerol_C4036H7672O1000">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_malt6p_c "M_Maltose_6__phosphate_C12H21O14P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_malt_e "M_Maltose_C12H22O11">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_man1p_c "M_D_Mannose_1_phosphate_C6H11O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_man6p_c "M_D_Mannose_6_phosphate_C6H11O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_man_e "M_D_Mannose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_met_L_ala_L_c "M_met_L_ala_L_C8H16N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_met_L_ala_L_e "M_met_L_ala_L_C8H16N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_met_L_c "M_L_Methionine_C5H11NO2S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_met_L_e "M_L_Methionine_C5H11NO2S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_methf_c "M_5_10_Methenyltetrahydrofolate_C20H20N7O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_metox_R_c "M_L_methionine_R_oxide_C5H11NO3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_metox_c "M_L_Methionine_S_oxide_C5H11NO3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mettrna_c "M_L_Methionyl_tRNA__Met__C5H10NOSR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mg2_c "M_Magnesium_Mg">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mg2_e "M_Magnesium_Mg">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mlthf_c "M_5_10_Methylenetetrahydrofolate_C20H21N7O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mn2_c "M_Mn2__Mn">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mn2_e "M_Mn2__Mn">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mnl1p_c "M_D_Mannitol_1_phosphate_C6H13O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mnl_e "M_D_Mannitol_C6H14O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mobd_c "M_Molybdate_MoO4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mobd_e "M_Molybdate_MoO4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mql7_c "M_Menaquinol_7_C46H66O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mqn7_c "M_Menaquinone_7_C46H64O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mqn7_e "M_Menaquinone_7_C46H64O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_msa_c "M_Malonate_semialdehyde_C3H3O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nac_c "M_Nicotinate_C6H4NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nac_e "M_Nicotinate_C6H4NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nad_c "M_Nicotinamide_adenine_dinucleotide_C21H26N7O14P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nadh_c "M_Nicotinamide_adenine_dinucleotide___reduced_C21H27N7O14P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nadp_c "M_Nicotinamide_adenine_dinucleotide_phosphate_C21H25N7O17P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nadph_c "M_Nicotinamide_adenine_dinucleotide_phosphate___reduced_C21H26N7O17P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nh4_c "M_Ammonium_H4N">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nh4_e "M_Ammonium_H4N">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ni2_c "M_Nickel_Ni">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ni2_e "M_Nickel_Ni">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nicrnt_c "M_Nicotinate_D_ribonucleotide_C11H12NO9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nmn_c "M_NMN_C11H14N2O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_orn_L_c "M_L_Ornithine_C5H13N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_orn_L_e "M_L_Ornithine_C5H13N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pep_c "M_Phosphoenolpyruvate_C3H2O6P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pglyp_c "M_Phosphatidylglycerophosphate_C8H11O13P2R2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_phe_L_c "M_L_Phenylalanine_C9H11NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_phe_L_e "M_L_Phenylalanine_C9H11NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_phetrna_c "M_L_Phenylalanyl_tRNA_Phe__C9H10NOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pi_c "M_Phosphate_HO4P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pi_e "M_Phosphate_HO4P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ppa_c "M_Propionate__n_C3_0__C3H5O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ppa_e "M_Propionate__n_C3_0__C3H5O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ppap_c "M_Propanoyl_phosphate_C3H5O5P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ppcoa_c "M_Propanoyl_CoA_C24H36N7O17P3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ppi_c "M_Diphosphate_HO7P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pppi_c "M_Inorganic_triphosphate_HO10P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pro_L_c "M_L_Proline_C5H9NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pro_L_e "M_L_Proline_C5H9NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_protrna_c "M_L_Prolyl_tRNA_Pro__C5H8NOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_prpp_c "M_5_Phospho_alpha_D_ribose_1_diphosphate_C5H8O14P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_psd5p_c "M_Pseudouridine_5__phosphate_C9H11N2O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ptrc_c "M_Putrescine_C4H14N2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ptrc_e "M_Putrescine_C4H14N2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pydx5p_c "M_Pyridoxal_5__phosphate_C8H8NO6P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pydx_c "M_Pyridoxal_C8H9NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pydx_e "M_Pyridoxal_C8H9NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pyr_c "M_Pyruvate_C3H3O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_r1p_c "M_alpha_D_Ribose_1_phosphate_C5H9O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_r5p_c "M_alpha_D_Ribose_5_phosphate_C5H9O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_rib_D_c "M_D_Ribose_C5H10O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_rib_D_e "M_D_Ribose_C5H10O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ribflv_c "M_Riboflavin_C17H20N4O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ribflv_e "M_Riboflavin_C17H20N4O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ru5p_D_c "M_D_Ribulose_5_phosphate_C5H9O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_s7p_c "M_Sedoheptulose_7_phosphate_C7H13O10P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_salc6p_c "M_Salicin_6_phosphate_C13H17O10P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_salcn_e "M_Salicin_C13H18O7">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ser_L_c "M_L_Serine_C3H7NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ser_L_e "M_L_Serine_C3H7NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_sertrna_c "M_L_Seryl_tRNA_Ser__C3H6NO2R">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_so4_c "M_Sulfate_O4S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_so4_e "M_Sulfate_O4S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_spmd_c "M_Spermidine_C7H22N3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_spmd_e "M_Spermidine_C7H22N3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_suc6p_c "M_Sucrose_6_phosphate_C12H21O14P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_succoa_c "M_Succinyl_CoA_C25H35N7O19P3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_sucr_e "M_Sucrose_C12H22O11">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_t12dg_c "M_triglucosyl_1_2_diacylglycerol_C5236H9672O2000">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_tcam_c "M_minor_teichoic_acid__acetylgalactosamine_glucose_phosphate__n=30__C420H750N30O420P30">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_teich_45_c "M_teichuronic_acid__GlcA___GalNac__45_repeating_unit__C630H945N45O630P45">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thf_c "M_5_6_7_8_Tetrahydrofolate_C19H21N7O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thm_c "M_Thiamin_C12H17N4OS">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thm_e "M_Thiamin_C12H17N4OS">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thmpp_c "M_Thiamine_diphosphate_C12H16N4O7P2S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thr_L_c "M_L_Threonine_C4H9NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thrtrna_c "M_L_Threonyl_tRNA_Thr__C4H8NO2R">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thym_c "M_Thymine_C5H6N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thymd_c "M_Thymidine_C10H14N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thymd_e "M_Thymidine_C10H14N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trdox_c "M_Oxidized_thioredoxin_C6H7NO2S2R2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trdrd_c "M_Reduced_thioredoxin_C6H9NO2S2R2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_tre6p_c "M_alpha_alpha__Trehalose_6_phosphate_C12H21O14P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_tre_e "M_Trehalose_C12H22O11">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaala_c "M_tRNA_Ala__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaarg_c "M_tRNA_Arg__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaasn_c "M_tRNA_Asn__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaasp_c "M_tRNA_Asp__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnacys_c "M_tRNA_Cys__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaglu_c "M_tRNA__Glu__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnagly_c "M_tRNA_Gly__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnahis_c "M_tRNA_His__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaile_c "M_tRNA_Ile__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaleu_c "M_tRNA_Leu__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnalys_c "M_tRNA_Lys__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnamet_c "M_tRNA_Met__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaphe_c "M_tRNA_Phe__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnapro_c "M_tRNA_Pro__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaser_c "M_tRNA_Ser__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnathr_c "M_tRNA_Thr__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnatrp_c "M_tRNA_Trp__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnatyr_c "M_tRNA_Tyr__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trnaval_c "M_tRNA_Val__HOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trp_L_c "M_L_Tryptophan_C11H12N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trp_L_e "M_L_Tryptophan_C11H12N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trptrna_c "M_L_Tryptophanyl_tRNA_Trp__C11H11N2OR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_tyr_L_c "M_L_Tyrosine_C9H11NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_tyr_L_e "M_L_Tyrosine_C9H11NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_tyrtrna_c "M_L_Tyrosyl_tRNA_Tyr__C9H10NO2R">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_uacgala_c "M_UDP_N_acetyl_D_galactosamine_C17H25N3O17P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_uacgam_c "M_UDP_N_acetyl_D_glucosamine_C17H25N3O17P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_udp_c "M_UDP_C9H11N2O12P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_udpg_c "M_UDPglucose_C15H22N2O17P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_udpgal_c "M_UDPgalactose_C15H22N2O17P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_udpgalfur_c "M_UDP_D_galacto_1_4_furanose_C15H22N2O17P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_udpglcur_c "M_UDP_D_glucuronate_C15H19N2O18P2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ump_c "M_UMP_C9H11N2O9P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ura_c "M_Uracil_C4H4N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ura_e "M_Uracil_C4H4N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_uri_c "M_Uridine_C9H12N2O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_utp_c "M_UTP_C9H11N2O15P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_val_L_c "M_L_Valine_C5H11NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_val_L_e "M_L_Valine_C5H11NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_valtrna_c "M_L_Valyl_tRNA_Val__C5H10NOR">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_xan_c "M_Xanthine_C5H4N4O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_xtp_c "M_XTP_C10H11N4O15P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_xtsn_c "M_Xanthosine_C10H12N4O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_xu5p_D_c "M_D_Xylulose_5_phosphate_C5H9O8P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_zn2_c "M_Zinc_Zn">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_zn2_e "M_Zinc_Zn">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_C03153_b "M_N5_Methyl_L_glutamine_C6H12N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_L_alagly_b "M_L_alanylglycine_C5H10N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ac_b "M_Acetate_C2H3O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_acgam_b "M_N_Acetyl_D_glucosamine_C8H15NO6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_acoa_b "M_Acyl_CoA_C22H31N7O17P3RS">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ade_b "M_Adenine_C5H5N5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_akg_b "M_2_Oxoglutarate_C5H4O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_asp_L_b "M_L_alanyl_L_aspartate_C7H11N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_gln_L_b "M_ala_L_gln_L_C8H15N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_glu_L_b "M_ala_L_glu_L_C8H15N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_his_L_b "M_Alanylhistidine_C9H14N4O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_leu_L_b "M_N_L_Alanyl_L_leucine_C9H18N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ala_L_thr_L_b "M_N_L_alanyl_L_threonine_C7H14N2O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_arbt_b "M_Arbutin_C12H16O7">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_arg_L_b "M_L_Arginine_C6H15N4O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_asn_L_b "M_L_Asparagine_C4H8N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ca2_b "M_Calcium_Ca">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cellb_b "M_cellobiose_C12H22O11">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cgly_b "M_Cys_Gly_C5H10N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cl_b "M_Chloride_Cl">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_co2_b "M_CO2_CO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_coa_b "M_Coenzyme_A_C21H32N7O16P3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cobalt2_b "M_Co2__Co">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_csn_b "M_Cytosine_C4H5N3O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_cu2_b "M_Cu2__Cu">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_datp_b "M_dATP_C10H12N5O12P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_dgtp_b "M_dGTP_C10H12N5O13P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fe2_b "M_Fe2__Fe">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fe3_b "M_Fe3__Fe">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fol_b "M_Folate_C19H18N7O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_fru_b "M_D_Fructose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gal_b "M_D_Galactose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gam_b "M_D_Glucosamine_C6H14NO5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glc_D_b "M_D_Glucose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glu_L_b "M_L_Glutamate_C5H8NO4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_asn_L_b "M_glycyl_L_asparagine_C6H11N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_asp_L_b "M_N_glycyl_L_aspartic_acid_C6H9N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_gln_L_b "M_L_Glycylglutamine_C7H13N3O4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_glu_L_b "M_glycyl_L_glutamic_acid_C7H11N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_met_L_b "M_N_Glycyl_L_methionine_C7H14N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gly_pro_L_b "M_L_Proline__1_glycyl__C7H12N2O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glyc3p_b "M_Glycerol_3_phosphate_C3H7O6P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_glyc_b "M_Glycerol_C3H8O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_gtp_b "M_GTP_C10H12N5O14P3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_h2o_b "M_H2O_H2O">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_h_b "M_H__H">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_his_L_b "M_L_Histidine_C6H9N3O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ile_L_b "M_L_Isoleucine_C6H13NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_k_b "M_Potassium_K">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_lac_L_b "M_L_Lactate_C3H5O3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_leu_L_b "M_L_Leucine_C6H13NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_lys_L_b "M_L_Lysine_C6H15N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_malt_b "M_Maltose_C12H22O11">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_man_b "M_D_Mannose_C6H12O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_met_L_ala_L_b "M_met_L_ala_L_C8H16N2O3S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_met_L_b "M_L_Methionine_C5H11NO2S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mg2_b "M_Magnesium_Mg">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mn2_b "M_Mn2__Mn">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mnl_b "M_D_Mannitol_C6H14O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mobd_b "M_Molybdate_MoO4">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_mqn7_b "M_Menaquinone_7_C46H64O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nac_b "M_Nicotinate_C6H4NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_nh4_b "M_Ammonium_H4N">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ni2_b "M_Nickel_Ni">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_orn_L_b "M_L_Ornithine_C5H13N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pglyp_b "M_Phosphatidylglycerophosphate_C8H11O13P2R2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_phe_L_b "M_L_Phenylalanine_C9H11NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pi_b "M_Phosphate_HO4P">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ppa_b "M_Propionate__n_C3_0__C3H5O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pro_L_b "M_L_Proline_C5H9NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ptrc_b "M_Putrescine_C4H14N2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_pydx_b "M_Pyridoxal_C8H9NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_rib_D_b "M_D_Ribose_C5H10O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ribflv_b "M_Riboflavin_C17H20N4O6">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_salcn_b "M_Salicin_C13H18O7">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ser_L_b "M_L_Serine_C3H7NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_so4_b "M_Sulfate_O4S">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_spmd_b "M_Spermidine_C7H22N3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_sucr_b "M_Sucrose_C12H22O11">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thm_b "M_Thiamin_C12H17N4OS">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_thymd_b "M_Thymidine_C10H14N2O5">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_tre_b "M_Trehalose_C12H22O11">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_trp_L_b "M_L_Tryptophan_C11H12N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_tyr_L_b "M_L_Tyrosine_C9H11NO3">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_ura_b "M_Uracil_C4H4N2O2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_val_L_b "M_L_Valine_C5H11NO2">
+Use of the species charge attribute is discouraged, use fbc:charge instead: <Species M_zn2_b "M_Zinc_Zn">
+Adding exchange reaction EX_C03153_b with default bounds for boundary metabolite: C03153_b.
+Adding exchange reaction EX_L_alagly_b with default bounds for boundary metabolite: L_alagly_b.
+Adding exchange reaction EX_ac_b with default bounds for boundary metabolite: ac_b.
+Adding exchange reaction EX_acgam_b with default bounds for boundary metabolite: acgam_b.
+Adding exchange reaction EX_acoa_b with default bounds for boundary metabolite: acoa_b.
+Adding exchange reaction EX_ade_b with default bounds for boundary metabolite: ade_b.
+Adding exchange reaction EX_akg_b with default bounds for boundary metabolite: akg_b.
+Adding exchange reaction EX_ala_L_asp_L_b with default bounds for boundary metabolite: ala_L_asp_L_b.
+Adding exchange reaction EX_ala_L_gln_L_b with default bounds for boundary metabolite: ala_L_gln_L_b.
+Adding exchange reaction EX_ala_L_glu_L_b with default bounds for boundary metabolite: ala_L_glu_L_b.
+Adding exchange reaction EX_ala_L_his_L_b with default bounds for boundary metabolite: ala_L_his_L_b.
+Adding exchange reaction EX_ala_L_leu_L_b with default bounds for boundary metabolite: ala_L_leu_L_b.
+Adding exchange reaction EX_ala_L_thr_L_b with default bounds for boundary metabolite: ala_L_thr_L_b.
+Adding exchange reaction EX_arbt_b with default bounds for boundary metabolite: arbt_b.
+Adding exchange reaction EX_arg_L_b with default bounds for boundary metabolite: arg_L_b.
+Adding exchange reaction EX_asn_L_b with default bounds for boundary metabolite: asn_L_b.
+Adding exchange reaction EX_ca2_b with default bounds for boundary metabolite: ca2_b.
+Adding exchange reaction EX_cellb_b with default bounds for boundary metabolite: cellb_b.
+Adding exchange reaction EX_cgly_b with default bounds for boundary metabolite: cgly_b.
+Adding exchange reaction EX_cl_b with default bounds for boundary metabolite: cl_b.
+Adding exchange reaction EX_co2_b with default bounds for boundary metabolite: co2_b.
+Adding exchange reaction EX_coa_b with default bounds for boundary metabolite: coa_b.
+Adding exchange reaction EX_cobalt2_b with default bounds for boundary metabolite: cobalt2_b.
+Adding exchange reaction EX_csn_b with default bounds for boundary metabolite: csn_b.
+Adding exchange reaction EX_cu2_b with default bounds for boundary metabolite: cu2_b.
+Adding exchange reaction EX_datp_b with default bounds for boundary metabolite: datp_b.
+Adding exchange reaction EX_dgtp_b with default bounds for boundary metabolite: dgtp_b.
+Adding exchange reaction EX_fe2_b with default bounds for boundary metabolite: fe2_b.
+Adding exchange reaction EX_fe3_b with default bounds for boundary metabolite: fe3_b.
+Adding exchange reaction EX_fol_b with default bounds for boundary metabolite: fol_b.
+Adding exchange reaction EX_fru_b with default bounds for boundary metabolite: fru_b.
+Adding exchange reaction EX_gal_b with default bounds for boundary metabolite: gal_b.
+Adding exchange reaction EX_gam_b with default bounds for boundary metabolite: gam_b.
+Adding exchange reaction EX_glc_D_b with default bounds for boundary metabolite: glc_D_b.
+Adding exchange reaction EX_glu_L_b with default bounds for boundary metabolite: glu_L_b.
+Adding exchange reaction EX_gly_asn_L_b with default bounds for boundary metabolite: gly_asn_L_b.
+Adding exchange reaction EX_gly_asp_L_b with default bounds for boundary metabolite: gly_asp_L_b.
+Adding exchange reaction EX_gly_gln_L_b with default bounds for boundary metabolite: gly_gln_L_b.
+Adding exchange reaction EX_gly_glu_L_b with default bounds for boundary metabolite: gly_glu_L_b.
+Adding exchange reaction EX_gly_met_L_b with default bounds for boundary metabolite: gly_met_L_b.
+Adding exchange reaction EX_gly_pro_L_b with default bounds for boundary metabolite: gly_pro_L_b.
+Adding exchange reaction EX_glyc3p_b with default bounds for boundary metabolite: glyc3p_b.
+Adding exchange reaction EX_glyc_b with default bounds for boundary metabolite: glyc_b.
+Adding exchange reaction EX_gtp_b with default bounds for boundary metabolite: gtp_b.
+Adding exchange reaction EX_h2o_b with default bounds for boundary metabolite: h2o_b.
+Adding exchange reaction EX_h_b with default bounds for boundary metabolite: h_b.
+Adding exchange reaction EX_his_L_b with default bounds for boundary metabolite: his_L_b.
+Adding exchange reaction EX_ile_L_b with default bounds for boundary metabolite: ile_L_b.
+Adding exchange reaction EX_k_b with default bounds for boundary metabolite: k_b.
+Adding exchange reaction EX_lac_L_b with default bounds for boundary metabolite: lac_L_b.
+Adding exchange reaction EX_leu_L_b with default bounds for boundary metabolite: leu_L_b.
+Adding exchange reaction EX_lys_L_b with default bounds for boundary metabolite: lys_L_b.
+Adding exchange reaction EX_malt_b with default bounds for boundary metabolite: malt_b.
+Adding exchange reaction EX_man_b with default bounds for boundary metabolite: man_b.
+Adding exchange reaction EX_met_L_ala_L_b with default bounds for boundary metabolite: met_L_ala_L_b.
+Adding exchange reaction EX_met_L_b with default bounds for boundary metabolite: met_L_b.
+Adding exchange reaction EX_mg2_b with default bounds for boundary metabolite: mg2_b.
+Adding exchange reaction EX_mn2_b with default bounds for boundary metabolite: mn2_b.
+Adding exchange reaction EX_mnl_b with default bounds for boundary metabolite: mnl_b.
+Adding exchange reaction EX_mobd_b with default bounds for boundary metabolite: mobd_b.
+Adding exchange reaction EX_mqn7_b with default bounds for boundary metabolite: mqn7_b.
+Adding exchange reaction EX_nac_b with default bounds for boundary metabolite: nac_b.
+Adding exchange reaction EX_nh4_b with default bounds for boundary metabolite: nh4_b.
+Adding exchange reaction EX_ni2_b with default bounds for boundary metabolite: ni2_b.
+Adding exchange reaction EX_orn_L_b with default bounds for boundary metabolite: orn_L_b.
+Adding exchange reaction EX_pglyp_b with default bounds for boundary metabolite: pglyp_b.
+Adding exchange reaction EX_phe_L_b with default bounds for boundary metabolite: phe_L_b.
+Adding exchange reaction EX_pi_b with default bounds for boundary metabolite: pi_b.
+Adding exchange reaction EX_ppa_b with default bounds for boundary metabolite: ppa_b.
+Adding exchange reaction EX_pro_L_b with default bounds for boundary metabolite: pro_L_b.
+Adding exchange reaction EX_ptrc_b with default bounds for boundary metabolite: ptrc_b.
+Adding exchange reaction EX_pydx_b with default bounds for boundary metabolite: pydx_b.
+Adding exchange reaction EX_rib_D_b with default bounds for boundary metabolite: rib_D_b.
+Adding exchange reaction EX_ribflv_b with default bounds for boundary metabolite: ribflv_b.
+Adding exchange reaction EX_salcn_b with default bounds for boundary metabolite: salcn_b.
+Adding exchange reaction EX_ser_L_b with default bounds for boundary metabolite: ser_L_b.
+Adding exchange reaction EX_so4_b with default bounds for boundary metabolite: so4_b.
+Adding exchange reaction EX_spmd_b with default bounds for boundary metabolite: spmd_b.
+Adding exchange reaction EX_sucr_b with default bounds for boundary metabolite: sucr_b.
+Adding exchange reaction EX_thm_b with default bounds for boundary metabolite: thm_b.
+Adding exchange reaction EX_thymd_b with default bounds for boundary metabolite: thymd_b.
+Adding exchange reaction EX_tre_b with default bounds for boundary metabolite: tre_b.
+Adding exchange reaction EX_trp_L_b with default bounds for boundary metabolite: trp_L_b.
+Adding exchange reaction EX_tyr_L_b with default bounds for boundary metabolite: tyr_L_b.
+Adding exchange reaction EX_ura_b with default bounds for boundary metabolite: ura_b.
+Adding exchange reaction EX_val_L_b with default bounds for boundary metabolite: val_L_b.
+Adding exchange reaction EX_zn2_b with default bounds for boundary metabolite: zn2_b.
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ACGApts "R_N_Acetyl_D_glucosamine_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ACGApts "R_N_Acetyl_D_glucosamine_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ACGApts "R_N_Acetyl_D_glucosamine_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ACKr "R_acetate_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ACKr "R_acetate_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ACKr "R_acetate_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ACOAt "R_Acyl_Coenzyme_A_transport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ACOAt "R_Acyl_Coenzyme_A_transport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ACt6 "R_acetate_transport_in/out_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ACt6 "R_acetate_transport_in/out_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ADEt2 "R_adenine_transport_via_proton_symport__reversible_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ADEt2 "R_adenine_transport_via_proton_symport__reversible_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ADK1 "R_adenylate_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ADK1 "R_adenylate_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ADK1 "R_adenylate_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ADK2 "R_adenylate_kinase__Inorganic_triphosphate_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ADK2 "R_adenylate_kinase__Inorganic_triphosphate_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ADK2 "R_adenylate_kinase__Inorganic_triphosphate_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ADPT "R_adenine_phosphoribosyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ADPT "R_adenine_phosphoribosyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ADPT "R_adenine_phosphoribosyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AGPAT "R_1_acylglycerol_3_phosphate_O_acyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AGPAT "R_1_acylglycerol_3_phosphate_O_acyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_AGPAT "R_1_acylglycerol_3_phosphate_O_acyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AKGD "R_2_oxoglutarate_dehydrogenase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AKGD "R_2_oxoglutarate_dehydrogenase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_AKGD "R_2_oxoglutarate_dehydrogenase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AKGt2 "R_2_oxoglutarate_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AKGt2 "R_2_oxoglutarate_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ALATRS "R_Alanyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ALATRS "R_Alanyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ALATRS "R_Alanyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ALDD2x "R_aldehyde_dehydrogenase__acetaldehyde__NAD_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ALDD2x "R_aldehyde_dehydrogenase__acetaldehyde__NAD_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ALDD2y "R_aldehyde_dehydrogenase__acetaldehyde__NADP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ALDD2y "R_aldehyde_dehydrogenase__acetaldehyde__NADP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP1 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP1 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP10 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP10 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP11 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP11 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP12 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP12 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP13 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP13 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP14 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP14 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP2 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP2 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP3 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP3 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP4 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP4 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP5 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP5 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP6 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP6 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP7 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP7 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP8 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP8 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_AMPEP9 "R_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_AMPEP9 "R_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ARBTpts "R_arbutin_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ARBTpts "R_arbutin_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ARBTpts "R_arbutin_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ARGt2 "R_L_arginine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ARGt2 "R_L_arginine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ARGTRS "R_Arginyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ARGTRS "R_Arginyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ARGTRS "R_Arginyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ASNt2 "R_L_asparagine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ASNt2 "R_L_asparagine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ASNTRS "R_Asparaginyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ASNTRS "R_Asparaginyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ASNTRS "R_Asparaginyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ASPTRS "R_Aspartyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ASPTRS "R_Aspartyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ASPTRS "R_Aspartyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ATPHs "R_ATP_amine_hydrolysis__spontaneous_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ATPHs "R_ATP_amine_hydrolysis__spontaneous_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ATPHs "R_ATP_amine_hydrolysis__spontaneous_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ATPM "R_ATP_maintenance_requirement">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ATPM "R_ATP_maintenance_requirement">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ATPS4r "R_ATP_synthase__four_protons_for_one_ATP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ATPS4r "R_ATP_synthase__four_protons_for_one_ATP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ATPS4r "R_ATP_synthase__four_protons_for_one_ATP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CA2abc "R_calcium_efflux__via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CA2abc "R_calcium_efflux__via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CA2abc "R_calcium_efflux__via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CDGPT "R_CDPdiacylglycerol_sn_glycerol_3_phosphate_3_phosphatidyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CDGPT "R_CDPdiacylglycerol_sn_glycerol_3_phosphate_3_phosphatidyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CDGPT "R_CDPdiacylglycerol_sn_glycerol_3_phosphate_3_phosphatidyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CELBpts "R_cellobiose_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CELBpts "R_cellobiose_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CELBpts "R_cellobiose_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CHOLK "R_Choline_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CHOLK "R_Choline_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CHOLK "R_Choline_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_Clt "R_chlorideion_transport_out_via_diffusion">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_Clt "R_chlorideion_transport_out_via_diffusion">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CO2t "R_CO2_transporter_via_diffusion">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CO2t "R_CO2_transporter_via_diffusion">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CO2t "R_CO2_transporter_via_diffusion">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_Coabc "R_Cobalt_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_Coabc "R_Cobalt_transport_via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_Coabc "R_Cobalt_transport_via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_COAt "R_Coenzyme_A__transport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_COAt "R_Coenzyme_A__transport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CSNt2 "R_cytosine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CSNt2 "R_cytosine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_Cuabc "R_Copper_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_Cuabc "R_Copper_transport_via_ABC_system">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CYSTRS "R_Cysteinyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CYSTRS "R_Cysteinyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CYSTRS "R_Cysteinyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CYTD "R_cytidine_deaminase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CYTD "R_cytidine_deaminase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CYTD "R_cytidine_deaminase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CYTDK1 "R_cytidine_kinase__ATP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CYTDK1 "R_cytidine_kinase__ATP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CYTDK1 "R_cytidine_kinase__ATP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CYTDK2 "R_cytidine_kinase__GTP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CYTDK2 "R_cytidine_kinase__GTP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CYTDK2 "R_cytidine_kinase__GTP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CYTDK3 "R_cytidine_kinase__ITP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CYTDK3 "R_cytidine_kinase__ITP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CYTDK3 "R_cytidine_kinase__ITP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CYTK1 "R_cytidylate_kinase__CMP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CYTK1 "R_cytidylate_kinase__CMP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CYTK1 "R_cytidylate_kinase__CMP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_CYTK2 "R_cytidylate_kinase__dCMP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_CYTK2 "R_cytidylate_kinase__dCMP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_CYTK2 "R_cytidylate_kinase__dCMP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DADK "R_deoxyadenylate_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DADK "R_deoxyadenylate_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DADK "R_deoxyadenylate_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DATPHs "R_dATP_amine_hydrolysis__spontaneous_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DATPHs "R_dATP_amine_hydrolysis__spontaneous_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DATPHs "R_dATP_amine_hydrolysis__spontaneous_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DATPt "R_Dinucleoside_transport__dATP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DATPt "R_Dinucleoside_transport__dATP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DCYTD "R_deoxycytidine_deaminase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DCYTD "R_deoxycytidine_deaminase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DCYTD "R_deoxycytidine_deaminase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DGK1 "R_deoxyguanylate_kinase__dGMP_ATP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DGK1 "R_deoxyguanylate_kinase__dGMP_ATP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DGK1 "R_deoxyguanylate_kinase__dGMP_ATP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DGTPt "R_Dinucleoside_transport__dGTP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DGTPt "R_Dinucleoside_transport__dGTP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DHFOR2 "R_dihydrofolate_reductase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DHFOR2 "R_dihydrofolate_reductase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DHFOR2 "R_dihydrofolate_reductase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DHFOR3 "R_dihydrofolate_reductase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DHFOR3 "R_dihydrofolate_reductase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DHFOR3 "R_dihydrofolate_reductase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DHFR "R_dihydrofolate_reductase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DHFR "R_dihydrofolate_reductase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DHFR "R_dihydrofolate_reductase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc1 "R_Dipeptide_transport_via_ABC_system__ala_asp_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc1 "R_Dipeptide_transport_via_ABC_system__ala_asp_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc1 "R_Dipeptide_transport_via_ABC_system__ala_asp_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc10 "R_Dipeptide_transport_via_ABC_system__gly_glu_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc10 "R_Dipeptide_transport_via_ABC_system__gly_glu_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc10 "R_Dipeptide_transport_via_ABC_system__gly_glu_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc11 "R_Dipeptide_transport_via_ABC_system__gly_met_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc11 "R_Dipeptide_transport_via_ABC_system__gly_met_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc11 "R_Dipeptide_transport_via_ABC_system__gly_met_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc12 "R_Dipeptide_transport_via_ABC_system__met_ala_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc12 "R_Dipeptide_transport_via_ABC_system__met_ala_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc12 "R_Dipeptide_transport_via_ABC_system__met_ala_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc13 "R_Dipeptide_transport_via_ABC_system__gly_asp_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc13 "R_Dipeptide_transport_via_ABC_system__gly_asp_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc13 "R_Dipeptide_transport_via_ABC_system__gly_asp_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc14 "R_Dipeptide_transport_via_ABC_system__gly_pro_L_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc14 "R_Dipeptide_transport_via_ABC_system__gly_pro_L_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc14 "R_Dipeptide_transport_via_ABC_system__gly_pro_L_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc15 "R_Dipeptide_transport_via_ABC_system__cgly_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc15 "R_Dipeptide_transport_via_ABC_system__cgly_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc15 "R_Dipeptide_transport_via_ABC_system__cgly_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc2 "R_Dipeptide_transport_via_ABC_system__ala_gln_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc2 "R_Dipeptide_transport_via_ABC_system__ala_gln_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc2 "R_Dipeptide_transport_via_ABC_system__ala_gln_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc3 "R_Dipeptide_transport_via_ABC_system__ala_glu_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc3 "R_Dipeptide_transport_via_ABC_system__ala_glu_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc3 "R_Dipeptide_transport_via_ABC_system__ala_glu_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc4 "R_Dipeptide_transport_via_ABC_system__ala_gly_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc4 "R_Dipeptide_transport_via_ABC_system__ala_gly_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc4 "R_Dipeptide_transport_via_ABC_system__ala_gly_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc5 "R_Dipeptide_transport_via_ABC_system__ala_his_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc5 "R_Dipeptide_transport_via_ABC_system__ala_his_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc5 "R_Dipeptide_transport_via_ABC_system__ala_his_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc6 "R_Dipeptide_transport_via_ABC_system__ala_leu_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc6 "R_Dipeptide_transport_via_ABC_system__ala_leu_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc6 "R_Dipeptide_transport_via_ABC_system__ala_leu_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc7 "R_Dipeptide_transport_via_ABC_system__ala_thr_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc7 "R_Dipeptide_transport_via_ABC_system__ala_thr_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc7 "R_Dipeptide_transport_via_ABC_system__ala_thr_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc8 "R_Dipeptide_transport_via_ABC_system__gly_asn_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc8 "R_Dipeptide_transport_via_ABC_system__gly_asn_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc8 "R_Dipeptide_transport_via_ABC_system__gly_asn_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DIPEPabc9 "R_Dipeptide_transport_via_ABC_system__gly_gln_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DIPEPabc9 "R_Dipeptide_transport_via_ABC_system__gly_gln_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DIPEPabc9 "R_Dipeptide_transport_via_ABC_system__gly_gln_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DM_C03153 "R_N5_Methyl_L_glutamine_drain">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DM_C03153 "R_N5_Methyl_L_glutamine_drain">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DM_pglyp "R_Phosphatidylglycerophosphate_drain">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DM_pglyp "R_Phosphatidylglycerophosphate_drain">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DRPAr "R_Deoxyribose_phosphate_aldolase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DRPAr "R_Deoxyribose_phosphate_aldolase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DRPAr "R_Deoxyribose_phosphate_aldolase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DTMPK "R_dTMP_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DTMPK "R_dTMP_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DTMPK "R_dTMP_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DURIPP "R_purine_nucleoside_phosphatase__deoxyuridine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DURIPP "R_purine_nucleoside_phosphatase__deoxyuridine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DURIPP "R_purine_nucleoside_phosphatase__deoxyuridine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_DXPS "R_1_deoxy_D_xylulose_5_phosphate_synthase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_DXPS "R_1_deoxy_D_xylulose_5_phosphate_synthase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_DXPS "R_1_deoxy_D_xylulose_5_phosphate_synthase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ENO "R_enolase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ENO "R_enolase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ENO "R_enolase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_F1PK "R_fructose_1_phosphate_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_F1PK "R_fructose_1_phosphate_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_F1PK "R_fructose_1_phosphate_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_FBA "R_fructose_bisphosphate_aldolase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_FBA "R_fructose_bisphosphate_aldolase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_FBA "R_fructose_bisphosphate_aldolase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_FBA2 "R_D_Fructose_1_phosphate_D_glyceraldehyde_3_phosphate_lyase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_FBA2 "R_D_Fructose_1_phosphate_D_glyceraldehyde_3_phosphate_lyase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_FBA2 "R_D_Fructose_1_phosphate_D_glyceraldehyde_3_phosphate_lyase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_FE2abc "R_iron__II__transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_FE2abc "R_iron__II__transport_via_ABC_system">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_FE3abc "R_iron__III__transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_FE3abc "R_iron__III__transport_via_ABC_system">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_FMETTRS "R_Methionyl_tRNA_formyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_FMETTRS "R_Methionyl_tRNA_formyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_FMETTRS "R_Methionyl_tRNA_formyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_FMNATr "R_FMN_adenylyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_FMNATr "R_FMN_adenylyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_FMNATr "R_FMN_adenylyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_FOLt "R_folate_transport_via_proton_simport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_FOLt "R_folate_transport_via_proton_simport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_FRUpts "R_D_fructose_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_FRUpts "R_D_fructose_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_FRUpts "R_D_fructose_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_G1PACT "R_glucosamine_1_phosphate_N_acetyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_G1PACT "R_glucosamine_1_phosphate_N_acetyltransferase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_G3PD4 "R_glycerol_3_phosphate_dehydrogenase__menaquinone_7_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_G3PD4 "R_glycerol_3_phosphate_dehydrogenase__menaquinone_7_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_G3PD4 "R_glycerol_3_phosphate_dehydrogenase__menaquinone_7_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_G3POA "R_glycerol_3_phosphate_O_acyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_G3POA "R_glycerol_3_phosphate_O_acyltransferase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_G6PI "R_Glucose_6_phosphate_isomerase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_G6PI "R_Glucose_6_phosphate_isomerase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_G6PI "R_Glucose_6_phosphate_isomerase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GALabc "R_D_galactose_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GALabc "R_D_galactose_transport_via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GALabc "R_D_galactose_transport_via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GALU "R_UTP_glucose_1_phosphate_uridylyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GALU "R_UTP_glucose_1_phosphate_uridylyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GALU "R_UTP_glucose_1_phosphate_uridylyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GAMpts "R_D_glucosamine_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GAMpts "R_D_glucosamine_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GAMpts "R_D_glucosamine_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GAPD "R_glyceraldehyde_3_phosphate_dehydrogenase__NAD_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GAPD "R_glyceraldehyde_3_phosphate_dehydrogenase__NAD_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GAPD "R_glyceraldehyde_3_phosphate_dehydrogenase__NAD_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GHMT "R_glycine_hydroxymethyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GHMT "R_glycine_hydroxymethyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GHMT "R_glycine_hydroxymethyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GK1 "R_guanylate_kinase__GMP_ATP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GK1 "R_guanylate_kinase__GMP_ATP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GK1 "R_guanylate_kinase__GMP_ATP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GK2 "R_guanylate_kinase__GMP_dATP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GK2 "R_guanylate_kinase__GMP_dATP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GK2 "R_guanylate_kinase__GMP_dATP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLCpts "R_D_glucose_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLCpts "R_D_glucose_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GLCpts "R_D_glucose_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLNMT "R_glutamine_N5_methyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLNMT "R_glutamine_N5_methyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GLNMT "R_glutamine_N5_methyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLUDy "R_glutamate_dehydrogenase__NADP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLUDy "R_glutamate_dehydrogenase__NADP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLUt6 "R_L_glutamate_transport_in/out_via_proton_symporter">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLUt6 "R_L_glutamate_transport_in/out_via_proton_symporter">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLUTRS "R_Glutamyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLUTRS "R_Glutamyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GLUTRS "R_Glutamyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLXAT "R_glutamyl_tRNA_Gln__amidotransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLXAT "R_glutamyl_tRNA_Gln__amidotransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GLXAT "R_glutamyl_tRNA_Gln__amidotransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLYC3Pabc "R_sn_Glycerol_3_phosphate_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLYC3Pabc "R_sn_Glycerol_3_phosphate_transport_via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GLYC3Pabc "R_sn_Glycerol_3_phosphate_transport_via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLYCt "R_glycerol_transport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLYCt "R_glycerol_transport">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GLYCt "R_glycerol_transport">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLYK "R_glycerol_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLYK "R_glycerol_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GLYK "R_glycerol_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GLYTRS "R_Glycyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GLYTRS "R_Glycyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GLYTRS "R_Glycyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GTPHs "R_GTP_amine_hydrolysis__spontaneous_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GTPHs "R_GTP_amine_hydrolysis__spontaneous_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GTPHs "R_GTP_amine_hydrolysis__spontaneous_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GTPt "R_Nucleoside_transport__GTP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GTPt "R_Nucleoside_transport__GTP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GUAD "R_guanine_deaminase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GUAD "R_guanine_deaminase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_GUAPRTr "R_guanine_phosphoribosyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_GUAPRTr "R_guanine_phosphoribosyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_GUAPRTr "R_guanine_phosphoribosyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_H2Ot5 "R_H2O_transport_via_diffusion">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_H2Ot5 "R_H2O_transport_via_diffusion">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_H2Ot5 "R_H2O_transport_via_diffusion">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_HISt2 "R_L_histidine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_HISt2 "R_L_histidine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_HISTRS "R_Histidyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_HISTRS "R_Histidyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_HISTRS "R_Histidyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_HXPRTr "R_hypoxanthine_phosphoribosyltransferase__Hypoxanthine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_HXPRTr "R_hypoxanthine_phosphoribosyltransferase__Hypoxanthine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_HXPRTr "R_hypoxanthine_phosphoribosyltransferase__Hypoxanthine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ILEt2 "R_L_isoleucine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ILEt2 "R_L_isoleucine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ILETRS "R_Isoleucyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ILETRS "R_Isoleucyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_ILETRS "R_Isoleucyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_INS2D "R_inositol_2_dehydrogenase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_INS2D "R_inositol_2_dehydrogenase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_INSCR "R_inositol_catabolic_reactions__lumped_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_INSCR "R_inositol_catabolic_reactions__lumped_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_INSCR "R_inositol_catabolic_reactions__lumped_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_INSK "R_inosine_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_INSK "R_inosine_kinase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_Kt2i "R_potassium_irreversible_transport_via_proton_symporter">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_Kt2i "R_potassium_irreversible_transport_via_proton_symporter">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_Kt2i "R_potassium_irreversible_transport_via_proton_symporter">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_LDH_L "R_L_lactate_dehydrogenase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_LDH_L "R_L_lactate_dehydrogenase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_LDH_L "R_L_lactate_dehydrogenase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_LEUt6 "R_L_leucine_transport_in/out_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_LEUt6 "R_L_leucine_transport_in/out_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_LEUTRS "R_Leucyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_LEUTRS "R_Leucyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_LEUTRS "R_Leucyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_L_LACt2 "R_L_lactate_reversible_transport_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_L_LACt2 "R_L_lactate_reversible_transport_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_LYSt3 "R_L_lysine_transport_out_via_proton_antiport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_LYSt3 "R_L_lysine_transport_out_via_proton_antiport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_LYSTRS "R_Lysyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_LYSTRS "R_Lysyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_LYSTRS "R_Lysyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MALTpts "R_maltose_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MALTpts "R_maltose_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_MALTpts "R_maltose_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MANpts "R_D_mannose_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MANpts "R_D_mannose_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_MANpts "R_D_mannose_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_METAT "R_methionine_adenosyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_METAT "R_methionine_adenosyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_METAT "R_methionine_adenosyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_METSR_R1 "R_L_methionine_R_oxide_reductase__trdrd_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_METSR_R1 "R_L_methionine_R_oxide_reductase__trdrd_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_METSR_R1 "R_L_methionine_R_oxide_reductase__trdrd_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_METSR_R2 "R_L_methionine_R_oxide__H2O2_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_METSR_R2 "R_L_methionine_R_oxide__H2O2_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_METSR_R2 "R_L_methionine_R_oxide__H2O2_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_METSR_S1 "R_L_methionine_S_oxide_reductase__trdrd_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_METSR_S1 "R_L_methionine_S_oxide_reductase__trdrd_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_METSR_S1 "R_L_methionine_S_oxide_reductase__trdrd_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_METSR_S2 "R_L_methionine_S_oxide_reductase__H2O2_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_METSR_S2 "R_L_methionine_S_oxide_reductase__H2O2_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_METSR_S2 "R_L_methionine_S_oxide_reductase__H2O2_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_METt6 "R_L_methionine_transport_in/out_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_METt6 "R_L_methionine_transport_in/out_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_METTRS "R_Methionyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_METTRS "R_Methionyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_METTRS "R_Methionyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MG2abc "R_Magnesium_transport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MG2abc "R_Magnesium_transport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MLN7t "R_Menaquinone_transport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MLN7t "R_Menaquinone_transport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MMSAD3 "R_methylmalonate_semialdehyde_dehydrogenase__malonic_semialdehyde_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MMSAD3 "R_methylmalonate_semialdehyde_dehydrogenase__malonic_semialdehyde_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MNabc "R_manganese_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MNabc "R_manganese_transport_via_ABC_system">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MNLpts "R_mannitol_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MNLpts "R_mannitol_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_MNLpts "R_mannitol_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MOBDabc "R_molybdate_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MOBDabc "R_molybdate_transport_via_ABC_system">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MTHFC "R_methenyltetrahydrofolate_cyclohydrolase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MTHFC "R_methenyltetrahydrofolate_cyclohydrolase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_MTHFC "R_methenyltetrahydrofolate_cyclohydrolase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_MTHFD "R_methylenetetrahydrofolate_dehydrogenase__NADP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_MTHFD "R_methylenetetrahydrofolate_dehydrogenase__NADP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_MTHFD "R_methylenetetrahydrofolate_dehydrogenase__NADP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NACUP "R_Nicotinic_acid_uptake">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NACUP "R_Nicotinic_acid_uptake">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NADH5 "R_NADH_dehydrogenase__Menaquinone_7___2_protons_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NADH5 "R_NADH_dehydrogenase__Menaquinone_7___2_protons_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_NADH5 "R_NADH_dehydrogenase__Menaquinone_7___2_protons_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NADK "R_NAD_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NADK "R_NAD_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_NADK "R_NAD_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NADS1 "R_NAD_synthase__nh4_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NADS1 "R_NAD_synthase__nh4_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_NADS1 "R_NAD_synthase__nh4_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NAMNPP "R_nicotinic_acid_mononucleotide_pyrophosphorylase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NAMNPP "R_nicotinic_acid_mononucleotide_pyrophosphorylase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_NAMNPP "R_nicotinic_acid_mononucleotide_pyrophosphorylase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK1 "R_nucleoside_diphosphate_kinase__ATP_GDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK1 "R_nucleoside_diphosphate_kinase__ATP_GDP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK2 "R_nucleoside_diphosphate_kinase__ATP_UDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK2 "R_nucleoside_diphosphate_kinase__ATP_UDP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK3 "R_nucleoside_diphosphate_kinase__ATP_CDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK3 "R_nucleoside_diphosphate_kinase__ATP_CDP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK4 "R_nucleoside_diphosphate_kinase__ATP_dTDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK4 "R_nucleoside_diphosphate_kinase__ATP_dTDP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK5 "R_nucleoside_diphosphate_kinase__ATP_dGDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK5 "R_nucleoside_diphosphate_kinase__ATP_dGDP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK6 "R_nucleoside_diphosphate_kinase__ATP_dUDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK6 "R_nucleoside_diphosphate_kinase__ATP_dUDP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK7 "R_nucleoside_diphosphate_kinase__ATP_dCDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK7 "R_nucleoside_diphosphate_kinase__ATP_dCDP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK8 "R_nucleoside_diphosphate_kinase__ATP_dADP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK8 "R_nucleoside_diphosphate_kinase__ATP_dADP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NDPK9 "R_nucleoside_diphophate_kinase__ATP_IDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NDPK9 "R_nucleoside_diphophate_kinase__ATP_IDP_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NH4t "R_ammonia_transport_via_diffusion">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NH4t "R_ammonia_transport_via_diffusion">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_NH4t "R_ammonia_transport_via_diffusion">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NIabc "R_nickel_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NIabc "R_nickel_transport_via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_NIabc "R_nickel_transport_via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NMNATr "R_nicotinamide_nucleotide_adenylyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NMNATr "R_nicotinamide_nucleotide_adenylyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_NMNATr "R_nicotinamide_nucleotide_adenylyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_NNATr "R_nicotinate_nucleotide_adenylyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_NNATr "R_nicotinate_nucleotide_adenylyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_NNATr "R_nicotinate_nucleotide_adenylyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_OHPHM "R_2_octaprenyl_6_hydroxyphenol_methylase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_OHPHM "R_2_octaprenyl_6_hydroxyphenol_methylase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_OHPHM "R_2_octaprenyl_6_hydroxyphenol_methylase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PAP "R_phosphatidic_acid_phosphatase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PAP "R_phosphatidic_acid_phosphatase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PBUTT "R_phosphate_butyryltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PBUTT "R_phosphate_butyryltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PBUTT "R_phosphate_butyryltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PDH "R_pyruvate_dehydrogenase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PDH "R_pyruvate_dehydrogenase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PDH "R_pyruvate_dehydrogenase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PFK "R_phosphofructokinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PFK "R_phosphofructokinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PFK "R_phosphofructokinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PGAMT "R_phosphoglucosamine_mutase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PGAMT "R_phosphoglucosamine_mutase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PGI "R_glucose_6_phosphate_isomerase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PGI "R_glucose_6_phosphate_isomerase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PGI "R_glucose_6_phosphate_isomerase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PGK "R_phosphoglycerate_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PGK "R_phosphoglycerate_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PGK "R_phosphoglycerate_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PGM "R_phosphoglycerate_mutase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PGM "R_phosphoglycerate_mutase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PGM "R_phosphoglycerate_mutase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PGMT "R_phosphoglucomutase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PGMT "R_phosphoglucomutase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PHCYT "R_phosphatidate_cytidylyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PHCYT "R_phosphatidate_cytidylyltransferase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PHEt6 "R_L_phenylalanine_transport_in/out_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PHEt6 "R_L_phenylalanine_transport_in/out_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PHETRS "R_Phenylalanyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PHETRS "R_Phenylalanyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PHETRS "R_Phenylalanyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PIabc "R_phosphate_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PIabc "R_phosphate_transport_via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PIabc "R_phosphate_transport_via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PMANM "R_phosphomannomutase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PMANM "R_phosphomannomutase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PMANM "R_phosphomannomutase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PPA "R_inorganic_diphosphatase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PPA "R_inorganic_diphosphatase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PPA "R_inorganic_diphosphatase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PPAK "R_Propionate_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PPAK "R_Propionate_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PPAK "R_Propionate_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PPAt6 "R_propionate_transport_in/out_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PPAt6 "R_propionate_transport_in/out_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PROt2 "R_L_proline_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PROt2 "R_L_proline_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PROTRS "R_Prolyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PROTRS "R_Prolyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PROTRS "R_Prolyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PRPPS "R_phosphoribosylpyrophosphate_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PRPPS "R_phosphoribosylpyrophosphate_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PRPPS "R_phosphoribosylpyrophosphate_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PSUDS "R_pseudouridylate_synthase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PSUDS "R_pseudouridylate_synthase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PSUDS "R_pseudouridylate_synthase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PTA2r "R_Phosphate_acetyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PTA2r "R_Phosphate_acetyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PTA2r "R_Phosphate_acetyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PTAr "R_phosphotransacetylase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PTAr "R_phosphotransacetylase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PTAr "R_phosphotransacetylase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PTRCabc "R_putrescine_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PTRCabc "R_putrescine_transport_via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PTRCabc "R_putrescine_transport_via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PTRCORNt7 "R_putrescine/ornithine_antiporter">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PTRCORNt7 "R_putrescine/ornithine_antiporter">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PTRCORNt7 "R_putrescine/ornithine_antiporter">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PTRCt2 "R_putrescine_transport_in_via_proton_symport__reversible">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PTRCt2 "R_putrescine_transport_in_via_proton_symport__reversible">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PTRCt2 "R_putrescine_transport_in_via_proton_symport__reversible">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PUNP1 "R_purine_nucleoside_phosphorylase__Adenosine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PUNP1 "R_purine_nucleoside_phosphorylase__Adenosine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PUNP1 "R_purine_nucleoside_phosphorylase__Adenosine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PUNP2 "R_purine_nucleoside_phosphorylase__Deoxyadenosine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PUNP2 "R_purine_nucleoside_phosphorylase__Deoxyadenosine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PUNP2 "R_purine_nucleoside_phosphorylase__Deoxyadenosine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PUNP3 "R_purine_nucleoside_phosphorylase__Guanosine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PUNP3 "R_purine_nucleoside_phosphorylase__Guanosine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PUNP3 "R_purine_nucleoside_phosphorylase__Guanosine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PUNP4 "R_purine_nucleoside_phosphorylase__Deoxyguanosine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PUNP4 "R_purine_nucleoside_phosphorylase__Deoxyguanosine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PUNP4 "R_purine_nucleoside_phosphorylase__Deoxyguanosine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PUNP5 "R_purine_nucleoside_phosphorylase__Inosine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PUNP5 "R_purine_nucleoside_phosphorylase__Inosine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PUNP5 "R_purine_nucleoside_phosphorylase__Inosine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PUNP6 "R_purine_nucleoside_phosphorylase__Deoxyinosine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PUNP6 "R_purine_nucleoside_phosphorylase__Deoxyinosine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PUNP6 "R_purine_nucleoside_phosphorylase__Deoxyinosine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PUNP7 "R_purine_nucleoside_phosphorylase__Xanthosine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PUNP7 "R_purine_nucleoside_phosphorylase__Xanthosine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PUNP7 "R_purine_nucleoside_phosphorylase__Xanthosine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PYDXK "R_pyridoxal_kinase__Pyridoxal_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PYDXK "R_pyridoxal_kinase__Pyridoxal_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PYDXt "R_Pyridoxal_transport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PYDXt "R_Pyridoxal_transport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PYK "R_pyruvate_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PYK "R_pyruvate_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PYK "R_pyruvate_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PYNP1r "R_pyrimidine_nucleoside_phosphorylase__cytosine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PYNP1r "R_pyrimidine_nucleoside_phosphorylase__cytosine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PYNP1r "R_pyrimidine_nucleoside_phosphorylase__cytosine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_PYNP2 "R_pyrimidine_nucleoside_phosphorylase__uracil_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_PYNP2 "R_pyrimidine_nucleoside_phosphorylase__uracil_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_PYNP2 "R_pyrimidine_nucleoside_phosphorylase__uracil_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RBFK "R_riboflavin_kinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RBFK "R_riboflavin_kinase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_RBFK "R_riboflavin_kinase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RBK "R_ribokinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RBK "R_ribokinase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RIBabc "R_D_ribose_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RIBabc "R_D_ribose_transport_via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_RIBabc "R_D_ribose_transport_via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RIBFLVt2 "R_riboflavin_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RIBFLVt2 "R_riboflavin_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RNDR1 "R_ribonucleoside_diphosphate_reductase__ADP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RNDR1 "R_ribonucleoside_diphosphate_reductase__ADP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_RNDR1 "R_ribonucleoside_diphosphate_reductase__ADP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RNDR2 "R_ribonucleoside_diphosphate_reductase__GDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RNDR2 "R_ribonucleoside_diphosphate_reductase__GDP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_RNDR2 "R_ribonucleoside_diphosphate_reductase__GDP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RNDR3 "R_ribonucleoside_diphosphate_reductase__CDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RNDR3 "R_ribonucleoside_diphosphate_reductase__CDP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_RNDR3 "R_ribonucleoside_diphosphate_reductase__CDP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RNDR4 "R_ribonucleoside_diphosphate_reductase__UDP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RNDR4 "R_ribonucleoside_diphosphate_reductase__UDP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_RNDR4 "R_ribonucleoside_diphosphate_reductase__UDP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RPE "R_ribulose_5_phosphate_3_epimerase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RPE "R_ribulose_5_phosphate_3_epimerase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_RPE "R_ribulose_5_phosphate_3_epimerase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_RPI "R_ribose_5_phosphate_isomerase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_RPI "R_ribose_5_phosphate_isomerase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_RPI "R_ribose_5_phosphate_isomerase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_SALCpts "R_salicin_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_SALCpts "R_salicin_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_SALCpts "R_salicin_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_SERt2 "R_L_serine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_SERt2 "R_L_serine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_SERTRS "R_Seryl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_SERTRS "R_Seryl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_SERTRS "R_Seryl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_SO4t2 "R_sulfate_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_SO4t2 "R_sulfate_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_SPMDabc "R_spermidine_transport_via_ABC_system">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_SPMDabc "R_spermidine_transport_via_ABC_system">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_SPMDabc "R_spermidine_transport_via_ABC_system">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_SUCpts "R_sucrose_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_SUCpts "R_sucrose_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_SUCpts "R_sucrose_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TECA4S "R_minor_teichoic_acid_synthesis__n=30_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TECA4S "R_minor_teichoic_acid_synthesis__n=30_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TECA4S "R_minor_teichoic_acid_synthesis__n=30_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TEICH45 "R_teichuronic_acid__n=45___unlinked__GalNAc_GlcA_repeated">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TEICH45 "R_teichuronic_acid__n=45___unlinked__GalNAc_GlcA_repeated">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TEICH45 "R_teichuronic_acid__n=45___unlinked__GalNAc_GlcA_repeated">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_THDPO "R_thiol_peroxidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_THDPO "R_thiol_peroxidase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_THDPO "R_thiol_peroxidase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_THM2t2 "R_Thiamine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_THM2t2 "R_Thiamine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_THMDt2 "R_thymidine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_THMDt2 "R_thymidine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_THRTRS "R_Threonyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_THRTRS "R_Threonyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_THRTRS "R_Threonyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_THZPSN "R_thiazole_phosphate_synthesis">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_THZPSN "R_thiazole_phosphate_synthesis">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_THZPSN "R_thiazole_phosphate_synthesis">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TKT1 "R_transketolase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TKT1 "R_transketolase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TKT1 "R_transketolase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TKT2 "R_transketolase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TKT2 "R_transketolase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TKT2 "R_transketolase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TMDK1 "R_thymidine_kinase__ATP_thymidine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TMDK1 "R_thymidine_kinase__ATP_thymidine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TMDK1 "R_thymidine_kinase__ATP_thymidine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TMDPK "R_thiamine_diphosphokinase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TMDPK "R_thiamine_diphosphokinase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TMDPP "R_thymidine_phosphorylase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TMDPP "R_thymidine_phosphorylase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TMDPP "R_thymidine_phosphorylase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TMDS "R_thymidylate_synthase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TMDS "R_thymidylate_synthase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TMDS "R_thymidylate_synthase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TPI "R_triose_phosphate_isomerase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TPI "R_triose_phosphate_isomerase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TPI "R_triose_phosphate_isomerase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TRDR "R_thioredoxin_reductase__NADPH_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TRDR "R_thioredoxin_reductase__NADPH_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TRDR "R_thioredoxin_reductase__NADPH_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TREpts "R_trehalose_transport_via_PEP_Pyr_PTS">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TREpts "R_trehalose_transport_via_PEP_Pyr_PTS">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TREpts "R_trehalose_transport_via_PEP_Pyr_PTS">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TRIA "R_membrane_alanyl_aminopeptidase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TRIA "R_membrane_alanyl_aminopeptidase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TRPt2 "R_L_tryptophan_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TRPt2 "R_L_tryptophan_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TRPTRS "R_Tryptophanyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TRPTRS "R_Tryptophanyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TRPTRS "R_Tryptophanyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TYRt2 "R_tyrosine_peroxisomal_transport_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TYRt2 "R_tyrosine_peroxisomal_transport_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_TYRTRS "R_Tyrosyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_TYRTRS "R_Tyrosyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_TYRTRS "R_Tyrosyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UAG4E "R_UDP_N_acetylglucosamine_4_epimerase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UAG4E "R_UDP_N_acetylglucosamine_4_epimerase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_UAG4E "R_UDP_N_acetylglucosamine_4_epimerase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UAGDP "R_UDP_N_acetylglucosamine_diphosphorylase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UAGDP "R_UDP_N_acetylglucosamine_diphosphorylase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UDPG4E "R_UDPglucose_4_epimerase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UDPG4E "R_UDPglucose_4_epimerase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_UDPG4E "R_UDPglucose_4_epimerase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UDPGALM "R_UDPgalactopyranose_mutase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UDPGALM "R_UDPgalactopyranose_mutase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_UDPGALM "R_UDPgalactopyranose_mutase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UDPGD "R_UDPglucose_6_dehydrogenase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UDPGD "R_UDPglucose_6_dehydrogenase">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UGT1 "R_UDP_glucosyltransferase__monoglucosyl_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UGT1 "R_UDP_glucosyltransferase__monoglucosyl_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UGT2 "R_UDP_glucosyltransferase__diglucosyl_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UGT2 "R_UDP_glucosyltransferase__diglucosyl_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UGT3 "R_UDP_glucosyltransferase__triglucosyl_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UGT3 "R_UDP_glucosyltransferase__triglucosyl_">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_UPPRT "R_uracil_phosphoribosyltransferase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_UPPRT "R_uracil_phosphoribosyltransferase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_UPPRT "R_uracil_phosphoribosyltransferase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_URAt2 "R_uracil_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_URAt2 "R_uracil_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_URIDK1 "R_uridylate_kinase__UMP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_URIDK1 "R_uridylate_kinase__UMP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_URIDK1 "R_uridylate_kinase__UMP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_URIDK3 "R_uridylate_kinase__dUMP_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_URIDK3 "R_uridylate_kinase__dUMP_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_URIDK3 "R_uridylate_kinase__dUMP_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_URIK1 "R_uridine_kinase__ATP_Uridine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_URIK1 "R_uridine_kinase__ATP_Uridine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_URIK1 "R_uridine_kinase__ATP_Uridine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_URIK2 "R_uridine_kinase__GTP_Uridine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_URIK2 "R_uridine_kinase__GTP_Uridine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_URIK2 "R_uridine_kinase__GTP_Uridine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_URIK3 "R_uridine_kinase__ITP_Uridine_">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_URIK3 "R_uridine_kinase__ITP_Uridine_">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_URIK3 "R_uridine_kinase__ITP_Uridine_">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_VALt2 "R_L_valine_transport_in_via_proton_symport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_VALt2 "R_L_valine_transport_in_via_proton_symport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_VALTRS "R_Valyl_tRNA_synthetase">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_VALTRS "R_Valyl_tRNA_synthetase">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_VALTRS "R_Valyl_tRNA_synthetase">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_ZN2t4 "R_zinc_transport_out_via_antiport">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_ZN2t4 "R_zinc_transport_out_via_antiport">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_Biomass "R_Biomass">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_Biomass "R_Biomass">'
+Use of GENE ASSOCIATION or GENE_ASSOCIATION in the notes element is discouraged, use fbc:gpr instead: <Reaction R_Biomass "R_Biomass">
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_L_alagly_e_ "R_L_alanylglycine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_L_alagly_e_ "R_L_alanylglycine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ac_e_ "R_Acetate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ac_e_ "R_Acetate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_acgam_e_ "R_N_Acetyl_D_glucosamine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_acgam_e_ "R_N_Acetyl_D_glucosamine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_acoa_e_ "R_Acyl_CoA_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_acoa_e_ "R_Acyl_CoA_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ade_e_ "R_Adenine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ade_e_ "R_Adenine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_akg_e_ "R_2_Oxoglutarate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_akg_e_ "R_2_Oxoglutarate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ala_L_asp_L_e_ "R_L_alanyl_L_aspartate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ala_L_asp_L_e_ "R_L_alanyl_L_aspartate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ala_L_gln_L_e_ "R_ala_L_gln_L_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ala_L_gln_L_e_ "R_ala_L_gln_L_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ala_L_glu_L_e_ "R_ala_L_glu_L_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ala_L_glu_L_e_ "R_ala_L_glu_L_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ala_L_his_L_e_ "R_Alanylhistidine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ala_L_his_L_e_ "R_Alanylhistidine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ala_L_leu_L_e_ "R_N_L_Alanyl_L_leucine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ala_L_leu_L_e_ "R_N_L_Alanyl_L_leucine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ala_L_thr_L_e_ "R_N_L_alanyl_L_threonine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ala_L_thr_L_e_ "R_N_L_alanyl_L_threonine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_arbt_e_ "R_Arbutin_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_arbt_e_ "R_Arbutin_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_arg_L_e_ "R_L_Arginine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_arg_L_e_ "R_L_Arginine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_asn_L_e_ "R_L_Asparagine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_asn_L_e_ "R_L_Asparagine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ca2_e_ "R_Calcium_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ca2_e_ "R_Calcium_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_cellb_e_ "R_cellobiose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_cellb_e_ "R_cellobiose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_cgly_e_ "R_Cys_Gly_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_cgly_e_ "R_Cys_Gly_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_cl_e_ "R_Chloride_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_cl_e_ "R_Chloride_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_co2_e_ "R_CO2_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_co2_e_ "R_CO2_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_coa_e_ "R_Coenzyme_A_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_coa_e_ "R_Coenzyme_A_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_cobalt2_e_ "R_Co2__exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_cobalt2_e_ "R_Co2__exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_csn_e_ "R_Cytosine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_csn_e_ "R_Cytosine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_cu2_e_ "R_Cu2__exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_cu2_e_ "R_Cu2__exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_datp_e_ "R_dATP_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_datp_e_ "R_dATP_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_dgtp_e_ "R_dGTP_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_dgtp_e_ "R_dGTP_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_fe2_e_ "R_Fe2__exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_fe2_e_ "R_Fe2__exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_fe3_e_ "R_Fe3__exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_fe3_e_ "R_Fe3__exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_fol_e_ "R_Folate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_fol_e_ "R_Folate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_fru_e_ "R_D_Fructose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_fru_e_ "R_D_Fructose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gal_e_ "R_D_Galactose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gal_e_ "R_D_Galactose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gam_e_ "R_D_Glucosamine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gam_e_ "R_D_Glucosamine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_glc_D_e_ "R_D_Glucose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_glc_D_e_ "R_D_Glucose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_glu_L_e_ "R_L_Glutamate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_glu_L_e_ "R_L_Glutamate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gly_asn_L_e_ "R_glycyl_L_asparagine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gly_asn_L_e_ "R_glycyl_L_asparagine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gly_asp_L_e_ "R_N_glycyl_L_aspartic_acid_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gly_asp_L_e_ "R_N_glycyl_L_aspartic_acid_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gly_gln_L_e_ "R_L_Glycylglutamine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gly_gln_L_e_ "R_L_Glycylglutamine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gly_glu_L_e_ "R_glycyl_L_glutamic_acid_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gly_glu_L_e_ "R_glycyl_L_glutamic_acid_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gly_met_L_e_ "R_N_Glycyl_L_methionine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gly_met_L_e_ "R_N_Glycyl_L_methionine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gly_pro_L_e_ "R_L_Proline__1_glycyl__exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gly_pro_L_e_ "R_L_Proline__1_glycyl__exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_glyc3p_e_ "R_Glycerol_3_phosphate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_glyc3p_e_ "R_Glycerol_3_phosphate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_glyc_e_ "R_Glycerol_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_glyc_e_ "R_Glycerol_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_gtp_e_ "R_GTP_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_gtp_e_ "R_GTP_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_h2o_e_ "R_H2O_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_h2o_e_ "R_H2O_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_h_e_ "R_H__exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_h_e_ "R_H__exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_his_L_e_ "R_L_Histidine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_his_L_e_ "R_L_Histidine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ile_L_e_ "R_L_Isoleucine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ile_L_e_ "R_L_Isoleucine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_k_e_ "R_Potassium_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_k_e_ "R_Potassium_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_lac_L_e_ "R_L_Lactate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_lac_L_e_ "R_L_Lactate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_leu_L_e_ "R_L_Leucine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_leu_L_e_ "R_L_Leucine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_lys_L_e_ "R_L_Lysine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_lys_L_e_ "R_L_Lysine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_malt_e_ "R_Maltose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_malt_e_ "R_Maltose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_man_e_ "R_D_Mannose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_man_e_ "R_D_Mannose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_met_L_ala_L_e_ "R_met_L_ala_L_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_met_L_ala_L_e_ "R_met_L_ala_L_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_met_L_e_ "R_L_Methionine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_met_L_e_ "R_L_Methionine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_mg2_e_ "R_Magnesium_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_mg2_e_ "R_Magnesium_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_mn2_e_ "R_Mn2__exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_mn2_e_ "R_Mn2__exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_mnl_e_ "R_D_Mannitol_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_mnl_e_ "R_D_Mannitol_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_mobd_e_ "R_Molybdate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_mobd_e_ "R_Molybdate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_mqn7_e_ "R_Menaquinone_7_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_mqn7_e_ "R_Menaquinone_7_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_nac_e_ "R_Nicotinate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_nac_e_ "R_Nicotinate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_nh4_e_ "R_Ammonium_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_nh4_e_ "R_Ammonium_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ni2_e_ "R_Nickel_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ni2_e_ "R_Nickel_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_orn_L_e_ "R_L_Ornithine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_orn_L_e_ "R_L_Ornithine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_phe_L_e_ "R_L_Phenylalanine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_phe_L_e_ "R_L_Phenylalanine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_pi_e_ "R_Phosphate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_pi_e_ "R_Phosphate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ppa_e_ "R_Propionate__n_C3_0__exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ppa_e_ "R_Propionate__n_C3_0__exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_pro_L_e_ "R_L_Proline_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_pro_L_e_ "R_L_Proline_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ptrc_e_ "R_Putrescine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ptrc_e_ "R_Putrescine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_pydx_e_ "R_Pyridoxal_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_pydx_e_ "R_Pyridoxal_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_rib_D_e_ "R_D_Ribose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_rib_D_e_ "R_D_Ribose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ribflv_e_ "R_Riboflavin_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ribflv_e_ "R_Riboflavin_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_salcn_e_ "R_Salicin_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_salcn_e_ "R_Salicin_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ser_L_e_ "R_L_Serine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ser_L_e_ "R_L_Serine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_so4_e_ "R_Sulfate_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_so4_e_ "R_Sulfate_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_spmd_e_ "R_Spermidine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_spmd_e_ "R_Spermidine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_sucr_e_ "R_Sucrose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_sucr_e_ "R_Sucrose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_thm_e_ "R_Thiamin_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_thm_e_ "R_Thiamin_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_thymd_e_ "R_Thymidine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_thymd_e_ "R_Thymidine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_tre_e_ "R_Trehalose_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_tre_e_ "R_Trehalose_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_trp_L_e_ "R_L_Tryptophan_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_trp_L_e_ "R_L_Tryptophan_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_tyr_L_e_ "R_L_Tyrosine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_tyr_L_e_ "R_L_Tyrosine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_ura_e_ "R_Uracil_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_ura_e_ "R_Uracil_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_val_L_e_ "R_L_Valine_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_val_L_e_ "R_L_Valine_exchange">'
+Missing lower flux bound set to '-1000.0' for reaction: '<Reaction R_EX_zn2_e_ "R_Zinc_exchange">'
+Missing upper flux bound set to '1000.0' for reaction: '<Reaction R_EX_zn2_e_ "R_Zinc_exchange">'
+No objective coefficients in model. Unclear what should be optimized
+Missing flux bounds on reactions set to default bounds.As best practise and to avoid confusion flux bounds should be set explicitly on all reactions.
+Could not identify an external compartment by name and choosing one with the most boundary reactions. That might be complete nonsense or change suddenly. Consider renaming your compartments using `Model.compartments` to fix this.
+Could not identify an external compartment by name and choosing one with the most boundary reactions. That might be complete nonsense or change suddenly. Consider renaming your compartments using `Model.compartments` to fix this.
+Loading Model...
+
+--- OPENING ALL GATES ---
+
+🟢 IT'S ALIVE! (Finally)
+   Max Growth Rate: 542.3379
+   (This confirms your Genome Integration was successful.)
+
+--- ID HUNTING RESULTS ---

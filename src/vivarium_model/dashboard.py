@@ -5,8 +5,10 @@ import cobra
 import pandas as pd
 import json
 import numpy as np
+import plotly.graph_objects as go
 import sys
 import os
+import hashlib
 
 # Add src to path for process imports
 project_root = os.path.join(os.path.dirname(__file__), "../..")
@@ -221,182 +223,454 @@ def run_hybrid_cached(drug_name, concentration_uM, sim_time=300.0):
     return _sim_cache[key]
 
 
-def build_cytoscape_elements():
-    """Build the organism graph with pathway grouping as parent nodes."""
-    elements = []
-    seen_mets = set()
-    node_count = 0
-    edge_count = 0
+# =====================================================================
+# 3D NETWORK LAYOUT (force-directed in 3D)
+# =====================================================================
 
-    pathway_ids = {}
-    for pw in _pathway_rxns:
-        pw_id = f"pw_{pw.replace(' ', '_').replace('&', 'and')}"
-        pathway_ids[pw] = pw_id
-        elements.append({
-            "data": {"id": pw_id, "label": pw, "node_type": "pathway"},
-            "classes": "pathway",
-        })
+def _stable_hash(s, mod=2**31):
+    """Deterministic hash for reproducible layout."""
+    return int(hashlib.md5(s.encode()).hexdigest(), 16) % mod
+
+
+def compute_3d_layout():
+    """
+    Compute 3D positions for all nodes using a pathway-grouped force-directed
+    approach. Pathways are placed in distinct spherical sectors, nodes within
+    each pathway are spread locally.
+    """
+    np.random.seed(42)
+
+    # Collect all node ids & their pathway membership
+    node_ids = []
+    node_types = {}
+    node_pathway = {}
 
     for gene in model.genes:
+        node_ids.append(gene.id)
+        node_types[gene.id] = "gene"
         rxn_ids = _gene_rxn_map.get(gene.id, [])
-        parent = None
         if rxn_ids:
-            pw = _rxn_pathway_map.get(rxn_ids[0], "Unknown")
-            parent = pathway_ids.get(pw)
-        node_data = {"id": gene.id, "label": gene.id, "node_type": "gene"}
-        if parent:
-            node_data["parent"] = parent
-        elements.append({"data": node_data, "classes": "gene"})
-        node_count += 1
+            node_pathway[gene.id] = _rxn_pathway_map.get(rxn_ids[0], "Unknown")
+        else:
+            node_pathway[gene.id] = "Unknown"
 
+    seen_mets = set()
     for rxn in model.reactions:
         if not rxn.genes:
             continue
-        pathway = _rxn_pathway_map.get(rxn.id, "Unknown")
-        parent = pathway_ids.get(pathway)
-        node_data = {
-            "id": rxn.id, "label": rxn.name[:30], "node_type": "reaction",
-            "pathway": pathway, "full_name": rxn.name,
-        }
-        if parent:
-            node_data["parent"] = parent
-        elements.append({"data": node_data, "classes": "reaction"})
-        node_count += 1
-
-        for gene in rxn.genes:
-            edge_id = f"eg_{gene.id}_{rxn.id}"
-            elements.append({
-                "data": {"id": edge_id, "source": gene.id, "target": rxn.id, "edge_type": "gene_rxn"},
-                "classes": "edge-default",
-            })
-            edge_count += 1
+        node_ids.append(rxn.id)
+        node_types[rxn.id] = "reaction"
+        node_pathway[rxn.id] = _rxn_pathway_map.get(rxn.id, "Unknown")
 
         for met in rxn.metabolites:
-            mid = met.id
-            if mid in HUB_METABOLITES:
+            if met.id in HUB_METABOLITES:
                 continue
-            if mid not in seen_mets:
-                met_name = get_met_name(mid)
-                first_rxn = _met_rxn_map.get(mid, [None])[0]
-                met_parent = None
+            if met.id not in seen_mets:
+                node_ids.append(met.id)
+                node_types[met.id] = "metabolite"
+                first_rxn = _met_rxn_map.get(met.id, [None])[0]
                 if first_rxn:
-                    mp = _rxn_pathway_map.get(first_rxn, "Unknown")
-                    met_parent = pathway_ids.get(mp)
-                met_data = {"id": mid, "label": met_name[:25], "node_type": "metabolite"}
-                if met_parent:
-                    met_data["parent"] = met_parent
-                elements.append({"data": met_data, "classes": "metabolite"})
-                seen_mets.add(mid)
-                node_count += 1
+                    node_pathway[met.id] = _rxn_pathway_map.get(first_rxn, "Unknown")
+                else:
+                    node_pathway[met.id] = "Unknown"
+                seen_mets.add(met.id)
 
-            edge_id = f"em_{rxn.id}_{mid}"
-            elements.append({
-                "data": {"id": edge_id, "source": rxn.id, "target": mid, "edge_type": "rxn_met"},
-                "classes": "edge-default",
-            })
-            edge_count += 1
+    # Assign pathway centers on a sphere
+    pathways = sorted(set(node_pathway.values()))
+    pw_centers = {}
+    n_pw = len(pathways)
+    golden_angle = np.pi * (3.0 - np.sqrt(5.0))
+    sphere_radius = 80.0
 
-    print(f"Graph built: {node_count} nodes, {edge_count} edges, {len(pathway_ids)} pathway groups")
-    return elements
+    for i, pw in enumerate(pathways):
+        # Fibonacci sphere for even distribution
+        y = 1.0 - (2.0 * i / max(n_pw - 1, 1))
+        r = np.sqrt(max(0, 1.0 - y * y))
+        theta = golden_angle * i
+        px = sphere_radius * r * np.cos(theta)
+        py = sphere_radius * y
+        pz = sphere_radius * r * np.sin(theta)
+        pw_centers[pw] = np.array([px, py, pz])
+
+    # Place nodes around their pathway center with jitter based on type
+    positions = {}
+    pw_node_count = {}
+    for nid in node_ids:
+        pw = node_pathway.get(nid, "Unknown")
+        center = pw_centers.get(pw, np.array([0, 0, 0]))
+        nt = node_types.get(nid, "metabolite")
+
+        # Use stable hash for deterministic jitter
+        h = _stable_hash(nid)
+        np.random.seed(h % (2**31))
+
+        if nt == "gene":
+            spread = 12.0
+        elif nt == "reaction":
+            spread = 18.0
+        else:
+            spread = 25.0
+
+        jitter = np.random.randn(3) * spread
+        positions[nid] = center + jitter
+
+    # Simple spring-based relaxation to reduce overlap
+    node_list = list(positions.keys())
+    pos_array = np.array([positions[n] for n in node_list])
+
+    # Build edge list for attraction
+    edge_pairs = []
+    node_index = {n: i for i, n in enumerate(node_list)}
+
+    for rxn in model.reactions:
+        if rxn.id not in node_index:
+            continue
+        ri = node_index[rxn.id]
+        for gene in rxn.genes:
+            if gene.id in node_index:
+                edge_pairs.append((node_index[gene.id], ri))
+        for met in rxn.metabolites:
+            if met.id in node_index:
+                edge_pairs.append((ri, node_index[met.id]))
+
+    # Run a few iterations of force-directed relaxation
+    n_nodes = len(node_list)
+    for iteration in range(30):
+        forces = np.zeros_like(pos_array)
+
+        # Edge attraction (spring force)
+        for i, j in edge_pairs:
+            diff = pos_array[j] - pos_array[i]
+            dist = np.linalg.norm(diff) + 1e-6
+            ideal_len = 8.0
+            f = (dist - ideal_len) * 0.01
+            force = diff / dist * f
+            forces[i] += force
+            forces[j] -= force
+
+        # Repulsion (only between nearby nodes for performance)
+        # Use a simple approach: sample pairs
+        if n_nodes < 500:
+            for i in range(n_nodes):
+                for j in range(i + 1, n_nodes):
+                    diff = pos_array[j] - pos_array[i]
+                    dist_sq = np.dot(diff, diff) + 1e-6
+                    if dist_sq < 900:  # Only repel if close (< 30 units)
+                        f = -50.0 / dist_sq
+                        dist = np.sqrt(dist_sq)
+                        force = diff / dist * f
+                        forces[i] += force
+                        forces[j] -= force
+        else:
+            # For large graphs, sample random pairs
+            n_samples = min(n_nodes * 10, 50000)
+            idx_i = np.random.randint(0, n_nodes, n_samples)
+            idx_j = np.random.randint(0, n_nodes, n_samples)
+            for si in range(n_samples):
+                i, j = idx_i[si], idx_j[si]
+                if i == j:
+                    continue
+                diff = pos_array[j] - pos_array[i]
+                dist_sq = np.dot(diff, diff) + 1e-6
+                if dist_sq < 900:
+                    f = -50.0 / dist_sq
+                    dist = np.sqrt(dist_sq)
+                    force = diff / dist * f
+                    forces[i] += force
+                    forces[j] -= force
+
+        # Pathway gravity: pull nodes toward their pathway center
+        for idx, nid in enumerate(node_list):
+            pw = node_pathway.get(nid, "Unknown")
+            center = pw_centers.get(pw, np.array([0, 0, 0]))
+            diff = center - pos_array[idx]
+            forces[idx] += diff * 0.005
+
+        # Apply forces with damping
+        damping = 0.8 * (1.0 - iteration / 30.0)
+        pos_array += forces * damping
+
+    # Write back
+    for idx, nid in enumerate(node_list):
+        positions[nid] = pos_array[idx]
+
+    return positions, node_types, node_pathway, pw_centers
 
 
-print("Building base graph (one-time)...")
-BASE_ELEMENTS = build_cytoscape_elements()
+print("Computing 3D layout (one-time)...")
+NODE_POSITIONS_3D, NODE_TYPES, NODE_PATHWAYS, PATHWAY_CENTERS = compute_3d_layout()
+print(f"3D layout computed for {len(NODE_POSITIONS_3D)} nodes")
 
 
-# --- STYLESHEET ---
-STYLESHEET = [
-    # === PATHWAY COMPOUND NODES ===
-    {"selector": "node.pathway", "style": {
-        "background-color": "#1e1b4b", "background-opacity": 0.3,
-        "border-width": 1, "border-color": "#4f46e5", "border-style": "dashed",
-        "shape": "round-rectangle", "label": "data(label)",
-        "font-size": 14, "color": "#818cf8", "text-valign": "top", "text-halign": "center",
-        "text-margin-y": -10, "text-opacity": 0.8, "padding": 40,
-        "compound-sizing-wrt-labels": "include",
-    }},
-    # === DEFAULT DIMMED ===
-    {"selector": "node.gene", "style": {
-        "background-color": "#0ea5e9", "width": 12, "height": 12, "shape": "diamond",
-        "label": "", "opacity": 0.3,
-        "transition-property": "background-color, width, height, opacity, border-width, border-color",
-        "transition-duration": "0.5s",
-    }},
-    {"selector": "node.reaction", "style": {
-        "background-color": "#64748b", "width": 8, "height": 8, "shape": "rectangle",
-        "label": "", "opacity": 0.25,
-        "transition-property": "background-color, width, height, opacity",
-        "transition-duration": "0.5s",
-    }},
-    {"selector": "node.metabolite", "style": {
-        "background-color": "#9ca3af", "width": 5, "height": 5, "shape": "ellipse",
-        "label": "", "opacity": 0.2,
-        "transition-property": "background-color, width, height, opacity",
-        "transition-duration": "0.5s",
-    }},
-    {"selector": "edge.edge-default", "style": {
-        "line-color": "#1e293b", "width": 0.5, "opacity": 0.15, "curve-style": "haystack",
-    }},
-    # === DRUG TARGET GENE ===
-    {"selector": "node.gene-target", "style": {
-        "background-color": "#d946ef", "width": 60, "height": 60,
-        "border-width": 6, "border-color": "#fdf4ff",
-        "label": "data(label)", "font-size": 20, "color": "#f0abfc",
-        "font-weight": "bold", "text-valign": "top", "text-margin-y": -12,
-        "opacity": 1.0, "z-index": 999,
-        "transition-property": "all", "transition-duration": "0.8s",
-    }},
-    # === DIRECT REACTION ===
-    {"selector": "node.reaction-hit", "style": {
-        "background-color": "#f97316", "width": 30, "height": 30,
-        "border-width": 3, "border-color": "#ffedd5",
-        "label": "data(label)", "font-size": 12, "color": "#fdba74",
-        "text-wrap": "ellipsis", "text-max-width": "100px",
-        "opacity": 1.0, "z-index": 100,
-        "transition-property": "all", "transition-duration": "0.6s", "transition-delay": "0.1s",
-    }},
-    # === DIRECT METABOLITE ===
-    {"selector": "node.metabolite-hit", "style": {
-        "background-color": "#eab308", "width": 20, "height": 20,
-        "border-width": 2, "border-color": "#fef08a",
-        "label": "data(label)", "font-size": 10, "color": "#fde047",
-        "text-wrap": "ellipsis", "text-max-width": "80px",
-        "opacity": 1.0, "z-index": 90,
-        "transition-property": "all", "transition-duration": "0.6s", "transition-delay": "0.2s",
-    }},
-    # === SECONDARY CASCADE ===
-    {"selector": "node.reaction-secondary", "style": {
-        "background-color": "#c2410c", "width": 16, "height": 16,
-        "label": "data(label)", "font-size": 8, "color": "#fdba74", "opacity": 0.8,
-        "transition-property": "all", "transition-duration": "0.5s", "transition-delay": "0.4s",
-    }},
-    {"selector": "node.metabolite-secondary", "style": {
-        "background-color": "#a16207", "width": 10, "height": 10, "opacity": 0.6,
-        "transition-property": "background-color, width, height, opacity",
-        "transition-duration": "0.5s", "transition-delay": "0.5s",
-    }},
-    # === PATHWAY HIT ===
-    {"selector": "node.pathway-hit", "style": {
-        "background-color": "#312e81", "background-opacity": 0.4,
-        "border-width": 4, "border-color": "#818cf8", "border-opacity": 0.8,
-        "label": "data(label)", "font-size": 16, "color": "#c7d2fe", "font-weight": "bold",
-        "transition-property": "border-color, background-opacity, border-opacity, border-width",
-        "transition-duration": "0.8s",
-    }},
-    # === HIGHLIGHTED EDGES ===
-    {"selector": "edge.edge-hit", "style": {
-        "line-color": "#fb923c", "width": 4, "opacity": 0.9, "z-index": 95,
-        "transition-property": "line-color, width, opacity", "transition-duration": "0.4s",
-    }},
-    {"selector": "edge.edge-ripple", "style": {
-        "line-color": "#ca8a04", "width": 1.5, "opacity": 0.5,
-        "transition-property": "line-color, width, opacity",
-        "transition-duration": "0.4s", "transition-delay": "0.3s",
-    }},
-    # === INTERACTION ===
-    {"selector": "node:active", "style": {"overlay-opacity": 0.2, "overlay-color": "#ffffff"}},
-    {"selector": "node:selected", "style": {"border-width": 4, "border-color": "#22d3ee"}},
-]
+# =====================================================================
+# BUILD 3D PLOTLY FIGURE
+# =====================================================================
+
+def build_3d_figure(highlighted_genes=None, highlighted_rxns=None, highlighted_mets=None,
+                    secondary_rxns=None, secondary_mets=None, hit_pathways=None,
+                    enzyme_activities=None):
+    """Build a Plotly 3D scatter figure for the metabolic network."""
+    if highlighted_genes is None:
+        highlighted_genes = set()
+    if highlighted_rxns is None:
+        highlighted_rxns = set()
+    if highlighted_mets is None:
+        highlighted_mets = set()
+    if secondary_rxns is None:
+        secondary_rxns = set()
+    if secondary_mets is None:
+        secondary_mets = set()
+    if hit_pathways is None:
+        hit_pathways = set()
+    if enzyme_activities is None:
+        enzyme_activities = {}
+
+    all_affected = highlighted_genes | highlighted_rxns | highlighted_mets | secondary_rxns | secondary_mets
+
+    # === EDGES ===
+    edge_x, edge_y, edge_z = [], [], []
+    edge_hit_x, edge_hit_y, edge_hit_z = [], [], []
+    edge_ripple_x, edge_ripple_y, edge_ripple_z = [], [], []
+
+    for rxn in model.reactions:
+        if rxn.id not in NODE_POSITIONS_3D:
+            continue
+        rx, ry, rz = NODE_POSITIONS_3D[rxn.id]
+
+        for gene in rxn.genes:
+            if gene.id not in NODE_POSITIONS_3D:
+                continue
+            gx, gy, gz = NODE_POSITIONS_3D[gene.id]
+
+            is_hit = (gene.id in highlighted_genes and rxn.id in highlighted_rxns)
+            is_ripple = (rxn.id in secondary_rxns)
+
+            if is_hit:
+                target = (edge_hit_x, edge_hit_y, edge_hit_z)
+            elif is_ripple:
+                target = (edge_ripple_x, edge_ripple_y, edge_ripple_z)
+            else:
+                target = (edge_x, edge_y, edge_z)
+
+            target[0].extend([gx, rx, None])
+            target[1].extend([gy, ry, None])
+            target[2].extend([gz, rz, None])
+
+        for met in rxn.metabolites:
+            if met.id not in NODE_POSITIONS_3D:
+                continue
+            mx, my, mz = NODE_POSITIONS_3D[met.id]
+
+            is_hit = (rxn.id in highlighted_rxns and met.id in highlighted_mets)
+            is_ripple = (rxn.id in secondary_rxns or met.id in secondary_mets)
+
+            if is_hit:
+                target = (edge_hit_x, edge_hit_y, edge_hit_z)
+            elif is_ripple:
+                target = (edge_ripple_x, edge_ripple_y, edge_ripple_z)
+            else:
+                target = (edge_x, edge_y, edge_z)
+
+            target[0].extend([rx, mx, None])
+            target[1].extend([ry, my, None])
+            target[2].extend([rz, mz, None])
+
+    traces = []
+
+    # Default edges
+    traces.append(go.Scatter3d(
+        x=edge_x, y=edge_y, z=edge_z,
+        mode="lines", name="Connections",
+        line=dict(color="rgba(30,41,59,0.25)", width=1),
+        hoverinfo="skip", showlegend=False,
+    ))
+
+    # Hit edges
+    if edge_hit_x:
+        traces.append(go.Scatter3d(
+            x=edge_hit_x, y=edge_hit_y, z=edge_hit_z,
+            mode="lines", name="Direct impact",
+            line=dict(color="rgba(251,146,60,0.8)", width=3),
+            hoverinfo="skip", showlegend=False,
+        ))
+
+    # Ripple edges
+    if edge_ripple_x:
+        traces.append(go.Scatter3d(
+            x=edge_ripple_x, y=edge_ripple_y, z=edge_ripple_z,
+            mode="lines", name="Cascade",
+            line=dict(color="rgba(202,138,4,0.4)", width=1.5),
+            hoverinfo="skip", showlegend=False,
+        ))
+
+    # === NODES by category ===
+    # Helper to build node traces
+    def _add_node_trace(ids, color, size, symbol, name, opacity=1.0, border_color=None, border_width=0):
+        if not ids:
+            return
+        xs = [NODE_POSITIONS_3D[n][0] for n in ids if n in NODE_POSITIONS_3D]
+        ys = [NODE_POSITIONS_3D[n][1] for n in ids if n in NODE_POSITIONS_3D]
+        zs = [NODE_POSITIONS_3D[n][2] for n in ids if n in NODE_POSITIONS_3D]
+        labels = [n for n in ids if n in NODE_POSITIONS_3D]
+
+        hover_texts = []
+        for nid in labels:
+            nt = NODE_TYPES.get(nid, "")
+            pw = NODE_PATHWAYS.get(nid, "Unknown")
+            if nt == "gene":
+                n_rxns = len(_gene_rxn_map.get(nid, []))
+                enz_info = ""
+                if nid in enzyme_activities:
+                    acts = enzyme_activities[nid]
+                    final = acts[-1] if acts else 1.0
+                    enz_info = f"<br>Enzyme activity: {final:.1%}"
+                hover_texts.append(f"<b>🧬 {nid}</b><br>Type: Gene<br>Reactions: {n_rxns}<br>Pathway: {pw}{enz_info}")
+            elif nt == "reaction":
+                rxn_obj = model.reactions.get_by_id(nid) if nid in [r.id for r in model.reactions] else None
+                rxn_name = rxn_obj.name if rxn_obj else nid
+                hover_texts.append(f"<b>⚗️ {rxn_name}</b><br>ID: {nid}<br>Pathway: {pw}")
+            elif nt == "metabolite":
+                mname = get_met_name(nid)
+                n_conn = len(_met_rxn_map.get(nid, []))
+                hover_texts.append(f"<b>🧪 {mname}</b><br>ID: {nid}<br>Connected rxns: {n_conn}")
+            else:
+                hover_texts.append(nid)
+
+        marker = dict(
+            size=size, color=color, opacity=opacity, symbol=symbol,
+        )
+        if border_color and border_width > 0:
+            marker["line"] = dict(color=border_color, width=border_width)
+
+        traces.append(go.Scatter3d(
+            x=xs, y=ys, z=zs,
+            mode="markers+text" if size >= 10 else "markers",
+            text=labels if size >= 10 else None,
+            textposition="top center" if size >= 10 else None,
+            textfont=dict(size=max(7, min(12, size // 2)), color=color) if size >= 10 else None,
+            name=name,
+            marker=marker,
+            hovertext=hover_texts,
+            hoverinfo="text",
+            customdata=[[nid, NODE_TYPES.get(nid, "")] for nid in labels],
+        ))
+
+    # Categorize all nodes
+    dimmed_genes = []
+    dimmed_rxns = []
+    dimmed_mets = []
+    target_genes = []
+    hit_rxn_list = []
+    hit_met_list = []
+    sec_rxn_list = []
+    sec_met_list = []
+
+    for nid, ntype in NODE_TYPES.items():
+        if ntype == "gene":
+            if nid in highlighted_genes:
+                target_genes.append(nid)
+            else:
+                dimmed_genes.append(nid)
+        elif ntype == "reaction":
+            if nid in highlighted_rxns:
+                hit_rxn_list.append(nid)
+            elif nid in secondary_rxns:
+                sec_rxn_list.append(nid)
+            else:
+                dimmed_rxns.append(nid)
+        elif ntype == "metabolite":
+            if nid in highlighted_mets:
+                hit_met_list.append(nid)
+            elif nid in secondary_mets:
+                sec_met_list.append(nid)
+            else:
+                dimmed_mets.append(nid)
+
+    # Dimmed nodes (background)
+    _add_node_trace(dimmed_genes, "#0ea5e9", 3, "diamond", "Genes (dim)", opacity=0.15)
+    _add_node_trace(dimmed_rxns, "#64748b", 2, "square", "Reactions (dim)", opacity=0.1)
+    _add_node_trace(dimmed_mets, "#9ca3af", 1.5, "circle", "Metabolites (dim)", opacity=0.08)
+
+    # Secondary cascade
+    _add_node_trace(sec_rxn_list, "#c2410c", 5, "square", "Cascade reactions", opacity=0.8)
+    _add_node_trace(sec_met_list, "#a16207", 3.5, "circle", "Cascade metabolites", opacity=0.6)
+
+    # Direct hits
+    _add_node_trace(hit_met_list, "#eab308", 7, "circle", "Direct metabolites",
+                    opacity=1.0, border_color="#fef08a", border_width=1)
+    _add_node_trace(hit_rxn_list, "#f97316", 10, "square", "Direct reactions",
+                    opacity=1.0, border_color="#ffedd5", border_width=2)
+
+    # Drug target genes (largest, most prominent)
+    _add_node_trace(target_genes, "#d946ef", 16, "diamond", "🎯 Target genes",
+                    opacity=1.0, border_color="#fdf4ff", border_width=3)
+
+    # === PATHWAY LABELS as 3D annotations ===
+    annotations = []
+    for pw, center in PATHWAY_CENTERS.items():
+        if pw == "Unknown":
+            continue
+        is_hit = pw in hit_pathways
+        annotations.append(dict(
+            x=center[0], y=center[1], z=center[2],
+            text=f"<b>{pw}</b>" if is_hit else pw,
+            showarrow=False,
+            font=dict(
+                size=13 if is_hit else 10,
+                color="#c7d2fe" if is_hit else "#4a4a7a",
+            ),
+            bgcolor="rgba(49,46,129,0.6)" if is_hit else "rgba(20,20,50,0.4)",
+            borderpad=4,
+        ))
+
+    # === LAYOUT ===
+    axis_style = dict(
+        showbackground=True,
+        backgroundcolor="#0a0a1a",
+        gridcolor="#111133",
+        showticklabels=False,
+        title="",
+        showspikes=False,
+        zeroline=False,
+        showline=False,
+    )
+
+    fig = go.Figure(data=traces)
+
+    fig.update_layout(
+        scene=dict(
+            xaxis=axis_style,
+            yaxis=axis_style,
+            zaxis=axis_style,
+            bgcolor="#0a0a1a",
+            annotations=annotations,
+            camera=dict(
+                eye=dict(x=1.6, y=1.6, z=1.0),
+                up=dict(x=0, y=1, z=0),
+            ),
+            aspectmode="data",
+            dragmode="orbit",
+        ),
+        paper_bgcolor="#0a0a1a",
+        plot_bgcolor="#0a0a1a",
+        margin=dict(l=0, r=0, t=0, b=0),
+        showlegend=True,
+        legend=dict(
+            x=0.01, y=0.99, bgcolor="rgba(10,10,26,0.8)",
+            font=dict(color="#888", size=10),
+            bordercolor="#222255", borderwidth=1,
+            itemsizing="constant",
+        ),
+        hovermode="closest",
+        uirevision="keep",  # Preserve camera angle across updates
+    )
+
+    return fig
+
+
+print("Building initial 3D figure...")
+INITIAL_3D_FIG = build_3d_figure()
+print("3D figure ready.")
 
 
 def _legend_row(color, symbol, label):
@@ -432,6 +706,7 @@ app.layout = html.Div(
                         style={"color": "#22c55e" if VIVARIUM_AVAILABLE else "#ef4444",
                                "fontWeight": "bold"},
                     ),
+                    html.Span("  |  🌐 3D Interactive Network", style={"color": "#818cf8"}),
                 ], style={"color": "#556", "margin": "2px 0 0 0", "fontSize": "12px"}),
             ]),
             html.Div(id="header-stats", style={"display": "flex", "gap": "30px", "alignItems": "center"}),
@@ -523,33 +798,26 @@ app.layout = html.Div(
                     _legend_row("#22c55e", "↘", "Drug diffusion (ODE)"),
                     _legend_row("#a855f7", "⊘", "Enzyme inhibition (kinetics)"),
                     _legend_row("#3b82f6", "⚡", "Metabolic flux (FBA)"),
+                    html.Div("─" * 20, style={"color": "#333", "margin": "4px 0"}),
+                    html.Div("🌐 3D Controls:", style={"color": "#556", "marginBottom": "3px"}),
+                    _legend_row("#818cf8", "🖱", "Drag to rotate"),
+                    _legend_row("#818cf8", "⚙", "Scroll to zoom"),
+                    _legend_row("#818cf8", "⇧", "Shift+drag to pan"),
                 ]),
             ]),
 
-            # --- CENTER: Network ---
+            # --- CENTER: 3D Network ---
             html.Div(style={"flex": 1, "position": "relative"}, children=[
-                cyto.Cytoscape(
-                    id="network-graph",
-                    elements=BASE_ELEMENTS,
-                    stylesheet=STYLESHEET,
-                    layout={
-                        "name": "cola",
-                        "animate": True,
-                        "refresh": 1,
-                        "maxSimulationTime": 4000,
-                        "ungrabifyWhileSimulating": False,
-                        "fit": True,
-                        "padding": 50,
-                        "randomize": True,
-                        "avoidOverlap": True,
-                        "handleDisconnected": True,
-                        "nodeSpacing": 45,
-                        "edgeLength": 220,
-                        "infinite": False,
+                dcc.Graph(
+                    id="network-3d",
+                    figure=INITIAL_3D_FIG,
+                    style={"width": "100%", "height": "100%"},
+                    config={
+                        "displayModeBar": True,
+                        "modeBarButtonsToRemove": ["toImage", "resetCameraLastSave3d"],
+                        "displaylogo": False,
+                        "scrollZoom": True,
                     },
-                    style={"width": "100%", "height": "100%", "backgroundColor": CLR_BG},
-                    responsive=True, minZoom=0.05, maxZoom=4.0,
-                    autoRefreshLayout=False, boxSelectionEnabled=False,
                 ),
 
                 html.Div(id="node-tooltip", style={
@@ -562,9 +830,11 @@ app.layout = html.Div(
                     "transition": "opacity 0.3s ease",
                 }),
 
-                html.Div("Scroll to zoom · Drag to pan · Click nodes for details", style={
+                html.Div("🖱 Drag to rotate · Scroll to zoom · Shift+drag to pan", style={
                     "position": "absolute", "top": "10px", "right": "15px",
-                    "color": "#333", "fontSize": "10px",
+                    "color": "#444", "fontSize": "10px",
+                    "backgroundColor": "rgba(10,10,26,0.7)", "padding": "4px 10px",
+                    "borderRadius": "4px",
                 }),
             ]),
 
@@ -608,7 +878,6 @@ def compute_simulation(drug_name, conc_uM, sim_time):
                     relevant_rxn_ids.add(r2)
 
     wt_fluxes = result.get("wt_fluxes", {})
-    # The hybrid simulation returns "fluxes" (final snapshot), not "drug_fluxes"
     drug_fluxes = result.get("fluxes", result.get("drug_fluxes", {}))
     wt_subset = {rid: float(wt_fluxes.get(rid, 0)) for rid in relevant_rxn_ids}
     drug_subset = {rid: float(drug_fluxes.get(rid, 0)) for rid in relevant_rxn_ids}
@@ -630,7 +899,7 @@ def compute_simulation(drug_name, conc_uM, sim_time):
 
 
 @app.callback(
-    Output("network-graph", "elements"),
+    Output("network-3d", "figure"),
     Output("drug-info", "children"),
     Output("metrics-panel", "children"),
     Output("header-stats", "children"),
@@ -682,55 +951,18 @@ def update_graph(drug_name, cascade_depth, sim_data):
                     next_frontier.add(m2)
         frontier_mets = next_frontier
 
-    hit_pathway_ids = set()
-    for pw in hit_pathways:
-        pw_id = f"pw_{pw.replace(' ', '_').replace('&', 'and')}"
-        hit_pathway_ids.add(pw_id)
+    enzyme_activities = sim_data.get("enzyme_activities", {})
 
-    # --- Update classes ---
-    updated = []
-    for el in BASE_ELEMENTS:
-        data = el["data"]
-        nid = data.get("id")
-        old_cls = el.get("classes", "")
-
-        if "source" not in data and nid:
-            nt = data.get("node_type", "")
-            if nt == "pathway":
-                cls = "pathway-hit" if nid in hit_pathway_ids else "pathway"
-            elif nt == "gene":
-                cls = "gene-target" if nid in highlighted_genes else "gene"
-            elif nt == "reaction":
-                if nid in highlighted_rxns:
-                    cls = "reaction-hit"
-                elif nid in secondary_rxns:
-                    cls = "reaction-secondary"
-                else:
-                    cls = "reaction"
-            elif nt == "metabolite":
-                if nid in highlighted_mets:
-                    cls = "metabolite-hit"
-                elif nid in secondary_mets:
-                    cls = "metabolite-secondary"
-                else:
-                    cls = "metabolite"
-            else:
-                cls = old_cls
-        else:
-            src = data.get("source", "")
-            tgt = data.get("target", "")
-            if (src in highlighted_genes and tgt in highlighted_rxns) or \
-               (src in highlighted_rxns and tgt in highlighted_mets):
-                cls = "edge-hit"
-            elif src in secondary_rxns or tgt in secondary_rxns:
-                cls = "edge-ripple"
-            else:
-                cls = "edge-default"
-
-        if cls != old_cls:
-            updated.append({**el, "classes": cls})
-        else:
-            updated.append(el)
+    # --- Build 3D figure ---
+    fig = build_3d_figure(
+        highlighted_genes=highlighted_genes,
+        highlighted_rxns=highlighted_rxns,
+        highlighted_mets=highlighted_mets,
+        secondary_rxns=secondary_rxns,
+        secondary_mets=secondary_mets,
+        hit_pathways=hit_pathways,
+        enzyme_activities=enzyme_activities,
+    )
 
     # --- Drug info ---
     mode_badge = html.Span(
@@ -775,7 +1007,6 @@ def update_graph(drug_name, cascade_depth, sim_data):
         )
 
     # --- Kinetics panel ---
-    enzyme_activities = sim_data.get("enzyme_activities", {})
     kinetics_children = []
     if enzyme_activities:
         kinetics_children.append(
@@ -848,7 +1079,7 @@ def update_graph(drug_name, cascade_depth, sim_data):
 
     timecourse = _build_timecourse_panel(sim_data, drug_name)
 
-    return updated, info_children, metrics, header, kinetics_children, timecourse
+    return fig, info_children, metrics, header, kinetics_children, timecourse
 
 
 def _build_timecourse_panel(sim_data, drug_name):
@@ -929,7 +1160,6 @@ def _build_timecourse_panel(sim_data, drug_name):
                     "font": {"color": "#888"},
                     "showlegend": True,
                     "legend": {"font": {"size": 9, "color": "#888"}, "x": 0.55, "y": 0.95},
-                    # Add 50% threshold line
                     "shapes": [{
                         "type": "line", "x0": times[0], "x1": times[-1],
                         "y0": 0.5, "y1": 0.5,
@@ -1023,16 +1253,26 @@ def _metric_card(title, value, subtitle=None, accent_color="#aaa"):
 
 @app.callback(
     Output("node-tooltip", "children"),
-    Input("network-graph", "tapNodeData"),
+    Input("network-3d", "clickData"),
     State("sim-store", "data"),
 )
-def show_node_info(data, sim_data):
-    if not data:
+def show_node_info(click_data, sim_data):
+    if not click_data or "points" not in click_data:
         return html.Span("Click any node for details", style={"color": "#444"})
 
-    nid = data.get("id", "")
-    ntype = data.get("node_type", "")
-    label = data.get("label", nid)
+    point = click_data["points"][0]
+    custom = point.get("customdata", [])
+    if not custom or len(custom) < 2:
+        hover = point.get("hovertext", "")
+        if hover:
+            return html.Div(
+                dcc.Markdown(hover.replace("<b>", "**").replace("</b>", "**").replace("<br>", "\n\n")),
+                style={"color": "#ddd"},
+            )
+        return html.Span("Click a node for details", style={"color": "#444"})
+
+    nid = custom[0]
+    ntype = custom[1]
 
     wt_fluxes = sim_data.get("wt_fluxes", {})
     drug_fluxes = sim_data.get("drug_fluxes", {})
@@ -1066,8 +1306,12 @@ def show_node_info(data, sim_data):
         ])
 
     elif ntype == "reaction":
-        full_name = data.get("full_name", label)
-        pathway = data.get("pathway", "Unknown")
+        try:
+            rxn_obj = model.reactions.get_by_id(nid)
+            full_name = rxn_obj.name
+        except KeyError:
+            full_name = nid
+        pathway = _rxn_pathway_map.get(nid, "Unknown")
         flux_wt = wt_fluxes.get(nid, 0)
         flux_drug = drug_fluxes.get(nid, 0)
         pct = ((flux_drug - flux_wt) / flux_wt * 100) if abs(flux_wt) > 1e-9 else 0
@@ -1097,18 +1341,12 @@ def show_node_info(data, sim_data):
         ])
 
     elif ntype == "metabolite":
+        met_name = get_met_name(nid)
         connected = len(_met_rxn_map.get(nid, []))
         return html.Div([
-            html.B(f"🧪 {label}", style={"fontSize": "13px", "color": "#ffdd55"}),
+            html.B(f"🧪 {met_name}", style={"fontSize": "13px", "color": "#ffdd55"}),
             html.P(f"ID: {nid}", style={"color": "#666", "margin": "3px 0", "fontSize": "11px"}),
             html.P(f"Connected reactions: {connected}", style={"color": "#888", "fontSize": "11px"}),
-        ])
-
-    elif ntype == "pathway":
-        rxn_count = len(_pathway_rxns.get(label, []))
-        return html.Div([
-            html.B(f"📂 Pathway: {label}", style={"fontSize": "13px", "color": "#8888cc"}),
-            html.P(f"Reactions in pathway: {rxn_count}", style={"color": "#888", "fontSize": "11px"}),
         ])
 
     return html.Span(f"Node: {nid}", style={"color": "#888"})

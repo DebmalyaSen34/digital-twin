@@ -1,0 +1,17 @@
+Abbreviation,Name,"Equation (note [c] and [e] at the beginning refer to the compartment 
+the reaction takes place in, cytosolic and extracellular respectively)",Subsystem,Protein Classification,Locus name
+5AOPt2,5-Amino-4-oxopentanoate transport in via proton symport,5aop[e] + h[e] --> 5aop[c] + h[c],Transport,,MG_432
+ATPS3r,ATPase,adp[c] + (3) h[e] + pi[c] <==> atp[c] + (2) h[c] + h2o[c],Membrane bioenergetics,,
+ATPS4,ATP synthase (four protons for one ATP),adp[c] + (4) h[e] + pi[c] --> atp[c] + (3) h[c] + h2o[c],Transport,EC-3.6.3.14,
+ATPSm,"ATP synthase, mitochondrial",adp[c] + (3) h[e] + pi[c] --> atp[c] + (2) h[c] + h2o[c],Oxidative Phosphorylation,EC-3.6.3.14,
+GABAt2,4-aminobutyrate transport in via proton symport,4abut[e] + h[e] --> 4abut[c] + h[c],Transport,,MG_432
+GTPDPK,GTP diphosphokinase,[c] : atp + gtp --> amp + gdptp + h,Nucleotides and nucleic acids,EC-2.7.6.5,MG_278
+NADDP,NAD diphosphatase,[c] : h2o + nad --> amp + (2) h + nmn,Cofactor and Prosthetic Group Biosynthesis,EC-3.6.1.22,MG_254
+PFLi,pyruvate formate lyase,[c] : coa + pyr --> accoa + for,Pyruvate Metabolism,,MG_423
+PGDH,phosphogluconate dehydrogenase,[c] : 6pgc + nadp --> co2 + nadph + ru5p-D,Pentose Phosphate Pathway,EC-1.1.1.44,MG_439
+PROTSYN_Eco,"Protein synthesis, E. coli",[c] : (103) alatrna + (59) argtrna + (48) asntrna + (48) asptrna + (18) cystrna + (53) glntrna + (53) glutrna + (53) glytrna + (2000) gtp + (2000) h2o + (19) histrna + (58) iletrna + (90) leutrna + (69) lystrna + (31) mettrna + (37) phetrna + (44) protrna + (43) sertrna + (51) thrtrna + (11) trptrna + (28) tyrtrna + (85) valtrna --> (2000) gdp + (3001) h + (2000) pi + protein_Eco + (103) trnaala + (59) trnaarg + (48) trnaasn + (48) trnaasp + (18) trnacys + (53) trnagln + (53) trnaglu + (53) trnagly + (19) trnahis + (58) trnaile + (90) trnaleu + (69) trnalys + (31) trnamet + (37) trnaphe + (44) trnapro + (43) trnaser + (51) trnathr + (11) trnatrp + (28) trnatyr + (85) trnaval,Macromolecule Synthesis,,
+PROTSYN_Hin,"Protein synthesis, H. influenzae",[c] : (84) alatrna + (45) argtrna + (49) asntrna + (50) asptrna + (10) cystrna + (46) glntrna + (65) glutrna + (66) glytrna + (2000) gtp + (2000) h2o + (21) histrna + (71) iletrna + (105) leutrna + (63) lystrna + (24) mettrna + (45) phetrna + (37) protrna + (58) sertrna + (52) thrtrna + (11) trptrna + (31) tyrtrna + (67) valtrna --> PROTEIN_Hin + (2000) gdp + (2000) h + (2000) pi + (84) trnaala + (45) trnaarg + (49) trnaasn + (50) trnaasp + (10) trnacys + (46) trnagln + (65) trnaglu + (66) trnagly + (21) trnahis + (71) trnaile + (105) trnaleu + (63) trnalys + (24) trnamet + (45) trnaphe + (37) trnapro + (58) trnaser + (52) trnathr + (11) trnatrp + (31) trnatyr + (67) trnaval,Macromolecule Synthesis,,
+THRD_L,L-threonine deaminase,[c] : thr-L --> 2obut + nh4,"Valine, Leucine, and Isoleucine Metabolism",,MG_075
+URIDK2,uridylate kinase (dUMP),[c] : atp + dump --> adp + dudp,Nucleotides and nucleic acids,,MG_330 and MG_434
+BUTKr,butyrate kinase,[c] : atp + but <==> adp + butpi,Carbohydrates and related molecules,EC-2.7.2.7,MG237
+LDH2,L-lactate dehydrogenase (2-Hydroxybutanoic acid),[c] : 2hbut + nad <==> 2obut + h + nadh,Membrane bioenergetics,EC-1.1.1.27,MG460
