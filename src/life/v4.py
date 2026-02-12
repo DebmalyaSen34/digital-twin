@@ -9,158 +9,228 @@ import plotly.graph_objects as go
 import plotly.io as pio
 import sys
 import os
-
 from Bio import SeqIO
 from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
 
-# Add src to path for process imports
 project_root = os.path.join(os.path.dirname(__file__), "../..")
 sys.path.insert(0, project_root)
 
-# --- CONFIGURATION ---
-GENOME_FASTA = "data/ncbi_dataset/data/GCA_000027325.1/cds_from_genomic.fna"
-MODEL_FILE = "src/iPS189.xml"
-HUB_THRESHOLD = 15
-CLR_BG = "#0a0a1a"
-
-# --- Try loading Vivarium ---
 VIVARIUM_AVAILABLE = False
 try:
-    from src.vivarium_model.whole_cell_composite import run_hybrid_simulation
-    from src.vivarium_model.binding_kinetics import DRUG_TARGET_PARAMS
-    from src.vivarium_model.drug_diffusion import DRUG_PERMEABILITY
+    from src.vivarium_model.whole_cell_composite import run_hybrid_simulation # Contains the Vivarium-based drug simulation logic
+    from src.config.file_paths import GENOME_FASTA, MODEL_FILE, HUB_THRESHOLD, CLR_BG, MASTER_MAP_FILE # Centralized config for file paths and visualization settings
+    from src.config.drug_db import DRUG_DB # Centralized drug target and MIC data
     VIVARIUM_AVAILABLE = True
     print("✅ Vivarium modules loaded.")
 except ImportError as e:
     print(f"⚠️ Vivarium unavailable (FBA fallback). {e}")
 
 # =====================================================================
-# DRUG DATABASE
+# MODEL & GENOME
 # =====================================================================
-DRUG_DB = {
-    "Control (No Treatment)": {
-        "targets": [], "desc": "Baseline metabolism.", "mic_uM": 0, "typical_dose_uM": 0,
-    },
-    "Trimethoprim": {
-        "targets": ["MG228"],
-        "desc": "Inhibits DHFR (Folate synthesis). Competitive inhibitor with Ki ≈ 5 nM.",
-        "mic_uM": 2.0, "typical_dose_uM": 10.0,
-    },
-    "Methotrexate": {
-        "targets": ["MG228", "MG006"],
-        "desc": "Blocks dTMP production. Tight-binding DHFR inhibitor (Ki ≈ 1 nM) + thymidylate synthase.",
-        "mic_uM": 0.5, "typical_dose_uM": 5.0,
-    },
-    "Fosmidomycin": {
-        "targets": ["MG066"],
-        "desc": "Inhibits DXR in isoprenoid synthesis (MEP pathway). Slow tight-binding inhibitor.",
-        "mic_uM": 10.0, "typical_dose_uM": 50.0,
-    },
-    "Cerulenin": {
-        "targets": ["MG212", "MG114"],
-        "desc": "Irreversible (covalent) inhibitor of fatty acid synthase. Time-dependent killing.",
-        "mic_uM": 5.0, "typical_dose_uM": 20.0,
-    },
-    "Mupirocin": {
-        "targets": ["MG345"],
-        "desc": "Inhibits isoleucyl-tRNA synthetase. Competitive with isoleucine (Ki ≈ 20 nM).",
-        "mic_uM": 0.1, "typical_dose_uM": 1.0,
-    },
-    "Generic Glycolysis Inhibitor": {
-        "targets": ["MG041", "MG429"],
-        "desc": "Blocks glucose import/phosphorylation. Cooperative inhibition.",
-        "mic_uM": 20.0, "typical_dose_uM": 100.0,
-    },
-}
 
-# =====================================================================
-# LOAD MODEL & GENOME
-# =====================================================================
-print("Loading metabolic model...")
-model = cobra.io.read_sbml_model(MODEL_FILE)
-print(f"Model: {len(model.genes)} genes, {len(model.reactions)} reactions, {len(model.metabolites)} metabolites")
+def load_model(model_file: str) -> cobra.Model | None:
+    """
+    Loads the COBRA model from the specified SBML file.
+    
+    :param model_file: Path to the SBML model file
+    :type model_file: str
+    :return: COBRA model object or None if loading fails
+    :rtype: cobra.Model | None
+    """
 
-print("Loading genome records...")
-try:
-    GENOME_RECORDS = list(SeqIO.parse(GENOME_FASTA, "fasta"))
-    print(f"Genome: {len(GENOME_RECORDS)} CDS records loaded.")
-except Exception as e:
-    GENOME_RECORDS = []
-    print(f"⚠️ Genome FASTA not found: {e}")
+    print("Loading metabolic model...")
+    try:
+        model = cobra.io.read_sbml_model(model_file)
+        print(f"Model: {len(model.genes)} genes, {len(model.reactions)} reactions, {len(model.metabolites)} metabolites")
+        return model
+    except FileNotFoundError:
+        print("❌ Error: model.xml not found.")
+        return None
 
-try:
-    rxn_df = pd.read_csv("data/master_map.csv")
-except Exception:
-    rxn_df = pd.DataFrame()
+def load_genome(genome_fasta: str) -> list[SeqRecord]:
+    """
+    Loads the genome sequences from the specified FASTA file.
+    
+    :param genome_fasta: Path to the genome FASTA file
+    :type genome_fasta: str
+    :return: List of SeqRecord objects representing the genome CDS records
+    :rtype: list[SeqRecord] or empty list if loading fails
+    """
 
-# --- Identify hub metabolites ---
-_met_degree = {}
-for rxn in model.reactions:
-    for met in rxn.metabolites:
-        _met_degree[met.id] = _met_degree.get(met.id, 0) + 1
-HUB_METABOLITES = {mid for mid, deg in _met_degree.items() if deg > HUB_THRESHOLD}
-print(f"Hub metabolites excluded (degree > {HUB_THRESHOLD}): {len(HUB_METABOLITES)}")
+    print("Loading genome records...")
+    try:
+        genome_records = list(SeqIO.parse(genome_fasta, "fasta"))
+        print(f"Genome: {len(genome_records)} CDS records loaded.")
+    except Exception as e:
+        genome_records = []
+        print(f"⚠️ Genome FASTA not found: {e}")
+    return genome_records
 
-# --- Pathway & metabolite name caches ---
-_pathway_cache = {}
-_met_name_cache = {}
-if not rxn_df.empty:
-    for _, row in rxn_df.iterrows():
-        rn = row.get("Reaction_Name", "")
-        if rn and rn not in _pathway_cache:
-            _pathway_cache[rn] = row.get("Pathway", "Unknown")
-        mid = row.get("Metabolite_ID", "")
-        if mid and mid not in _met_name_cache:
-            _met_name_cache[mid] = row.get("name", mid)
+genome_records = load_genome(GENOME_FASTA)
+
+def map_genome_to_proteome(master_map_file: str, model: cobra.Model) -> tuple[pd.DataFrame, set[str]]:
+    """
+    Maps the genome to the proteome using the master map file, and identifies hub metabolites to exclude from visualization.
+    
+    :param master_map_file: Path to the master map file
+    :type master_map_file: str
+    :param model: COBRA model
+    :type model: cobra.Model
+    :return: Tuple containing the master map DataFrame and a set of hub metabolite IDs
+    :rtype: tuple[DataFrame, set[str]]
+    """
+
+    print("Mapping genome to proteome...")
+    try:
+        rxn_df = pd.read_csv(master_map_file)
+        print(f"Master map loaded: {len(rxn_df)} entries.")
+    except Exception:
+        rxn_df = pd.DataFrame()
+        print("⚠️ Master map not found or failed to load.")
+
+    # --- Identify hub metabolites ---
+    #NOTE: This is a simple degree-based approach. More sophisticated methods could consider flux variability or centrality measures.
+    _met_degree = {}
+    for rxn in model.reactions:
+        for met in rxn.metabolites:
+            _met_degree[met.id] = _met_degree.get(met.id, 0) + 1
+    hub_metabolites = {mid for mid, deg in _met_degree.items() if deg > HUB_THRESHOLD}
+    print(f"Hub metabolites excluded (degree > {HUB_THRESHOLD}): {len(hub_metabolites)}")
+
+    return rxn_df, hub_metabolites
+
+def cache_pathway_metabolite_name(rxn_df: pd.DataFrame) -> tuple[dict, dict]:
+    """
+    Crates a cache for pathway names and metabolite names from the master map for quick lookup during visualization.
+    
+    :param rxn_df: DataFrame containing the master map of reactions and metabolites
+    :type rxn_df: pd.DataFrame
+    :return: Tuple containing pathway cache and metabolite name cache
+    :rtype: tuple[dict[Any, Any], dict[Any, Any]]
+    """
+
+    _pathway_cache = {}
+    _met_name_cache = {}
+    if not rxn_df.empty:
+        for _, row in rxn_df.iterrows():
+            rn = row.get("Reaction_Name", "")
+            if rn and rn not in _pathway_cache:
+                _pathway_cache[rn] = row.get("Pathway", "Unknown")
+            mid = row.get("Metabolite_ID", "")
+            if mid and mid not in _met_name_cache:
+                _met_name_cache[mid] = row.get("name", mid)
+        return _pathway_cache, _met_name_cache
+    else:
+        print("⚠️ Empty master map, pathway and metabolite names will be unknown.")
+        return {}, {}
+
+def get_pathway(rxn_name: str, pathway_cache: dict) -> str:
+    """
+    Retrieves the pathway name for a given reaction name from the pathway cache.
+    
+    :param rxn_name: Reaction name
+    :type rxn_name: str
+    :param pathway_cache: Cache of reaction names to pathway names
+    :type pathway_cache: dict
+    :return: Pathway name corresponding to the reaction name, or "Unknown" if not found
+    :rtype: str
+    """
+
+    clean_name = rxn_name.replace("R_", "").replace("_", " ")
+    return pathway_cache.get(clean_name, pathway_cache.get(rxn_name, "Unknown"))
+
+def get_met_name(met_id: str, met_name_cache: dict) -> str:
+    """
+    Retrieves the metabolite name for a given metabolite ID from the metabolite name cache.
+    
+    :param met_id: Metabolite ID
+    :type met_id: str
+    :param met_name_cache: Cache of metabolite IDs to metabolite names
+    :type met_name_cache: dict
+    :return: Metabolite name corresponding to the metabolite ID, or the ID itself if not found
+    :rtype: str
+    """
+    return met_name_cache.get(met_id, met_id)
+
+def precompute_mapping(model: cobra.Model, hub_metabolites: set[str], pathway_cache: dict):
+    """
+    Precomputes mapping dictionaries for genes to reactions, reactions to metabolites, reactions to genes, reactions to pathways, and metabolites to reactions for efficient lookup during visualization and simulation.
+    
+    :param model: COBRA model
+    :type model: cobra.Model
+    :param hub_metabolites: Set of hub metabolite IDs to exclude from mappings
+    :type hub_metabolites: set[str]
+    :param pathway_cache: Cache of reaction names to pathway names
+    :type pathway_cache: dict
+    """
 
 
-def get_pathway(rxn_name):
-    clean = rxn_name.replace("R_", "").replace("_", " ")
-    return _pathway_cache.get(clean, _pathway_cache.get(rxn_name, "Unknown"))
+    _gene_rxn_map = {}
+    for gene in model.genes:
+        _gene_rxn_map[gene.id] = [rxn.id for rxn in gene.reactions]
+
+    _rxn_met_map = {}
+    _rxn_gene_map = {}
+    _rxn_pathway_map = {}
+    for rxn in model.reactions:
+        _rxn_met_map[rxn.id] = [m.id for m in rxn.metabolites if m.id not in hub_metabolites]
+        _rxn_gene_map[rxn.id] = [g.id for g in rxn.genes]
+        _rxn_pathway_map[rxn.id] = get_pathway(rxn.name, pathway_cache)
+
+    _met_rxn_map = {}
+    for rxn_id, mets in _rxn_met_map.items():
+        for mid in mets:
+            if mid not in _met_rxn_map:
+                _met_rxn_map[mid] = []
+            _met_rxn_map[mid].append(rxn_id)
+
+    return _gene_rxn_map, _rxn_met_map, _rxn_gene_map, _rxn_pathway_map, _met_rxn_map
+
+def find_active_genes_for_mutation_targets(model: cobra.Model) -> list[str]:
+    """
+    Identifies active genes in the model that are carrying flux under baseline conditions, which can serve as realistic targets for mutation in the simulation.
+    
+    :param model: COBRA model
+    :type model: cobra.Model
+    :return: List of active gene IDs that are carrying flux and can be targeted for mutation
+    :rtype: list[str]
+    """
+
+    print("Computing baseline FBA for active gene list...")
+
+    _baseline_model = model.copy()
+    _baseline_model.objective = "Biomass"
+    
+    for rxn in _baseline_model.exchanges:
+        rxn.lower_bound = -10.0
+    
+    _baseline_sol = _baseline_model.optimize()
+    _baseline_growth = _baseline_sol.objective_value
+    _baseline_fluxes = _baseline_sol.fluxes.abs()
+
+    active_genes = []
+    for gene in _baseline_model.genes:
+        for rxn in gene.reactions:
+            if _baseline_fluxes[rxn.id] > 0.0001:
+                active_genes.append(gene.id)
+                break
+
+    print(f"Active genes (mutation targets): {len(active_genes)}")
+
+    return active_genes
 
 
-def get_met_name(met_id):
-    return _met_name_cache.get(met_id, met_id)
+model = load_model(MODEL_FILE)
 
-
-# --- Pre-compute mappings ---
-_gene_rxn_map = {}
-for gene in model.genes:
-    _gene_rxn_map[gene.id] = [rxn.id for rxn in gene.reactions]
-
-_rxn_met_map = {}
-_rxn_gene_map = {}
-_rxn_pathway_map = {}
-for rxn in model.reactions:
-    _rxn_met_map[rxn.id] = [m.id for m in rxn.metabolites if m.id not in HUB_METABOLITES]
-    _rxn_gene_map[rxn.id] = [g.id for g in rxn.genes]
-    _rxn_pathway_map[rxn.id] = get_pathway(rxn.name)
-
-_met_rxn_map = {}
-for rxn_id, mets in _rxn_met_map.items():
-    for mid in mets:
-        if mid not in _met_rxn_map:
-            _met_rxn_map[mid] = []
-        _met_rxn_map[mid].append(rxn_id)
-
-# --- Find active genes for mutation targets ---
-print("Computing baseline FBA for active gene list...")
-_baseline_model = model.copy()
-_baseline_model.objective = "Biomass"
-for rxn in _baseline_model.exchanges:
-    rxn.lower_bound = -10.0
-_baseline_sol = _baseline_model.optimize()
-_baseline_growth = _baseline_sol.objective_value
-_baseline_fluxes = _baseline_sol.fluxes.abs()
-
-ACTIVE_GENES = []
-for gene in _baseline_model.genes:
-    for rxn in gene.reactions:
-        if _baseline_fluxes[rxn.id] > 0.0001:
-            ACTIVE_GENES.append(gene.id)
-            break
-
-print(f"Active genes (mutation targets): {len(ACTIVE_GENES)}")
+if model is not None:
+    rxn_df, hub_metabolites = map_genome_to_proteome(MASTER_MAP_FILE, model)
+    pathway_cache, met_name_cache = cache_pathway_metabolite_name(rxn_df)
+    _gene_rxn_map, _rxn_met_map, _rxn_gene_map, _rxn_pathway_map, _met_rxn_map = precompute_mapping(model, hub_metabolites, pathway_cache)
+    active_genes = find_active_genes_for_mutation_targets(model)
+else:
+    raise RuntimeError("Failed to load metabolic model. Cannot proceed with simulation.")
 
 # =====================================================================
 # 3D LAYOUT (computed once at startup)
@@ -193,7 +263,7 @@ def compute_3d_layout():
         node_pathway[rxn.id] = _rxn_pathway_map.get(rxn.id, "Unknown")
 
         for met in rxn.metabolites:
-            if met.id in HUB_METABOLITES or met.id in seen_mets:
+            if met.id in hub_metabolites or met.id in seen_mets:
                 continue
             node_ids.append(met.id)
             node_types[met.id] = "metabolite"
@@ -423,14 +493,73 @@ def run_drug_simulation(drug_name, concentration_uM, sim_time=300.0):
 
 
 def mutate_dna(dna_seq):
-    """Introduce a single point mutation."""
+    """
+    Introduces random point mutations into the DNA sequence to stimulate evolutionary processes.
+    Biased toward NONSENSE mutations (premature stop codons) ~40% of the time.
+    Returns: (Mutated Sequence, List of Changes)
+    """
     bases = ['A', 'T', 'C', 'G']
     seq_list = list(dna_seq)
-    pos = random.randint(0, len(seq_list) - 1)
-    original = seq_list[pos]
-    new_base = random.choice([b for b in bases if b != original])
-    seq_list[pos] = new_base
-    return Seq("".join(seq_list)), f"Position {pos}: {original} → {new_base}"
+    changes = []
+
+    # Stop codons in standard/table 4: TAA, TAG, TGA
+    stop_codons = ['TAA', 'TAG', 'TGA']
+
+    # 40% chance: try to force a nonsense mutation by targeting a codon
+    if random.random() < 0.4 and len(seq_list) >= 6:
+        # Pick a random codon position (excluding the last codon which is normally a stop)
+        num_codons = len(seq_list) // 3
+        if num_codons > 2:
+            # Choose a codon in the first 80% of the sequence to make it clearly premature
+            target_codon_idx = random.randint(1, int(num_codons * 0.8))
+            codon_start = target_codon_idx * 3
+            original_codon = seq_list[codon_start:codon_start + 3]
+
+            # Pick a random stop codon and find the minimal single-base change to reach it
+            random.shuffle(stop_codons)
+            mutated = False
+            for stop in stop_codons:
+                diffs = [(i, original_codon[i], stop[i]) for i in range(3) if original_codon[i] != stop[i]]
+                if len(diffs) == 1:
+                    # Only one base change needed — perfect single point mutation
+                    i, orig_base, new_base = diffs[0]
+                    pos = codon_start + i
+                    seq_list[pos] = new_base
+                    changes.append(f"Position {pos}: {orig_base} -> {new_base}")
+                    mutated = True
+                    break
+            
+            if not mutated:
+                # Fallback: force a stop codon with one random base change
+                stop = random.choice(stop_codons)
+                i = random.randint(0, 2)
+                pos = codon_start + i
+                original_base = seq_list[pos]
+                new_base = stop[i]
+                if new_base == original_base:
+                    # Change a different position in the codon
+                    i = (i + 1) % 3
+                    pos = codon_start + i
+                    original_base = seq_list[pos]
+                    new_base = stop[i]
+                seq_list[pos] = new_base
+                changes.append(f"Position {pos}: {original_base} -> {new_base}")
+        else:
+            # Gene too short, fall through to random mutation
+            pos = random.randint(0, len(seq_list) - 1)
+            original_base = seq_list[pos]
+            new_base = random.choice([b for b in bases if b != original_base])
+            seq_list[pos] = new_base
+            changes.append(f"Position {pos}: {original_base} -> {new_base}")
+    else:
+        # Normal random point mutation (SILENT or MISSENSE likely)
+        pos = random.randint(0, len(seq_list) - 1)
+        original_base = seq_list[pos]
+        new_base = random.choice([b for b in bases if b != original_base])
+        seq_list[pos] = new_base
+        changes.append(f"Position {pos}: {original_base} -> {new_base}")
+
+    return Seq("".join(seq_list)), changes
 
 
 def analyze_mutation_impact(original_prot, mutated_prot):
@@ -460,7 +589,10 @@ def run_mutation_simulation(gene_id):
     # Find genome record
     cleaned_id = gene_id[:2] + "_" + gene_id[2:] if not gene_id.startswith("MG_") else gene_id
     candidate_record = None
-    for rec in GENOME_RECORDS:
+
+    genome_records = load_genome(GENOME_FASTA)
+
+    for rec in genome_records:
         if cleaned_id in rec.description or gene_id in rec.description:
             candidate_record = rec
             break
@@ -682,7 +814,8 @@ def build_3d_figure(cascade=None, enzyme_activities=None, title_text=None):
                     rname = nid
                 hovers.append(f"<b>⚗️ {rname}</b><br>ID: {nid}<br>Pathway: {pw}")
             elif nt == "metabolite":
-                mname = get_met_name(nid)
+                # mname = get_met_name(nid)
+                mname = met_name_cache.get(nid, nid)
                 nc = len(_met_rxn_map.get(nid, []))
                 hovers.append(f"<b>🧪 {mname}</b><br>ID: {nid}<br>Connected: {nc}")
             else:
@@ -788,6 +921,8 @@ def _metric_card(title, value, subtitle=None, accent="#aaa"):
 
 app = dash.Dash(__name__, title="iPS189 Whole-Cell Lab — Mutation & Drug Simulator", update_title=None)
 
+server = app.server
+
 app.layout = html.Div(style={
     "backgroundColor": CLR_BG, "minHeight": "100vh", "fontFamily": "'Segoe UI', sans-serif", "overflow": "hidden",
 }, children=[
@@ -874,8 +1009,8 @@ app.layout = html.Div(style={
                 html.Label("Target Gene:", style={"color": "#888", "fontSize": "11px"}),
                 dcc.Dropdown(
                     id="mutation-gene-select",
-                    options=[{"label": g, "value": g} for g in sorted(ACTIVE_GENES)],
-                    value=ACTIVE_GENES[0] if ACTIVE_GENES else None,
+                    options=[{"label": g, "value": g} for g in sorted(active_genes)],
+                    value=active_genes[0] if active_genes else None,
                     placeholder="Select gene to mutate...",
                     style={"marginBottom": "12px"},
                 ),
@@ -995,7 +1130,7 @@ def update_conc_label(val):
     prevent_initial_call=True,
 )
 def roll_random_gene(_):
-    return random.choice(ACTIVE_GENES) if ACTIVE_GENES else no_update
+    return random.choice(active_genes) if active_genes else no_update
 
 
 @app.callback(
@@ -1017,7 +1152,7 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene):
     elif mode in ("mutation_random", "mutation_target"):
         gene_id = mutation_gene
         if not gene_id:
-            gene_id = random.choice(ACTIVE_GENES) if ACTIVE_GENES else None
+            gene_id = random.choice(active_genes) if active_genes else None
         if not gene_id:
             return {"_mode": "mutation", "_targets": []}
         result = run_mutation_simulation(gene_id)
@@ -1029,7 +1164,7 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene):
         # Drug simulation
         drug_result = run_drug_simulation(drug_name, float(conc_uM), float(sim_time))
         # Mutation simulation
-        gene_id = mutation_gene or (random.choice(ACTIVE_GENES) if ACTIVE_GENES else None)
+        gene_id = mutation_gene or (random.choice(active_genes) if active_genes else None)
         if gene_id:
             mut_result = run_mutation_simulation(gene_id)
         else:
@@ -1494,7 +1629,8 @@ def show_node_info(click_data, sim_data):
         ])
 
     elif ntype == "metabolite":
-        mname = get_met_name(nid)
+        # mname = get_met_name(nid)
+        mname = met_name_cache.get(nid, nid)
         nc = len(_met_rxn_map.get(nid, []))
         return html.Div([
             html.B(f"🧪 {mname}", style={"fontSize": "13px", "color": "#ffdd55"}),
