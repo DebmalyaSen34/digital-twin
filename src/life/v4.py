@@ -305,31 +305,43 @@ _sim_cache = {}
 
 
 def run_fba_legacy(drug_name, efficacy):
-    """Pure-FBA drug simulation."""
+    """Pure-FBA drug simulation — mirrors dashboard.py logic exactly."""
     m = model.copy()
     m.objective = "Biomass"
     for rxn in m.exchanges:
         rxn.lower_bound = -10.0
 
     sol_wt = m.optimize()
-    wt_growth = sol_wt.objective_value
-    wt_fluxes = {r.id: float(sol_wt.fluxes[r.id]) for r in m.reactions}
+    wt_growth = sol_wt.objective_value if sol_wt.status == "optimal" else 0.0
+    wt_fluxes = {r.id: float(sol_wt.fluxes[r.id]) for r in m.reactions} if sol_wt.status == "optimal" else {r.id: 0.0 for r in m.reactions}
 
     drug_data = DRUG_DB[drug_name]
-    with m:
-        for tid in drug_data["targets"]:
-            if tid in _gene_rxn_map:
-                for rxn_id in _gene_rxn_map[tid]:
-                    rxn = m.reactions.get_by_id(rxn_id)
-                    lo, hi = rxn.bounds
-                    rxn.bounds = (lo * (1 - efficacy), hi * (1 - efficacy))
-        sol_drug = m.optimize()
-        if sol_drug.status == "optimal":
-            drug_growth = sol_drug.objective_value
-            drug_fluxes = {r.id: float(sol_drug.fluxes[r.id]) for r in m.reactions}
-        else:
-            drug_growth = 0.0
-            drug_fluxes = {r.id: 0.0 for r in m.reactions}
+
+    # Apply drug effect on a fresh copy (same as dashboard.py)
+    m2 = model.copy()
+    m2.objective = "Biomass"
+    for rxn in m2.exchanges:
+        rxn.lower_bound = -10.0
+
+    for tid in drug_data["targets"]:
+        if tid in _gene_rxn_map:
+            for rxn_id in _gene_rxn_map[tid]:
+                try:
+                    rxn = m2.reactions.get_by_id(rxn_id)
+                except KeyError:
+                    continue
+                lo, hi = rxn.bounds
+                rxn.bounds = (lo * (1.0 - efficacy), hi * (1.0 - efficacy))
+
+    sol_drug = m2.optimize()
+    if sol_drug.status == "optimal":
+        drug_growth = sol_drug.objective_value
+        drug_fluxes = {r.id: float(sol_drug.fluxes[r.id]) for r in m2.reactions}
+    else:
+        drug_growth = 0.0
+        drug_fluxes = {r.id: 0.0 for r in m2.reactions}
+
+    loss = (wt_growth - drug_growth) / wt_growth * 100 if wt_growth > 0 else 0.0
 
     return {
         "wt_growth": float(wt_growth), "drug_growth": float(drug_growth),
@@ -337,6 +349,7 @@ def run_fba_legacy(drug_name, efficacy):
         "time": [0.0], "drug_intracellular": [0.0],
         "enzyme_activities": {}, "growth_rate": [float(drug_growth)],
         "simulation_mode": "legacy_fba",
+        "loss_pct": float(loss),
     }
 
 
@@ -345,13 +358,60 @@ def run_drug_simulation(drug_name, concentration_uM, sim_time=300.0):
     key = ("drug", drug_name, round(concentration_uM, 2), round(sim_time, 1))
     if key not in _sim_cache:
         if VIVARIUM_AVAILABLE and drug_name != "Control (No Treatment)":
-            result = run_hybrid_simulation(
-                drug_name=drug_name,
-                extracellular_concentration=concentration_uM,
-                total_time=sim_time,
-                emit_step=max(sim_time / 30.0, 1.0),
-            )
-            result["simulation_mode"] = "vivarium_hybrid"
+            try:
+                result = run_hybrid_simulation(
+                    drug_name=drug_name,
+                    extracellular_concentration=concentration_uM,
+                    total_time=sim_time,
+                    emit_step=max(sim_time / 30.0, 1.0),
+                )
+                result["simulation_mode"] = "vivarium_hybrid"
+
+                # Vivarium returns growth_rate as a time series — extract scalar values
+                # wt_growth comes from baseline FBA, drug_growth from final time point
+                if "wt_growth" not in result or result.get("wt_growth", 0) == 0:
+                    # Compute WT growth from a clean FBA
+                    m_wt = model.copy()
+                    m_wt.objective = "Biomass"
+                    for rxn in m_wt.exchanges:
+                        rxn.lower_bound = -10.0
+                    sol_wt = m_wt.optimize()
+                    result["wt_growth"] = float(sol_wt.objective_value) if sol_wt.status == "optimal" else 0.0
+
+                if "drug_growth" not in result or result.get("drug_growth", 0) == 0:
+                    # Use last growth rate from time series if available
+                    gr = result.get("growth_rate", [])
+                    if gr and len(gr) > 0:
+                        result["drug_growth"] = float(gr[-1])
+
+                wt = result.get("wt_growth", 0)
+                dg = result.get("drug_growth", 0)
+                result["loss_pct"] = (wt - dg) / wt * 100 if wt > 0 else 0.0
+
+                # Also ensure wt_fluxes / drug_fluxes exist for the flux comparison chart
+                if "wt_fluxes" not in result or not result["wt_fluxes"]:
+                    m_wt = model.copy()
+                    m_wt.objective = "Biomass"
+                    for rxn in m_wt.exchanges:
+                        rxn.lower_bound = -10.0
+                    sol_wt = m_wt.optimize()
+                    if sol_wt.status == "optimal":
+                        result["wt_fluxes"] = {r.id: float(sol_wt.fluxes[r.id]) for r in m_wt.reactions}
+                    else:
+                        result["wt_fluxes"] = {}
+
+                if "drug_fluxes" not in result or not result["drug_fluxes"]:
+                    # Run FBA with the drug efficacy to get flux snapshot
+                    mic = DRUG_DB[drug_name].get("mic_uM", 10.0)
+                    eff = concentration_uM / (mic + concentration_uM) if mic > 0 else 0.0
+                    fba_result = run_fba_legacy(drug_name, eff)
+                    result["drug_fluxes"] = fba_result["drug_fluxes"]
+
+            except Exception as e:
+                print(f"⚠️ Vivarium simulation failed, falling back to FBA: {e}")
+                mic = DRUG_DB[drug_name].get("mic_uM", 10.0)
+                efficacy = concentration_uM / (mic + concentration_uM) if mic > 0 and concentration_uM > 0 else 0.0
+                result = run_fba_legacy(drug_name, efficacy)
         else:
             mic = DRUG_DB[drug_name].get("mic_uM", 10.0)
             efficacy = concentration_uM / (mic + concentration_uM) if mic > 0 and concentration_uM > 0 else 0.0
@@ -393,9 +453,9 @@ def run_mutation_simulation(gene_id):
         rxn.lower_bound = -10.0
 
     sol_wt = m.optimize()
-    wt_growth = sol_wt.objective_value
-    wt_fluxes = {r.id: float(sol_wt.fluxes[r.id]) for r in m.reactions}
-    abs_fluxes = sol_wt.fluxes.abs()
+    wt_growth = sol_wt.objective_value if sol_wt.status == "optimal" else 0.0
+    wt_fluxes = {r.id: float(sol_wt.fluxes[r.id]) for r in m.reactions} if sol_wt.status == "optimal" else {r.id: 0.0 for r in m.reactions}
+    abs_fluxes = sol_wt.fluxes.abs() if sol_wt.status == "optimal" else None
 
     # Find genome record
     cleaned_id = gene_id[:2] + "_" + gene_id[2:] if not gene_id.startswith("MG_") else gene_id
@@ -414,30 +474,41 @@ def run_mutation_simulation(gene_id):
         mut_prot = mutated_dna.translate(table=4, to_stop=True)
         impact = analyze_mutation_impact(orig_prot, mut_prot)
 
-    # Apply penalty
-    target_gene = m.genes.get_by_id(gene_id)
-    if impact == "MISSENSE":
-        max_flux = 0
-        for rxn in target_gene.reactions:
-            if abs_fluxes[rxn.id] > max_flux:
-                max_flux = abs_fluxes[rxn.id]
-        new_limit = max_flux * 0.1
-        for rxn in target_gene.reactions:
-            if rxn.upper_bound > 0:
-                rxn.upper_bound = min(rxn.upper_bound, new_limit)
-            if rxn.lower_bound < 0:
-                rxn.lower_bound = max(rxn.lower_bound, -new_limit)
-    elif impact == "NONSENSE":
-        target_gene.knock_out()
+    # Apply penalty on a fresh copy
+    m2 = model.copy()
+    m2.objective = "Biomass"
+    for rxn in m2.exchanges:
+        rxn.lower_bound = -10.0
 
-    mut_sol = m.optimize()
-    new_growth = mut_sol.objective_value if mut_sol.status == "optimal" else 0.0
     try:
-        mut_fluxes = {r.id: float(mut_sol.fluxes[r.id]) for r in m.reactions}
-    except Exception:
-        mut_fluxes = {r.id: 0.0 for r in m.reactions}
+        target_gene = m2.genes.get_by_id(gene_id)
+    except KeyError:
+        target_gene = None
 
-    loss = (wt_growth - new_growth) / wt_growth * 100 if wt_growth > 0 else 0
+    if target_gene and abs_fluxes is not None:
+        if impact == "MISSENSE":
+            max_flux = 0
+            for rxn in target_gene.reactions:
+                if abs_fluxes[rxn.id] > max_flux:
+                    max_flux = abs_fluxes[rxn.id]
+            new_limit = max(max_flux * 0.1, 1e-9)
+            for rxn in target_gene.reactions:
+                if rxn.upper_bound > 0:
+                    rxn.upper_bound = min(rxn.upper_bound, new_limit)
+                if rxn.lower_bound < 0:
+                    rxn.lower_bound = max(rxn.lower_bound, -new_limit)
+        elif impact == "NONSENSE":
+            target_gene.knock_out()
+
+    mut_sol = m2.optimize()
+    if mut_sol.status == "optimal":
+        new_growth = mut_sol.objective_value
+        mut_fluxes = {r.id: float(mut_sol.fluxes[r.id]) for r in m2.reactions}
+    else:
+        new_growth = 0.0
+        mut_fluxes = {r.id: 0.0 for r in m2.reactions}
+
+    loss = (wt_growth - new_growth) / wt_growth * 100 if wt_growth > 0 else 0.0
 
     result = {
         "wt_growth": float(wt_growth),
@@ -451,7 +522,7 @@ def run_mutation_simulation(gene_id):
         "simulation_mode": "mutation_fba",
         "mutation_impact": impact,
         "mutation_log": mutation_log,
-        "loss_pct": loss,
+        "loss_pct": float(loss),
         "target_gene": gene_id,
     }
     _sim_cache[key] = result
@@ -761,9 +832,12 @@ app.layout = html.Div(style={
                     {"label": " 💊+🧬 Drug + Mutation", "value": "combined"},
                 ],
                 value="drug",
-                style={"color": "#ccc", "fontSize": "12px", "marginBottom": "16px"},
-                inputStyle={"marginRight": "6px"},
-                labelStyle={"display": "block", "marginBottom": "6px", "cursor": "pointer"},
+                style={"marginBottom": "16px"},
+                inputStyle={"marginRight": "6px", "accentColor": "#818cf8"},
+                labelStyle={
+                    "display": "block", "marginBottom": "6px", "cursor": "pointer",
+                    "color": "#e2e8f0", "fontSize": "12px",
+                },
             ),
 
             html.Hr(style={"borderColor": "#1a1a3e", "margin": "12px 0"}),
@@ -959,18 +1033,25 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene):
         if gene_id:
             mut_result = run_mutation_simulation(gene_id)
         else:
-            mut_result = {"drug_growth": drug_result["wt_growth"], "mutation_impact": "NONE", "mutation_log": "—"}
+            mut_result = {
+                "drug_growth": drug_result.get("wt_growth", 0),
+                "mutation_impact": "NONE", "mutation_log": "—", "loss_pct": 0.0,
+            }
 
-        # Combine: use worst-case growth
-        combined_growth = min(drug_result.get("drug_growth", 0), mut_result.get("drug_growth", 0))
         wt = drug_result.get("wt_growth", 0)
+        # Combined fitness: multiply the relative fitness of each perturbation
+        drug_fitness = drug_result.get("drug_growth", 0) / wt if wt > 0 else 0
+        mut_fitness = mut_result.get("drug_growth", 0) / wt if wt > 0 else 0
+        combined_growth = wt * drug_fitness * mut_fitness
 
         targets = list(DRUG_DB[drug_name]["targets"])
         if gene_id:
             targets.append(gene_id)
 
+        combined_loss = (wt - combined_growth) / wt * 100 if wt > 0 else 0.0
+
         return {
-            "wt_growth": wt,
+            "wt_growth": float(wt),
             "drug_growth": float(combined_growth),
             "wt_fluxes": drug_result.get("wt_fluxes", {}),
             "drug_fluxes": drug_result.get("drug_fluxes", {}),
@@ -981,7 +1062,7 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene):
             "simulation_mode": "combined",
             "mutation_impact": mut_result.get("mutation_impact", "NONE"),
             "mutation_log": mut_result.get("mutation_log", "—"),
-            "loss_pct": (wt - combined_growth) / wt * 100 if wt > 0 else 0,
+            "loss_pct": float(combined_loss),
             "_mode": "combined",
             "_targets": targets,
             "target_gene": gene_id,
@@ -1251,21 +1332,28 @@ def _build_timecourse(sim_data):
         ))
 
     # Growth gauge (always shown)
-    loss = sim_data.get("loss_pct", (wt_growth - drug_growth) / wt_growth * 100 if wt_growth > 0 else 0)
+    loss = sim_data.get("loss_pct", None)
+    if loss is None:
+        loss = (wt_growth - drug_growth) / wt_growth * 100 if wt_growth > 0 else 0.0
+    loss = max(0.0, min(100.0, float(loss)))
+
+    gauge_max = max(wt_growth * 1.2, drug_growth * 1.2, 0.01)
+    wt_ref = float(wt_growth) if wt_growth > 0 else 0.001
+
     children.append(dcc.Graph(
         figure=go.Figure(go.Indicator(
             mode="gauge+number+delta",
-            value=drug_growth,
-            delta={"reference": wt_growth, "decreasing": {"color": "#ef4444"}},
+            value=float(drug_growth),
+            delta={"reference": wt_ref, "decreasing": {"color": "#ef4444"}},
             gauge={
-                "axis": {"range": [0, wt_growth * 1.2] if wt_growth > 0 else [0, 1], "tickcolor": "#888"},
+                "axis": {"range": [0, gauge_max], "tickcolor": "#888"},
                 "bar": {"color": "#ef4444" if loss > 50 else ("#eab308" if loss > 10 else "#22c55e")},
                 "bgcolor": "#111133", "bordercolor": "#222255",
                 "steps": [
-                    {"range": [0, wt_growth * 0.5], "color": "rgba(239,68,68,0.2)"},
-                    {"range": [wt_growth * 0.5, wt_growth], "color": "rgba(234,179,8,0.2)"},
+                    {"range": [0, gauge_max * 0.4], "color": "rgba(239,68,68,0.2)"},
+                    {"range": [gauge_max * 0.4, gauge_max * 0.83], "color": "rgba(234,179,8,0.2)"},
                 ],
-                "threshold": {"line": {"color": "#3b82f6", "width": 3}, "thickness": 0.8, "value": wt_growth},
+                "threshold": {"line": {"color": "#3b82f6", "width": 3}, "thickness": 0.8, "value": wt_ref},
             },
             title={"text": f"Fitness (Loss: {loss:.1f}%)", "font": {"size": 12, "color": "#ddd"}},
             number={"font": {"size": 22, "color": "#ddd"}, "suffix": " h⁻¹"},
@@ -1317,6 +1405,11 @@ def _build_timecourse(sim_data):
 
     # Summary box
     sim_mode_label = sim_data.get("simulation_mode", "unknown")
+    summary_loss = sim_data.get("loss_pct", None)
+    if summary_loss is None:
+        summary_loss = (wt_growth - drug_growth) / wt_growth * 100 if wt_growth > 0 else 0.0
+    summary_loss = float(summary_loss)
+
     children.append(html.Div(style={
         "padding": "8px", "backgroundColor": "#111133", "borderRadius": "6px",
         "border": "1px solid #222255", "fontSize": "10px", "color": "#556", "marginTop": "8px",
@@ -1325,7 +1418,7 @@ def _build_timecourse(sim_data):
         html.Div(f"🔬 Mode: {sim_mode_label}"),
         html.Div(f"📉 WT Growth: {wt_growth:.4f} h⁻¹"),
         html.Div(f"📉 Perturbed: {drug_growth:.4f} h⁻¹"),
-        html.Div(f"📊 Fitness Loss: {loss:.1f}%"),
+        html.Div(f"📊 Fitness Loss: {summary_loss:.1f}%"),
         *([html.Div(f"🧬 Mutation: {sim_data.get('mutation_impact', '?')} — {sim_data.get('mutation_log', '—')}")]
           if mode in ("mutation", "combined") else []),
     ]))
