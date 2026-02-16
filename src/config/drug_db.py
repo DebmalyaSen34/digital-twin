@@ -32,4 +32,19 @@ DRUG_DB = {
         "desc": "Blocks glucose import/phosphorylation. Cooperative inhibition.",
         "mic_uM": 20.0, "typical_dose_uM": 100.0,
     },
+    "Rifampicin": {
+        "targets": ["MG111"],
+        "desc": "Inhibits RNA Polymerase (beta-subunit). Blocks gene transcription.",
+        "mic_uM": 0.01, "typical_dose_uM": 5.0,
+    },
+    "Hydroxyurea": {
+        "targets": ["MG231"],
+        "desc": "Inhibits Ribonucleotide Reductase (RNR). Depletes dNTP pool.",
+        "mic_uM": 50.0, "typical_dose_uM": 200.0,
+    },
+    "5-Fluorouracil": {
+        "targets": ["MG006"],
+        "desc": "Inhibits Thymidylate Synthase (ThyA). Halt dTMP synthesis.",
+        "mic_uM": 5.0, "typical_dose_uM": 25.0,
+    },
 }
