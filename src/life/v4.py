@@ -10,8 +10,10 @@ import plotly.io as pio
 import sys
 import os
 from Bio import SeqIO
+from Bio import Align
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
+import re
 
 project_root = os.path.join(os.path.dirname(__file__), "../..")
 sys.path.insert(0, project_root)
@@ -21,10 +23,37 @@ try:
     from src.vivarium_model.whole_cell_composite import run_hybrid_simulation # Contains the Vivarium-based drug simulation logic
     from src.config.file_paths import GENOME_FASTA, MODEL_FILE, HUB_THRESHOLD, CLR_BG, MASTER_MAP_FILE # Centralized config for file paths and visualization settings
     from src.config.drug_db import DRUG_DB # Centralized drug target and MIC data
+    from src.config.growth_media import MEDIUM_PRESETS
     VIVARIUM_AVAILABLE = True
     print("✅ Vivarium modules loaded.")
 except ImportError as e:
     print(f"⚠️ Vivarium unavailable (FBA fallback). {e}")
+
+# =====================================================================
+# GROWTH MEDIA PRESETS
+# =====================================================================
+
+def apply_medium_to_model(m: cobra.Model, medium_name: str) -> None:
+    """
+    Applies a growth medium preset to a COBRA model by adjusting exchange reaction bounds.
+    
+    :param m: COBRA model (modified in-place)
+    :param medium_name: Key from MEDIUM_PRESETS
+    """
+    preset = MEDIUM_PRESETS.get(medium_name, MEDIUM_PRESETS["Rich (Default)"])
+    overrides = preset["overrides"]
+    
+    # First set all exchanges to default open (-10)
+    for rxn in m.exchanges:
+        rxn.lower_bound = -10.0
+    
+    # Then apply overrides
+    for rxn_id, lb in overrides.items():
+        try:
+            rxn = m.reactions.get_by_id(rxn_id)
+            rxn.lower_bound = lb
+        except KeyError:
+            pass  # Exchange doesn't exist in this model version
 
 # =====================================================================
 # MODEL & GENOME
@@ -221,6 +250,200 @@ def find_active_genes_for_mutation_targets(model: cobra.Model) -> list[str]:
 
     return active_genes
 
+def _extract_model_gene_id(record_description: str, model_gene_ids: set[str]) -> str | None:
+    """
+    Extracts a model-compatible gene ID from a FASTA record description.
+    Tries multiple patterns to reconcile NCBI FASTA headers with COBRA model gene IDs.
+    
+    :param record_description: The FASTA record description line
+    :param model_gene_ids: Set of gene IDs present in the COBRA model
+    :return: Matching model gene ID or None
+    """
+    # Pattern 1: [locus_tag=MG_001] or [locus_tag=MG001]
+    match = re.search(r'\[locus_tag=([^\]]+)\]', record_description)
+    if match:
+        locus = match.group(1).strip()
+        if locus in model_gene_ids:
+            return locus
+        # Try without underscore: MG_001 <-> MG001
+        alt = locus.replace("_", "")
+        if alt in model_gene_ids:
+            return alt
+        # Try adding underscore: MG001 -> MG_001
+        alt2 = re.sub(r'^(MG)(\d)', r'\1_\2', locus)
+        if alt2 in model_gene_ids:
+            return alt2
+
+    # Pattern 2: MG_XXX or MGXXX anywhere in description
+    for pat in re.findall(r'MG_?\d+', record_description):
+        if pat in model_gene_ids:
+            return pat
+        alt = pat.replace("_", "")
+        if alt in model_gene_ids:
+            return alt
+        alt2 = re.sub(r'^(MG)(\d)', r'\1_\2', pat)
+        if alt2 in model_gene_ids:
+            return alt2
+
+    # Pattern 3: [gene=XXX]
+    match = re.search(r'\[gene=([^\]]+)\]', record_description)
+    if match:
+        gene_name = match.group(1).strip()
+        if gene_name in model_gene_ids:
+            return gene_name
+
+    # Pattern 4: [protein_id=XXX]
+    match = re.search(r'\[protein_id=([^\]]+)\]', record_description)
+    if match:
+        pid = match.group(1).strip()
+        if pid in model_gene_ids:
+            return pid
+
+    return None
+
+
+def _build_gene_record_index(genome_records: list[SeqRecord], model_gene_ids: set[str]) -> dict[str, SeqRecord]:
+    """
+    Builds a lookup from model gene ID -> genome FASTA record.
+    Precomputed once to avoid repeated scanning.
+    """
+    index = {}
+    for rec in genome_records:
+        gid = _extract_model_gene_id(rec.description, model_gene_ids)
+        if gid and gid not in index:
+            index[gid] = rec
+    return index
+
+def simulate_crispr_targeting(guide_rna: str, mismatch_tolerance: int = 2) -> dict:
+    """
+    Simulates CRISPR-Cas9 targeting using Smith-Waterman local alignment.
+    Searches all CDS records for the guide RNA sequence, allowing mismatches
+    to identify on-target (exact) and off-target (close) hits.
+    
+    :param guide_rna: 20nt guide sequence (DNA or RNA)
+    :param mismatch_tolerance: Max mismatches to consider a hit (default 2)
+    :return: Dictionary of {model_gene_id: mismatch_count}
+    """
+    targets = {}
+
+    query = guide_rna.upper().replace("U", "T").strip()
+    if len(query) < 10:
+        return {}
+
+    # Also search the reverse complement (Cas9 binds the complementary strand)
+    complement = str(Seq(query).reverse_complement())
+
+    # Setup local aligner (Smith-Waterman style)
+    aligner = Align.PairwiseAligner()
+    aligner.mode = 'local'
+    aligner.match_score = 1.0
+    aligner.mismatch_score = -1.0
+    aligner.open_gap_score = -5.0   # CRISPR rarely tolerates gaps
+    aligner.extend_gap_score = -2.0
+
+    max_score = float(len(query)) * aligner.match_score
+    # Score cutoff: each mismatch costs 2 points (match_score - mismatch_score)
+    score_cutoff = max_score - (mismatch_tolerance * 2.0)
+
+    model_gene_ids = {g.id for g in model.genes}
+
+    for rec in genome_records:
+        # Map this FASTA record to a model gene ID
+        model_gene_id = _extract_model_gene_id(rec.description, model_gene_ids)
+        if not model_gene_id:
+            continue
+
+        target_seq = str(rec.seq).upper()
+
+        # Score both strands
+        score_fwd = aligner.score(query, target_seq)
+        score_rev = aligner.score(complement, target_seq)
+        best_score = max(score_fwd, score_rev)
+
+        if best_score >= score_cutoff:
+            mismatches = max(0, int(round((max_score - best_score) / 2.0)))
+
+            if model_gene_id not in targets or mismatches < targets[model_gene_id]:
+                targets[model_gene_id] = mismatches
+                print(f"  CRISPR hit: {model_gene_id} | score={best_score:.1f}/{max_score:.1f} | mismatches≈{mismatches}")
+
+    if not targets:
+        print(f"  CRISPR: No hits found for guide '{query}' (cutoff={score_cutoff:.1f})")
+    
+    return targets
+
+def run_crispr_simulation(guide_rna: str, medium_name: str = "Rich (Default)"):
+    key = ("crispr", guide_rna, medium_name)
+    if key in _sim_cache:
+        return _sim_cache[key]
+
+    # Find Targets
+    gene_targets = simulate_crispr_targeting(guide_rna)
+
+    if not gene_targets:
+        print("⚠️ No gene targets found for the provided guide RNA. Returning no-impact result.")
+        return {
+            "wt_growth": 0.0, "drug_growth": 0.0, "loss_pct": 0.0,
+            "mutation_impact": "NO MATCH", "mutation_log": "Guide RNA did not match any genes.",
+            "_targets": [], "crispr_data": {}
+        }
+
+    # Baseline
+    m = model.copy()
+    m.objective = "Biomass"
+    apply_medium_to_model(m, medium_name)
+    
+    sol_wt = m.optimize()
+    wt_growth = sol_wt.objective_value if sol_wt.status == "optimal" else 0.0
+    wt_fluxes = {r.id: float(sol_wt.fluxes[r.id]) for r in m.reactions} if sol_wt.status == "optimal" else {}
+
+    # Apply knockouts (Cas9 usually causes Indels -> Nonsense)
+    m2 = model.copy()
+    m2.objective = "Biomass"
+    apply_medium_to_model(m2, medium_name)
+
+    logs = []
+
+    for gene_id, mismatches in gene_targets.items():
+        try:
+            gene = m2.genes.get_by_id(gene_id)
+            if mismatches == 0:
+                gene.knock_out()
+                logs.append(f"{gene_id}: PERFECT MATCH - Knocked out")
+            elif mismatches == 1:
+                for rxn in gene.reactions:
+                    rxn.bounds = (rxn.lower_bound * 0.2, rxn.upper_bound * 0.2)
+                logs.append(f"{gene_id}: 1 MISMATCH - 80% KD")
+            else:
+                for rxn in gene.reactions:
+                    rxn.bounds = (rxn.lower_bound * 0.8, rxn.upper_bound * 0.8)
+                logs.append(f"{gene_id}: {mismatches} MISMATCHES - 20% KD (off-target)")
+        except KeyError:
+            logs.append(f"{gene_id}: NOT IN MODEL - No effect")
+            pass
+    sol_crispr = m2.optimize()
+    new_growth = sol_crispr.objective_value if sol_crispr.status == "optimal" else 0.0
+    new_fluxes = {r.id: float(sol_crispr.fluxes[r.id]) for r in m2.reactions} if sol_crispr.status == "optimal" else {}
+
+    loss = (wt_growth - new_growth) / wt_growth * 100 if wt_growth > 0 else 0.0
+
+    result = {
+        "wt_growth": float(wt_growth),
+        "drug_growth": float(new_growth),
+        "wt_fluxes": wt_fluxes,
+        "drug_fluxes": new_fluxes,
+        "time": [0.0], "enzyme_activities": {},
+        "growth_rate": [float(new_growth)],
+        "simulation_mode": "crispr_cas9",
+        "mutation_impact": "EDITED",
+        "mutation_log": "; ".join(logs),
+        "loss_pct": float(loss),
+        "_targets": list(gene_targets.keys()),
+        "crispr_data": gene_targets # {gene: mismatches}
+    }
+
+    _sim_cache[key] = result
+    return result
 
 model = load_model(MODEL_FILE)
 
@@ -229,6 +452,8 @@ if model is not None:
     pathway_cache, met_name_cache = cache_pathway_metabolite_name(rxn_df)
     _gene_rxn_map, _rxn_met_map, _rxn_gene_map, _rxn_pathway_map, _met_rxn_map = precompute_mapping(model, hub_metabolites, pathway_cache)
     active_genes = find_active_genes_for_mutation_targets(model)
+    _model_gene_ids = {g.id for g in model.genes}
+    _gene_record_index = _build_gene_record_index(genome_records, _model_gene_ids)
 else:
     raise RuntimeError("Failed to load metabolic model. Cannot proceed with simulation.")
 
@@ -374,12 +599,11 @@ print(f"3D layout: {len(NODE_POS)} nodes")
 _sim_cache = {}
 
 
-def run_fba_legacy(drug_name, efficacy):
+def run_fba_legacy(drug_name, efficacy, medium_name="Rich (Default)"):
     """Pure-FBA drug simulation — mirrors dashboard.py logic exactly."""
     m = model.copy()
     m.objective = "Biomass"
-    for rxn in m.exchanges:
-        rxn.lower_bound = -10.0
+    apply_medium_to_model(m, medium_name)
 
     sol_wt = m.optimize()
     wt_growth = sol_wt.objective_value if sol_wt.status == "optimal" else 0.0
@@ -390,8 +614,7 @@ def run_fba_legacy(drug_name, efficacy):
     # Apply drug effect on a fresh copy (same as dashboard.py)
     m2 = model.copy()
     m2.objective = "Biomass"
-    for rxn in m2.exchanges:
-        rxn.lower_bound = -10.0
+    apply_medium_to_model(m2, medium_name)
 
     for tid in drug_data["targets"]:
         if tid in _gene_rxn_map:
@@ -423,9 +646,9 @@ def run_fba_legacy(drug_name, efficacy):
     }
 
 
-def run_drug_simulation(drug_name, concentration_uM, sim_time=300.0):
+def run_drug_simulation(drug_name, concentration_uM, sim_time=300.0, medium_name="Rich (Default)"):
     """Run drug simulation with caching."""
-    key = ("drug", drug_name, round(concentration_uM, 2), round(sim_time, 1))
+    key = ("drug", drug_name, round(concentration_uM, 2), round(sim_time, 1), medium_name)
     if key not in _sim_cache:
         if VIVARIUM_AVAILABLE and drug_name != "Control (No Treatment)":
             try:
@@ -440,11 +663,10 @@ def run_drug_simulation(drug_name, concentration_uM, sim_time=300.0):
                 # Vivarium returns growth_rate as a time series — extract scalar values
                 # wt_growth comes from baseline FBA, drug_growth from final time point
                 if "wt_growth" not in result or result.get("wt_growth", 0) == 0:
-                    # Compute WT growth from a clean FBA
+                    # Compute WT growth from a clean FBA with medium applied
                     m_wt = model.copy()
                     m_wt.objective = "Biomass"
-                    for rxn in m_wt.exchanges:
-                        rxn.lower_bound = -10.0
+                    apply_medium_to_model(m_wt, medium_name)
                     sol_wt = m_wt.optimize()
                     result["wt_growth"] = float(sol_wt.objective_value) if sol_wt.status == "optimal" else 0.0
 
@@ -462,8 +684,7 @@ def run_drug_simulation(drug_name, concentration_uM, sim_time=300.0):
                 if "wt_fluxes" not in result or not result["wt_fluxes"]:
                     m_wt = model.copy()
                     m_wt.objective = "Biomass"
-                    for rxn in m_wt.exchanges:
-                        rxn.lower_bound = -10.0
+                    apply_medium_to_model(m_wt, medium_name)
                     sol_wt = m_wt.optimize()
                     if sol_wt.status == "optimal":
                         result["wt_fluxes"] = {r.id: float(sol_wt.fluxes[r.id]) for r in m_wt.reactions}
@@ -474,18 +695,18 @@ def run_drug_simulation(drug_name, concentration_uM, sim_time=300.0):
                     # Run FBA with the drug efficacy to get flux snapshot
                     mic = DRUG_DB[drug_name].get("mic_uM", 10.0)
                     eff = concentration_uM / (mic + concentration_uM) if mic > 0 else 0.0
-                    fba_result = run_fba_legacy(drug_name, eff)
+                    fba_result = run_fba_legacy(drug_name, eff, medium_name)
                     result["drug_fluxes"] = fba_result["drug_fluxes"]
 
             except Exception as e:
                 print(f"⚠️ Vivarium simulation failed, falling back to FBA: {e}")
                 mic = DRUG_DB[drug_name].get("mic_uM", 10.0)
                 efficacy = concentration_uM / (mic + concentration_uM) if mic > 0 and concentration_uM > 0 else 0.0
-                result = run_fba_legacy(drug_name, efficacy)
+                result = run_fba_legacy(drug_name, efficacy, medium_name)
         else:
             mic = DRUG_DB[drug_name].get("mic_uM", 10.0)
             efficacy = concentration_uM / (mic + concentration_uM) if mic > 0 and concentration_uM > 0 else 0.0
-            result = run_fba_legacy(drug_name, efficacy)
+            result = run_fba_legacy(drug_name, efficacy, medium_name)
         _sim_cache[key] = result
         if len(_sim_cache) > 50:
             _sim_cache.pop(next(iter(_sim_cache)))
@@ -570,35 +791,27 @@ def analyze_mutation_impact(original_prot, mutated_prot):
     return "MISSENSE"
 
 
-def run_mutation_simulation(gene_id):
+def run_mutation_simulation(gene_id, medium_name="Rich (Default)"):
     """Run mutation simulation on a specific gene, return results dict."""
-    key = ("mutation", gene_id)
+    key = ("mutation", gene_id, medium_name)
     if key in _sim_cache:
         return _sim_cache[key]
 
     m = model.copy()
     m.objective = "Biomass"
-    for rxn in m.exchanges:
-        rxn.lower_bound = -10.0
+    apply_medium_to_model(m, medium_name)
 
     sol_wt = m.optimize()
     wt_growth = sol_wt.objective_value if sol_wt.status == "optimal" else 0.0
     wt_fluxes = {r.id: float(sol_wt.fluxes[r.id]) for r in m.reactions} if sol_wt.status == "optimal" else {r.id: 0.0 for r in m.reactions}
     abs_fluxes = sol_wt.fluxes.abs() if sol_wt.status == "optimal" else None
 
-    # Find genome record
-    cleaned_id = gene_id[:2] + "_" + gene_id[2:] if not gene_id.startswith("MG_") else gene_id
-    candidate_record = None
-
-    genome_records = load_genome(GENOME_FASTA)
-
-    for rec in genome_records:
-        if cleaned_id in rec.description or gene_id in rec.description:
-            candidate_record = rec
-            break
+    # Use precomputed gene -> record index
+    candidate_record = _gene_record_index.get(gene_id)
 
     impact = "SILENT"
     mutation_log = "No FASTA record found"
+
     if candidate_record:
         original_dna = candidate_record.seq
         mutated_dna, mutation_log = mutate_dna(original_dna)
@@ -609,8 +822,7 @@ def run_mutation_simulation(gene_id):
     # Apply penalty on a fresh copy
     m2 = model.copy()
     m2.objective = "Biomass"
-    for rxn in m2.exchanges:
-        rxn.lower_bound = -10.0
+    apply_medium_to_model(m2, medium_name)
 
     try:
         target_gene = m2.genes.get_by_id(gene_id)
@@ -964,6 +1176,7 @@ app.layout = html.Div(style={
                     {"label": " 💊 Drug Response", "value": "drug"},
                     {"label": " 🧬 Random Mutation", "value": "mutation_random"},
                     {"label": " 🎯 Targeted Mutation", "value": "mutation_target"},
+                    {"label": " ✂️ CRISPR-Cas9", "value": "crispr"},
                     {"label": " 💊+🧬 Drug + Mutation", "value": "combined"},
                 ],
                 value="drug",
@@ -974,6 +1187,30 @@ app.layout = html.Div(style={
                     "color": "#e2e8f0", "fontSize": "12px",
                 },
             ),
+
+            # ENVIRONMENT CONTROLS
+            html.Div(id="environment-controls-section", children=[
+                html.H3("🌍 Growth Environment", style={"color": "#ddd", "marginTop": 0, "fontSize": "14px"}),
+                html.Label("Growth Medium:", style={"color": "#888", "fontSize": "11px"}),
+                dcc.Dropdown(
+                    id="medium-select",
+                    options=[
+                        {"label": f"{'🟢' if v['color'] == '#22c55e' else '🔵' if v['color'] == '#3b82f6' else '🟡' if v['color'] == '#eab308' else '🟣' if v['color'] == '#a855f7' else '🟠' if v['color'] == '#f97316' else '🔴' if v['color'] == '#ef4444' else '🩷'} {k}", "value": k}
+                        for k, v in MEDIUM_PRESETS.items()
+                    ],
+                    value="Rich (Default)",
+                    style={"marginBottom": "8px"},
+                ),
+                html.Div(id="medium-desc", style={
+                    "color": "#888", "fontSize": "10px", "fontStyle": "italic",
+                    "padding": "6px 8px", "backgroundColor": "#0a0a1a",
+                    "borderRadius": "4px", "border": "1px solid #1a1a3e",
+                    "marginBottom": "8px",
+                }),
+                html.Div(id="medium-baseline", style={
+                    "fontSize": "11px", "marginBottom": "4px",
+                }),
+            ]),
 
             html.Hr(style={"borderColor": "#1a1a3e", "margin": "12px 0"}),
 
@@ -999,6 +1236,30 @@ app.layout = html.Div(style={
                            marks={30: {"label": "30s", "style": {"color": "#444"}},
                                   300: {"label": "5m", "style": {"color": "#444"}},
                                   600: {"label": "10m", "style": {"color": "#444"}}}),
+            ]),
+
+            # CRISPR CONTROLS
+            html.Div(id="crispr-controls-section", style={"display": "none"}, children=[
+                html.H3("✂️ CRISPR Design", style={"color": "#ddd", "marginTop": 0, "fontSize": "14px"}),
+                html.Label("Target Gene (Auto-fill Guide):", style={"color": "#888", "fontSize": "11px"}),
+                dcc.Dropdown(
+                    id="crispr-gene-select",
+                    options=[{"label": g, "value": g} for g in sorted(active_genes)],
+                    placeholder="Select to generate guide...",
+                    style={"marginBottom": "8px"},
+                ),
+                html.Label("Guide RNA Sequence (20nt):", style={"color": "#888", "fontSize": "11px"}),
+                dcc.Input(
+                    id="crispr-guide-input",
+                    type="text",
+                    placeholder="ATG...",
+                    style={
+                        "width": "100%", "padding": "8px", "borderRadius": "4px", 
+                        "border": "1px solid #444", "backgroundColor": "#0a0a1a", "color": "#fff",
+                        "boxSizing": "border-box", "fontFamily": "monospace", "marginBottom": "12px"
+                    }
+                ),
+                html.Div(id="crispr-warning", style={"color": "#eab308", "fontSize": "10px", "marginBottom": "6px"}),
             ]),
 
             html.Hr(style={"borderColor": "#1a1a3e", "margin": "12px 0"}),
@@ -1103,18 +1364,68 @@ app.layout = html.Div(style={
 @app.callback(
     Output("drug-controls-section", "style"),
     Output("mutation-controls-section", "style"),
+    Output("crispr-controls-section", "style"),
     Input("sim-mode", "value"),
 )
 def toggle_controls(mode):
     show = {"display": "block"}
     hide = {"display": "none"}
+    
+    drug_style = hide
+    mut_style = hide
+    crispr_style = hide
+    
     if mode == "drug":
-        return show, hide
+        drug_style = show
     elif mode in ("mutation_random", "mutation_target"):
-        return hide, show
-    else:  # combined
-        return show, show
+        mut_style = show
+    elif mode == "crispr":
+        crispr_style = show
+    elif mode == "combined":
+        drug_style = show
+        mut_style = show
+        
+    return drug_style, mut_style, crispr_style
 
+@app.callback(
+    Output("medium-desc", "children"),
+    Output("medium-baseline", "children"),
+    Input("medium-select", "value"),
+)
+def update_medium_info(medium_name):
+    preset = MEDIUM_PRESETS.get(medium_name, MEDIUM_PRESETS["Rich (Default)"])
+    desc = preset["desc"]
+    
+    # Quick FBA to show baseline growth on this medium
+    m_test = model.copy()
+    m_test.objective = "Biomass"
+    apply_medium_to_model(m_test, medium_name)
+    sol = m_test.optimize()
+    baseline = sol.objective_value if sol.status == "optimal" else 0.0
+    
+    # Compare to rich
+    m_rich = model.copy()
+    m_rich.objective = "Biomass"
+    apply_medium_to_model(m_rich, "Rich (Default)")
+    sol_rich = m_rich.optimize()
+    rich_baseline = sol_rich.objective_value if sol_rich.status == "optimal" else 0.0
+    
+    pct = (baseline / rich_baseline * 100) if rich_baseline > 0 else 0
+    color = "#22c55e" if pct > 80 else "#eab308" if pct > 30 else "#ef4444"
+    
+    n_overrides = len(preset["overrides"])
+    
+    baseline_children = [
+        html.Span(f"Baseline growth: ", style={"color": "#777"}),
+        html.Span(f"{baseline:.4f} h⁻¹", style={"color": color, "fontWeight": "bold"}),
+        html.Span(f" ({pct:.0f}% of Rich)", style={"color": "#666"}),
+    ]
+    if n_overrides > 0:
+        baseline_children.append(
+            html.Div(f"📋 {n_overrides} exchange bounds modified", style={"color": "#555", "fontSize": "10px", "marginTop": "2px"})
+        )
+    
+    return desc, html.Div(baseline_children)
 
 @app.callback(
     Output("conc-val", "children"),
@@ -1123,6 +1434,32 @@ def toggle_controls(mode):
 def update_conc_label(val):
     return f"{val:.1f} µM"
 
+@app.callback(
+    Output("crispr-guide-input", "value"),
+    Input("crispr-gene-select", "value"),
+    prevent_initial_call=True
+)
+
+def generate_guide_for_gene(gene_id: str):
+    if not gene_id:
+        return no_update
+
+    # Use the precomputed index
+    rec = _gene_record_index.get(gene_id)
+    if rec:
+        seq = str(rec.seq)
+        if len(seq) >= 20:
+            # Pick a 20nt chunk from the first 60% of the gene (more likely to disrupt function)
+            max_start = max(0, int(len(seq) * 0.6) - 20)
+            start = random.randint(0, max_start) if max_start > 0 else 0
+            guide = seq[start:start + 20]
+            print(f"  Generated guide for {gene_id}: {guide} (pos {start}-{start+20} of {len(seq)}nt)")
+            return guide
+        elif len(seq) > 0:
+            return seq[:min(len(seq), 20)]
+
+    print(f"  ⚠️ No FASTA record found for gene {gene_id}")
+    return "NO_SEQUENCE_FOUND"
 
 @app.callback(
     Output("mutation-gene-select", "value"),
@@ -1140,13 +1477,19 @@ def roll_random_gene(_):
     Input("conc-slider", "value"),
     Input("time-slider", "value"),
     Input("mutation-gene-select", "value"),
+    Input("crispr-guide-input", "value"),
+    Input("medium-select", "value")
 )
-def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene):
+def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene, crispr_guide, medium_name):
     """Run appropriate simulation based on mode."""
+    if not medium_name:
+        medium_name = "Rich (Default)"
+    
     if mode == "drug":
-        result = run_drug_simulation(drug_name, float(conc_uM), float(sim_time))
+        result = run_drug_simulation(drug_name, float(conc_uM), float(sim_time), medium_name)
         result["_mode"] = "drug"
         result["_targets"] = DRUG_DB[drug_name]["targets"]
+        result["_medium"] = medium_name
         return result
 
     elif mode in ("mutation_random", "mutation_target"):
@@ -1155,18 +1498,29 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene):
             gene_id = random.choice(active_genes) if active_genes else None
         if not gene_id:
             return {"_mode": "mutation", "_targets": []}
-        result = run_mutation_simulation(gene_id)
+        result = run_mutation_simulation(gene_id, medium_name)
         result["_mode"] = "mutation"
         result["_targets"] = [gene_id]
+        result["_medium"] = medium_name
+        return result
+
+    elif mode == "crispr":
+        if not crispr_guide or len(crispr_guide) < 10:
+            return {"_mode": "crispr", "loss_pct": 0, "mutation_log": "Enter valid gRNA"}
+
+        result = run_crispr_simulation(crispr_guide, medium_name)
+        result["_mode"] = "mutation"
+        result["target_gene"] = result.get("target_gene", "Unknown")
+        result["_medium"] = medium_name
         return result
 
     elif mode == "combined":
         # Drug simulation
-        drug_result = run_drug_simulation(drug_name, float(conc_uM), float(sim_time))
+        drug_result = run_drug_simulation(drug_name, float(conc_uM), float(sim_time), medium_name)
         # Mutation simulation
         gene_id = mutation_gene or (random.choice(active_genes) if active_genes else None)
         if gene_id:
-            mut_result = run_mutation_simulation(gene_id)
+            mut_result = run_mutation_simulation(gene_id, medium_name)
         else:
             mut_result = {
                 "drug_growth": drug_result.get("wt_growth", 0),
@@ -1201,10 +1555,10 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene):
             "_mode": "combined",
             "_targets": targets,
             "target_gene": gene_id,
+            "_medium": medium_name,
         }
 
     return {}
-
 
 @app.callback(
     Output("network-3d", "figure"),
@@ -1234,7 +1588,13 @@ def update_graph(cascade_depth, sim_data):
         impact = sim_data.get("mutation_impact", "?")
         gene = sim_data.get("target_gene", "?")
         loss = sim_data.get("loss_pct", 0)
-        title = f"🧬 Mutation: {gene} ({impact}) — {loss:.1f}% fitness loss"
+
+        if "crispr_data" in sim_data:
+            targets = sim_data.get("_targets", [])
+            off_targets = len(targets) - 1 if len(targets) > 0 else 0
+            title = f"✂️ CRISPR Edit: {len(targets)} targets ({off_targets} off-target) — {loss:.1f}% loss"
+        else:
+            title = f"🧬 Mutation: {gene} ({impact}) — {loss:.1f}% fitness loss"
     elif mode == "combined":
         gene = sim_data.get("target_gene", "?")
         impact = sim_data.get("mutation_impact", "?")
@@ -1246,6 +1606,21 @@ def update_graph(cascade_depth, sim_data):
 
     # INFO PANEL
     info_children = []
+
+    # Show active medium
+    active_medium = sim_data.get("_medium", "Rich (Default)")
+    medium_preset = MEDIUM_PRESETS.get(active_medium, MEDIUM_PRESETS["Rich (Default)"])
+    if active_medium != "Rich (Default)":
+        info_children.append(html.Div(style={
+            "marginBottom": "8px", "padding": "6px 10px",
+            "backgroundColor": f"{medium_preset['color']}15",
+            "border": f"1px solid {medium_preset['color']}40",
+            "borderRadius": "6px",
+        }, children=[
+            html.Span(f"🌍 Environment: ", style={"color": "#888", "fontSize": "11px"}),
+            html.Span(active_medium, style={"color": medium_preset["color"], "fontWeight": "bold", "fontSize": "12px"}),
+        ]))
+
     if mode == "drug" or mode == "combined":
         drug_name = ""
         for k, v in DRUG_DB.items():
@@ -1273,27 +1648,45 @@ def update_graph(cascade_depth, sim_data):
             ]))
 
     if mode in ("mutation", "combined"):
-        gene = sim_data.get("target_gene", "?")
-        impact = sim_data.get("mutation_impact", "?")
-        mutation_log = sim_data.get("mutation_log", "—")
-        impact_color = {"SILENT": "#22c55e", "MISSENSE": "#eab308", "NONSENSE": "#ef4444"}.get(impact, "#888")
-        info_children.extend([
-            html.Div(style={"marginTop": "8px" if mode == "combined" else "0"}, children=[
-                html.Div([
-                    f"🧬 Mutation: {gene}",
-                    html.Span(f" [{impact}]", style={"color": impact_color, "fontWeight": "bold", "fontSize": "11px"}),
-                ], style={"fontWeight": "bold", "color": "#a78bfa", "fontSize": "14px", "marginBottom": "4px"}),
-                html.Div(mutation_log, style={"color": "#888", "fontSize": "11px", "fontFamily": "monospace"}),
-                html.Div(style={"marginTop": "4px"}, children=[
-                    html.Span("Effect: ", style={"color": "#777", "fontSize": "11px"}),
-                    html.Span(
-                        {"SILENT": "No protein change", "MISSENSE": "Enzyme limited to 10% capacity",
-                         "NONSENSE": "Gene knocked out (premature stop)"}.get(impact, "Unknown"),
-                        style={"color": impact_color, "fontSize": "11px"},
-                    ),
+        if "crispr_data" in sim_data:
+            # Custom info block for CRISPR
+            crispr_map = sim_data.get("crispr_data", {})
+            info_children.extend([
+                html.Div("✂️ CRISPR TARGET REPORT", style={"fontWeight": "bold", "color": "#fb923c", "fontSize": "14px", "marginBottom": "4px"}),
+            ])
+            
+            if not crispr_map:
+                info_children.append(html.Div("No targets found matching this guide.", style={"color": "#888", "fontSize": "11px"}))
+            else:
+                 for gid, mis in crispr_map.items():
+                     color = "#ef4444" if mis == 0 else "#eab308"
+                     label = "PERFECT MATCH" if mis == 0 else f"{mis} MISMATCHES"
+                     info_children.append(html.Div(style={"marginBottom": "4px"}, children=[
+                         html.Span(f"🎯 {gid}: ", style={"color": "#ddd", "fontWeight": "bold", "fontSize": "11px"}),
+                         html.Span(label, style={"color": color, "fontSize": "10px", "border": f"1px solid {color}", "padding": "0 4px", "borderRadius": "4px"})
+                     ]))
+        else:
+            gene = sim_data.get("target_gene", "?")
+            impact = sim_data.get("mutation_impact", "?")
+            mutation_log = sim_data.get("mutation_log", "—")
+            impact_color = {"SILENT": "#22c55e", "MISSENSE": "#eab308", "NONSENSE": "#ef4444"}.get(impact, "#888")
+            info_children.extend([
+                html.Div(style={"marginTop": "8px" if mode == "combined" else "0"}, children=[
+                    html.Div([
+                        f"🧬 Mutation: {gene}",
+                        html.Span(f" [{impact}]", style={"color": impact_color, "fontWeight": "bold", "fontSize": "11px"}),
+                    ], style={"fontWeight": "bold", "color": "#a78bfa", "fontSize": "14px", "marginBottom": "4px"}),
+                    html.Div(mutation_log, style={"color": "#888", "fontSize": "11px", "fontFamily": "monospace"}),
+                    html.Div(style={"marginTop": "4px"}, children=[
+                        html.Span("Effect: ", style={"color": "#777", "fontSize": "11px"}),
+                        html.Span(
+                            {"SILENT": "No protein change", "MISSENSE": "Enzyme limited to 10% capacity",
+                             "NONSENSE": "Gene knocked out (premature stop)"}.get(impact, "Unknown"),
+                            style={"color": impact_color, "fontSize": "11px"},
+                        ),
+                    ]),
                 ]),
-            ]),
-        ])
+            ])
 
     hit_pathways = cascade["hit_pathways"] - {"Unknown"}
     if hit_pathways:
@@ -1361,6 +1754,8 @@ def update_graph(cascade_depth, sim_data):
     # HEADER
     fitness_color = "#ff4444" if fitness < 50 else ("#ffaa00" if fitness < 80 else "#44ff44")
     mode_labels = {"drug": "💊 Drug", "mutation": "🧬 Mutation", "combined": "💊+🧬 Combined"}
+    active_medium = sim_data.get("_medium", "Rich (Default)")
+    medium_preset = MEDIUM_PRESETS.get(active_medium, MEDIUM_PRESETS["Rich (Default)"])
     header = [
         html.Div([
             html.Div("FITNESS", style={"color": "#556", "fontSize": "9px", "letterSpacing": "1px"}),
@@ -1374,6 +1769,10 @@ def update_graph(cascade_depth, sim_data):
         html.Div([
             html.Div("MODE", style={"color": "#556", "fontSize": "9px", "letterSpacing": "1px"}),
             html.Div(mode_labels.get(mode, mode), style={"color": "#818cf8", "fontSize": "14px"}),
+        ]),
+        html.Div([
+            html.Div("MEDIUM", style={"color": "#556", "fontSize": "9px", "letterSpacing": "1px"}),
+            html.Div(active_medium.split("(")[0].strip(), style={"color": medium_preset["color"], "fontSize": "12px"}),
         ]),
     ]
 
