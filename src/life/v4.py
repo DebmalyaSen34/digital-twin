@@ -47,7 +47,6 @@ def apply_medium_to_model(m: cobra.Model, medium_name: str) -> None:
     for rxn in m.exchanges:
         rxn.lower_bound = -10.0
     
-    # Then apply overrides
     for rxn_id, lb in overrides.items():
         try:
             rxn = m.reactions.get_by_id(rxn_id)
@@ -713,77 +712,177 @@ def run_drug_simulation(drug_name, concentration_uM, sim_time=300.0, medium_name
     return _sim_cache[key]
 
 
-def mutate_dna(dna_seq):
+def mutate_dna(dna_seq, mutation_type="auto"):
     """
-    Introduces random point mutations into the DNA sequence to stimulate evolutionary processes.
-    Biased toward NONSENSE mutations (premature stop codons) ~40% of the time.
-    Returns: (Mutated Sequence, List of Changes)
+    Introduces mutations into the DNA sequence.
+    
+    :param dna_seq: Original DNA sequence
+    :param mutation_type: One of "auto", "point", "insertion", "deletion", "optimization"
+        - auto: Random pick biased toward nonsense point mutations (legacy behavior)
+        - point: Single nucleotide substitution
+        - insertion: Insert 1-2 random bases (causes frameshift)
+        - deletion: Delete 1-2 bases (causes frameshift)
+        - optimization: Codon-optimize a region (silent changes toward high-usage codons)
+    :return: (Mutated Sequence, mutation log string, effective mutation type)
     """
     bases = ['A', 'T', 'C', 'G']
     seq_list = list(dna_seq)
-    changes = []
-
-    # Stop codons in standard/table 4: TAA, TAG, TGA
     stop_codons = ['TAA', 'TAG', 'TGA']
 
-    # 40% chance: try to force a nonsense mutation by targeting a codon
+    # Auto-select mutation type with weighted probabilities
+    if mutation_type == "auto":
+        mutation_type = random.choices(
+            ["point", "insertion", "deletion"],
+            weights=[0.6, 0.2, 0.2],
+            k=1
+        )[0]
+
+    # ── INSERTION (Frameshift) ──────────────────────────────────────
+    if mutation_type == "insertion":
+        if len(seq_list) < 3:
+            # Too short, fall back to point
+            mutation_type = "point"
+        else:
+            # Insert 1 or 2 bases at a random position (not at very start/end)
+            n_insert = random.choice([1, 1, 1, 2])  # 1 base more common
+            pos = random.randint(3, max(3, len(seq_list) - 3))
+            inserted_bases = ''.join(random.choice(bases) for _ in range(n_insert))
+            for i, b in enumerate(inserted_bases):
+                seq_list.insert(pos + i, b)
+            log = f"INSERTION: +{n_insert}bp at position {pos} ({inserted_bases})"
+            return Seq("".join(seq_list)), log, "FRAMESHIFT_INS"
+
+    # ── DELETION (Frameshift) ───────────────────────────────────────
+    if mutation_type == "deletion":
+        if len(seq_list) < 6:
+            mutation_type = "point"
+        else:
+            # Delete 1 or 2 bases (not a multiple of 3 to guarantee frameshift)
+            n_delete = random.choice([1, 1, 1, 2])
+            pos = random.randint(3, max(3, len(seq_list) - n_delete - 3))
+            deleted_bases = ''.join(seq_list[pos:pos + n_delete])
+            del seq_list[pos:pos + n_delete]
+            log = f"DELETION: -{n_delete}bp at position {pos} (removed {deleted_bases})"
+            return Seq("".join(seq_list)), log, "FRAMESHIFT_DEL"
+
+    # ── OPTIMIZATION (beneficial silent mutations) ──────────────────
+    if mutation_type == "optimization":
+        # M. genitalium codon usage bias (table 4)
+        # Preferred codons for high-expression genes
+        preferred_codons = {
+            'F': 'TTT', 'L': 'TTA', 'I': 'ATT', 'M': 'ATG', 'V': 'GTT',
+            'S': 'TCT', 'P': 'CCA', 'T': 'ACA', 'A': 'GCT', 'Y': 'TAT',
+            'H': 'CAT', 'Q': 'CAA', 'N': 'AAT', 'K': 'AAA', 'D': 'GAT',
+            'E': 'GAA', 'C': 'TGT', 'W': 'TGG', 'R': 'AGA', 'G': 'GGT',
+            '*': 'TAA',
+        }
+
+        num_codons = len(seq_list) // 3
+        if num_codons < 3:
+            return Seq("".join(seq_list)), "Gene too short to optimize", "SILENT"
+
+        changes = []
+        # Optimize 3-8 random codons
+        n_optimize = random.randint(3, min(8, num_codons - 1))
+        codon_indices = random.sample(range(1, num_codons - 1), min(n_optimize, num_codons - 2))
+
+        for ci in codon_indices:
+            start = ci * 3
+            original_codon = ''.join(seq_list[start:start + 3])
+            # Translate the original codon to get the amino acid
+            try:
+                aa = str(Seq(original_codon).translate(table=4))
+            except Exception:
+                continue
+            if aa in preferred_codons:
+                preferred = preferred_codons[aa]
+                if preferred != original_codon:
+                    for i in range(3):
+                        seq_list[start + i] = preferred[i]
+                    changes.append(f"Codon {ci}: {original_codon}→{preferred} ({aa})")
+
+        if changes:
+            log = f"OPTIMIZED {len(changes)} codons: " + "; ".join(changes[:4])
+            if len(changes) > 4:
+                log += f" (+{len(changes) - 4} more)"
+            return Seq("".join(seq_list)), log, "OPTIMIZED"
+        else:
+            return Seq("".join(seq_list)), "No optimization possible (already optimal)", "SILENT"
+
+    # ── POINT MUTATION (legacy, biased toward nonsense) ─────────────
     if random.random() < 0.4 and len(seq_list) >= 6:
-        # Pick a random codon position (excluding the last codon which is normally a stop)
         num_codons = len(seq_list) // 3
         if num_codons > 2:
-            # Choose a codon in the first 80% of the sequence to make it clearly premature
             target_codon_idx = random.randint(1, int(num_codons * 0.8))
             codon_start = target_codon_idx * 3
             original_codon = seq_list[codon_start:codon_start + 3]
 
-            # Pick a random stop codon and find the minimal single-base change to reach it
             random.shuffle(stop_codons)
             mutated = False
             for stop in stop_codons:
                 diffs = [(i, original_codon[i], stop[i]) for i in range(3) if original_codon[i] != stop[i]]
                 if len(diffs) == 1:
-                    # Only one base change needed — perfect single point mutation
                     i, orig_base, new_base = diffs[0]
                     pos = codon_start + i
                     seq_list[pos] = new_base
-                    changes.append(f"Position {pos}: {orig_base} -> {new_base}")
-                    mutated = True
-                    break
+                    log = f"Position {pos}: {orig_base} -> {new_base}"
+                    return Seq("".join(seq_list)), log, "POINT"
             
-            if not mutated:
-                # Fallback: force a stop codon with one random base change
-                stop = random.choice(stop_codons)
-                i = random.randint(0, 2)
+            stop = random.choice(stop_codons)
+            i = random.randint(0, 2)
+            pos = codon_start + i
+            original_base = seq_list[pos]
+            new_base = stop[i]
+            if new_base == original_base:
+                i = (i + 1) % 3
                 pos = codon_start + i
                 original_base = seq_list[pos]
                 new_base = stop[i]
-                if new_base == original_base:
-                    # Change a different position in the codon
-                    i = (i + 1) % 3
-                    pos = codon_start + i
-                    original_base = seq_list[pos]
-                    new_base = stop[i]
-                seq_list[pos] = new_base
-                changes.append(f"Position {pos}: {original_base} -> {new_base}")
-        else:
-            # Gene too short, fall through to random mutation
-            pos = random.randint(0, len(seq_list) - 1)
-            original_base = seq_list[pos]
-            new_base = random.choice([b for b in bases if b != original_base])
             seq_list[pos] = new_base
-            changes.append(f"Position {pos}: {original_base} -> {new_base}")
-    else:
-        # Normal random point mutation (SILENT or MISSENSE likely)
-        pos = random.randint(0, len(seq_list) - 1)
-        original_base = seq_list[pos]
-        new_base = random.choice([b for b in bases if b != original_base])
-        seq_list[pos] = new_base
-        changes.append(f"Position {pos}: {original_base} -> {new_base}")
+            log = f"Position {pos}: {original_base} -> {new_base}"
+            return Seq("".join(seq_list)), log, "POINT"
 
-    return Seq("".join(seq_list)), changes
+    pos = random.randint(0, len(seq_list) - 1)
+    original_base = seq_list[pos]
+    new_base = random.choice([b for b in bases if b != original_base])
+    seq_list[pos] = new_base
+    log = f"Position {pos}: {original_base} -> {new_base}"
+    return Seq("".join(seq_list)), log, "POINT"
 
 
-def analyze_mutation_impact(original_prot, mutated_prot):
+def analyze_mutation_impact(original_prot, mutated_prot, mutation_class="POINT"):
+    """
+    Compares original and mutated protein sequences.
+    
+    :param original_prot: Original protein sequence
+    :param mutated_prot: Mutated protein sequence
+    :param mutation_class: The class of mutation applied (POINT, FRAMESHIFT_INS, FRAMESHIFT_DEL, OPTIMIZED)
+    :return: Impact classification string
+    """
+    if mutation_class.startswith("FRAMESHIFT"):
+        # Frameshifts almost always destroy the protein
+        # But check if by luck the reading frame is preserved (in-frame indel of 3n bases)
+        if len(original_prot) == len(mutated_prot) and original_prot == mutated_prot:
+            return "SILENT"
+        elif "*" in str(mutated_prot):
+            # Premature stop from frameshift
+            orig_len = len(str(original_prot).replace("*", ""))
+            mut_len = str(mutated_prot).index("*") if "*" in str(mutated_prot) else len(str(mutated_prot))
+            truncation_pct = (1.0 - mut_len / max(orig_len, 1)) * 100
+            return f"FRAMESHIFT ({truncation_pct:.0f}% truncated)"
+        else:
+            # Massive amino acid changes
+            mismatches = sum(1 for a, b in zip(str(original_prot), str(mutated_prot)) if a != b)
+            return f"FRAMESHIFT ({mismatches} AA changed)"
+
+    if mutation_class == "OPTIMIZED":
+        if original_prot == mutated_prot:
+            return "OPTIMIZED"
+        else:
+            # Shouldn't happen with proper codon optimization, but safety check
+            return "MISSENSE"
+
+    # Standard point mutation analysis
     if original_prot == mutated_prot:
         return "SILENT"
     elif "*" in str(mutated_prot)[:-1]:
@@ -791,9 +890,14 @@ def analyze_mutation_impact(original_prot, mutated_prot):
     return "MISSENSE"
 
 
-def run_mutation_simulation(gene_id, medium_name="Rich (Default)"):
-    """Run mutation simulation on a specific gene, return results dict."""
-    key = ("mutation", gene_id, medium_name)
+def run_mutation_simulation(gene_id, medium_name="Rich (Default)", mutation_type="auto"):
+    """Run mutation simulation on a specific gene, return results dict.
+    
+    :param gene_id: Target gene ID
+    :param medium_name: Growth medium preset name
+    :param mutation_type: "auto", "point", "insertion", "deletion", "optimization"
+    """
+    key = ("mutation", gene_id, medium_name, mutation_type)
     if key in _sim_cache:
         return _sim_cache[key]
 
@@ -811,13 +915,28 @@ def run_mutation_simulation(gene_id, medium_name="Rich (Default)"):
 
     impact = "SILENT"
     mutation_log = "No FASTA record found"
+    mutation_class = "POINT"
 
     if candidate_record:
         original_dna = candidate_record.seq
-        mutated_dna, mutation_log = mutate_dna(original_dna)
+        mutated_dna, mutation_log, mutation_class = mutate_dna(original_dna, mutation_type)
+        
+        # For frameshifts, the sequence length changes, so translation may differ
         orig_prot = original_dna.translate(table=4, to_stop=True)
-        mut_prot = mutated_dna.translate(table=4, to_stop=True)
-        impact = analyze_mutation_impact(orig_prot, mut_prot)
+        
+        # Frameshifted sequences need special handling for translation
+        # Ensure length is multiple of 3 for translation (pad if needed)
+        mut_seq_str = str(mutated_dna)
+        remainder = len(mut_seq_str) % 3
+        if remainder != 0:
+            mut_seq_str = mut_seq_str[:len(mut_seq_str) - remainder]  # Trim to codon boundary
+        
+        try:
+            mut_prot = Seq(mut_seq_str).translate(table=4, to_stop=True)
+        except Exception:
+            mut_prot = Seq("")
+        
+        impact = analyze_mutation_impact(orig_prot, mut_prot, mutation_class)
 
     # Apply penalty on a fresh copy
     m2 = model.copy()
@@ -831,6 +950,7 @@ def run_mutation_simulation(gene_id, medium_name="Rich (Default)"):
 
     if target_gene and abs_fluxes is not None:
         if impact == "MISSENSE":
+            # Missense: enzyme at 10% capacity
             max_flux = 0
             for rxn in target_gene.reactions:
                 if abs_fluxes[rxn.id] > max_flux:
@@ -841,8 +961,22 @@ def run_mutation_simulation(gene_id, medium_name="Rich (Default)"):
                     rxn.upper_bound = min(rxn.upper_bound, new_limit)
                 if rxn.lower_bound < 0:
                     rxn.lower_bound = max(rxn.lower_bound, -new_limit)
-        elif impact == "NONSENSE":
+
+        elif impact == "NONSENSE" or impact.startswith("FRAMESHIFT"):
+            # Nonsense & Frameshift: full knockout
             target_gene.knock_out()
+
+        elif impact == "OPTIMIZED":
+            # Optimization: INCREASE enzyme capacity by 50-200%
+            boost = random.uniform(1.5, 3.0)
+            for rxn in target_gene.reactions:
+                if rxn.upper_bound > 0:
+                    rxn.upper_bound = rxn.upper_bound * boost
+                if rxn.lower_bound < 0:
+                    rxn.lower_bound = rxn.lower_bound * boost
+            mutation_log += f" | Enzyme boosted {boost:.1f}x"
+
+        # SILENT: no change needed
 
     mut_sol = m2.optimize()
     if mut_sol.status == "optimal":
@@ -865,7 +999,8 @@ def run_mutation_simulation(gene_id, medium_name="Rich (Default)"):
         "growth_rate": [float(new_growth)],
         "simulation_mode": "mutation_fba",
         "mutation_impact": impact,
-        "mutation_log": mutation_log,
+        "mutation_class": mutation_class,
+        "mutation_log": mutation_log if isinstance(mutation_log, str) else "; ".join(mutation_log),
         "loss_pct": float(loss),
         "target_gene": gene_id,
     }
@@ -1275,6 +1410,27 @@ app.layout = html.Div(style={
                     placeholder="Select gene to mutate...",
                     style={"marginBottom": "12px"},
                 ),
+
+                html.Label("Mutation Type:", style={"color": "#888", "fontSize": "11px"}),
+                dcc.Dropdown(
+                    id="mutation-type-select",
+                    options=[
+                        {"label": "🎲 Auto (Random)", "value": "auto"},
+                        {"label": "🔴 Point Mutation (SNP)", "value": "point"},
+                        {"label": "➕ Insertion (Frameshift)", "value": "insertion"},
+                        {"label": "➖ Deletion (Frameshift)", "value": "deletion"},
+                        {"label": "🧪 Codon Optimization (Beneficial)", "value": "optimization"},
+                    ],
+                    value="auto",
+                    style={"marginBottom": "8px"},
+                ),
+                html.Div(id="mutation-type-desc", style={
+                    "color": "#888", "fontSize": "10px", "fontStyle": "italic",
+                    "padding": "6px 8px", "backgroundColor": "#0a0a1a",
+                    "borderRadius": "4px", "border": "1px solid #1a1a3e",
+                    "marginBottom": "12px",
+                }),
+
                 html.Button("🎲 Roll Random Mutation", id="random-mutation-btn",
                             style={
                                 "width": "100%", "padding": "8px", "backgroundColor": "#4c1d95",
@@ -1388,6 +1544,20 @@ def toggle_controls(mode):
     return drug_style, mut_style, crispr_style
 
 @app.callback(
+    Output("mutation-type-desc", "children"),
+    Input("mutation-type-select", "value"),
+)
+def update_mutation_type_desc(mutation_type):
+    descs = {
+        "auto": "Randomly selects between point mutation (60%), insertion (20%), or deletion (20%). Point mutations are biased toward nonsense (stop codons).",
+        "point": "Single nucleotide substitution (SNP). Can produce SILENT, MISSENSE, or NONSENSE mutations depending on codon position.",
+        "insertion": "Inserts 1–2 random bases into the gene. Shifts the reading frame downstream, usually destroying the protein (frameshift).",
+        "deletion": "Deletes 1–2 bases from the gene. Shifts the reading frame, typically causing premature stop codons and truncated protein.",
+        "optimization": "Replaces codons with preferred synonymous codons (silent changes). Simulates directed evolution — increases enzyme expression/efficiency.",
+    }
+    return descs.get(mutation_type, "")
+
+@app.callback(
     Output("medium-desc", "children"),
     Output("medium-baseline", "children"),
     Input("medium-select", "value"),
@@ -1478,12 +1648,15 @@ def roll_random_gene(_):
     Input("time-slider", "value"),
     Input("mutation-gene-select", "value"),
     Input("crispr-guide-input", "value"),
-    Input("medium-select", "value")
+    Input("medium-select", "value"),
+    Input("mutation-type-select", "value"),
 )
-def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene, crispr_guide, medium_name):
+def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene, crispr_guide, medium_name, mutation_type):
     """Run appropriate simulation based on mode."""
     if not medium_name:
         medium_name = "Rich (Default)"
+    if not mutation_type:
+        mutation_type = "auto"
     
     if mode == "drug":
         result = run_drug_simulation(drug_name, float(conc_uM), float(sim_time), medium_name)
@@ -1498,7 +1671,7 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene, crispr
             gene_id = random.choice(active_genes) if active_genes else None
         if not gene_id:
             return {"_mode": "mutation", "_targets": []}
-        result = run_mutation_simulation(gene_id, medium_name)
+        result = run_mutation_simulation(gene_id, medium_name, mutation_type)
         result["_mode"] = "mutation"
         result["_targets"] = [gene_id]
         result["_medium"] = medium_name
@@ -1520,7 +1693,7 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene, crispr
         # Mutation simulation
         gene_id = mutation_gene or (random.choice(active_genes) if active_genes else None)
         if gene_id:
-            mut_result = run_mutation_simulation(gene_id, medium_name)
+            mut_result = run_mutation_simulation(gene_id, medium_name, mutation_type)
         else:
             mut_result = {
                 "drug_growth": drug_result.get("wt_growth", 0),
@@ -1528,7 +1701,6 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene, crispr
             }
 
         wt = drug_result.get("wt_growth", 0)
-        # Combined fitness: multiply the relative fitness of each perturbation
         drug_fitness = drug_result.get("drug_growth", 0) / wt if wt > 0 else 0
         mut_fitness = mut_result.get("drug_growth", 0) / wt if wt > 0 else 0
         combined_growth = wt * drug_fitness * mut_fitness
@@ -1550,6 +1722,7 @@ def compute_simulation(mode, drug_name, conc_uM, sim_time, mutation_gene, crispr
             "growth_rate": drug_result.get("growth_rate", [float(combined_growth)]),
             "simulation_mode": "combined",
             "mutation_impact": mut_result.get("mutation_impact", "NONE"),
+            "mutation_class": mut_result.get("mutation_class", "POINT"),
             "mutation_log": mut_result.get("mutation_log", "—"),
             "loss_pct": float(combined_loss),
             "_mode": "combined",
@@ -1669,21 +1842,57 @@ def update_graph(cascade_depth, sim_data):
             gene = sim_data.get("target_gene", "?")
             impact = sim_data.get("mutation_impact", "?")
             mutation_log = sim_data.get("mutation_log", "—")
-            impact_color = {"SILENT": "#22c55e", "MISSENSE": "#eab308", "NONSENSE": "#ef4444"}.get(impact, "#888")
+            mutation_class = sim_data.get("mutation_class", "POINT")
+            
+            # Color mapping for all impact types
+            if impact == "SILENT":
+                impact_color = "#22c55e"
+            elif impact == "MISSENSE":
+                impact_color = "#eab308"
+            elif impact == "NONSENSE":
+                impact_color = "#ef4444"
+            elif impact.startswith("FRAMESHIFT"):
+                impact_color = "#dc2626"
+            elif impact == "OPTIMIZED":
+                impact_color = "#22d3ee"
+            else:
+                impact_color = "#888"
+            
+            # Icon based on mutation class
+            mutation_icons = {
+                "POINT": "🔴",
+                "FRAMESHIFT_INS": "➕",
+                "FRAMESHIFT_DEL": "➖",
+                "OPTIMIZED": "🧪",
+            }
+            icon = mutation_icons.get(mutation_class, "🧬")
+            
+            # Effect description
+            effect_descriptions = {
+                "SILENT": "No protein change — synonymous substitution",
+                "MISSENSE": "Enzyme limited to 10% capacity — altered active site",
+                "NONSENSE": "Gene knocked out (premature stop codon)",
+                "OPTIMIZED": "Enzyme boosted — improved codon usage increases expression",
+            }
+            # Handle frameshift descriptions dynamically
+            if impact.startswith("FRAMESHIFT"):
+                effect_desc = f"Reading frame destroyed — {impact}"
+            else:
+                effect_desc = effect_descriptions.get(impact, impact)
+
             info_children.extend([
                 html.Div(style={"marginTop": "8px" if mode == "combined" else "0"}, children=[
                     html.Div([
-                        f"🧬 Mutation: {gene}",
+                        f"{icon} Mutation: {gene}",
                         html.Span(f" [{impact}]", style={"color": impact_color, "fontWeight": "bold", "fontSize": "11px"}),
                     ], style={"fontWeight": "bold", "color": "#a78bfa", "fontSize": "14px", "marginBottom": "4px"}),
-                    html.Div(mutation_log, style={"color": "#888", "fontSize": "11px", "fontFamily": "monospace"}),
+                    html.Div(
+                        mutation_log if isinstance(mutation_log, str) else "; ".join(mutation_log),
+                        style={"color": "#888", "fontSize": "11px", "fontFamily": "monospace"}
+                    ),
                     html.Div(style={"marginTop": "4px"}, children=[
                         html.Span("Effect: ", style={"color": "#777", "fontSize": "11px"}),
-                        html.Span(
-                            {"SILENT": "No protein change", "MISSENSE": "Enzyme limited to 10% capacity",
-                             "NONSENSE": "Gene knocked out (premature stop)"}.get(impact, "Unknown"),
-                            style={"color": impact_color, "fontSize": "11px"},
-                        ),
+                        html.Span(effect_desc, style={"color": impact_color, "fontSize": "11px"}),
                     ]),
                 ]),
             ])
@@ -1726,13 +1935,17 @@ def update_graph(cascade_depth, sim_data):
         elif impact == "NONSENSE":
             kinetics_children.append(html.Div(f"🧬 {gene}: 0% (knocked out)",
                                               style={"color": "#ef4444", "fontSize": "11px"}))
+        elif impact.startswith("FRAMESHIFT"):
+            kinetics_children.append(html.Div(f"🧬 {gene}: 0% (frameshift — protein destroyed)",
+                                              style={"color": "#dc2626", "fontSize": "11px"}))
+        elif impact == "OPTIMIZED":
+            kinetics_children.append(html.Div(f"🧬 {gene}: BOOSTED (codon-optimized, 150-300% capacity)",
+                                              style={"color": "#22d3ee", "fontSize": "11px"}))
         elif impact == "SILENT":
             kinetics_children.append(html.Div(f"🧬 {gene}: 100% (silent mutation)",
                                               style={"color": "#22c55e", "fontSize": "11px"}))
         else:
             kinetics_children.append(html.Div("No enzyme data", style={"color": "#444", "fontSize": "11px"}))
-    else:
-        kinetics_children.append(html.Div("No enzyme targets", style={"color": "#444", "fontSize": "11px"}))
 
     # METRICS
     fitness = (drug_growth / wt_growth * 100) if wt_growth > 0 else 0
